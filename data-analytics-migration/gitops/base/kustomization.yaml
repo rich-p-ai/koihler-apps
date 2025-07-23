@@ -6,8 +6,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 
-namespace: data-analytics
-
 resources:
   - namespace.yaml
   - serviceaccount.yaml

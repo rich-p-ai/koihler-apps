@@ -1,0 +1,15 @@
+namePrefix:
+- path: metadata/name
+  kind: ServiceAccount
+- path: metadata/name
+  kind: Namespace
+
+namespace:
+- path: metadata/namespace
+  kind: ServiceAccount
+  create: true
+
+# Don't add namespace to cluster-scoped resources
+- path: metadata/namespace
+  kind: SecurityContextConstraints
+  create: false
