@@ -7,6 +7,9 @@ This repository contains OpenShift application deployments and migrations for Ko
 ```
 koihler-apps/
 ├── README.md
+├── ARGOCD-SETUP-GUIDE.md           # ArgoCD integration guide
+├── argocd-repository.yaml          # ArgoCD repository configuration
+├── setup-argocd.sh                 # Automated ArgoCD setup script
 ├── data-analytics-migration/        # Data Analytics migration to OCP-PRD
 │   ├── README.md                   # Migration project overview
 │   ├── gitops/                     # GitOps structure with Kustomize
@@ -28,25 +31,34 @@ Complete migration of the `data-analytics` namespace from OCP4 to OCP-PRD cluste
 
 ## Getting Started
 
-1. **Data Analytics Migration**:
-   ```bash
-   cd data-analytics-migration
-   ./quick-start.sh
-   ```
+### 1. ArgoCD Repository Setup
+```bash
+# Add repository to ArgoCD
+./setup-argocd.sh
 
-2. **GitOps Deployment**:
-   ```bash
-   # Production
-   kubectl apply -k data-analytics-migration/gitops/overlays/prd
-   
-   # Development
-   kubectl apply -k data-analytics-migration/gitops/overlays/dev
-   ```
+# Or manually apply repository configuration
+kubectl apply -f argocd-repository.yaml
+```
 
-3. **ArgoCD Applications**:
-   ```bash
-   kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
-   ```
+### 2. Data Analytics Migration
+```bash
+cd data-analytics-migration
+./migration-scripts/quick-start.sh
+```
+
+### 3. GitOps Deployment
+```bash
+# Production
+kubectl apply -k data-analytics-migration/gitops/overlays/prd
+
+# Development
+kubectl apply -k data-analytics-migration/gitops/overlays/dev
+```
+
+### 4. ArgoCD Applications
+```bash
+kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
+```
 
 ## Repository Management
 
