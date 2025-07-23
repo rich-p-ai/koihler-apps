@@ -5,6 +5,12 @@ namespace: data-analytics
 
 resources:
   - ../../base
+  - storage.yaml
+  - secrets.yaml
+  - configmaps.yaml
+  - deployments.yaml
+  - services.yaml
+  - routes.yaml
 
 patches:
   - target:

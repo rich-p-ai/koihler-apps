@@ -1,0 +1,214 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+      volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+    creationTimestamp: "2023-09-08T12:06:39Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: cdh-callfinder-vol01
+    namespace: data-analytics
+    resourceVersion: "5335600566"
+    uid: 34097b5b-bff8-434b-93c5-f2124fbebb90
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: ocs-external-storagecluster-cephfs
+    volumeMode: Filesystem
+    volumeName: pvc-34097b5b-bff8-434b-93c5-f2124fbebb90
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+    creationTimestamp: "2021-07-06T16:10:41Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      velero.io/exclude-from-backup: "true"
+    name: nfspvcdataanalyticsdata01
+    namespace: data-analytics
+    resourceVersion: "1204629015"
+    uid: 3dbaec93-eb82-42a0-99ae-ff6899e8687c
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 10Gi
+    storageClassName: nfs
+    volumeMode: Filesystem
+    volumeName: nfspvdataanalyticsdata01
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 10Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+      volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+    creationTimestamp: "2023-08-29T19:54:05Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: sci-scorecard-dev-vol01
+    namespace: data-analytics
+    resourceVersion: "5335600781"
+    uid: a6fe3c3f-9698-487c-8652-cc2e34bb99ba
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: ocs-external-storagecluster-cephfs
+    volumeMode: Filesystem
+    volumeName: pvc-a6fe3c3f-9698-487c-8652-cc2e34bb99ba
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/vsphere-volume
+    creationTimestamp: "2021-06-15T13:43:29Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: sftp-analytics-01
+    namespace: data-analytics
+    resourceVersion: "355653566"
+    uid: 31a78975-4210-4795-95c4-a364a1371e57
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+    storageClassName: thin
+    volumeMode: Filesystem
+    volumeName: pvc-31a78975-4210-4795-95c4-a364a1371e57
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 2Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: csi-isilon.dellemc.com
+    creationTimestamp: "2021-06-15T13:45:36Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      velero.io/exclude-from-backup: "true"
+    name: sftp-analytics-data01
+    namespace: data-analytics
+    resourceVersion: "1204629028"
+    uid: 9d3f70bb-0285-4430-a37a-50538849f45a
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 10Gi
+    storageClassName: isilon-storageclass
+    volumeMode: Filesystem
+    volumeName: csipscale-9d3f70bb02
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 10Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+    creationTimestamp: "2021-09-14T18:19:36Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: sftp-datalake-01
+    namespace: data-analytics
+    resourceVersion: "5335600999"
+    uid: 19a9af7d-426d-4ba6-9fdf-65978d442731
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 1Gi
+    storageClassName: ocs-external-storagecluster-cephfs
+    volumeMode: Filesystem
+    volumeName: pvc-19a9af7d-426d-4ba6-9fdf-65978d442731
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 1Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: csi-isilon.dellemc.com
+    creationTimestamp: "2021-09-14T18:21:15Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      velero.io/exclude-from-backup: "true"
+    name: sftp-datalake-data01
+    namespace: data-analytics
+    resourceVersion: "1204629047"
+    uid: ca2b9e6e-4d22-41b7-95a5-a9f5d6052d6f
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 5Gi
+    storageClassName: isilon-storageclass-v6
+    volumeMode: Filesystem
+    volumeName: csipscale-ca2b9e6e4d
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 5Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""

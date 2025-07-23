@@ -3,10 +3,13 @@ kind: Kustomization
 
 namespace: data-analytics
 
-bases:
+resources:
   - ../../base
+  - storage.yaml
+  - secrets.yaml
+  - configmaps.yaml
 
-patchesJson6902:
+patches:
   - target:
       group: ""
       version: v1
@@ -20,16 +23,11 @@ patchesJson6902:
         path: /metadata/annotations/openshift.io~1display-name
         value: "Data Analytics - Development"
 
-resources: []
-# Will be populated after running migration script:
-# - storage.yaml
-# - secrets.yaml
-# - configmaps.yaml
-
 replicas:
   - name: "*"
     count: 1
 
-commonLabels:
-  environment: development
-  tier: non-production
+labels:
+  - pairs:
+      environment: development
+      tier: non-production

@@ -1,0 +1,161 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2023-09-08T11:57:48Z"
+    labels:
+      app: cdh-callfinder-sftp-app
+      app.kubernetes.io/component: cdh-callfinder-sftp-app
+      app.kubernetes.io/instance: cdh-callfinder-sftp-app
+      app.kubernetes.io/name: cdh-callfinder-sftp-app
+      app.kubernetes.io/part-of: cdh-callfinder
+    name: cdh-callfinder-sftp-app
+    namespace: data-analytics
+    resourceVersion: "2518935332"
+    uid: 911e1f2a-4fec-4091-995e-685a71e8ecb3
+  spec:
+    clusterIP: 172.30.163.142
+    clusterIPs:
+    - 172.30.163.142
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 22-tcp
+      nodePort: 32073
+      port: 22
+      protocol: TCP
+      targetPort: 22
+    selector:
+      app: cdh-callfinder-sftp-app
+      deploymentconfig: cdh-callfinder-sftp-app
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix.git
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2023-08-29T16:02:25Z"
+    labels:
+      app: sci-scorecard-dev-stage1
+      app.kubernetes.io/component: sci-scorecard-dev-stage1
+      app.kubernetes.io/instance: sci-scorecard-dev-stage1
+      app.kubernetes.io/name: sci-scorecard-dev-stage1
+      app.kubernetes.io/part-of: sci-scorecard
+    name: sci-scorecard-dev-stage1
+    namespace: data-analytics
+    resourceVersion: "2475295139"
+    uid: d2522332-91ca-4559-b6df-74d50ef18f76
+  spec:
+    clusterIP: 172.30.8.20
+    clusterIPs:
+    - 172.30.8.20
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 22-tcp
+      nodePort: 32105
+      port: 22
+      protocol: TCP
+      targetPort: 22
+    selector:
+      app: sci-scorecard-dev-stage1
+      deploymentconfig: sci-scorecard-dev-stage1
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2021-06-15T12:47:43Z"
+    labels:
+      app: sftp-data-analytics-app1
+      app.kubernetes.io/component: sftp-data-analytics-app1
+      app.kubernetes.io/instance: sftp-data-analytics-app1
+      app.kubernetes.io/part-of: sftp-data-analytics-app1
+    name: sftp-data-analytics-app1
+    namespace: data-analytics
+    resourceVersion: "357609881"
+    uid: 54e42280-750f-4d61-a5ed-b7c6ee89226e
+  spec:
+    clusterIP: 172.30.244.2
+    clusterIPs:
+    - 172.30.244.2
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 22-tcp
+      nodePort: 32005
+      port: 22
+      protocol: TCP
+      targetPort: 22
+    selector:
+      app: sftp-data-analytics-app1
+      deploymentconfig: sftp-data-analytics-app1
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2021-09-14T17:54:46Z"
+    labels:
+      app: sftp-data-lake-app1
+      app.kubernetes.io/component: sftp-data-lake-app1
+      app.kubernetes.io/instance: sftp-data-lake-app1
+      app.kubernetes.io/part-of: sftp-data-lake-app1
+    name: sftp-data-lake-app1
+    namespace: data-analytics
+    resourceVersion: "491297179"
+    uid: a190dacb-190e-475f-941f-9629da4d1928
+  spec:
+    clusterIP: 172.30.77.119
+    clusterIPs:
+    - 172.30.77.119
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 22-tcp
+      nodePort: 32010
+      port: 22
+      protocol: TCP
+      targetPort: 22
+    selector:
+      app: sftp-data-lake-app1
+      deploymentconfig: sftp-data-lake-app1
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""

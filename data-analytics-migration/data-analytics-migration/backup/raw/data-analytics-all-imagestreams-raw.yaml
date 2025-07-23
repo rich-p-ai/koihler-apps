@@ -1,0 +1,126 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2023-09-08T11:57:46Z"
+    generation: 1
+    labels:
+      app: cdh-callfinder-sftp-app
+      app.kubernetes.io/component: cdh-callfinder-sftp-app
+      app.kubernetes.io/instance: cdh-callfinder-sftp-app
+      app.kubernetes.io/name: cdh-callfinder-sftp-app
+      app.kubernetes.io/part-of: cdh-callfinder
+    name: cdh-callfinder-sftp-app
+    namespace: data-analytics
+    resourceVersion: "2518806953"
+    uid: 942a5e28-a8c4-444c-a15e-fb7613ab2846
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/data-analytics/cdh-callfinder-sftp-app
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.kohlerco.com/data-analytics/cdh-callfinder-sftp-app
+    tags:
+    - items:
+      - created: "2023-09-08T11:58:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/data-analytics/cdh-callfinder-sftp-app@sha256:8ad8bf808e53c61c76cdde3546a4d352f52beaddb3bd622ce5713969a34f55b4
+        generation: 1
+        image: sha256:8ad8bf808e53c61c76cdde3546a4d352f52beaddb3bd622ce5713969a34f55b4
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix.git
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2023-08-29T16:02:25Z"
+    generation: 1
+    labels:
+      app: sci-scorecard-dev-stage1
+      app.kubernetes.io/component: sci-scorecard-dev-stage1
+      app.kubernetes.io/instance: sci-scorecard-dev-stage1
+      app.kubernetes.io/name: sci-scorecard-dev-stage1
+      app.kubernetes.io/part-of: sci-scorecard
+    name: sci-scorecard-dev-stage1
+    namespace: data-analytics
+    resourceVersion: "2519984446"
+    uid: 7496c303-3612-4038-9057-f4bba0ae1640
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/data-analytics/sci-scorecard-dev-stage1
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.kohlerco.com/data-analytics/sci-scorecard-dev-stage1
+    tags:
+    - items:
+      - created: "2023-09-08T18:17:23Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/data-analytics/sci-scorecard-dev-stage1@sha256:3b0f2fcdeca5587b3ff09f8c9bea9d530cd0e404234069a5e0154d2e848d6940
+        generation: 1
+        image: sha256:3b0f2fcdeca5587b3ff09f8c9bea9d530cd0e404234069a5e0154d2e848d6940
+      - created: "2023-08-29T16:06:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/data-analytics/sci-scorecard-dev-stage1@sha256:ac25529e0ae60f76eee019216766cfad5015df9ee47d847f333fcbd19d090114
+        generation: 1
+        image: sha256:ac25529e0ae60f76eee019216766cfad5015df9ee47d847f333fcbd19d090114
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: sftp
+      app.openshift.io/vcs-uri: https://bitbucket.org/kohler_prime/ia_unix
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2021-09-14T17:54:45Z"
+    generation: 1
+    labels:
+      app: sftp-data-lake-app1
+      app.kubernetes.io/component: sftp-data-lake-app1
+      app.kubernetes.io/instance: sftp-data-lake-app1
+      app.kubernetes.io/part-of: sftp-data-lake-app1
+    name: sftp-data-lake-app1
+    namespace: data-analytics
+    resourceVersion: "491253158"
+    uid: c2fdf9f0-ef16-41ed-afd1-c4a629cb40c4
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/data-analytics/sftp-data-lake-app1
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.kohlerco.com/data-analytics/sftp-data-lake-app1
+    tags:
+    - items:
+      - created: "2021-09-14T17:58:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/data-analytics/sftp-data-lake-app1@sha256:b6a22129dc132f7f68cfa342b23361f844dff65dc0232d1507253cfa2912ba85
+        generation: 1
+        image: sha256:b6a22129dc132f7f68cfa342b23361f844dff65dc0232d1507253cfa2912ba85
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    creationTimestamp: "2021-06-15T12:41:21Z"
+    generation: 1
+    name: sftp-debian
+    namespace: data-analytics
+    resourceVersion: "355584183"
+    uid: 1714a18a-109a-4286-97ee-9ed4483e7103
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/data-analytics/sftp-debian
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.kohlerco.com/data-analytics/sftp-debian
+    tags:
+    - items:
+      - created: "2021-06-15T12:41:21Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/data-analytics/sftp-debian@sha256:31ed9fa857f79fcd19bfe70d250bc8d760e91c1f605bb8ed969f9716237af970
+        generation: 1
+        image: sha256:31ed9fa857f79fcd19bfe70d250bc8d760e91c1f605bb8ed969f9716237af970
+      tag: v1
+kind: List
+metadata:
+  resourceVersion: ""
