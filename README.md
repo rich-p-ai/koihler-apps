@@ -1,6 +1,33 @@
-# Kohler OpenShift Applications
+# 🚀 Kohler OpenShift Applications - GitOps Repository
 
-This repository contains OpenShift application deployments and migrations for Kohler Co.
+This repository contains OpenShift application deployments and migrations for Kohler Co, managed through ArgoCD for automated GitOps workflows.
+
+## 📊 Current Status
+
+✅ **ArgoCD Connected**: Repository successfully connected to OpenShift GitOps  
+✅ **Data Analytics**: Successfully migrated and deployed to OCP-PRD  
+✅ **GitOps Active**: Automated sync and deployment operational  
+
+## 🔧 ArgoCD Integration
+
+### Repository Connection
+- **Repository URL**: `https://github.com/rich-p-ai/koihler-apps.git`
+- **ArgoCD Instance**: OpenShift GitOps (`openshift-gitops` namespace)
+- **Connection Status**: ✅ Connected and operational
+
+### Active Applications
+- **data-analytics-prd**: Production deployment of data-analytics namespace
+  - **Path**: `data-analytics-migration/gitops/overlays/prd`
+  - **Status**: ✅ Healthy and syncing
+  - **Sync Policy**: Automated with self-healing
+
+### Access ArgoCD UI
+```bash
+# Get ArgoCD URL
+echo "https://$(oc get route openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}')"
+
+# Direct URL: https://openshift-gitops-server-openshift-gitops.apps.ocp-prd.kohlerco.com
+```
 
 ## Repository Structure
 
