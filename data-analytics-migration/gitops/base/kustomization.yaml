@@ -13,10 +13,8 @@ resources:
   - serviceaccount.yaml
   - scc-binding.yaml
 
-commonLabels:
-  app.kubernetes.io/name: data-analytics
-  app.kubernetes.io/part-of: data-analytics-platform
-  app.kubernetes.io/managed-by: kustomize
-
-patchesStrategicMerge: []
-patchesJson6902: []
+labels:
+  - pairs:
+      app.kubernetes.io/name: data-analytics
+      app.kubernetes.io/part-of: data-analytics-platform
+      app.kubernetes.io/managed-by: kustomize
