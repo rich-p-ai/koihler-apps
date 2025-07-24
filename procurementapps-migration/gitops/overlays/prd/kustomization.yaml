@@ -14,9 +14,10 @@ resources:
   - services.yaml
   - routes.yaml
 
-commonLabels:
-  environment: production
-  app.kubernetes.io/instance: procurementapps-prd
+labels:
+  - pairs:
+      environment: production
+      app.kubernetes.io/instance: procurementapps-prd
 
 images:
   - name: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp

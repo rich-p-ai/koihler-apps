@@ -9,6 +9,7 @@ resources:
   - serviceaccount.yaml
   - scc-binding.yaml
 
-commonLabels:
-  app.kubernetes.io/name: procurementapps
-  app.kubernetes.io/part-of: kohler-apps
+labels:
+  - pairs:
+      app.kubernetes.io/name: procurementapps
+      app.kubernetes.io/part-of: kohler-apps

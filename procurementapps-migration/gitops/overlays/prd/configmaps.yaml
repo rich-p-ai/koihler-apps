@@ -1,54 +1,41 @@
 apiVersion: v1
-data:
-  AZUREAD_CALLBACKPATH: /signin-oidc
-  AZUREAD_CLIENTID: 5cb76c25-f97e-4371-b990-3d2871eda178
-  AZUREAD_DOMAIN: kohler.onmicrosoft.com
-  AZUREAD_INSTANCE: https://login.microsoftonline.com/
-  AZUREAD_TENANTID: 5d2d3f03-286e-4643-8f5b-10565608e5f8
-  VALUES_CERTLOC: /i01/certs/pm-procedures-prod.apps.oc.kohlerco.com.official.p12
-  VALUES_ENVIRONMENTTYPE: PRODUCTION
-  VALUES_LOCALADDRESS: 127.0.0.1
-  VALUES_LOCALPATH: /preventivemaintenance
-  VALUES_WORKORDER_NOTIFICATIONURL: https://webapp2.kohlerco.com/sappm/index.cfm?action=new
 kind: ConfigMap
 metadata:
-  annotations:
-    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
-    openshift.io/backup-server-version: "1.11"
-    openshift.io/migration-registry: 172.30.105.8:5000
-    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
-    openshift.io/restore-server-version: "1.20"
-  labels:
-    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
-    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
-    velero.io/backup-name: migration-555db-initial-km8f4
-    velero.io/restore-name: migration-555db-final-wp57g
   name: pm-procedures-prod
   namespace: procurementapps
-apiVersion: v1
+  labels:
+    app: pm-procedures-prod
+    component: pm-procedures
+    environment: production
 data:
-  AZUREAD_CALLBACKPATH: /signin-oidc
-  AZUREAD_CLIENTID: 3f742838-1441-4440-8f39-c9fe75711d98
-  AZUREAD_DOMAIN: kohler.onmicrosoft.com
-  AZUREAD_INSTANCE: https://login.microsoftonline.com/
-  AZUREAD_TENANTID: 5d2d3f03-286e-4643-8f5b-10565608e5f8
-  VALUES_CERTLOC: /i01/certs/pm-procedures-test.apps.ocp4.kohlerco.com.official.p12
-  VALUES_ENVIRONMENTTYPE: TEST
-  VALUES_LOCALADDRESS: 127.0.0.1
-  VALUES_LOCALPATH: /preventivemaintenance
-  VALUES_WORKORDER_NOTIFICATIONURL: https://webapp2test.kohlerco.com/sappm/index.cfm?action=new
+  DB_TYPE: sqlserver
+  DB_SERVER: sqlprdtxsql01.kohlerco.com
+  DB_DATABASE: procurement_procedures
+  DB_DRIVER: ODBC Driver 17 for SQL Server
+  SSL_CERT: /opt/app-root/src/ssl/tls.crt
+  SSL_KEY: /opt/app-root/src/ssl/tls.key
+  NODE_ENV: production
+  PORT: "5001"
+  TZ: America/Chicago
+  ASPNETCORE_ENVIRONMENT: Production
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
-  annotations:
-    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
-    openshift.io/backup-server-version: "1.11"
-    openshift.io/migration-registry: 172.30.105.8:5000
-    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
-    openshift.io/restore-server-version: "1.20"
-  labels:
-    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
-    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
-    velero.io/backup-name: migration-555db-initial-km8f4
-    velero.io/restore-name: migration-555db-final-wp57g
   name: pm-procedures-test
   namespace: procurementapps
+  labels:
+    app: pm-procedures-test
+    component: pm-procedures
+    environment: test
+data:
+  DB_TYPE: sqlserver
+  DB_SERVER: sqldevtxsql01.kohlerco.com
+  DB_DATABASE: procurement_procedures_test
+  DB_DRIVER: ODBC Driver 17 for SQL Server
+  SSL_CERT: /opt/app-root/src/ssl/tls.crt
+  SSL_KEY: /opt/app-root/src/ssl/tls.key
+  NODE_ENV: test
+  PORT: "5001"
+  TZ: America/Chicago
+  ASPNETCORE_ENVIRONMENT: Development

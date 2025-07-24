@@ -1,64 +1,39 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
-    openshift.io/backup-server-version: "1.11"
-    openshift.io/generated-by: OpenShiftWebConsole
-    openshift.io/migration-registry: 172.30.105.8:5000
-    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
-    openshift.io/restore-server-version: "1.20"
-  labels:
-    app: pm-procedures-prod
-    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
-    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
-    velero.io/backup-name: migration-555db-initial-km8f4
-    velero.io/restore-name: migration-555db-final-wp57g
   name: pm-procedures-prod
   namespace: procurementapps
+  labels:
+    app: pm-procedures-prod
+    component: pm-procedures
+    environment: production
 spec:
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
-    - name: 5001-tcp
-      port: 5001
-      protocol: TCP
-      targetPort: 5001
+  - name: 5001-tcp
+    port: 5001
+    protocol: TCP
+    targetPort: 5001
   selector:
-    deploymentconfig: pm-procedures-prod
-  sessionAffinity: None
+    app: pm-procedures-prod
+    deployment: pm-procedures-prod
   type: ClusterIP
+---
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
-    openshift.io/backup-server-version: "1.11"
-    openshift.io/generated-by: OpenShiftWebConsole
-    openshift.io/migration-registry: 172.30.105.8:5000
-    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
-    openshift.io/restore-server-version: "1.20"
-  labels:
-    app: pm-procedures-test
-    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
-    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
-    velero.io/backup-name: migration-555db-initial-km8f4
-    velero.io/restore-name: migration-555db-final-wp57g
   name: pm-procedures-test
   namespace: procurementapps
+  labels:
+    app: pm-procedures-test
+    component: pm-procedures
+    environment: test
 spec:
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
-    - name: 5001-tcp
-      port: 5001
-      protocol: TCP
-      targetPort: 5001
+  - name: 5001-tcp
+    port: 5001
+    protocol: TCP
+    targetPort: 5001
   selector:
-    deploymentconfig: pm-procedures-test
-  sessionAffinity: None
+    app: pm-procedures-test
+    deployment: pm-procedures-test
   type: ClusterIP
