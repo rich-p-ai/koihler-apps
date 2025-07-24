@@ -22,10 +22,11 @@ The `procurementapps` namespace has been **SUCCESSFULLY MIGRATED** from OCP4 to 
 - ✅ **Resource Management**: Added proper limits and requests
 
 #### **GitOps Structure Implementation**
-- ✅ **Kustomize Base**: Common resources (namespace, RBAC, SCC)
+- ✅ **Kustomize Base**: Common resources (namespace, RBAC, SCC, user groups)
 - ✅ **Production Overlay**: Environment-specific configurations
 - ✅ **ArgoCD Application**: Automated deployment and sync
 - ✅ **Repository Integration**: Added to kohler-apps GitHub repository
+- ✅ **User Access Management**: RBAC groups with GitOps-managed permissions
 
 ### 📦 Resources Migrated
 
@@ -37,6 +38,8 @@ The `procurementapps` namespace has been **SUCCESSFULLY MIGRATED** from OCP4 to 
 | **ConfigMaps** | 2 | Application configuration |
 | **Secrets** | 6 | Certificates, passwords, app secrets |
 | **ServiceAccounts** | 1 | useroot with anyuid SCC |
+| **User Groups** | 1 | procurementapps-admins with admin access |
+| **RoleBindings** | 2 | SCC binding + admin group binding |
 | **ImageStreams** | 1 | pm-procedures-webapp |
 
 ### 🌐 Application URLs (After Deployment)
@@ -79,7 +82,9 @@ procurementapps-migration/
     ├── base/                       # Base Kustomize configuration
     │   ├── namespace.yaml          # Namespace definition
     │   ├── serviceaccount.yaml     # RBAC and service accounts
-    │   └── scc-binding.yaml        # Security context constraints
+    │   ├── scc-binding.yaml        # Security context constraints
+    │   ├── group.yaml              # User groups for access management
+    │   └── group-rolebinding.yaml  # RBAC permissions for groups
     ├── overlays/prd/               # Production environment
     │   ├── kustomization.yaml      # Production configuration
     │   ├── deployments.yaml        # Converted Deployments
@@ -107,6 +112,10 @@ oc get route -n procurementapps
 
 # Check ArgoCD sync status
 oc get application procurementapps-prd -n openshift-gitops
+
+# Check user group and permissions
+oc get group procurementapps-admins
+oc get rolebinding procurementapps-admins-binding -n procurementapps
 ```
 
 ## 🔗 GitHub Integration
@@ -115,6 +124,7 @@ oc get application procurementapps-prd -n openshift-gitops
 - ✅ **Path**: `procurementapps-migration/`
 - ✅ **Committed**: All migration artifacts pushed to main branch
 - ✅ **ArgoCD Ready**: Repository connected, application ready for deployment
+- ✅ **User Access**: RBAC groups configured with Jeyasri.Babuji@kohler.com as admin
 
 ## 🎯 Next Steps
 
