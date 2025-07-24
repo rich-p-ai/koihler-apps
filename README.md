@@ -21,6 +21,11 @@ This repository contains OpenShift application deployments and migrations for Ko
   - **Status**: ✅ Healthy and syncing
   - **Sync Policy**: Automated with self-healing
 
+- **procurementapps-prd**: Production deployment of procurementapps namespace
+  - **Path**: `procurementapps-migration/gitops/overlays/prd`
+  - **Status**: 🔄 Ready for deployment
+  - **Sync Policy**: Automated with self-healing
+
 ### Access ArgoCD UI
 ```bash
 # Get ArgoCD URL
@@ -43,6 +48,12 @@ koihler-apps/
 │   │   ├── base/                   # Base Kustomize configuration
 │   │   └── overlays/               # Environment-specific overlays
 │   └── migration-scripts/          # Migration automation scripts
+├── procurementapps-migration/       # Procurement Apps migration to OCP-PRD
+│   ├── README.md                   # Migration project overview
+│   ├── gitops/                     # GitOps structure with Kustomize
+│   │   ├── base/                   # Base Kustomize configuration
+│   │   └── overlays/               # Environment-specific overlays
+│   └── migrate-procurementapps.sh  # Migration automation script
 └── applications/                   # Future application deployments
     └── README.md
 ```
@@ -53,8 +64,16 @@ koihler-apps/
 Complete migration of the `data-analytics` namespace from OCP4 to OCP-PRD cluster with GitOps deployment using Kustomize and ArgoCD.
 
 **Location**: `data-analytics-migration/`
-**Status**: Ready for deployment
+**Status**: ✅ Deployed and operational
 **Method**: GitOps with Kustomize overlays
+
+### Procurement Apps Migration
+Migration of the `procurementapps` namespace from OCP4 to OCP-PRD with conversion from DeploymentConfigs to Deployments and GitOps deployment.
+
+**Location**: `procurementapps-migration/`
+**Status**: 🔄 Ready for deployment
+**Method**: DeploymentConfig → Deployment + GitOps
+**Applications**: pm-procedures-prod, pm-procedures-test
 
 ## Getting Started
 
@@ -67,19 +86,22 @@ Complete migration of the `data-analytics` namespace from OCP4 to OCP-PRD cluste
 kubectl apply -f argocd-repository.yaml
 ```
 
-### 2. Data Analytics Migration
+### 2. Deploy Applications
 ```bash
-cd data-analytics-migration
-./migration-scripts/quick-start.sh
+# Data Analytics (already deployed)
+kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
+
+# Procurement Apps (new)
+kubectl apply -f procurementapps-migration/gitops/argocd-application.yaml
 ```
 
-### 3. GitOps Deployment
+### 3. Direct Kustomize Deployment (Alternative)
 ```bash
-# Production
+# Data Analytics Production
 kubectl apply -k data-analytics-migration/gitops/overlays/prd
 
-# Development
-kubectl apply -k data-analytics-migration/gitops/overlays/dev
+# Procurement Apps Production
+kubectl apply -k procurementapps-migration/gitops/overlays/prd
 ```
 
 ### 4. ArgoCD Applications
