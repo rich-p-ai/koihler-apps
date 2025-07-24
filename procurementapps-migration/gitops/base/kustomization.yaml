@@ -8,6 +8,8 @@ resources:
   - namespace.yaml
   - serviceaccount.yaml
   - scc-binding.yaml
+  - group.yaml
+  - group-rolebinding.yaml
 
 labels:
   - pairs:

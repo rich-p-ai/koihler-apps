@@ -1,0 +1,10 @@
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: procurementapps-admins
+  labels:
+    app.kubernetes.io/name: procurementapps
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/managed-by: kustomize
+users:
+  - Jeyasri.Babuji@kohler.com
