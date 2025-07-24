@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: humanresourceapps
+  labels:
+    name: humanresourceapps
+    openshift.io/cluster-monitoring: "true"
+  annotations:
+    openshift.io/display-name: "Human Resource Apps"
+    openshift.io/description: "Human Resource applications and jobs"

@@ -1,0 +1,295 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: couchdb-employee-dev
+        app.kubernetes.io/component: couchdb-employee-dev
+        app.kubernetes.io/instance: couchdb-employee-dev
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-dev
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.176.70
+      clusterIPs:
+        - 172.30.176.70
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 4369-tcp
+          port: 4369
+          protocol: TCP
+          targetPort: 4369
+        - name: 5984-tcp
+          port: 5984
+          protocol: TCP
+          targetPort: 5984
+        - name: 6984-tcp
+          port: 6984
+          protocol: TCP
+          targetPort: 6984
+        - name: 9100-tcp
+          port: 9100
+          protocol: TCP
+          targetPort: 9100
+      selector:
+        app: couchdb-employee-dev
+        deploymentconfig: couchdb-employee-dev
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: couchdb-employee-prd
+        app.kubernetes.io/component: couchdb-employee-prd
+        app.kubernetes.io/instance: couchdb-employee-prd
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-prd
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.18.67
+      clusterIPs:
+        - 172.30.18.67
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 4369-tcp
+          port: 4369
+          protocol: TCP
+          targetPort: 4369
+        - name: 5984-tcp
+          port: 5984
+          protocol: TCP
+          targetPort: 5984
+        - name: 6984-tcp
+          port: 6984
+          protocol: TCP
+          targetPort: 6984
+        - name: 9100-tcp
+          port: 9100
+          protocol: TCP
+          targetPort: 9100
+      selector:
+        app: couchdb-employee-prd
+        deploymentconfig: couchdb-employee-prd
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: couchdb-employee-qa
+        app.kubernetes.io/component: couchdb-employee-qa
+        app.kubernetes.io/instance: couchdb-employee-qa
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-qa
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.79.115
+      clusterIPs:
+        - 172.30.79.115
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 4369-tcp
+          port: 4369
+          protocol: TCP
+          targetPort: 4369
+        - name: 5984-tcp
+          port: 5984
+          protocol: TCP
+          targetPort: 5984
+        - name: 6984-tcp
+          port: 6984
+          protocol: TCP
+          targetPort: 6984
+        - name: 9100-tcp
+          port: 9100
+          protocol: TCP
+          targetPort: 9100
+      selector:
+        app: couchdb-employee-qa
+        deploymentconfig: couchdb-employee-qa
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: hr06esst-jco-prd
+        app.kubernetes.io/component: hr06esst-jco-prd
+        app.kubernetes.io/instance: hr06esst-jco-prd
+        app.kubernetes.io/part-of: hr06esst-jco
+      name: hr06esst-jco-prd
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.17.55
+      clusterIPs:
+        - 172.30.17.55
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hr06esst-jco-prd
+        deploymentconfig: hr06esst-jco-prd
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: hr06esst-jco-pwr-prd
+        app.kubernetes.io/component: hr06esst-jco-pwr-prd
+        app.kubernetes.io/instance: hr06esst-jco-pwr-prd
+      name: hr06esst-jco-pwr-prd
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.181.59
+      clusterIPs:
+        - 172.30.181.59
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hr06esst-jco-pwr-prd
+        deploymentconfig: hr06esst-jco-pwr-prd
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: hr06esst-jco-pwr-qa
+        app.kubernetes.io/component: hr06esst-jco-pwr-qa
+        app.kubernetes.io/instance: hr06esst-jco-pwr-qa
+        app.kubernetes.io/part-of: hr06esst-pwr-jco
+      name: hr06esst-jco-pwr-qa
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.182.85
+      clusterIPs:
+        - 172.30.182.85
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hr06esst-jco-pwr-qa
+        deploymentconfig: hr06esst-jco-pwr-qa
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: hr06esst-jco-qa
+        app.kubernetes.io/component: hr06esst-jco-qa
+        app.kubernetes.io/instance: hr06esst-jco-qa
+        app.kubernetes.io/part-of: hr06esst-jco
+      name: hr06esst-jco-qa
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.122.52
+      clusterIPs:
+        - 172.30.122.52
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hr06esst-jco-qa
+        deploymentconfig: hr06esst-jco-qa
+      sessionAffinity: None
+      type: ClusterIP
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        app.openshift.io/vcs-ref: ""
+        app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
+        openshift.io/generated-by: OpenShiftWebConsole
+      labels:
+        app: httpd-temp
+        app.kubernetes.io/component: httpd-temp
+        app.kubernetes.io/instance: httpd-temp
+        app.kubernetes.io/name: httpd
+        app.kubernetes.io/part-of: httpd-temp
+        app.openshift.io/runtime: httpd
+        app.openshift.io/runtime-version: 2.4-el7
+      name: httpd-temp
+      namespace: humanresourceapps
+    spec:
+      clusterIP: 172.30.51.222
+      clusterIPs:
+        - 172.30.51.222
+      internalTrafficPolicy: Cluster
+      ipFamilies:
+        - IPv4
+      ipFamilyPolicy: SingleStack
+      ports:
+        - name: 8080-tcp
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+        - name: 8443-tcp
+          port: 8443
+          protocol: TCP
+          targetPort: 8443
+      selector:
+        app: httpd-temp
+        deploymentconfig: httpd-temp
+      sessionAffinity: None
+      type: ClusterIP
+kind: List
+metadata:
+  resourceVersion: ""

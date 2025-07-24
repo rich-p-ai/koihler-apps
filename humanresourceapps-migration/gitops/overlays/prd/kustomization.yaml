@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: humanresourceapps-prd
+
+namespace: humanresourceapps
+
+resources:
+  - ../../base
+
+commonLabels:
+  environment: production
+  app.kubernetes.io/instance: humanresourceapps-prd
+
+# Add resource files if they exist
+  - configmaps-cleaned.yaml
+  - cronjobs-cleaned.yaml
+  - deploymentconfigs-cleaned.yaml
+  - deployments-cleaned.yaml
+  - imagestreams-cleaned.yaml
+  - jobs-cleaned.yaml
+  - pvcs-cleaned.yaml
+  - routes-cleaned.yaml
+  - secrets-cleaned.yaml
+  - serviceaccounts-cleaned.yaml
+  - services-cleaned.yaml
+
+replicas:
+  - name: "*"
+    count: 1
+
+images: []

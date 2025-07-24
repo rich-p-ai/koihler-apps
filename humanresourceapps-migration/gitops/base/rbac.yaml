@@ -1,0 +1,31 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: humanresourceapps-admins-binding
+  namespace: humanresourceapps
+  labels:
+    app.kubernetes.io/name: humanresourceapps
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/managed-by: kustomize
+subjects:
+  - kind: Group
+    name: humanresourceapps-admins
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: humanresourceapps-users-binding
+  namespace: humanresourceapps
+subjects:
+- kind: User
+  name: Jeyasri.Babuji@kohler.com
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io

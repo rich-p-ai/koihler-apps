@@ -1,0 +1,1514 @@
+apiVersion: v1
+items:
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        deployment.kubernetes.io/revision: "17"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"couchdb-kohler:3.2.2","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"couchdb-employee-dev\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-05-18T17:38:37Z"
+      generation: 45
+      labels:
+        app: couchdb-employee-dev
+        app.kubernetes.io/component: couchdb-employee-dev
+        app.kubernetes.io/instance: couchdb-employee-dev
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-dev
+      namespace: humanresourceapps
+      resourceVersion: "5285616632"
+      uid: 44e48140-46e3-4894-9ed0-9b7eb30874da
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: couchdb-employee-dev
+      strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
+        type: RollingUpdate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: couchdb-employee-dev
+            deploymentconfig: couchdb-employee-dev
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: COUCHDB_USER
+                  value: kohleradmin
+                - name: COUCHDB_PASSWORD
+                  value: W^Z$H4qi6C&J9!!ay66g*JZ7R
+              image: kohlercitregistry.azurecr.io/couchdb@sha256:3ea7f178b119a1bbd2adbec78486241a087ba35d1d3ec9128a3ada704d55ec97
+              imagePullPolicy: Always
+              name: couchdb-employee-dev
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /opt/couchdb/data
+                  name: employee-couchdb-rbd-dev
+                  subPath: data
+                - mountPath: /opt/couchdb/etc/local.d
+                  name: employee-couchdb-rbd-dev
+                  subPath: config
+                - mountPath: /opt/couchdb/cert
+                  name: certs
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: certs
+              secret:
+                defaultMode: 420
+                secretName: couchdb-employee-certs-dev
+            - name: employee-couchdb-rbd-dev
+              persistentVolumeClaim:
+                claimName: employee-couchdb-rbd-dev
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-05-18T17:38:38Z"
+          lastUpdateTime: "2023-02-24T19:53:57Z"
+          message: ReplicaSet "couchdb-employee-dev-5c476b84b8" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-07-08T14:35:43Z"
+          lastUpdateTime: "2025-07-08T14:35:43Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 45
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        deployment.kubernetes.io/revision: "4"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"couchdb-kohler:3.2.2","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"couchdb-employee-prd\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-05-19T20:10:14Z"
+      generation: 21
+      labels:
+        app: couchdb-employee-prd
+        app.kubernetes.io/component: couchdb-employee-prd
+        app.kubernetes.io/instance: couchdb-employee-prd
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-prd
+      namespace: humanresourceapps
+      resourceVersion: "4954090306"
+      uid: b5d49dca-9e2b-4d59-adda-ce2d2140f72c
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: couchdb-employee-prd
+      strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
+        type: RollingUpdate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: couchdb-employee-prd
+            deploymentconfig: couchdb-employee-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: COUCHDB_USER
+                  value: kohleradmin
+                - name: COUCHDB_PASSWORD
+                  value: W^Z$H4qi6C&J9!!ay66g*JZ7R
+              image: kohlercitregistry.azurecr.io/couchdb@sha256:3ea7f178b119a1bbd2adbec78486241a087ba35d1d3ec9128a3ada704d55ec97
+              imagePullPolicy: Always
+              name: couchdb-employee-prd
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /opt/couchdb/data
+                  name: employee-couchdb-rbd-prd
+                  subPath: data
+                - mountPath: /opt/couchdb/etc/local.d
+                  name: employee-couchdb-rbd-prd
+                  subPath: config
+                - mountPath: /opt/couchdb/cert
+                  name: certs
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: certs
+              secret:
+                defaultMode: 420
+                secretName: couchdb-employee-certs-prd
+            - name: employee-couchdb-rbd-prd
+              persistentVolumeClaim:
+                claimName: employee-couchdb-rbd-prd
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-05-19T20:10:14Z"
+          lastUpdateTime: "2023-02-26T12:57:43Z"
+          message: ReplicaSet "couchdb-employee-prd-749b7f8c78" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-04-07T11:06:38Z"
+          lastUpdateTime: "2025-04-07T11:06:38Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 21
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        app.openshift.io/vcs-ref: main
+        app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+        deployment.kubernetes.io/revision: "5"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"couchdb-kohler:3.2.2","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"couchdb-employee-qa\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-05-19T20:08:21Z"
+      generation: 31
+      labels:
+        app: couchdb-employee-qa
+        app.kubernetes.io/component: couchdb-employee-qa
+        app.kubernetes.io/instance: couchdb-employee-qa
+        app.kubernetes.io/part-of: couchdb-employee
+      name: couchdb-employee-qa
+      namespace: humanresourceapps
+      resourceVersion: "5076559903"
+      uid: 74001c29-fc4b-4719-9f3b-3a6aa67c6fdc
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: couchdb-employee-qa
+      strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
+        type: RollingUpdate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: couchdb-employee-qa
+            deploymentconfig: couchdb-employee-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: COUCHDB_USER
+                  value: kohleradmin
+                - name: COUCHDB_PASSWORD
+                  value: h3hpqomr1*AIBj7&7O9mz*
+              image: kohlercitregistry.azurecr.io/couchdb@sha256:3ea7f178b119a1bbd2adbec78486241a087ba35d1d3ec9128a3ada704d55ec97
+              imagePullPolicy: Always
+              name: couchdb-employee-qa
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /opt/couchdb/data
+                  name: employee-couchdb-rbd-qa
+                  subPath: data
+                - mountPath: /opt/couchdb/etc/local.d
+                  name: employee-couchdb-rbd-qa
+                  subPath: config
+                - mountPath: /opt/couchdb/cert
+                  name: certs
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: certs
+              secret:
+                defaultMode: 420
+                secretName: couchdb-employee-certs-qa
+            - name: employee-couchdb-rbd-qa
+              persistentVolumeClaim:
+                claimName: employee-couchdb-rbd-qa
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-05-19T20:08:21Z"
+          lastUpdateTime: "2023-02-24T20:01:10Z"
+          message: ReplicaSet "couchdb-employee-qa-7585cb6d67" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-04-08T19:07:29Z"
+          lastUpdateTime: "2025-04-08T19:07:29Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 31
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        deployment.kubernetes.io/revision: "5"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hr06esst_jco:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hr06esst-jco-prd\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-04-14T13:14:40Z"
+      generation: 14
+      labels:
+        app: hr06esst-jco-prd
+        app.kubernetes.io/component: hr06esst-jco-prd
+        app.kubernetes.io/instance: hr06esst-jco-prd
+        app.kubernetes.io/name: hr06esst_jco
+        app.kubernetes.io/part-of: hr06esst-jco
+        app.openshift.io/runtime: hr06esst_jco
+        app.openshift.io/runtime-namespace: humanresourceapps
+        app.openshift.io/runtime-version: latest
+      name: hr06esst-jco-prd
+      namespace: humanresourceapps
+      resourceVersion: "5280627033"
+      uid: 99b4fda4-5d6a-4fc9-84e0-0a0f767bb867
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: hr06esst-jco-prd
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: hr06esst-jco-prd
+            deploymentconfig: hr06esst-jco-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: kohlercitregistry.azurecr.io/hr06esst_jco@sha256:70f3f11d7147c4fae98d327d464ba7a181def6da5abb380345310394e631a7db
+              imagePullPolicy: IfNotPresent
+              name: hr06esst-jco-prd
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/config
+                  name: volume-secrets
+                  readOnly: true
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: hr06esst-jco-secrets-prod
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2025-07-07T06:47:34Z"
+          lastUpdateTime: "2025-07-07T06:47:34Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+        - lastTransitionTime: "2022-04-14T13:14:40Z"
+          lastUpdateTime: "2025-07-07T06:47:34Z"
+          message: ReplicaSet "hr06esst-jco-prd-75bf5db4db" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+      observedGeneration: 14
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        deployment.kubernetes.io/revision: "2"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hr06esst_jco:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hr06esst-jco-pwr-prd\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2024-02-01T16:29:01Z"
+      generation: 11
+      labels:
+        app: hr06esst-jco-pwr-prd
+        app.kubernetes.io/component: hr06esst-jco-pwr-prd
+        app.kubernetes.io/instance: hr06esst-jco-pwr-prd
+        app.kubernetes.io/name: hr06esst_jco
+        app.openshift.io/runtime: hr06esst_jco
+        app.openshift.io/runtime-namespace: humanresourceapps
+        app.openshift.io/runtime-version: latest
+      name: hr06esst-jco-pwr-prd
+      namespace: humanresourceapps
+      resourceVersion: "5280626753"
+      uid: 175cbfc4-6088-416c-8af5-aa43638f8d9d
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: hr06esst-jco-pwr-prd
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: hr06esst-jco-pwr-prd
+            deploymentconfig: hr06esst-jco-pwr-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: kohlercitregistry.azurecr.io/hr06esst_jco@sha256:70f3f11d7147c4fae98d327d464ba7a181def6da5abb380345310394e631a7db
+              imagePullPolicy: IfNotPresent
+              name: hr06esst-jco-pwr-prd
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/config
+                  name: volume-secrets
+                  readOnly: true
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: hr06esst-jco-secrets-pwr-prod
+    status:
+      conditions:
+        - lastTransitionTime: "2025-04-04T18:07:52Z"
+          lastUpdateTime: "2025-04-04T18:07:52Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+        - lastTransitionTime: "2024-02-01T16:29:01Z"
+          lastUpdateTime: "2025-07-07T06:47:27Z"
+          message: ReplicaSet "hr06esst-jco-pwr-prd-d7cf5898b" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+      observedGeneration: 11
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        deployment.kubernetes.io/revision: "4"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hr06esst_jco:test","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hr06esst-jco-pwr-qa\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2024-01-29T20:16:51Z"
+      generation: 5
+      labels:
+        app: hr06esst-jco-pwr-qa
+        app.kubernetes.io/component: hr06esst-jco-pwr-qa
+        app.kubernetes.io/instance: hr06esst-jco-pwr-qa
+        app.openshift.io/runtime-namespace: humanresourceapps
+        app.openshift.io/runtime-version: test
+      name: hr06esst-jco-pwr-qa
+      namespace: humanresourceapps
+      resourceVersion: "5266853534"
+      uid: b7f3b79d-7e56-4c65-9a02-76b9a1915b29
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: hr06esst-jco-pwr-qa
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: hr06esst-jco-pwr-qa
+            deploymentconfig: hr06esst-jco-pwr-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: kohlercitregistry.azurecr.io/hr06esst_jco@sha256:76d239a59eb4946cc71c5ef01c94b005315e9e6210686c1fb62373e213733e4d
+              imagePullPolicy: IfNotPresent
+              name: hr06esst-jco-pwr-qa
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/config
+                  name: volume-secrets
+                  readOnly: true
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: hr06esst-jco-secrets-pwr-test
+    status:
+      conditions:
+        - lastTransitionTime: "2024-12-07T16:12:28Z"
+          lastUpdateTime: "2024-12-07T16:12:28Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+        - lastTransitionTime: "2024-01-29T20:16:51Z"
+          lastUpdateTime: "2025-07-03T11:38:19Z"
+          message: ReplicaSet "hr06esst-jco-pwr-qa-5cb8bf88cf" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+      observedGeneration: 5
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        deployment.kubernetes.io/revision: "11"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"hr06esst_jco:test","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"hr06esst-jco-qa\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-04-13T19:46:26Z"
+      generation: 25
+      labels:
+        app: hr06esst-jco-qa
+        app.kubernetes.io/component: hr06esst-jco-qa
+        app.kubernetes.io/instance: hr06esst-jco-qa
+        app.kubernetes.io/name: hr06esst_jco
+        app.kubernetes.io/part-of: hr06esst-jco
+        app.openshift.io/runtime: hr06esst_jco
+        app.openshift.io/runtime-namespace: humanresourceapps
+        app.openshift.io/runtime-version: test
+      name: hr06esst-jco-qa
+      namespace: humanresourceapps
+      resourceVersion: "5307452082"
+      uid: a7aa2927-da7f-44c9-a166-aefd3fee4619
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: hr06esst-jco-qa
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: hr06esst-jco-qa
+            deploymentconfig: hr06esst-jco-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: kohlercitregistry.azurecr.io/hr06esst_jco@sha256:76d239a59eb4946cc71c5ef01c94b005315e9e6210686c1fb62373e213733e4d
+              imagePullPolicy: IfNotPresent
+              name: hr06esst-jco-qa
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/config
+                  name: volume-secrets
+                  readOnly: true
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: hr06esst-jco-secrets-test
+    status:
+      conditions:
+        - lastTransitionTime: "2025-07-03T11:38:26Z"
+          lastUpdateTime: "2025-07-03T11:38:26Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+        - lastTransitionTime: "2022-04-13T19:46:26Z"
+          lastUpdateTime: "2025-07-03T11:38:26Z"
+          message: ReplicaSet "hr06esst-jco-qa-68cbd66d67" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+      observedGeneration: 25
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
+        app.openshift.io/vcs-ref: ""
+        app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
+        deployment.kubernetes.io/revision: "4"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"httpd-temp:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"httpd-temp\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-05-05T11:24:16Z"
+      generation: 9
+      labels:
+        app: httpd-temp
+        app.kubernetes.io/component: httpd-temp
+        app.kubernetes.io/instance: httpd-temp
+        app.kubernetes.io/name: httpd
+        app.kubernetes.io/part-of: httpd-temp
+        app.openshift.io/runtime: httpd
+        app.openshift.io/runtime-version: 2.4-el7
+      name: httpd-temp
+      namespace: humanresourceapps
+      resourceVersion: "4944264066"
+      uid: 1e3f6e8a-8ce4-4c6d-885b-12ac378606b9
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: httpd-temp
+      strategy:
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%
+        type: RollingUpdate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: httpd-temp
+            deploymentconfig: httpd-temp
+        spec:
+          containers:
+            - image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/httpd-temp@sha256:3fa6c2d0dbea815b6a2d2aac54f70f3710a37d785a4b043f75953cf0714d3bfc
+              imagePullPolicy: Always
+              name: httpd-temp
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
+                - containerPort: 8443
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/reports
+                  name: nfspvckcmpreports
+                - mountPath: /x05/temp
+                  name: nfspvcqanashr
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvckcmpreports
+              persistentVolumeClaim:
+                claimName: nfspvckcmpreports
+            - name: nfspvcqanashr
+              persistentVolumeClaim:
+                claimName: nfspvcqanashr
+    status:
+      conditions:
+        - lastTransitionTime: "2022-05-05T11:24:16Z"
+          lastUpdateTime: "2022-10-13T18:09:21Z"
+          message: ReplicaSet "httpd-temp-c6cfc985c" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:18:27Z"
+          lastUpdateTime: "2024-12-07T16:18:27Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 9
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "41"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mulesoft-bulk-dev:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mulesoft-bulk-dev\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-09T13:46:51Z"
+      generation: 49
+      name: mulesoft-bulk-dev
+      namespace: humanresourceapps
+      resourceVersion: "5241958728"
+      uid: 48a42961-5b43-4fd5-b4ef-fce619a14cae
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mulesoft-bulk-dev
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: mulesoft-bulk-dev
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: DW_HOME
+                  value: /app
+              envFrom:
+                - prefix: VALUES_
+                  secretRef:
+                    name: mulesoft-bulk-dev-secrets
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mulesoft-bulk-dev@sha256:655c9f342ea1a60a2ed1df1156d5472c88991fc6bd7f4f9f0e17390d9cdf3a48
+              imagePullPolicy: Always
+              name: mulesoft-bulk-dev
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /dev_nas/HR
+                  name: nfspvcdevnashr
+                - mountPath: /i01/rootdir
+                  name: mulesoft-bulk2-dev
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcdevnashr
+              persistentVolumeClaim:
+                claimName: nfspvcdevnashr
+            - name: mulesoft-bulk2-dev
+              persistentVolumeClaim:
+                claimName: mulesoft-bulk2-dev
+    status:
+      conditions:
+        - lastTransitionTime: "2024-12-07T16:19:23Z"
+          lastUpdateTime: "2024-12-07T16:19:23Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+        - lastTransitionTime: "2022-11-09T13:46:51Z"
+          lastUpdateTime: "2025-06-26T11:59:58Z"
+          message: ReplicaSet "mulesoft-bulk-dev-6769b7f5" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+      observedGeneration: 49
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "32"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mulesoft-bulk-prd:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mulesoft-bulk-prd\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-09T14:13:48Z"
+      generation: 58
+      name: mulesoft-bulk-prd
+      namespace: humanresourceapps
+      resourceVersion: "4954085890"
+      uid: b6e301f8-7c78-4bf2-a426-4c9bd44b04da
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mulesoft-bulk-prd
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: mulesoft-bulk-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: DW_HOME
+                  value: /app
+              envFrom:
+                - prefix: VALUES_
+                  secretRef:
+                    name: mulesoft-bulk-prd-secrets
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mulesoft-bulk-prd@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
+              imagePullPolicy: Always
+              name: mulesoft-bulk-prd
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/rootdir
+                  name: mulesoft-bulk2-prd
+                - mountPath: /prd_nas/HR
+                  name: nfspvcprdnashr
+                - mountPath: /prd_nas/MESLITE/GM
+                  name: nfspvcprdnashumanresourceappsgm1
+                - mountPath: /qa_nas/MESLITE/GM
+                  name: nfspvcqanashumanresourceappsgm1
+                - mountPath: /dev_nas/MESLITE/GM
+                  name: nfspvcdevnashumanresourceappsgm1
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcprdnashr
+              persistentVolumeClaim:
+                claimName: nfspvcprdnashr
+            - name: nfspvcprdnashumanresourceappsgm1
+              persistentVolumeClaim:
+                claimName: powerpvcprdnashumanresourceappsgm1
+            - name: nfspvcqanashumanresourceappsgm1
+              persistentVolumeClaim:
+                claimName: powerpvcqanashumanresourceappsgm1
+            - name: nfspvcdevnashumanresourceappsgm1
+              persistentVolumeClaim:
+                claimName: powerpvcdevnashumanresourceappsgm1
+            - name: mulesoft-bulk2-prd
+              persistentVolumeClaim:
+                claimName: mulesoft-bulk2-prd
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2024-02-15T13:56:23Z"
+          lastUpdateTime: "2024-05-01T05:25:22Z"
+          message: ReplicaSet "mulesoft-bulk-prd-c985777cc" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-04-07T11:04:56Z"
+          lastUpdateTime: "2025-04-07T11:04:56Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 58
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "39"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mulesoft-bulk-qa:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mulesoft-bulk-qa\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-09T14:07:32Z"
+      generation: 46
+      name: mulesoft-bulk-qa
+      namespace: humanresourceapps
+      resourceVersion: "4958781845"
+      uid: 9905f94a-d079-4231-b9a4-862dbf058f87
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mulesoft-bulk-qa
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: mulesoft-bulk-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+                - name: DW_HOME
+                  value: /app
+              envFrom:
+                - prefix: VALUES_
+                  secretRef:
+                    name: mulesoft-bulk-qa-secrets
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mulesoft-bulk-qa@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
+              imagePullPolicy: Always
+              name: mulesoft-bulk-qa
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /qa_nas/HR
+                  name: nfspvcqanashr
+                - mountPath: /i01/rootdir
+                  name: mulesoft-bulk2-qa
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcqanashr
+              persistentVolumeClaim:
+                claimName: nfspvcqanashr
+            - name: mulesoft-bulk2-qa
+              persistentVolumeClaim:
+                claimName: mulesoft-bulk2-qa
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-11-09T14:07:32Z"
+          lastUpdateTime: "2024-05-01T05:25:14Z"
+          message: ReplicaSet "mulesoft-bulk-qa-689bf58bc" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-04-08T19:07:50Z"
+          lastUpdateTime: "2025-04-08T19:07:50Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 46
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "12"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-inbound-dev:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-inbound-dev\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-11-30T19:52:42Z"
+      generation: 24
+      labels:
+        app: mykohler-ess-sap-inbound-dev
+      name: mykohler-ess-sap-inbound-dev
+      namespace: humanresourceapps
+      resourceVersion: "4863424667"
+      uid: a0222a3d-88b7-48af-91ad-2f729f76a076
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-inbound-dev
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-inbound-dev
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-inbound-dev@sha256:7bbccb0e8d1b5c3ace8ba0831403bd6fbd48056fcb7c240aab85373fc62f6732
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-inbound-dev
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcdevnasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcdevnasesshr
+                - mountPath: /i01
+                  name: mykohler-ess-inbound-adhoc-dev
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-inbound-dev
+            - name: nfspvcdevnasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasesspayroll
+            - name: nfspvcdevnasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasesshr
+            - name: mykohler-ess-inbound-adhoc-dev
+              persistentVolumeClaim:
+                claimName: mykohler-ess-inbound-adhoc-dev
+    status:
+      conditions:
+        - lastTransitionTime: "2022-11-30T19:52:42Z"
+          lastUpdateTime: "2023-03-02T15:32:22Z"
+          message: ReplicaSet "mykohler-ess-sap-inbound-dev-58cb947d99" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:19:22Z"
+          lastUpdateTime: "2024-12-07T16:19:22Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 24
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "3"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-inbound-prd:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-inbound-prd\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2023-01-09T16:40:53Z"
+      generation: 12
+      labels:
+        app: mykohler-ess-sap-inbound-prd
+      name: mykohler-ess-sap-inbound-prd
+      namespace: humanresourceapps
+      resourceVersion: "4944254146"
+      uid: f7d38282-5384-47e9-81d0-eca08b67e150
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-inbound-prd
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-inbound-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-inbound-prd@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-inbound-prd
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcprdnasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcprdnasesshr
+                - mountPath: /i01
+                  name: mykohler-ess-inbound-adhoc-prd
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-inbound-prd
+            - name: nfspvcprdnasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasesspayroll
+            - name: nfspvcprdnasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasesshr
+            - name: mykohler-ess-inbound-adhoc-prd
+              persistentVolumeClaim:
+                claimName: mykohler-ess-inbound-adhoc-prd
+    status:
+      conditions:
+        - lastTransitionTime: "2023-01-09T16:40:53Z"
+          lastUpdateTime: "2023-03-02T15:30:19Z"
+          message: ReplicaSet "mykohler-ess-sap-inbound-prd-74f69bf976" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:08:10Z"
+          lastUpdateTime: "2024-12-07T16:08:10Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 12
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "4"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-inbound-qa:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-inbound-qa\")].image","pause":"false"}]'
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: "2022-12-01T17:14:25Z"
+      generation: 15
+      labels:
+        app: mykohler-ess-sap-inbound-qa
+      name: mykohler-ess-sap-inbound-qa
+      namespace: humanresourceapps
+      resourceVersion: "4863424887"
+      uid: 50f4399f-5b9d-4303-9f2e-195a4b05d97a
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-inbound-qa
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-inbound-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-inbound-qa@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-inbound-qa
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcqanasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcqanasesshr
+                - mountPath: /i01
+                  name: mykohler-ess-inbound-adhoc-qa
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-inbound-qa
+            - name: nfspvcqanasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcqanasesspayroll
+            - name: nfspvcqanasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcqanasesshr
+            - name: mykohler-ess-inbound-adhoc-qa
+              persistentVolumeClaim:
+                claimName: mykohler-ess-inbound-adhoc-qa
+    status:
+      conditions:
+        - lastTransitionTime: "2022-12-01T17:14:25Z"
+          lastUpdateTime: "2023-03-02T15:30:40Z"
+          message: ReplicaSet "mykohler-ess-sap-inbound-qa-dfd7f665b" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:15:32Z"
+          lastUpdateTime: "2024-12-07T16:15:32Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 15
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "21"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-outbound-dev:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-outbound-dev\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-30T20:51:58Z"
+      generation: 38
+      labels:
+        app: mykohler-ess-sap-outbound-dev
+      name: mykohler-ess-sap-outbound-dev
+      namespace: humanresourceapps
+      resourceVersion: "4863425095"
+      uid: f1b0334c-011d-4fab-970e-c82093c06c19
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-outbound-dev
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-outbound-dev
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-outbound-dev@sha256:db07c51b9d5e68340ed17388301459e780bf305e6107e2cc954d5b53a0967471
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-outbound-dev
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcdevnasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcdevnasesshr
+                - mountPath: /nfs/fi
+                  name: nfspvcdevnasessfi
+                - mountPath: /nfs/sva
+                  name: nfspvcdevnasesssva
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-outbound-dev
+            - name: nfspvcdevnasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasesspayroll
+            - name: nfspvcdevnasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasesshr
+            - name: nfspvcdevnasessfi
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasessfi
+            - name: nfspvcdevnasesssva
+              persistentVolumeClaim:
+                claimName: nfspvcdevnasesssva
+    status:
+      conditions:
+        - lastTransitionTime: "2022-11-30T20:51:58Z"
+          lastUpdateTime: "2023-07-13T13:25:30Z"
+          message: ReplicaSet "mykohler-ess-sap-outbound-dev-84797c98f4" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:11:44Z"
+          lastUpdateTime: "2024-12-07T16:11:44Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 38
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "5"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-outbound-prd:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-outbound-prd\")].image","pause":"false"}]'
+      creationTimestamp: "2023-01-09T16:47:47Z"
+      generation: 14
+      labels:
+        app: mykohler-ess-sap-outbound-prd
+      name: mykohler-ess-sap-outbound-prd
+      namespace: humanresourceapps
+      resourceVersion: "4944254655"
+      uid: f2b44b2b-1f60-4ef2-8f5f-c64b40ba9d7e
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-outbound-prd
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-outbound-prd
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-outbound-prd@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-outbound-prd
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcprdnasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcprdnasesshr
+                - mountPath: /nfs/fi
+                  name: nfspvcprdnasessfi
+                - mountPath: /nfs/sva
+                  name: nfspvcprdnasesssva
+                - mountPath: /nfs/myhrsva
+                  name: nfspvcprdnasmyhrsva
+                - mountPath: /nfs/myhrpayroll
+                  name: nfspvcprdnasmyhrpayroll
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-outbound-prd
+            - name: nfspvcprdnasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasesspayroll
+            - name: nfspvcprdnasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasesshr
+            - name: nfspvcprdnasessfi
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasessfi
+            - name: nfspvcprdnasesssva
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasesssva
+            - name: nfspvcprdnasmyhrsva
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasmyhrsva
+            - name: nfspvcprdnasmyhrpayroll
+              persistentVolumeClaim:
+                claimName: nfspvcprdnasmyhrpayroll
+    status:
+      conditions:
+        - lastTransitionTime: "2023-01-09T16:47:47Z"
+          lastUpdateTime: "2023-07-17T12:49:11Z"
+          message: ReplicaSet "mykohler-ess-sap-outbound-prd-86ccff4575" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:12:10Z"
+          lastUpdateTime: "2024-12-07T16:12:10Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 14
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "9"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mykohler-ess-sap-outbound-qa:latest","namespace":"humanresourceapps"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mykohler-ess-sap-outbound-qa\")].image","pause":"false"}]'
+      creationTimestamp: "2022-12-01T17:20:15Z"
+      generation: 23
+      labels:
+        app: mykohler-ess-sap-outbound-qa
+      name: mykohler-ess-sap-outbound-qa
+      namespace: humanresourceapps
+      resourceVersion: "4863425457"
+      uid: c8e2c34f-b156-4a38-8409-f5c7602fe40f
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 0
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mykohler-ess-sap-outbound-qa
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+          creationTimestamp: null
+          labels:
+            app: mykohler-ess-sap-outbound-qa
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              image: image-registry.openshift-image-registry.svc:5000/humanresourceapps/mykohler-ess-sap-outbound-qa@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
+              imagePullPolicy: IfNotPresent
+              name: mykohler-ess-sap-outbound-qa
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/out/config
+                  name: volume-secrets
+                  readOnly: true
+                - mountPath: /nfs/payroll
+                  name: nfspvcqanasesspayroll
+                - mountPath: /nfs/hr
+                  name: nfspvcqanasesshr
+                - mountPath: /nfs/fi
+                  name: nfspvcqanasessfi
+                - mountPath: /nfs/sva
+                  name: nfspvcqanasesssva
+                - mountPath: /nfs/myhrsva
+                  name: nfspvcqanasmyhrsva
+                - mountPath: /nfs/myhrpayroll
+                  name: nfspvcqanasmyhrpayroll
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: volume-secrets
+              secret:
+                defaultMode: 420
+                secretName: mykohler-ess-sap-outbound-qa
+            - name: nfspvcqanasesspayroll
+              persistentVolumeClaim:
+                claimName: nfspvcqanasesspayroll
+            - name: nfspvcqanasesshr
+              persistentVolumeClaim:
+                claimName: nfspvcqanasesshr
+            - name: nfspvcqanasessfi
+              persistentVolumeClaim:
+                claimName: nfspvcqanasessfi
+            - name: nfspvcqanasesssva
+              persistentVolumeClaim:
+                claimName: nfspvcqanasesssva
+            - name: nfspvcqanasmyhrsva
+              persistentVolumeClaim:
+                claimName: nfspvcqanasmyhrsva
+            - name: nfspvcqanasmyhrpayroll
+              persistentVolumeClaim:
+                claimName: nfspvcqanasmyhrpayroll
+    status:
+      conditions:
+        - lastTransitionTime: "2022-12-01T17:20:16Z"
+          lastUpdateTime: "2023-07-13T13:40:36Z"
+          message: ReplicaSet "mykohler-ess-sap-outbound-qa-6676b9f48c" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2024-12-07T16:18:27Z"
+          lastUpdateTime: "2024-12-07T16:18:27Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 23
+kind: List
+metadata: {}
