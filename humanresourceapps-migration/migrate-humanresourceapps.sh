@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ====================================================================
-# Human Resource Apps Migration Script
-# Source: OCP4 cluster -> Target: OCP-PRD cluster
+# Human Resource Apps GitOps Management Script
+# Source: Current OCP-PRD cluster -> GitHub Repository for GitOps
 # ====================================================================
 
 set -euo pipefail
@@ -58,9 +58,9 @@ create_directories() {
 
 # Export resources from source cluster
 export_resources() {
-    print_section "EXPORTING RESOURCES FROM OCP4 CLUSTER"
+    print_section "EXPORTING RESOURCES FROM CURRENT OCP-PRD CLUSTER"
     
-    # Verify we're connected to source cluster
+    # Verify we're connected to cluster
     if ! oc whoami &> /dev/null; then
         print_error "Not logged in to OpenShift cluster"
         exit 1
@@ -71,7 +71,7 @@ export_resources() {
     
     # Check if namespace exists
     if ! oc get namespace "$SOURCE_NAMESPACE" &> /dev/null; then
-        print_error "Namespace '$SOURCE_NAMESPACE' not found on source cluster"
+        print_error "Namespace '$SOURCE_NAMESPACE' not found on current cluster"
         exit 1
     fi
     
@@ -138,16 +138,14 @@ clean_resources() {
         fi
     done
     
-    # Update domains for target cluster
+    # Update domains for target cluster (skip since we're already on target cluster)
     if [[ -f "$CLEAN_DIR/routes-cleaned.yaml" ]]; then
-        print_info "Updating route domains for target cluster..."
-        sed -i 's/\.apps\.ocp4\.kohlerco\.com/.apps.ocp-prd.kohlerco.com/g' "$CLEAN_DIR/routes-cleaned.yaml"
+        print_info "Routes already configured for current cluster - no domain updates needed"
     fi
     
-    # Update storage classes if needed
+    # Update storage classes if needed (skip since we're already on target cluster)
     if [[ -f "$CLEAN_DIR/pvcs-cleaned.yaml" ]]; then
-        print_info "Updating storage classes for target cluster..."
-        sed -i 's/storageClassName: .*/storageClassName: gp3-csi/g' "$CLEAN_DIR/pvcs-cleaned.yaml"
+        print_info "PVCs already configured for current cluster - no storage class updates needed"
     fi
     
     print_success "Resource cleaning completed"
@@ -602,9 +600,9 @@ EOF
 
 # Main execution
 main() {
-    print_section "HUMAN RESOURCE APPS MIGRATION TO OCP-PRD"
-    print_info "Source: $SOURCE_NAMESPACE namespace on OCP4"
-    print_info "Target: $TARGET_NAMESPACE namespace on OCP-PRD"
+    print_section "HUMAN RESOURCE APPS GITOPS SETUP FOR OCP-PRD"
+    print_info "Source: $SOURCE_NAMESPACE namespace on current OCP-PRD cluster"
+    print_info "Target: GitHub repository for GitOps management"
     
     create_directories
     export_resources
@@ -614,10 +612,10 @@ main() {
     create_deployment_script
     generate_migration_summary
     
-    print_section "MIGRATION PREPARATION COMPLETE!"
-    print_success "All resources have been exported and prepared for deployment"
-    print_info "Review the generated files and run ./deploy-to-ocp-prd.sh when ready"
-    print_info "Or use: kubectl apply -f gitops/argocd-application.yaml for GitOps deployment"
+    print_section "GITOPS SETUP COMPLETE!"
+    print_success "All resources have been exported and prepared for GitOps management"
+    print_info "Review the generated files and commit to GitHub repository"
+    print_info "Then use: kubectl apply -f gitops/argocd-application.yaml for GitOps deployment"
 }
 
 # Run main function

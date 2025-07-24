@@ -4,11 +4,17 @@ items:
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"employee-couchdb-config-prd","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"100Mi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: employee-couchdb-config-prd
       namespace: humanresourceapps
     spec:
@@ -17,18 +23,24 @@ items:
       resources:
         requests:
           storage: 100Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: pvc-13976b72-ba19-46d3-aaad-789ad898b14e
+      volumeName: pvc-79185381-9882-4e88-98f1-045721d49561
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"employee-couchdb-prd","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"10Gi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: employee-couchdb-prd
       namespace: humanresourceapps
     spec:
@@ -37,18 +49,24 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: pvc-941047a2-7900-48ec-8331-f62cadabaa2b
+      volumeName: pvc-380326df-8ce5-4513-8598-1a93a6a74f71
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"employee-couchdb-rbd-dev","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"2Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: employee-couchdb-rbd-dev
       namespace: humanresourceapps
     spec:
@@ -57,18 +75,24 @@ items:
       resources:
         requests:
           storage: 2Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-b0fd7f61-1741-441e-8591-a22436bbe7cd
+      volumeName: pvc-b9adb7f0-28c0-4b23-92f5-9d61152f0337
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"employee-couchdb-rbd-prd","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"6Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: employee-couchdb-rbd-prd
       namespace: humanresourceapps
     spec:
@@ -77,18 +101,24 @@ items:
       resources:
         requests:
           storage: 6Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-d0ae4e88-2e7c-4183-9e32-0d5f55a3bb2a
+      volumeName: pvc-3bda5a6a-c8ed-45eb-8109-60928e22e032
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"employee-couchdb-rbd-qa","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"6Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: employee-couchdb-rbd-qa
       namespace: humanresourceapps
     spec:
@@ -97,18 +127,24 @@ items:
       resources:
         requests:
           storage: 6Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-a71c0fa7-1466-474f-980e-031211a5e088
+      volumeName: pvc-b38b0ee1-3419-4b0a-bb26-87219b17e1f7
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mulesoft-bulk2-dev","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"10Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mulesoft-bulk2-dev
       namespace: humanresourceapps
     spec:
@@ -117,18 +153,24 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-665ef050-62c9-4202-815e-bf4de3a221b6
+      volumeName: pvc-9c860d07-88fe-4e26-b7ad-bef8539e6285
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mulesoft-bulk2-prd","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"10Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mulesoft-bulk2-prd
       namespace: humanresourceapps
     spec:
@@ -137,18 +179,24 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-2940d62b-5b1e-4362-ac37-8585ec4b547a
+      volumeName: pvc-deb541cf-a50a-47fa-b7a9-c9c0cda38c75
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mulesoft-bulk2-qa","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"10Gi"}},"storageClassName":"ocs-storagecluster-ceph-rbd"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mulesoft-bulk2-qa
       namespace: humanresourceapps
     spec:
@@ -157,18 +205,24 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-02568c39-9eb5-4b9d-91fc-99a52074ad69
+      volumeName: pvc-8ae7cda9-65fe-40bb-809e-d5b2af64df09
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mykohler-ess-inbound-adhoc-dev","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"50Mi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mykohler-ess-inbound-adhoc-dev
       namespace: humanresourceapps
     spec:
@@ -177,18 +231,24 @@ items:
       resources:
         requests:
           storage: 50Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: pvc-ff7c94a2-aa7f-4395-af01-8d13248521b6
+      volumeName: pvc-a20c6779-4665-48b7-9e85-a63aa27bfcaa
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mykohler-ess-inbound-adhoc-prd","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"50Mi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mykohler-ess-inbound-adhoc-prd
       namespace: humanresourceapps
     spec:
@@ -197,18 +257,24 @@ items:
       resources:
         requests:
           storage: 50Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: pvc-62098801-3250-47e0-9ff3-c8fb6c07e53f
+      volumeName: pvc-a9e35f71-c117-409c-9d16-fe3223794f2b
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"mykohler-ess-inbound-adhoc-qa","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"50Mi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
         pv.kubernetes.io/bound-by-controller: "yes"
         volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: mykohler-ess-inbound-adhoc-qa
       namespace: humanresourceapps
     spec:
@@ -217,21 +283,22 @@ items:
       resources:
         requests:
           storage: 50Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: pvc-515d6f6e-c33a-4955-baad-c266d2946d76
+      volumeName: pvc-a0deccca-3624-49b3-b147-641874c6b20a
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnasessfihumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcdevnasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnasessfihumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcdevnasessfi
       namespace: humanresourceapps
     spec:
@@ -240,7 +307,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnasessfihumanresourceapps
   - apiVersion: v1
@@ -248,13 +315,15 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnasesshrhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app":"humanresourceapps","app.kubernetes.io/instance":"ocp-prd-config","environment":"development"},"name":"nfspvcdevnasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"20Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnasesshrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app: humanresourceapps
+        app.kubernetes.io/instance: ocp-prd-config
+        environment: development
       name: nfspvcdevnasesshr
       namespace: humanresourceapps
     spec:
@@ -262,8 +331,8 @@ items:
         - ReadWriteMany
       resources:
         requests:
-          storage: 15Gi
-      storageClassName: gp3-csi
+          storage: 20Gi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnasesshrhumanresourceapps
   - apiVersion: v1
@@ -271,13 +340,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnasesspayrollhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcdevnasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnasesspayrollhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcdevnasesspayroll
       namespace: humanresourceapps
     spec:
@@ -286,7 +356,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnasesspayrollhumanresourceapps
   - apiVersion: v1
@@ -294,13 +364,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnasesssvahumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcdevnasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnasesssvahumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcdevnasesssva
       namespace: humanresourceapps
     spec:
@@ -309,7 +380,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnasesssvahumanresourceapps
   - apiVersion: v1
@@ -317,13 +388,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnashr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnashrhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcdevnashr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnashrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcdevnashr
       namespace: humanresourceapps
     spec:
@@ -332,7 +404,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnashrhumanresourceapps
   - apiVersion: v1
@@ -340,13 +412,15 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app":"humanresourceapps","app.kubernetes.io/instance":"ocp-prd-config","environment":"development"},"name":"nfspvcdevnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"20Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvdevnashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app: humanresourceapps
+        app.kubernetes.io/instance: ocp-prd-config
+        environment: development
       name: nfspvcdevnashumanresourceappsgm1
       namespace: humanresourceapps
     spec:
@@ -354,19 +428,22 @@ items:
         - ReadWriteMany
       resources:
         requests:
-          storage: 15Gi
-      storageClassName: gp3-csi
+          storage: 20Gi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvdevnashumanresourceappsgm1
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"nfspvckcmpreports","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"10Gi"}},"storageClassName":"ocs-storagecluster-cephfs"}}
         pv.kubernetes.io/bind-completed: "yes"
+        pv.kubernetes.io/bound-by-controller: "yes"
+        volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
       finalizers:
         - kubernetes.io/pvc-protection
-      labels:
-        velero.io/exclude-from-backup: "true"
       name: nfspvckcmpreports
       namespace: humanresourceapps
     spec:
@@ -375,18 +452,22 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-cephfs
       volumeMode: Filesystem
-      volumeName: nfspvkcmpreports
+      volumeName: pvc-e09e5515-1abd-4d1e-98c7-c09092b98939
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasb2badmin","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasb2badminhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasb2badmin
       namespace: humanresourceapps
     spec:
@@ -395,7 +476,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasb2badminhumanresourceapps
   - apiVersion: v1
@@ -403,13 +484,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasessfihumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasessfihumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasessfi
       namespace: humanresourceapps
     spec:
@@ -418,7 +500,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasessfihumanresourceapps
   - apiVersion: v1
@@ -426,13 +508,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasesshrhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasesshrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasesshr
       namespace: humanresourceapps
     spec:
@@ -441,7 +524,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasesshrhumanresourceapps
   - apiVersion: v1
@@ -449,13 +532,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasesspayrollhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasesspayrollhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasesspayroll
       namespace: humanresourceapps
     spec:
@@ -464,7 +548,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasesspayrollhumanresourceapps
   - apiVersion: v1
@@ -472,13 +556,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasesssvahumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasesssvahumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasesssva
       namespace: humanresourceapps
     spec:
@@ -487,18 +572,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasesssvahumanresourceapps
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnashr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnashrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnashr
       namespace: humanresourceapps
     spec:
@@ -507,7 +596,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnashrhumanresourceapps
   - apiVersion: v1
@@ -515,13 +604,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnashumanresourceappsgm1
       namespace: humanresourceapps
     spec:
@@ -530,18 +620,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnashumanresourceappsgm1
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasicon","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasiconhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasicon
       namespace: humanresourceapps
     spec:
@@ -550,18 +644,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasiconhumanresourceapps
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasinterfaces","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"40Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasinterfaceshumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasinterfaces
       namespace: humanresourceapps
     spec:
@@ -570,7 +668,7 @@ items:
       resources:
         requests:
           storage: 40Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasinterfaceshumanresourceapps
   - apiVersion: v1
@@ -578,12 +676,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasmyhrpayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasmyhrpayrollhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasmyhrpayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasmyhrpayrollhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasmyhrpayroll
       namespace: humanresourceapps
     spec:
@@ -592,7 +692,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasmyhrpayrollhumanresourceapps
   - apiVersion: v1
@@ -600,12 +700,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnasmyhrsva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnasmyhrsvahumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcprdnasmyhrsva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvprdnasmyhrsvahumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcprdnasmyhrsva
       namespace: humanresourceapps
     spec:
@@ -614,18 +716,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvprdnasmyhrsvahumanresourceapps
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasb2badmin","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasb2badminhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasb2badmin
       namespace: humanresourceapps
     spec:
@@ -634,7 +740,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasb2badminhumanresourceapps
   - apiVersion: v1
@@ -642,13 +748,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasessfihumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasessfi","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasessfihumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasessfi
       namespace: humanresourceapps
     spec:
@@ -657,7 +764,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasessfihumanresourceapps
   - apiVersion: v1
@@ -665,13 +772,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasesshrhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasesshr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasesshrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasesshr
       namespace: humanresourceapps
     spec:
@@ -680,7 +788,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasesshrhumanresourceapps
   - apiVersion: v1
@@ -688,13 +796,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasesspayrollhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasesspayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasesspayrollhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasesspayroll
       namespace: humanresourceapps
     spec:
@@ -703,7 +812,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasesspayrollhumanresourceapps
   - apiVersion: v1
@@ -711,13 +820,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasesssvahumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasesssva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasesssvahumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasesssva
       namespace: humanresourceapps
     spec:
@@ -726,18 +836,23 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasesssvahumanresourceapps
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app":"humanresourceapps","app.kubernetes.io/instance":"ocp-prd-config","environment":"qa"},"name":"nfspvcqanashr","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"30Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanashrhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app: humanresourceapps
+        app.kubernetes.io/instance: ocp-prd-config
+        environment: qa
       name: nfspvcqanashr
       namespace: humanresourceapps
     spec:
@@ -745,8 +860,8 @@ items:
         - ReadWriteMany
       resources:
         requests:
-          storage: 15Gi
-      storageClassName: gp3-csi
+          storage: 30Gi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanashrhumanresourceapps
   - apiVersion: v1
@@ -754,13 +869,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanashumanresourceappsgm1
       namespace: humanresourceapps
     spec:
@@ -769,18 +885,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanashumanresourceappsgm1
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasicon","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasiconhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasicon
       namespace: humanresourceapps
     spec:
@@ -789,18 +909,22 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasiconhumanresourceapps
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasinterfaces","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasinterfaceshumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        velero.io/exclude-from-backup: "true"
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasinterfaces
       namespace: humanresourceapps
     spec:
@@ -809,7 +933,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasinterfaceshumanresourceapps
   - apiVersion: v1
@@ -817,12 +941,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasmyhrpayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasmyhrpayrollhumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasmyhrpayroll","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasmyhrpayrollhumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasmyhrpayroll
       namespace: humanresourceapps
     spec:
@@ -831,7 +957,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasmyhrpayrollhumanresourceapps
   - apiVersion: v1
@@ -839,12 +965,14 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanasmyhrsva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanasmyhrsvahumanresourceapps"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"volume.beta.kubernetes.io/storage-class":""},"labels":{"app.kubernetes.io/instance":"ocp-prd-config","migrated-from":"ocp4"},"name":"nfspvcqanasmyhrsva","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"","volumeMode":"Filesystem","volumeName":"nfspvqanasmyhrsvahumanresourceapps"}}
         pv.kubernetes.io/bind-completed: "yes"
+        volume.beta.kubernetes.io/storage-class: ""
       finalizers:
         - kubernetes.io/pvc-protection
       labels:
-        app.kubernetes.io/instance: ocp4-config
+        app.kubernetes.io/instance: ocp-prd-config
+        migrated-from: ocp4
       name: nfspvcqanasmyhrsva
       namespace: humanresourceapps
     spec:
@@ -853,7 +981,7 @@ items:
       resources:
         requests:
           storage: 15Gi
-      storageClassName: gp3-csi
+      storageClassName: ""
       volumeMode: Filesystem
       volumeName: nfspvqanasmyhrsvahumanresourceapps
   - apiVersion: v1
@@ -861,10 +989,13 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"powerpvcdevnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"powerpvdevnashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"],"labels":{"app.kubernetes.io/instance":"humanresourceapps-prd","environment":"production"},"name":"powerpvcdevnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"gp3-csi","volumeMode":"Filesystem","volumeName":"powerpvdevnashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: humanresourceapps-prd
+        environment: production
       name: powerpvcdevnashumanresourceappsgm1
       namespace: humanresourceapps
     spec:
@@ -881,10 +1012,13 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"powerpvcprdnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"powerpvprdnashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"],"labels":{"app.kubernetes.io/instance":"humanresourceapps-prd","environment":"production"},"name":"powerpvcprdnashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"gp3-csi","volumeMode":"Filesystem","volumeName":"powerpvprdnashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: humanresourceapps-prd
+        environment: production
       name: powerpvcprdnashumanresourceappsgm1
       namespace: humanresourceapps
     spec:
@@ -901,10 +1035,13 @@ items:
     metadata:
       annotations:
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"powerpvcqanashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"powerpvqanashumanresourceappsgm1"}}
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{"pv.kubernetes.io/bind-completed":"yes"},"finalizers":["kubernetes.io/pvc-protection"],"labels":{"app.kubernetes.io/instance":"humanresourceapps-prd","environment":"production"},"name":"powerpvcqanashumanresourceappsgm1","namespace":"humanresourceapps"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"gp3-csi","volumeMode":"Filesystem","volumeName":"powerpvqanashumanresourceappsgm1"}}
         pv.kubernetes.io/bind-completed: "yes"
       finalizers:
         - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: humanresourceapps-prd
+        environment: production
       name: powerpvcqanashumanresourceappsgm1
       namespace: humanresourceapps
     spec:

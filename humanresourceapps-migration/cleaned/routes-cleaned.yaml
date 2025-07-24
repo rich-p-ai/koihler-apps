@@ -4,35 +4,15 @@ items:
     kind: Route
     metadata:
       annotations:
-        openshift.io/host.generated: "true"
-      labels:
-        app: couchdb-employee-dev
-        app.kubernetes.io/component: couchdb-employee-dev
-        app.kubernetes.io/instance: couchdb-employee-dev
-        app.kubernetes.io/part-of: couchdb-employee
-      name: couchdb-employee-dev
-      namespace: humanresourceapps
-    spec:
-      host: couchdb-employee-dev-humanresourceapps.apps.ocp-prd.kohlerco.com
-      port:
-        targetPort: 6984-tcp
-      tls:
-        termination: passthrough
-      to:
-        kind: Service
-        name: couchdb-employee-dev
-        weight: 100
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{"openshift.io/host.generated":"true"},"labels":{"app":"couchdb-employee-prd","app.kubernetes.io/component":"couchdb-employee-prd","app.kubernetes.io/instance":"humanresourceapps-prd","app.kubernetes.io/part-of":"couchdb-employee","environment":"production"},"name":"couchdb-employee-prd","namespace":"humanresourceapps"},"spec":{"host":"couchdb-employee-prd-humanresourceapps.apps.ocp-prd.kohlerco.com","port":{"targetPort":"6984-tcp"},"tls":{"termination":"passthrough"},"to":{"kind":"Service","name":"couchdb-employee-prd","weight":100},"wildcardPolicy":"None"}}
         openshift.io/host.generated: "true"
       labels:
         app: couchdb-employee-prd
         app.kubernetes.io/component: couchdb-employee-prd
-        app.kubernetes.io/instance: couchdb-employee-prd
+        app.kubernetes.io/instance: humanresourceapps-prd
         app.kubernetes.io/part-of: couchdb-employee
+        environment: production
       name: couchdb-employee-prd
       namespace: humanresourceapps
     spec:
@@ -50,12 +30,15 @@ items:
     kind: Route
     metadata:
       annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"route.openshift.io/v1","kind":"Route","metadata":{"annotations":{"openshift.io/host.generated":"true"},"labels":{"app":"couchdb-employee-qa","app.kubernetes.io/component":"couchdb-employee-qa","app.kubernetes.io/instance":"humanresourceapps-prd","app.kubernetes.io/part-of":"couchdb-employee","environment":"production"},"name":"couchdb-employee-qa","namespace":"humanresourceapps"},"spec":{"host":"couchdb-employee-qa-humanresourceapps.apps.ocp-prd.kohlerco.com","port":{"targetPort":"6984-tcp"},"tls":{"termination":"passthrough"},"to":{"kind":"Service","name":"couchdb-employee-qa","weight":100},"wildcardPolicy":"None"}}
         openshift.io/host.generated: "true"
       labels:
         app: couchdb-employee-qa
         app.kubernetes.io/component: couchdb-employee-qa
-        app.kubernetes.io/instance: couchdb-employee-qa
+        app.kubernetes.io/instance: humanresourceapps-prd
         app.kubernetes.io/part-of: couchdb-employee
+        environment: production
       name: couchdb-employee-qa
       namespace: humanresourceapps
     spec:
@@ -73,10 +56,62 @@ items:
     kind: Route
     metadata:
       labels:
+        app: directvolumemigration-rsync-transfer
+        app.kubernetes.io/part-of: openshift-migration
+        directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+        migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+        owner: directvolumemigration
+        purpose: rsync
+      name: dvm
+      namespace: humanresourceapps
+    spec:
+      host: dvm-humanresourceapps.apps.ocp-prd.kohlerco.com
+      port:
+        targetPort: 6443
+      subdomain: apps.ocp-prd.kohlerco.com
+      tls:
+        termination: passthrough
+      to:
+        kind: Service
+        name: dvm
+        weight: 100
+      wildcardPolicy: None
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    metadata:
+      labels:
+        app: directvolumemigration-rsync-transfer-block
+        app.kubernetes.io/part-of: openshift-migration
+        directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+        migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+        owner: directvolumemigration
+        purpose: rsync
+      name: dvm-block
+      namespace: humanresourceapps
+    spec:
+      host: dvm-block-humanresourceapps.apps.ocp-prd.kohlerco.com
+      port:
+        targetPort: 6443
+      subdomain: apps.ocp-prd.kohlerco.com
+      tls:
+        termination: passthrough
+      to:
+        kind: Service
+        name: dvm-block
+        weight: 100
+      wildcardPolicy: None
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+        openshift.io/host.generated: "true"
+      labels:
         app: hr06esst-jco-prd
         app.kubernetes.io/component: hr06esst-jco-prd
         app.kubernetes.io/instance: hr06esst-jco-prd
-        app.kubernetes.io/part-of: hr06esst-jco
+        app.kubernetes.io/name: hr06esst-jco-prd
+        app.openshift.io/runtime-version: latest
       name: hr06esst-jco-prd
       namespace: humanresourceapps
     spec:
@@ -84,73 +119,7 @@ items:
       port:
         targetPort: 8080-tcp
       tls:
-        certificate: |-
-          -----BEGIN CERTIFICATE-----
-          MIIGUzCCBTugAwIBAgITNwABYTLaHnP7vVu8dAACAAFhMjANBgkqhkiG9w0BAQsF
-          ADBPMRMwEQYKCZImiZPyLGQBGRYDY29tMRgwFgYKCZImiZPyLGQBGRYIa29obGVy
-          Y28xHjAcBgNVBAMTFWtvaGxlcmNvLVVTV0lBUzIyMS1DQTAeFw0yMjA0MTQxMzAz
-          NDlaFw0yNTA5MTcxNzI4MDhaMIGGMQswCQYDVQQGEwJVUzELMAkGA1UECBMCV0kx
-          DzANBgNVBAcTBktvaGxlcjETMBEGA1UEChMKS29obGVyIENvLjESMBAGA1UECxMJ
-          S29obGVyIElUMTAwLgYDVQQDEydocjA2ZXNzdC1qY28tcHJkLmFwcHMub2NwNC5r
-          b2hsZXJjby5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCBUQKO
-          In1YzovMAyO9T44I6AAw82aVjlNACjPmpeda9bNNY3sQafxU64S1N6tVG5N4yiys
-          RnLQ4Y1AtV8I9ul/8p2G241FObHKNS40YkRDs/aBgliJ3d3q4f2/gDMaCskGRPCS
-          OPA2F9f/jkCet+V4EcmG019NZyvMqlaz1rnciN0ijbKGLSdWT+LtHNVsAWZKnwtP
-          cixsiSD1SolltzBagrNY4uEihRbp6zA2n93eZoTNlul5fhuCxT/6Tr68uFTgH44Y
-          ZCXfkZMUpCwda7xQvakVTaJqdbyoAGBFYcnl4/HaMreNRc8Sag9LJrGcfCYrNNwY
-          8AALtozRUmVxZmx9AgMBAAGjggLuMIIC6jAdBgNVHQ4EFgQU5xxO7gq0Kw4ku8PY
-          aQYA5FIVe38wMgYDVR0RBCswKYInaHIwNmVzc3QtamNvLXByZC5hcHBzLm9jcDQu
-          a29obGVyY28uY29tMB8GA1UdIwQYMBaAFBLbKO2tKNGQDGHbc68Mw/BZinrfMIIB
-          JQYDVR0fBIIBHDCCARgwggEUoIIBEKCCAQyGgcJsZGFwOi8vL0NOPWtvaGxlcmNv
-          LVVTV0lBUzIyMS1DQSgyKSxDTj1VU1dJQVMyMjEsQ049Q0RQLENOPVB1YmxpYyUy
-          MEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9
-          a29obGVyY28sREM9Y29tP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9v
-          YmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2ludIZFaHR0cDovL1VTV0lBUzIy
-          MS5rb2hsZXJjby5jb20vQ2VydEVucm9sbC9rb2hsZXJjby1VU1dJQVMyMjEtQ0Eo
-          MikuY3JsMIHIBggrBgEFBQcBAQSBuzCBuDCBtQYIKwYBBQUHMAKGgahsZGFwOi8v
-          L0NOPWtvaGxlcmNvLVVTV0lBUzIyMS1DQSxDTj1BSUEsQ049UHVibGljJTIwS2V5
-          JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1rb2hs
-          ZXJjbyxEQz1jb20/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRp
-          ZmljYXRpb25BdXRob3JpdHkwDgYDVR0PAQH/BAQDAgWgMD4GCSsGAQQBgjcVBwQx
-          MC8GJysGAQQBgjcVCIa5zAyC/LlmgsGPI4HT+TWD29Q9gTGHoqshgu6AbgIBZAIB
-          BzATBgNVHSUEDDAKBggrBgEFBQcDATAbBgkrBgEEAYI3FQoEDjAMMAoGCCsGAQUF
-          BwMBMA0GCSqGSIb3DQEBCwUAA4IBAQAO97FZKsoRoN7c4FxYen7ciLiz3bUhJwck
-          VGqo6ZCIkHzRtM9PBM6N24BsPWy+ZCktnlFOmNvDBI6M4ipOfh/6a0IDc6/YYZpz
-          QIryKbrpTIKDgF6pSRbu9tADBKEoKcfC9OyEI+HhbHD+qJHztyAie/Zky0PmGKfq
-          QMqruAHO+E9plqhUI9uhTBxztHycY/S5MnsK9B+41/vG68CD3LjX7kO/pi/O7ybb
-          l9kcTQBDEUj2AndIqEilh8fbi04pfQQQHaYe6TMY9cbdYAiNoEgJe2HQ8Y86U0xd
-          aiDhq8qb1XjVveNV9j6OxHfhhvzvXy8NCY4bBISeZVJZG9CGKmhv
-          -----END CERTIFICATE-----
-        insecureEdgeTerminationPolicy: None
-        key: |-
-          -----BEGIN PRIVATE KEY-----
-          MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCBUQKOIn1YzovM
-          AyO9T44I6AAw82aVjlNACjPmpeda9bNNY3sQafxU64S1N6tVG5N4yiysRnLQ4Y1A
-          tV8I9ul/8p2G241FObHKNS40YkRDs/aBgliJ3d3q4f2/gDMaCskGRPCSOPA2F9f/
-          jkCet+V4EcmG019NZyvMqlaz1rnciN0ijbKGLSdWT+LtHNVsAWZKnwtPcixsiSD1
-          SolltzBagrNY4uEihRbp6zA2n93eZoTNlul5fhuCxT/6Tr68uFTgH44YZCXfkZMU
-          pCwda7xQvakVTaJqdbyoAGBFYcnl4/HaMreNRc8Sag9LJrGcfCYrNNwY8AALtozR
-          UmVxZmx9AgMBAAECggEAe3xWSlAZDlK+ICTnXgG4Cj0w4Y2saigsyzxy70+Bq9Rw
-          UfgrLjNnJ9h3M21jiLP6kR/OpPvo7BpWfnIzvCW8N9gAISVKs84yPnumEZO8yEHz
-          pRxJW+2n2oHPg6zyH24pJHl0mM0SZTVDp9+5SVcmIxApNzxlB077/kay4Kytcy9D
-          gWOJFvxYwyOg3a06HO4pKPfmSuhdktfe6k7L2cMEtDvmWExBAuXZPJlFyfRiextm
-          +td/D2P1ppzCPxWT1lftSafx38aj9bpBeMzzgckDj5t2UIGNu7qqAdZ+XRCNraw0
-          +XQFuD+t/iHyaT7OvHY11nHDiRk9J3B31va0pw6v6QKBgQDgaFvTDsLs6Cr4c+8R
-          ORyTm0R6GXbYbCKRF9xg92Xx3YUpQuOD7UErrsjWUG+APo5qtZ1VvNkLDDHDdrFd
-          1xWBJHdAKY5dVLNpI3rPm2C0XLlHdGOy2mIaO0v99BT52D8EnvSq8FVnBe9y4vQ6
-          62i6TXYhbia8PyPwF8LzNOKa+wKBgQCThZGTTg+a+r7vuGtpwRdf6d66/UIikL63
-          Uo3zHph1ydnVgAIGnOK9wfexRSPWorVEB6KNqasSwoE455+PI0qA7qE+9EYF8xR1
-          PwulT1/XOzCgP4QxTV1yajcpKCkwPVEjws1INmOt80O4evGPzZE9ZNgKxknXMKXC
-          YrKWGqF85wKBgQCVKmlXKunBJjZh/lY8QZVQPJZQ/xozk/WKMq0nu2uFUTVRjwfC
-          yvNWARG4+7CSM4LhRaW2txgistFlV0Fg2jaOKFooSTc7rLCxQ4c/9s1aNoRmDeSz
-          n1w0iZPi09sZlHeXL7383lI2cAiRenDTtWVg6VqLsDeJTAMsde79UPsL/wKBgDtX
-          DRnN2qUim89dxYdCrp5cOsXIveOdibnAMW1ML1OiIEerOCVk0ig2b+YUw7fAt11o
-          HNETIMdpCgXT1fED5yI52w6xv8EA6IfJFmwmo4y2OHcdVZVnY2F0rD+X8gl/gLX7
-          1AtqJWqBYgpBGg4YSIYDnIuo+2beIK8yeFe82pydAoGBANQwD5E3fYujtbIncm67
-          ghmCB1qnc8x1wjvCkYO7HX5OqJ60EaKEG0StTvimiDhHDn7C0xdhPELaMP2VHwzF
-          V8YD/vdv93E93C87wpWfVFxsBMiWx6LS5FfvrFMwZ7cth5mq9a3Eu8lQG5XpDNvN
-          jM+eijtPHZzC7w+TjT7rNRmP
-          -----END PRIVATE KEY-----
+        insecureEdgeTerminationPolicy: Redirect
         termination: edge
       to:
         kind: Service
@@ -160,242 +129,15 @@ items:
   - apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
-      labels:
-        app: hr06esst-jco-pwr-prd
-        app.kubernetes.io/component: hr06esst-jco-pwr-prd
-        app.kubernetes.io/instance: hr06esst-jco-pwr-prd
-      name: hr06esst-jco-pwr-prd
-      namespace: humanresourceapps
-    spec:
-      host: hr06esst-jco-pwr-prd.apps.ocp-prd.kohlerco.com
-      port:
-        targetPort: 8080-tcp
-      tls:
-        certificate: |-
-          -----BEGIN CERTIFICATE-----
-          MIIHMDCCBRigAwIBAgITPgAAAZ4+Db7inLTLKgAAAAABnjANBgkqhkiG9w0BAQsF
-          ADBFMRMwEQYKCZImiZPyLGQBGRYDY29tMRgwFgYKCZImiZPyLGQBGRYIa29obGVy
-          Y28xFDASBgNVBAMTC0tvaGxlci1JQ0ExMB4XDTI0MDUwMjE3NDE1NloXDTI2MDUw
-          MjE3NDE1NlowgaExCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJXSTEPMA0GA1UEBxMG
-          S29obGVyMRMwEQYDVQQKEwpLb2hsZXIgQ28uMTQwMgYDVQQDEytocjA2ZXNzdC1q
-          Y28tcHdyLXByZC5hcHBzLm9jcDQua29obGVyY28uY29tMSkwJwYJKoZIhvcNAQkB
-          FhpjcmFpZy5zY2huZWlkZXJAa29obGVyLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQAD
-          ggIPADCCAgoCggIBANmwRptozIGS4bLd/pxWsEaQGP7cap804dZypeBOsutciOwQ
-          Jp5pOX7bywT0NmxvbwFEQfLk0ExKH0CWfY9vL1vGwx45PXL6lbHa8X+4GtzIkeln
-          XXSkzjhGKzepj76xZ5vdNsSB7f8KantyFMOyWJjAi2LR4ISxW/KSVNdkub0mwR7g
-          CtsCG1QOdGWk+0q2rDkXluZ0sX/OxoCtEmkbnNvRJ0ESEbAYdeQiPWvNH+ziiM7y
-          RNUZUvDyW8E+QY5iPL2ubAASnyF9ygJpFkwHbn5G+rSBSRFPc91tObEnf9w7ljUT
-          d6LdUB4i4v+IROw41qvzmTVdj5gqjnPjrWh/Oc2/yhEIl8kumitE7ja/KSFhv8VN
-          /U07PyRbPE3mfxr+HF9lw2wTHkFuSjdXHMGyIPslROXPkOS3d8JI3l9/EGLd5vxN
-          5qIPXQuJFYXXnAKjFM+EscpKVmOI4HtGf+QWsg3AbJppbTg6obkMUv28gyjrKNqV
-          NP8/snhSA8ssvGrDecTElqE6/nsJ3JCRPfVbrIEnjuxGcZbk3CvavjA2zfAWuwkn
-          fDKzJ89EqQvxV21Dd0kWXcPzfE+pDmwZGC3XZtzJ4MyuAiJZ+T7e/RjQ3NENxXT3
-          QSokUMj1Om6yWxUZiaY6Z/wrzK0QGhWmcBCiB8xwSmvmkM5r9AS3xMuUGUX1AgMB
-          AAGjggG6MIIBtjA+BgkrBgEEAYI3FQcEMTAvBicrBgEEAYI3FQiGucwMgvy5ZoLB
-          jyOB0/k1g9vUPYExhefVd4P9ukACAWQCAQMwEwYDVR0lBAwwCgYIKwYBBQUHAwEw
-          DgYDVR0PAQH/BAQDAgWgMBsGCSsGAQQBgjcVCgQOMAwwCgYIKwYBBQUHAwEwHQYD
-          VR0OBBYEFJQp6eIroR3EnTgh/NTQ9vzcIHZMMDYGA1UdEQQvMC2CK2hyMDZlc3N0
-          LWpjby1wd3ItcHJkLmFwcHMub2NwNC5rb2hsZXJjby5jb20wHwYDVR0jBBgwFoAU
-          dhO5OUPrfMEGUyJYP5IYHPY2CPwwQQYDVR0fBDowODA2oDSgMoYwaHR0cDovL2Ny
-          bC5rb2hsZXJjby5jb20vY2VydGRhdGEvS29obGVyLUlDQTEuY3JsMHcGCCsGAQUF
-          BwEBBGswaTA8BggrBgEFBQcwAoYwaHR0cDovL2NybC5rb2hsZXJjby5jb20vY2Vy
-          dGRhdGEvS29obGVyLUlDQTEuY3J0MCkGCCsGAQUFBzABhh1odHRwOi8vb2NzcC5r
-          b2hsZXJjby5jb20vb2NzcDANBgkqhkiG9w0BAQsFAAOCAgEAjw4Jq/dra8BhVXho
-          9QUZVHSt9qjZeGZjlAHtOFGFD/CzBuJR2EAgAu7eTYCddpdJ/D/Logb8R1TEsrE/
-          QrUhVagIOfqVr9zoSz/OiIayMCR513ehCVf89cMPE6o3TQ6Lpwkao4kNngHDNeGX
-          2Cbflu61uENgA72pj/MsnUvuTJ/qW79e0y7vKmedwnVZiMvhrrgXg3CAToFMaOjE
-          P5POjkf0Lgwt8StNgBwZxWVP+Heu4llQtDf1NnXI6U9d4q9lqsU3qqk+aQyUqf8n
-          iK7y/aCxlMlEeTIZGHipSwOY5XF/TgTnTYCOykd3iQPN3bGbUSaUdTWMhGnTWoOE
-          A15CKLTtD4EnJhqK6iUYVljhMkTRM+rsdgH2AtgfwQ2hJslcfTChilB2x+ycJC6/
-          NmK59FfbZfd+Cf+JYxicoruiJKLWbce5u9pJEW0WyhkYblbDwObKS5oXPkYgKJ8X
-          9nab8hig6xQmdF5H6qLdBs7SXuRHAWIpvUwgcdrg5wVxB/hiDwbQXjNJ11xH7EIk
-          fuupZ6PgLj11v+lRVDvIqELQBq/jFhubhF/TUaC3gZBJ9/c0XgLV0ofwbxoTgQe5
-          PZHlJAL+P1R6kOZHutxdJcsiSyjRqDTFGIV3cXxNZzwWePLJvx98EwV/b41lZMoU
-          Y05ddb7hND1A/R3T3gTDxYPEHoE=
-          -----END CERTIFICATE-----
-        insecureEdgeTerminationPolicy: None
-        key: |-
-          -----BEGIN RSA PRIVATE KEY-----
-          MIIJKQIBAAKCAgEA2bBGm2jMgZLhst3+nFawRpAY/txqnzTh1nKl4E6y61yI7BAm
-          nmk5ftvLBPQ2bG9vAURB8uTQTEofQJZ9j28vW8bDHjk9cvqVsdrxf7ga3MiR6Wdd
-          dKTOOEYrN6mPvrFnm902xIHt/wpqe3IUw7JYmMCLYtHghLFb8pJU12S5vSbBHuAK
-          2wIbVA50ZaT7SrasOReW5nSxf87GgK0SaRuc29EnQRIRsBh15CI9a80f7OKIzvJE
-          1RlS8PJbwT5BjmI8va5sABKfIX3KAmkWTAdufkb6tIFJEU9z3W05sSd/3DuWNRN3
-          ot1QHiLi/4hE7DjWq/OZNV2PmCqOc+OtaH85zb/KEQiXyS6aK0TuNr8pIWG/xU39
-          TTs/JFs8TeZ/Gv4cX2XDbBMeQW5KN1ccwbIg+yVE5c+Q5Ld3wkjeX38QYt3m/E3m
-          og9dC4kVhdecAqMUz4SxykpWY4jge0Z/5BayDcBsmmltODqhuQxS/byDKOso2pU0
-          /z+yeFIDyyy8asN5xMSWoTr+ewnckJE99VusgSeO7EZxluTcK9q+MDbN8Ba7CSd8
-          MrMnz0SpC/FXbUN3SRZdw/N8T6kObBkYLddm3MngzK4CIln5Pt79GNDc0Q3FdPdB
-          KiRQyPU6brJbFRmJpjpn/CvMrRAaFaZwEKIHzHBKa+aQzmv0BLfEy5QZRfUCAwEA
-          AQKCAgAJOxNTZbc+S1csuYMhZ/+jjlqw+/G9fIWTDVuBTnUBy/O2ZtzsXLPmcDWE
-          qUJhiLwhRp6xSQiYI5B9saPzYBiXAK+naW/0nzGX0BvreYgSEqM1TX/GAXMJKdiN
-          TLBeurEVB+VZodTQusVXJLhCsB5Xo9qFPzcRCWBHwfK9C3Vg0vLfd0qejNFR2CcR
-          ZFSPj31wElMAxLP+ImuCa1RbhqM5Iv5SIQ0E9ZSSLu2B07nl1plMhTNsAd3lf7Fq
-          WVR4UCwZMvs7aY674dSeE4yxfqMt0Z6x5sWNaVwVaJtIqs8eLJyq9X9eNZo/HOWZ
-          RlL93U8lDXhSrfv3zN4rhd0FkFeIEOxaUmYLyHNmwjYe+KAtGplDJhsBdHQL4WQK
-          7pNZY1nYZT5A2oxU4ehUNp/Yay+3XX1yw6A3zYMAspQCdu2F03y8zFHnJtL++p2e
-          rv9+14Xue2Rinqub3JKNpjDITdowjlEZnNowY6F6FxxQrkhUZBUoqqAUW4MvR5tY
-          34bK4sDhqr+ze7BDNXhw9/RV1rGLV7/ynSb0EEJEmv361YUz4VXwEVMPpwSJRVLA
-          aK3xwdsNcfcqDCW1C7b2fbOL/YDT/6tWUIQqR2Ye8ooOz6I9oXcy6I+yI1XrRCaB
-          QSl0d1+bIFNEBv5CDcp9Pv7G9RDChSbFL3eoOhEL/wg/RWVRpQKCAQEA+P0wgGhe
-          XtdGXnZG/Nk2yrzYVlgyoRfJT1DBwQ0qnTcSEI2BWbJB+J3zkJEIyzWCkzSW1D+P
-          n6lUdR43L7QYRI0OS78HdY3vDgbA1WYlxJmEnQkVBCwE74Y0U141WVoDpv287rUi
-          XMco+dnartU5oIl4E/lnjGcXUCOMFp1GIzve8uSlpNaxDYbhkSU+8CjFOrHlLt3T
-          qalSzl8qkyGVQB0qnJ32rFTAuu6BwSKTLQ0yTbhSr6jU9JDJG8HEwq7biYTsCP0M
-          E2ylC3wXozXOvxusZnfX7mOnkmE3tXQnPySbmnKdgozhPvrxis31nRQssm1hiwf9
-          VhSPUaSdLTS/DwKCAQEA39F14WpDzJy8xZfLBtXiCyPtfHeLlyjkFH6KVsuTFs9m
-          qFWwblPSquYDNEExk1rifSt12Wtc2x4X04BQkmy2Gf2B8m4IJ++OMR9qZfWUADfc
-          VOzIhZ1gs3nyIZy1Z+dW+PJTfSHoj3jxHKk+FN0hRj4JoSEn56kVZX3RkWiGOOe6
-          MESdlrtIHzAmiPVEAUP769LE2VgkNqd7zKmnoaSsCcJ+5fZfNYL6eAon22yLQHA7
-          uNZy5Pc0Md1UcU/9kqmuHSNo5x4R/HLGiRInEV3vFNPwkUiQ2VdJ6YxZkDpU28UT
-          eYIwHfAzWspLrLggYHPM42vjACqbUCjHp4ITiTLquwKCAQEA2kDeDgDukAX2KgFV
-          sngY3lfw7qb7Ilh+Xuc0H6wR6aOHUzkm5GAsEekqwlNPuQjbv3t+puhcViEQ5mSp
-          DUi5aQWYPW9i83mJzeq/h4+1lYLYSurWIEURwoAKR/Wxn/QWdX+/6CKgz2DIm1KK
-          rWw8ymsV9bROPzVyqw2t03jjLSljAdjJFhgXNPtBqIBUjiG+2PdtJMrPqc3BxyKG
-          aFgswvmOC6Evw9m642EEHi7XgcsqiBQFbvL4ULTFhG4yslCiIgaA/FQMDM7UUZ/h
-          /G/DHaP9WAi/H7j8/4P2WDlL2b6WIylKxlAFdbZ0mi51mM5Ba9oTgdJsD9OP2YoJ
-          OMIeowKCAQBB7eiEexH3rt/ocJtMqypHz9CADpLe9xugcdn8UUFFwdhik8NB7I0s
-          7E5bUSzyVB5NcsTnQ7n5jbbFBZI2X7GQnF1v9TuP0AAZtkBYQmvTWKEdnxY+TaqT
-          k8NgZVIGhl3XPUKcpKVlxeF4aN4xtSW9FD8v6J1hnyv/Vn2qEJkhIBl3aG7nXMmU
-          7lEbnOvoV4dY4yA7Sbx5IQLVuc/4TJKk2VcaFGXdVHTFcXBmMWYfmC/vdbQogC0u
-          1xytuDtgvXzddnXLRs9Thte2vtMlSX9Iqlm94htQ+mZ6Vm53jsc6aaYf79qOpxfp
-          kZeTDDX1U4cyIrCedu6DQU/2ptlsW8RLAoIBAQCOzb2m0lmgZ4vkGBLpgFqIb8WP
-          GOWMhWVJ/2VJ3A6CzajDzxrKCDG0eElc6qA4BdspvJxsbh4B+ttrKfjT/Eysp19V
-          bSJaH4kD90fgjfe/lq/Yv6KwshKFMrWIVVHPFYpCiSiEA9Xc7lOrWmq7ZeTzxT3K
-          OT2S2k3bXG3HJAsEluOVCfCAQMPIE0CjdOzYzrSWnyNRVb25ggLYuz9O09BQlQty
-          BJaeAug1EF79wq1xh+gKvEU13jIQF2OeUvIlHbvYwQHvtXplwFsc+NQlgNCfF1zG
-          3euOMbtPPKTtiWICiw4q3Q+zJjUk1KgDtV0he7cfVMwerS20vSC/twExh6I+
-          -----END RSA PRIVATE KEY-----
-        termination: edge
-      to:
-        kind: Service
-        name: hr06esst-jco-pwr-prd
-        weight: 100
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      labels:
-        app: hr06esst-jco-pwr-qa
-        app.kubernetes.io/component: hr06esst-jco-pwr-qa
-        app.kubernetes.io/instance: hr06esst-jco-pwr-qa
-        app.kubernetes.io/part-of: hr06esst-pwr-jco
-      name: hr06esst-jco-pwr-qa
-      namespace: humanresourceapps
-    spec:
-      host: hr06esst-jco-pwr-qa.apps.ocp-prd.kohlerco.com
-      port:
-        targetPort: 8080-tcp
-      tls:
-        certificate: |-
-          -----BEGIN CERTIFICATE-----
-          MIIHLDCCBRSgAwIBAgITPgAAAVVXiNB4Bk3IwAAAAAABVTANBgkqhkiG9w0BAQsF
-          ADBFMRMwEQYKCZImiZPyLGQBGRYDY29tMRgwFgYKCZImiZPyLGQBGRYIa29obGVy
-          Y28xFDASBgNVBAMTC0tvaGxlci1JQ0ExMB4XDTI0MDIwMTE2NDQwNFoXDTI2MDEz
-          MTE2NDQwNFowgZ4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJXSTEPMA0GA1UEBxMG
-          S29obGVyMRMwEQYDVQQKEwpLb2hsZXIgQ28uMTMwMQYDVQQDEypocjA2ZXNzdC1q
-          Y28tcHdyLXFhLmFwcHMub2NwNC5rb2hsZXJjby5jb20xJzAlBgkqhkiG9w0BCQEW
-          GE5hdGhhbi5LcmFjaHRAa29obGVyLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIP
-          ADCCAgoCggIBAMXtvNrffmi3Z+wBF46zbzqy7xY+HYWWGdcsKCA2VfGMdiqzDyxx
-          m5n/ved8Vm+tQTNOx77v7LlBdTnNOCgljgWdGTv4BHQvVrOyNSMUPJ6cNEn31hUE
-          jIlxKYJrwHXRvBPuEoy9s0i7apoNdqhBCIhAAfIf5BttJ5FQMfi3xx3C0QLtdagI
-          5X5qPOnV7CexYjjqBcCbceBkCWHISjM39TQ8RBh3q36wpA7FB8+dP+xCg/LT/N1q
-          XkETLN5V/f53gVnzYbU5AHmPtD/57h5Ry4o6kNw76b0/xXhW7Ec7fejv3nAOq4mx
-          QxKXlDbGQDbX8jRzV50icnQ2AfLn4F+lcxnm1w55isyDRC5ud17L9asJlqW7f2JQ
-          Fz1D4klFw31j9k+xvlCBVGXmro88EcPHvHp9PmwibEL0r6RsFOKACJ4hn1iiGBUA
-          6bgIGmLamPV5XwuUW3+0GKeCMaIH6puOeYeZj4dzQ7uyH5HvJefeU6Tv6/K8SeTG
-          BWiedA4EO0MCpRPYUjXN5NV7eEwI9Mv2cXZbfgr6qz7qmrCU6Sx/P2gSC8DScoaG
-          2PL+VDPKs4uA57kHOMnK+L89F3sHpYNhHnl8DVPj0x+QtSz4tfPJwNHgiyvk1pJG
-          PM2A2zg7Npu5TinL2qW7v9S5aiixoRvunmDETxyVNi/x+0cCi+jUbvmVAgMBAAGj
-          ggG5MIIBtTA+BgkrBgEEAYI3FQcEMTAvBicrBgEEAYI3FQiGucwMgvy5ZoLBjyOB
-          0/k1g9vUPYExhefVd4P9ukACAWQCAQMwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDgYD
-          VR0PAQH/BAQDAgWgMBsGCSsGAQQBgjcVCgQOMAwwCgYIKwYBBQUHAwEwHQYDVR0O
-          BBYEFNDG9N3ZmVjnMqJZPxPbftkIiyTdMDUGA1UdEQQuMCyCKmhyMDZlc3N0LWpj
-          by1wd3ItcWEuYXBwcy5vY3A0LmtvaGxlcmNvLmNvbTAfBgNVHSMEGDAWgBR2E7k5
-          Q+t8wQZTIlg/khgc9jYI/DBBBgNVHR8EOjA4MDagNKAyhjBodHRwOi8vY3JsLmtv
-          aGxlcmNvLmNvbS9jZXJ0ZGF0YS9Lb2hsZXItSUNBMS5jcmwwdwYIKwYBBQUHAQEE
-          azBpMDwGCCsGAQUFBzAChjBodHRwOi8vY3JsLmtvaGxlcmNvLmNvbS9jZXJ0ZGF0
-          YS9Lb2hsZXItSUNBMS5jcnQwKQYIKwYBBQUHMAGGHWh0dHA6Ly9vY3NwLmtvaGxl
-          cmNvLmNvbS9vY3NwMA0GCSqGSIb3DQEBCwUAA4ICAQCEORsfXcuQ2eyd+AzLN2By
-          mlI22zwGV/Wu4ZtHFpIicNLW+DeTTV4K/NviqbjTAl5ku2V1trs1acAfif6lB6Ju
-          ecbgZwWCmjQEW2/TtYO2mZHs7AvJxDWtwlM/CAdTvn4vtYfSrLBQLO7wcsesIJVS
-          gDlTofFFcKy7D9RRy9ZsPk3f9e75IPqId/OQJan49n9lUOYhadAyr2b2N8YxLO1g
-          JHJL00gYFQTZljHegGs7ZvQUUzFLYBa5DBkzWtPhOlR7UkP1R0xOqOvl99rAk3zt
-          9Tb34EQoEqiXy+4XmzkVQP4G8g0Gwm2w3egRCPCrtWo7vT/hs3j+ozyJmKK66Uwd
-          /EgY7jrN7BjPR8feQ0peHzxkeZhl+/rT1HwMehIT5twecqdHHqKP7D5w+nvZCNf+
-          m6dOkJkNsvgewVFuriYypGlsrQkbjU8qWUdRyKDbY/6ySvCxGJ5iUhKtqMudljW1
-          X/U186qYr+Vb39hQQlgNP+/Mm++zXs/7AppAUmEihtMKDvphHhnyLnkUerPzg/Xj
-          RSkJqbIlxkjkxSxjpKfuI1fUT8tKrhxJjgVCMPDlLAmamUMaXOqSr5GUFqYh/lNa
-          f+5VzypDIo4hb2iHYr/6/QeWCS6o/vJOQ1P+XuEcYLVL6g9W7S4L9ZWbxNzN+9jN
-          IucPU0+8dOcKSQTrfoNPNA==
-          -----END CERTIFICATE-----
-        insecureEdgeTerminationPolicy: None
-        key: |-
-          -----BEGIN RSA PRIVATE KEY-----
-          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
-          -----END RSA PRIVATE KEY-----
-        termination: edge
-      to:
-        kind: Service
-        name: hr06esst-jco-pwr-qa
-        weight: 100
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+        openshift.io/host.generated: "true"
       labels:
         app: hr06esst-jco-qa
         app.kubernetes.io/component: hr06esst-jco-qa
         app.kubernetes.io/instance: hr06esst-jco-qa
-        app.kubernetes.io/part-of: hr06esst-jco
+        app.kubernetes.io/name: hr06esst-jco-qa
+        app.openshift.io/runtime-version: latest
       name: hr06esst-jco-qa
       namespace: humanresourceapps
     spec:
@@ -403,101 +145,11 @@ items:
       port:
         targetPort: 8080-tcp
       tls:
-        certificate: |-
-          -----BEGIN CERTIFICATE-----
-          MIIGUTCCBTmgAwIBAgITNwABYTGMUx5n0tvJXgACAAFhMTANBgkqhkiG9w0BAQsF
-          ADBPMRMwEQYKCZImiZPyLGQBGRYDY29tMRgwFgYKCZImiZPyLGQBGRYIa29obGVy
-          Y28xHjAcBgNVBAMTFWtvaGxlcmNvLVVTV0lBUzIyMS1DQTAeFw0yMjA0MTQxMjQ3
-          MDRaFw0yNTA5MTcxNzI4MDhaMIGFMQswCQYDVQQGEwJVUzELMAkGA1UECBMCV0kx
-          DzANBgNVBAcTBktvaGxlcjETMBEGA1UEChMKS29obGVyIENvLjESMBAGA1UECxMJ
-          S29obGVyIElUMS8wLQYDVQQDEyZocjA2ZXNzdC1qY28tcWEuYXBwcy5vY3A0Lmtv
-          aGxlcmNvLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMHDlBiw
-          oSKU/BtthHdJAoIWtZ3bsZHo0DLekKS+v2/+jGMcO66DZzXkjI7BQujyQGWIMTKW
-          sCPqiU5L619RCXcBgNOJbNm/xdltMTXFXrIi+1NxIqUXUjvg3QPXBGMkWxdGNGEQ
-          SgaqdRg046FAC/gtma6/7o7YChkVZymaDJF5kbzR93qaqykEpkasZFWtKxxJYWMu
-          RDC/Nhnb8pCE/CVLXUqC4jYl1Op20De8vio6adU3c5bgDk4/Kr0b7xrf9fr2aEHY
-          xxQB0Yl/wWntQ0epr+8YHqmb4U+kDUSMVVAkdg0kkvUzNj8j0if/FGn1A3FslM8+
-          ljumX3ILj3xcI4kCAwEAAaOCAu0wggLpMB0GA1UdDgQWBBQPwyaKMxyyIo7vIqpm
-          ub+9raVSLzAxBgNVHREEKjAogiZocjA2ZXNzdC1qY28tcWEuYXBwcy5vY3A0Lmtv
-          aGxlcmNvLmNvbTAfBgNVHSMEGDAWgBQS2yjtrSjRkAxh23OvDMPwWYp63zCCASUG
-          A1UdHwSCARwwggEYMIIBFKCCARCgggEMhoHCbGRhcDovLy9DTj1rb2hsZXJjby1V
-          U1dJQVMyMjEtQ0EoMiksQ049VVNXSUFTMjIxLENOPUNEUCxDTj1QdWJsaWMlMjBL
-          ZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPWtv
-          aGxlcmNvLERDPWNvbT9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2Jq
-          ZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9uUG9pbnSGRWh0dHA6Ly9VU1dJQVMyMjEu
-          a29obGVyY28uY29tL0NlcnRFbnJvbGwva29obGVyY28tVVNXSUFTMjIxLUNBKDIp
-          LmNybDCByAYIKwYBBQUHAQEEgbswgbgwgbUGCCsGAQUFBzAChoGobGRhcDovLy9D
-          Tj1rb2hsZXJjby1VU1dJQVMyMjEtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUy
-          MFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9a29obGVy
-          Y28sREM9Y29tP2NBQ2VydGlmaWNhdGU/YmFzZT9vYmplY3RDbGFzcz1jZXJ0aWZp
-          Y2F0aW9uQXV0aG9yaXR5MA4GA1UdDwEB/wQEAwIFoDA+BgkrBgEEAYI3FQcEMTAv
-          BicrBgEEAYI3FQiGucwMgvy5ZoLBjyOB0/k1g9vUPYExh6KrIYLugG4CAWQCAQcw
-          EwYDVR0lBAwwCgYIKwYBBQUHAwEwGwYJKwYBBAGCNxUKBA4wDDAKBggrBgEFBQcD
-          ATANBgkqhkiG9w0BAQsFAAOCAQEAbus6gJpxyzRCxvL2d+/mcnQgCsCwd0Q9dHA0
-          m9375YozAjS8ixvg7L3Xg+Rw8V1S8mDhJHf5eYyiqC1AaIY/GeOrzTjR5+x5x3gQ
-          cM2xVU1auwb3NS9wCqEH12WCXSfeWq88cgjVt+TOCJy/ceFXREB1hdwFYHlIEAi4
-          Wpg/YA4wlVOSVq+ewPupPF9lZL0XzuP9ytHr71QJzrbjYIHGVObWqV997FvTrMSS
-          P55NguQElJ64hqQTzZfB9BZJmmIQK4D+JMPo7MZQESS2Sg+S6/uYmJXYtvduLf2o
-          Lo1LJ+GyPJ4HJniZXawlmgMhOzz+beDGlNDugKUO2qByxaFEIg==
-          -----END CERTIFICATE-----
-        insecureEdgeTerminationPolicy: None
-        key: |-
-          -----BEGIN PRIVATE KEY-----
-          MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDBw5QYsKEilPwb
-          bYR3SQKCFrWd27GR6NAy3pCkvr9v/oxjHDuug2c15IyOwULo8kBliDEylrAj6olO
-          S+tfUQl3AYDTiWzZv8XZbTE1xV6yIvtTcSKlF1I74N0D1wRjJFsXRjRhEEoGqnUY
-          NOOhQAv4LZmuv+6O2AoZFWcpmgyReZG80fd6mqspBKZGrGRVrSscSWFjLkQwvzYZ
-          2/KQhPwlS11KguI2JdTqdtA3vL4qOmnVN3OW4A5OPyq9G+8a3/X69mhB2McUAdGJ
-          f8Fp7UNHqa/vGB6pm+FPpA1EjFVQJHYNJJL1MzY/I9In/xRp9QNxbJTPPpY7pl9y
-          C498XCOJAgMBAAECggEAC307VNN0WoaXBFFUH3aWzXvnPPr/5nT1k26bCQm+dDeV
-          v3K3HzvvbMSmiPhwrTtgEiUnNaa1vwtzJM9fn4FAnGvcZa6qY6b5ZlERL+0KFmn4
-          mRQGR9/AIojM0iN3wSEwvYqOJItAuHB3DP5l2PPhQdACYthCnvm0b5RTT6YwxJdk
-          T0Y6AyJ3/THqO+GekaZmwW+TW5oDDtcg1BXf8Hh1PFYJEd7J3WYdWglol2kzQ81v
-          2Gn7Mnlk013Zp3pfAGfZpE66QOze+tozNrR4+dtDAmI/5VcmA6alOAsNRTkcNnuX
-          qYWgK6J8U7xKc4y7FfN5U+C1noEBoNcO0udDfZrSuQKBgQDvkS6y14h6JSChG0Qb
-          8AvGmR2YQ6OPSp7xmeB3DARVYbeiS11vdXgxB/eAEIA+GH5RgAzh+bpkeL0dCDuU
-          ItqtgbUiJOV2C2j/9bb03PoWRMxU/nA+Brr22wsmSAXY7zKsgRDCjTx4WRbYC5NG
-          jaQisVyVxFJJdIylldG4Tk/NgwKBgQDPDhbdQFrYoTZnmp5Fz12k0c6VIlmme0Kt
-          bcD7TBXRRL64w1a9+PBj+T2oYAlVtbk4Oir9XAVt95aKQmEuHvbJc5CvaID1nSON
-          Zns3YdmwqGXVw0NkEzje8omIPIh/1MUc3+umKVZERjDvDdmlXe0OHd6fC4plsIZy
-          MCXrabZpAwKBgF4gty6BzRfg+p8SbYJkoNvZUW2ANgWZFjZrdWyRBireCB72abHf
-          f+gT70UcNqcvTIKNQ4KOcpQDdJqxn2cnArDlo9vUj2wAM7NOQiKXqJOTWI2Uo1lb
-          n55alljmN5Xy9gAdfg5THA1VQ8qDUcyI3pLbCTu3NXWzG4f8A7jc3DItAoGAKNTi
-          dWdHgwjnra60H5gxI1usnYRUoZwVHhZSxDvQ4Z/o7I65AGWjIlP4cMffj2Nyzz/J
-          UoVfHLyCl2lXuLyqdjewBKdbJxSB+lSHX/iP8WKEEo+bLpUL1guGS7OER5Ex/eu6
-          kN3+ASDGbZ4RmabYJLyHNl4UQNF68fHEyJPkQPkCgYByvTzs9ow1q6t03zOpa0fY
-          xiT7Uj/WP+ir3dimKJcI6sq6KCZDdjCymLMGmQnZygBiBgc1ek9Raq4cckSrylhh
-          WuIlATuFnIWbAgO6AUbEs6gnKwX9zBZEy5afY1r15hEb94VfLvP67xrMP6n9yTEf
-          q7wOpuOkvynm1IK8dqFHhQ==
-          -----END PRIVATE KEY-----
+        insecureEdgeTerminationPolicy: Redirect
         termination: edge
       to:
         kind: Service
         name: hr06esst-jco-qa
-        weight: 100
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      annotations:
-        openshift.io/host.generated: "true"
-      labels:
-        app: httpd-temp
-        app.kubernetes.io/component: httpd-temp
-        app.kubernetes.io/instance: httpd-temp
-        app.kubernetes.io/name: httpd
-        app.kubernetes.io/part-of: httpd-temp
-        app.openshift.io/runtime: httpd
-        app.openshift.io/runtime-version: 2.4-el7
-      name: httpd-temp
-      namespace: humanresourceapps
-    spec:
-      host: httpd-temp-humanresourceapps.apps.ocp-prd.kohlerco.com
-      port:
-        targetPort: 8080-tcp
-      to:
-        kind: Service
-        name: httpd-temp
         weight: 100
       wildcardPolicy: None
 kind: List

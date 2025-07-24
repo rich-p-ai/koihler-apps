@@ -6,17 +6,20 @@ items:
     annotations:
       app.openshift.io/vcs-ref: main
       app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"app.openshift.io/vcs-ref":"main","app.openshift.io/vcs-uri":"https://github.com/apache/couchdb-docker","openshift.io/generated-by":"OpenShiftWebConsole"},"labels":{"app":"couchdb-employee-dev","app.kubernetes.io/component":"couchdb-employee-dev","app.kubernetes.io/instance":"humanresourceapps-prd","app.kubernetes.io/part-of":"couchdb-employee","environment":"production"},"name":"couchdb-employee-dev","namespace":"humanresourceapps"},"spec":{"clusterIP":"172.30.176.70","clusterIPs":["172.30.176.70"],"internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"4369-tcp","port":4369,"protocol":"TCP","targetPort":4369},{"name":"5984-tcp","port":5984,"protocol":"TCP","targetPort":5984},{"name":"6984-tcp","port":6984,"protocol":"TCP","targetPort":6984},{"name":"9100-tcp","port":9100,"protocol":"TCP","targetPort":9100}],"selector":{"app":"couchdb-employee-dev","app.kubernetes.io/instance":"humanresourceapps-prd","deploymentconfig":"couchdb-employee-dev","environment":"production"},"sessionAffinity":"None","type":"ClusterIP"}}
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-05-18T17:38:38Z"
+    creationTimestamp: "2025-07-24T20:15:56Z"
     labels:
       app: couchdb-employee-dev
       app.kubernetes.io/component: couchdb-employee-dev
-      app.kubernetes.io/instance: couchdb-employee-dev
+      app.kubernetes.io/instance: humanresourceapps-prd
       app.kubernetes.io/part-of: couchdb-employee
+      environment: production
     name: couchdb-employee-dev
     namespace: humanresourceapps
-    resourceVersion: "745687273"
-    uid: e9dbb85c-66ae-4085-8ac3-18a565a4b60d
+    resourceVersion: "190587135"
+    uid: 92066869-51ff-46ed-8fb3-80e756d02894
   spec:
     clusterIP: 172.30.176.70
     clusterIPs:
@@ -44,7 +47,9 @@ items:
       targetPort: 9100
     selector:
       app: couchdb-employee-dev
+      app.kubernetes.io/instance: humanresourceapps-prd
       deploymentconfig: couchdb-employee-dev
+      environment: production
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -52,24 +57,15 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
-    annotations:
-      app.openshift.io/vcs-ref: main
-      app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
-      openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-05-19T20:12:31Z"
-    labels:
-      app: couchdb-employee-prd
-      app.kubernetes.io/component: couchdb-employee-prd
-      app.kubernetes.io/instance: couchdb-employee-prd
-      app.kubernetes.io/part-of: couchdb-employee
+    creationTimestamp: "2025-07-04T10:25:14Z"
     name: couchdb-employee-prd
     namespace: humanresourceapps
-    resourceVersion: "746860455"
-    uid: 5fff23bc-7cfd-482b-8892-441c2f18c76d
+    resourceVersion: "172009835"
+    uid: e650d3f9-f6d1-496c-9ed9-79c9df49a165
   spec:
-    clusterIP: 172.30.18.67
+    clusterIP: 172.30.176.11
     clusterIPs:
-    - 172.30.18.67
+    - 172.30.176.11
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -101,24 +97,15 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
-    annotations:
-      app.openshift.io/vcs-ref: main
-      app.openshift.io/vcs-uri: https://github.com/apache/couchdb-docker
-      openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-05-19T20:11:38Z"
-    labels:
-      app: couchdb-employee-qa
-      app.kubernetes.io/component: couchdb-employee-qa
-      app.kubernetes.io/instance: couchdb-employee-qa
-      app.kubernetes.io/part-of: couchdb-employee
+    creationTimestamp: "2025-07-04T10:18:46Z"
     name: couchdb-employee-qa
     namespace: humanresourceapps
-    resourceVersion: "746859769"
-    uid: f51b7861-b11d-4b2c-84fd-2779ea489d63
+    resourceVersion: "172005814"
+    uid: 4ec0b64f-0130-4128-bf1b-89d91d6f3277
   spec:
-    clusterIP: 172.30.79.115
+    clusterIP: 172.30.45.100
     clusterIPs:
-    - 172.30.79.115
+    - 172.30.45.100
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -150,22 +137,101 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
+    creationTimestamp: "2025-07-09T14:13:48Z"
+    labels:
+      app: directvolumemigration-rsync-transfer
+      app.kubernetes.io/part-of: openshift-migration
+      directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+      migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+      owner: directvolumemigration
+      purpose: rsync
+    name: dvm
+    namespace: humanresourceapps
+    resourceVersion: "176683199"
+    uid: de11564d-4077-4e61-83c1-589696794d37
+  spec:
+    clusterIP: 172.30.216.184
+    clusterIPs:
+    - 172.30.216.184
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: dvm
+      port: 6443
+      protocol: TCP
+      targetPort: 6443
+    selector:
+      app: directvolumemigration-rsync-transfer
+      app.kubernetes.io/part-of: openshift-migration
+      directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+      migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+      owner: directvolumemigration
+      purpose: rsync
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2025-07-09T14:13:48Z"
+    labels:
+      app: directvolumemigration-rsync-transfer-block
+      app.kubernetes.io/part-of: openshift-migration
+      directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+      migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+      owner: directvolumemigration
+      purpose: rsync
+    name: dvm-block
+    namespace: humanresourceapps
+    resourceVersion: "176683205"
+    uid: d37b5044-46f9-4db3-857f-ab619d2322bc
+  spec:
+    clusterIP: 172.30.236.125
+    clusterIPs:
+    - 172.30.236.125
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: dvm-block
+      port: 6443
+      protocol: TCP
+      targetPort: 6443
+    selector:
+      app: directvolumemigration-rsync-transfer-block
+      app.kubernetes.io/part-of: openshift-migration
+      directvolumemigration: d75bba62-0c6c-4855-8efc-bb230639d4c8
+      migration.openshift.io/migrated-by-migplan: ba008ae5-0381-4e18-93c9-455b7486a653
+      owner: directvolumemigration
+      purpose: rsync
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
     annotations:
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-04-14T13:14:40Z"
+    creationTimestamp: "2025-07-07T06:43:15Z"
     labels:
       app: hr06esst-jco-prd
       app.kubernetes.io/component: hr06esst-jco-prd
       app.kubernetes.io/instance: hr06esst-jco-prd
-      app.kubernetes.io/part-of: hr06esst-jco
+      app.kubernetes.io/name: hr06esst-jco-prd
+      app.openshift.io/runtime-version: latest
     name: hr06esst-jco-prd
     namespace: humanresourceapps
-    resourceVersion: "707455086"
-    uid: 9b06ee4b-6551-4d4b-9f2d-ace58df8f144
+    resourceVersion: "174565350"
+    uid: fd160f28-ce46-4147-bc37-22addbcc469f
   spec:
-    clusterIP: 172.30.17.55
+    clusterIP: 172.30.92.186
     clusterIPs:
-    - 172.30.17.55
+    - 172.30.92.186
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -177,7 +243,7 @@ items:
       targetPort: 8080
     selector:
       app: hr06esst-jco-prd
-      deploymentconfig: hr06esst-jco-prd
+      deployment: hr06esst-jco-prd
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -186,16 +252,19 @@ items:
   kind: Service
   metadata:
     annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"},"labels":{"app":"hr06esst-jco-pwr-prd","app.kubernetes.io/component":"hr06esst-jco-pwr-prd","app.kubernetes.io/instance":"humanresourceapps-prd","environment":"production"},"name":"hr06esst-jco-pwr-prd","namespace":"humanresourceapps"},"spec":{"clusterIP":"172.30.181.59","clusterIPs":["172.30.181.59"],"internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"8080-tcp","port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"hr06esst-jco-pwr-prd","app.kubernetes.io/instance":"humanresourceapps-prd","deploymentconfig":"hr06esst-jco-pwr-prd","environment":"production"},"sessionAffinity":"None","type":"ClusterIP"}}
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2024-02-01T16:30:37Z"
+    creationTimestamp: "2025-07-24T20:15:57Z"
     labels:
       app: hr06esst-jco-pwr-prd
       app.kubernetes.io/component: hr06esst-jco-pwr-prd
-      app.kubernetes.io/instance: hr06esst-jco-pwr-prd
+      app.kubernetes.io/instance: humanresourceapps-prd
+      environment: production
     name: hr06esst-jco-pwr-prd
     namespace: humanresourceapps
-    resourceVersion: "5214874217"
-    uid: 7055d033-c6a4-4489-b9b8-1661f558344a
+    resourceVersion: "190587147"
+    uid: 5f1e4bc3-3788-45f1-a71e-9a3db9a58ad3
   spec:
     clusterIP: 172.30.181.59
     clusterIPs:
@@ -211,7 +280,9 @@ items:
       targetPort: 8080
     selector:
       app: hr06esst-jco-pwr-prd
+      app.kubernetes.io/instance: humanresourceapps-prd
       deploymentconfig: hr06esst-jco-pwr-prd
+      environment: production
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -220,17 +291,20 @@ items:
   kind: Service
   metadata:
     annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"},"labels":{"app":"hr06esst-jco-pwr-qa","app.kubernetes.io/component":"hr06esst-jco-pwr-qa","app.kubernetes.io/instance":"humanresourceapps-prd","app.kubernetes.io/part-of":"hr06esst-pwr-jco","environment":"production"},"name":"hr06esst-jco-pwr-qa","namespace":"humanresourceapps"},"spec":{"clusterIP":"172.30.182.85","clusterIPs":["172.30.182.85"],"internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"8080-tcp","port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"app":"hr06esst-jco-pwr-qa","app.kubernetes.io/instance":"humanresourceapps-prd","deploymentconfig":"hr06esst-jco-pwr-qa","environment":"production"},"sessionAffinity":"None","type":"ClusterIP"}}
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2024-01-29T20:29:40Z"
+    creationTimestamp: "2025-07-24T20:15:57Z"
     labels:
       app: hr06esst-jco-pwr-qa
       app.kubernetes.io/component: hr06esst-jco-pwr-qa
-      app.kubernetes.io/instance: hr06esst-jco-pwr-qa
+      app.kubernetes.io/instance: humanresourceapps-prd
       app.kubernetes.io/part-of: hr06esst-pwr-jco
+      environment: production
     name: hr06esst-jco-pwr-qa
     namespace: humanresourceapps
-    resourceVersion: "3179284057"
-    uid: 4958f737-57a6-44ed-b9e0-b8135412be33
+    resourceVersion: "190587149"
+    uid: eeb809a6-67af-4c12-bb54-18b76be13563
   spec:
     clusterIP: 172.30.182.85
     clusterIPs:
@@ -246,7 +320,9 @@ items:
       targetPort: 8080
     selector:
       app: hr06esst-jco-pwr-qa
+      app.kubernetes.io/instance: humanresourceapps-prd
       deploymentconfig: hr06esst-jco-pwr-qa
+      environment: production
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -256,20 +332,21 @@ items:
   metadata:
     annotations:
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-04-13T19:46:26Z"
+    creationTimestamp: "2025-07-07T06:16:19Z"
     labels:
       app: hr06esst-jco-qa
       app.kubernetes.io/component: hr06esst-jco-qa
       app.kubernetes.io/instance: hr06esst-jco-qa
-      app.kubernetes.io/part-of: hr06esst-jco
+      app.kubernetes.io/name: hr06esst-jco-qa
+      app.openshift.io/runtime-version: latest
     name: hr06esst-jco-qa
     namespace: humanresourceapps
-    resourceVersion: "706643658"
-    uid: f451fc45-a4b6-4ca5-b50f-6aeaec761a31
+    resourceVersion: "174548876"
+    uid: a46bb567-7346-4571-a8b4-e7e9cb8c78bb
   spec:
-    clusterIP: 172.30.122.52
+    clusterIP: 172.30.140.160
     clusterIPs:
-    - 172.30.122.52
+    - 172.30.140.160
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -281,7 +358,7 @@ items:
       targetPort: 8080
     selector:
       app: hr06esst-jco-qa
-      deploymentconfig: hr06esst-jco-qa
+      deployment: hr06esst-jco-qa
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -292,20 +369,23 @@ items:
     annotations:
       app.openshift.io/vcs-ref: ""
       app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"app.openshift.io/vcs-ref":"","app.openshift.io/vcs-uri":"https://github.com/sclorg/httpd-ex.git","openshift.io/generated-by":"OpenShiftWebConsole"},"labels":{"app":"httpd-temp","app.kubernetes.io/component":"httpd-temp","app.kubernetes.io/instance":"humanresourceapps-prd","app.kubernetes.io/name":"httpd","app.kubernetes.io/part-of":"httpd-temp","app.openshift.io/runtime":"httpd","app.openshift.io/runtime-version":"2.4-el7","environment":"production"},"name":"httpd-temp","namespace":"humanresourceapps"},"spec":{"clusterIP":"172.30.51.222","clusterIPs":["172.30.51.222"],"internalTrafficPolicy":"Cluster","ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"name":"8080-tcp","port":8080,"protocol":"TCP","targetPort":8080},{"name":"8443-tcp","port":8443,"protocol":"TCP","targetPort":8443}],"selector":{"app":"httpd-temp","app.kubernetes.io/instance":"humanresourceapps-prd","deploymentconfig":"httpd-temp","environment":"production"},"sessionAffinity":"None","type":"ClusterIP"}}
       openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2022-05-05T11:24:16Z"
+    creationTimestamp: "2025-07-24T20:15:57Z"
     labels:
       app: httpd-temp
       app.kubernetes.io/component: httpd-temp
-      app.kubernetes.io/instance: httpd-temp
+      app.kubernetes.io/instance: humanresourceapps-prd
       app.kubernetes.io/name: httpd
       app.kubernetes.io/part-of: httpd-temp
       app.openshift.io/runtime: httpd
       app.openshift.io/runtime-version: 2.4-el7
+      environment: production
     name: httpd-temp
     namespace: humanresourceapps
-    resourceVersion: "730838400"
-    uid: 8266a451-e420-40a9-989b-6293fe2ae361
+    resourceVersion: "190587155"
+    uid: 45771d6c-7aaf-4cae-9fff-552a1c8e6c59
   spec:
     clusterIP: 172.30.51.222
     clusterIPs:
@@ -325,7 +405,44 @@ items:
       targetPort: 8443
     selector:
       app: httpd-temp
+      app.kubernetes.io/instance: humanresourceapps-prd
       deploymentconfig: httpd-temp
+      environment: production
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2025-07-02T11:18:15Z"
+    labels:
+      app: mulesoft-bulk-prd
+      app.kubernetes.io/component: mulesoft-bulk-prd
+      app.kubernetes.io/instance: mulesoft-bulk-prd
+      app.kubernetes.io/name: mulesoft-bulk-prd
+    name: mulesoft-bulk-prd
+    namespace: humanresourceapps
+    resourceVersion: "170235432"
+    uid: 81435147-40a5-44cc-96c3-e25f30d3fc1d
+  spec:
+    clusterIP: 172.30.208.33
+    clusterIPs:
+    - 172.30.208.33
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: mulesoft-bulk-prd
+      deployment: mulesoft-bulk-prd
     sessionAffinity: None
     type: ClusterIP
   status:

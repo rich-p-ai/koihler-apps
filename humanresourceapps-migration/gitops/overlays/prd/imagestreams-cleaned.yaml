@@ -3,90 +3,19 @@ items:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
     metadata:
-      annotations:
-        openshift.io/image.dockerRepositoryCheck: "2022-06-30T17:33:47Z"
-      generation: 2
-      name: couchdb-kohler
+      generation: 4
+      name: dv15seei-batch
       namespace: humanresourceapps
     spec:
       lookupPolicy:
         local: false
       tags:
-        - annotations:
-            openshift.io/imported-from: kohlercitregistry.azurecr.io/couchdb:3.2.2
-          from:
-            kind: DockerImage
-            name: kohlercitregistry.azurecr.io/couchdb:3.2.2
-          generation: 2
-          importPolicy:
-            importMode: Legacy
-          name: 3.2.2
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      annotations:
-        openshift.io/image.dockerRepositoryCheck: "2024-04-18T00:28:30Z"
-      generation: 144
-      labels:
-        app: dv15seei-batch
-      name: dv15seei-batch
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: true
-      tags:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: dv15seei-batch@sha256:ebf321a241c29435ec87045f83f5591bd7d4c277907d1fde191065a857fd5fac
+            name: dv15seei-batch@sha256:2f5443b6790b2eb027e657e0539d520e3734e4543f91232ed8a1f3517fe86143
             namespace: programmingdevops
-          generation: 123
-          importPolicy:
-            importMode: Legacy
-          name: 2024.04.25
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: dv15seei-batch@sha256:bc7586acdded545e3c80a15f43152149b198f8eb41cd01d27d566d909c865c03
-            namespace: programmingdevops
-          generation: 126
-          importPolicy:
-            importMode: Legacy
-          name: 2024.05.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: dv15seei-batch@sha256:483254ffeeb277d2ec2820a83f57a00369381574279ace3541fc3816ec0a34fe
-            namespace: programmingdevops
-          generation: 130
-          importPolicy:
-            importMode: Legacy
-          name: 2024.05.20
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: dv15seei-batch@sha256:ce6f92c761c289f63f296a5593a69282e7f9e3affdae98d86a44a78860af4c52
-            namespace: programmingdevops
-          generation: 138
-          importPolicy:
-            importMode: Legacy
-          name: 2024.06.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: dv15seei-batch@sha256:d66f7bd0ad3c7efb2737201d6ac2b22cb81c16343979a2d75bd8f5629ab69435
-            namespace: programmingdevops
-          generation: 143
+          generation: 3
           importPolicy:
             importMode: Legacy
           name: 2025.04.30
@@ -95,20 +24,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: dv15seei-batch@sha256:18d731cd5c885eb6b6a1302fe750727d9875e75411ed6696773e8e7d58d30112
-            namespace: programmingdevops
-          generation: 141
-          importPolicy:
-            importMode: Legacy
-          name: dev
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: dv15seei-batch@sha256:d66f7bd0ad3c7efb2737201d6ac2b22cb81c16343979a2d75bd8f5629ab69435
+            name: dv15seei-batch@sha256:2f5443b6790b2eb027e657e0539d520e3734e4543f91232ed8a1f3517fe86143
             namespace: humanresourceapps
-          generation: 144
+          generation: 4
           importPolicy:
             importMode: Legacy
           name: latest
@@ -117,9 +35,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: dv15seei-batch@sha256:d66f7bd0ad3c7efb2737201d6ac2b22cb81c16343979a2d75bd8f5629ab69435
+            name: dv15seei-batch@sha256:2f5443b6790b2eb027e657e0539d520e3734e4543f91232ed8a1f3517fe86143
             namespace: programmingdevops
-          generation: 142
+          generation: 2
           importPolicy:
             importMode: Legacy
           name: test
@@ -129,8 +47,8 @@ items:
     kind: ImageStream
     metadata:
       annotations:
-        openshift.io/image.dockerRepositoryCheck: "2025-07-14T13:15:56Z"
-      generation: 178
+        openshift.io/image.dockerRepositoryCheck: "2025-07-16T19:34:20Z"
+      generation: 14
       labels:
         app: hr01hrqp-batch
       name: hr01hrqp-batch
@@ -143,7 +61,7 @@ items:
           from:
             kind: DockerImage
             name: kohlercitregistry.azurecr.io/hr01hrqp-batch:latest
-          generation: 178
+          generation: 14
           importPolicy:
             importMode: Legacy
             scheduled: true
@@ -154,7 +72,7 @@ items:
           from:
             kind: DockerImage
             name: kohlercitregistry.azurecr.io/hr01hrqp-batch:test
-          generation: 178
+          generation: 14
           importPolicy:
             importMode: Legacy
             scheduled: true
@@ -165,8 +83,66 @@ items:
     kind: ImageStream
     metadata:
       annotations:
-        openshift.io/image.dockerRepositoryCheck: "2025-07-17T20:38:24Z"
-      generation: 206
+        openshift.io/image.dockerRepositoryCheck: "2025-07-07T06:43:14Z"
+      generation: 2
+      labels:
+        app: hr06esst-jco-prd
+        app.kubernetes.io/component: hr06esst-jco-prd
+        app.kubernetes.io/instance: hr06esst-jco-prd
+        app.kubernetes.io/name: hr06esst-jco-prd
+      name: hr06esst-jco-prd
+      namespace: humanresourceapps
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/hr06esst_jco:latest
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/hr06esst_jco:latest
+          generation: 2
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2025-07-07T06:16:18Z"
+      generation: 2
+      labels:
+        app: hr06esst-jco-qa
+        app.kubernetes.io/component: hr06esst-jco-qa
+        app.kubernetes.io/instance: hr06esst-jco-qa
+        app.kubernetes.io/name: hr06esst-jco-qa
+      name: hr06esst-jco-qa
+      namespace: humanresourceapps
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/hr06esst_jco:latest
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/hr06esst_jco:latest
+          generation: 2
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2025-07-14T13:49:20Z"
+      generation: 16
       labels:
         app: hr06esst_jco
       name: hr06esst_jco
@@ -181,7 +157,7 @@ items:
           from:
             kind: DockerImage
             name: kohlercitregistry.azurecr.io/hr06esst_jco:latest
-          generation: 206
+          generation: 16
           importPolicy:
             importMode: Legacy
             scheduled: true
@@ -194,7 +170,7 @@ items:
           from:
             kind: DockerImage
             name: kohlercitregistry.azurecr.io/hr06esst_jco:test
-          generation: 206
+          generation: 16
           importPolicy:
             importMode: Legacy
             scheduled: true
@@ -204,28 +180,7 @@ items:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
     metadata:
-      annotations:
-        app.openshift.io/vcs-ref: ""
-        app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
-        openshift.io/generated-by: OpenShiftWebConsole
-      generation: 1
-      labels:
-        app: httpd-temp
-        app.kubernetes.io/component: httpd-temp
-        app.kubernetes.io/instance: httpd-temp
-        app.kubernetes.io/name: httpd
-        app.kubernetes.io/part-of: httpd-temp
-        app.openshift.io/runtime: httpd
-        app.openshift.io/runtime-version: 2.4-el7
-      name: httpd-temp
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 66
+      generation: 2
       name: mulesoft-bulk-dev
       namespace: humanresourceapps
     spec:
@@ -235,9 +190,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:655c9f342ea1a60a2ed1df1156d5472c88991fc6bd7f4f9f0e17390d9cdf3a48
+            name: mulesoft-bulk@sha256:1cd36fdf70b6e6c475ebc0c956863ee2fc4fc4e2272bfe9a64d3277dab32bcba
             namespace: programmingdevops
-          generation: 66
+          generation: 2
           importPolicy:
             importMode: Legacy
           name: latest
@@ -246,7 +201,7 @@ items:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
     metadata:
-      generation: 55
+      generation: 3
       name: mulesoft-bulk-prd
       namespace: humanresourceapps
     spec:
@@ -256,229 +211,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:826e34e96416fbd8291904e4d2865a9de8daf6eaeb78b0b5f5cf3d4326b1392b
+            name: mulesoft-bulk-qa@sha256:262c66ef48b6c4a83024788f6ee688be135a7d1edc84ed769c2724a63edd1d24
             namespace: humanresourceapps
-          generation: 5
-          importPolicy:
-            importMode: Legacy
-          name: 2022.10.27
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:b9bea6396a4e152fee76e386cc4756bcff883df31d14b27b736c674161ee11dd
-            namespace: humanresourceapps
-          generation: 7
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:c9af6b4126484184cd0bf452c89677b2e80fb36e63c7f193d3865da026f98a90
-            namespace: humanresourceapps
-          generation: 11
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.09
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:785efb2a3a247693729c7254a367d7353a7f38eebaf9a76634565a1238d523bf
-            namespace: humanresourceapps
-          generation: 15
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:e750f10c41108d84c57b376a59f9898255b49b39f51d06cc977c7c5412e7fde1
-            namespace: humanresourceapps
-          generation: 17
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:e4f2d80c541439ee45b7330e7afe3181b83e72ce688fa548c24db25a72fcaabb
-            namespace: humanresourceapps
-          generation: 19
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:5e1099eb5f64511de69756b0aea2cac7a32e47a14f1e69594ee9fc115e8c5acb
-            namespace: humanresourceapps
-          generation: 21
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.17
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:7f7646b80ae049c14c2d7ed3499ea35056f5372afe59532e9763ed0b42a04176
-            namespace: humanresourceapps
-          generation: 23
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:84b76a93e1203fa7c90dae90695ce7fd0c84b13dc582c28591ee9431f8e453a6
-            namespace: humanresourceapps
-          generation: 25
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:a520c1462c108eb40098a6258600f6cb4f0f420332f8a8e33ec596162e72c52b
-            namespace: humanresourceapps
-          generation: 27
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.09
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:09a5d2aeba0271078b60f563566ff1a717cdddb1f148bc41d2c3cedb2e5e6812
-            namespace: humanresourceapps
-          generation: 33
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.11
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:fe0dffb6bcca136b0c885f89815ad27c312b4789c7d5fbe8d6fdee1480725b79
-            namespace: humanresourceapps
-          generation: 35
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.23
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:7e89f08f6a7e10eb677100871d8b164531dc8e029a8f2c0b4837a23424aa2f68
-            namespace: humanresourceapps
-          generation: 39
-          importPolicy:
-            importMode: Legacy
-          name: 2023.09.26
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:9fb7d88a42418abfc5bca4c5782e5dc809810df891da569a2a239ebf383ece3b
-            namespace: humanresourceapps
-          generation: 41
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:d00262a1d02a419b9f994beb9013c32342dd74f580583b16b33d8c4a8379252a
-            namespace: humanresourceapps
-          generation: 43
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.11
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:e78bd42797c5c87f0acc167b6104fa7092ca15179449e7e626bc963f7922803a
-            namespace: humanresourceapps
-          generation: 45
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.12
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:570725ddbd72dac6d08bdb25a0e43ac9b4299dd233edc0a0b3d3676bfd9ed440
-            namespace: humanresourceapps
-          generation: 47
-          importPolicy:
-            importMode: Legacy
-          name: 2023.11.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:63c3a9dea73afbdfd37f67094575730726a50b460583061f43d3a07ae7c670a3
-            namespace: humanresourceapps
-          generation: 49
-          importPolicy:
-            importMode: Legacy
-          name: 2023.11.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:8d94ebb121f6135126a1e180c0d9b23ca78290120b21dcbf23888f41e972a0e0
-            namespace: humanresourceapps
-          generation: 51
-          importPolicy:
-            importMode: Legacy
-          name: 2024.02.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:2121bd1831d4f58fa596609db8d4d4671cee7fd8efffaa1a846ac2243468415f
-            namespace: humanresourceapps
-          generation: 53
-          importPolicy:
-            importMode: Legacy
-          name: 2024.04.12
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
-            namespace: humanresourceapps
-          generation: 55
+          generation: 3
           importPolicy:
             importMode: Legacy
           name: 2024.04.16
@@ -487,9 +222,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: mulesoft-bulk-qa@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
+            name: mulesoft-bulk-qa@sha256:262c66ef48b6c4a83024788f6ee688be135a7d1edc84ed769c2724a63edd1d24
             namespace: humanresourceapps
-          generation: 54
+          generation: 2
           importPolicy:
             importMode: Legacy
           name: latest
@@ -498,7 +233,7 @@ items:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
     metadata:
-      generation: 101
+      generation: 3
       name: mulesoft-bulk-qa
       namespace: humanresourceapps
     spec:
@@ -508,273 +243,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:826e34e96416fbd8291904e4d2865a9de8daf6eaeb78b0b5f5cf3d4326b1392b
+            name: mulesoft-bulk@sha256:262c66ef48b6c4a83024788f6ee688be135a7d1edc84ed769c2724a63edd1d24
             namespace: programmingdevops
-          generation: 17
-          importPolicy:
-            importMode: Legacy
-          name: 2022.10.27
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:3156e9897fded38d2b6b59616310928ab30aa0b931961b68e54be79bf7abeb51
-            namespace: programmingdevops
-          generation: 51
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.04
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:b9bea6396a4e152fee76e386cc4756bcff883df31d14b27b736c674161ee11dd
-            namespace: programmingdevops
-          generation: 27
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:ddf52c7a0c6725d8cae0d2aa9124b7974689fcea66257c0911006eca8a281aca
-            namespace: programmingdevops
-          generation: 53
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.09
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:f20dafdffdad9c8451475a5050a429a612acb4c84882c4379e6e363385725208
-            namespace: programmingdevops
-          generation: 33
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:785efb2a3a247693729c7254a367d7353a7f38eebaf9a76634565a1238d523bf
-            namespace: programmingdevops
-          generation: 39
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:c99c77387768a4a4bb13ab471d8b0e679bc5e08f7ce3c470cfd522d38fa0a4e2
-            namespace: programmingdevops
-          generation: 47
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:563c8dfeb9245629230cc9b9ee33f73340d8fa0bf8e7cf9c5cc2a43e82792ce5
-            namespace: programmingdevops
-          generation: 49
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:5e1099eb5f64511de69756b0aea2cac7a32e47a14f1e69594ee9fc115e8c5acb
-            namespace: programmingdevops
-          generation: 45
-          importPolicy:
-            importMode: Legacy
-          name: 2023.03.17
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:7f7646b80ae049c14c2d7ed3499ea35056f5372afe59532e9763ed0b42a04176
-            namespace: programmingdevops
-          generation: 55
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.07
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:84b76a93e1203fa7c90dae90695ce7fd0c84b13dc582c28591ee9431f8e453a6
-            namespace: programmingdevops
-          generation: 57
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.08
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:a520c1462c108eb40098a6258600f6cb4f0f420332f8a8e33ec596162e72c52b
-            namespace: programmingdevops
-          generation: 59
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.09
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:09a5d2aeba0271078b60f563566ff1a717cdddb1f148bc41d2c3cedb2e5e6812
-            namespace: programmingdevops
-          generation: 65
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.11
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:fe0dffb6bcca136b0c885f89815ad27c312b4789c7d5fbe8d6fdee1480725b79
-            namespace: programmingdevops
-          generation: 67
-          importPolicy:
-            importMode: Legacy
-          name: 2023.08.23
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:7e89f08f6a7e10eb677100871d8b164531dc8e029a8f2c0b4837a23424aa2f68
-            namespace: programmingdevops
-          generation: 71
-          importPolicy:
-            importMode: Legacy
-          name: 2023.09.26
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:9fb7d88a42418abfc5bca4c5782e5dc809810df891da569a2a239ebf383ece3b
-            namespace: programmingdevops
-          generation: 73
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:d00262a1d02a419b9f994beb9013c32342dd74f580583b16b33d8c4a8379252a
-            namespace: programmingdevops
-          generation: 75
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.11
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:e78bd42797c5c87f0acc167b6104fa7092ca15179449e7e626bc963f7922803a
-            namespace: programmingdevops
-          generation: 79
-          importPolicy:
-            importMode: Legacy
-          name: 2023.10.12
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:570725ddbd72dac6d08bdb25a0e43ac9b4299dd233edc0a0b3d3676bfd9ed440
-            namespace: programmingdevops
-          generation: 81
-          importPolicy:
-            importMode: Legacy
-          name: 2023.11.06
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:63c3a9dea73afbdfd37f67094575730726a50b460583061f43d3a07ae7c670a3
-            namespace: programmingdevops
-          generation: 85
-          importPolicy:
-            importMode: Legacy
-          name: 2023.11.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:8d94ebb121f6135126a1e180c0d9b23ca78290120b21dcbf23888f41e972a0e0
-            namespace: programmingdevops
-          generation: 89
-          importPolicy:
-            importMode: Legacy
-          name: 2024.02.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:47272298bb57cb4d52719f2cd8dbca74a8373b0ae776c7f304f3614e0d4b43aa
-            namespace: programmingdevops
-          generation: 91
-          importPolicy:
-            importMode: Legacy
-          name: 2024.02.14
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:17f2b2c703ecfeeca7c609348dfe0db532fda7ecd06d414d12a9c5203d1659a9
-            namespace: programmingdevops
-          generation: 93
-          importPolicy:
-            importMode: Legacy
-          name: 2024.04.02
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:2121bd1831d4f58fa596609db8d4d4671cee7fd8efffaa1a846ac2243468415f
-            namespace: programmingdevops
-          generation: 97
-          importPolicy:
-            importMode: Legacy
-          name: 2024.04.12
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
-            namespace: programmingdevops
-          generation: 101
+          generation: 3
           importPolicy:
             importMode: Legacy
           name: 2024.04.16
@@ -783,30 +254,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: mulesoft-bulk@sha256:1a6f8b0b4b7661dd69a5476efeb5531c97f472cb52bf53b3e98b5b8338b6ef0f
+            name: mulesoft-bulk@sha256:262c66ef48b6c4a83024788f6ee688be135a7d1edc84ed769c2724a63edd1d24
             namespace: programmingdevops
-          generation: 100
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 10
-      name: mykohler-ess-sap-inbound-dev
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound@sha256:7bbccb0e8d1b5c3ace8ba0831403bd6fbd48056fcb7c240aab85373fc62f6732
-            namespace: programmingdevops
-          generation: 10
+          generation: 2
           importPolicy:
             importMode: Legacy
           name: latest
@@ -816,328 +266,18 @@ items:
     kind: ImageStream
     metadata:
       generation: 7
-      name: mykohler-ess-sap-inbound-prd
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound-qa@sha256:512d19bb1572787f68e1d5917dece6c4e50fe69b5b2f1a803b65002bd91b6959
-            namespace: humanresourceapps
-          generation: 3
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.28
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound-qa@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
-            namespace: humanresourceapps
-          generation: 7
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.01
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound-qa@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
-            namespace: humanresourceapps
-          generation: 6
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 7
-      name: mykohler-ess-sap-inbound-qa
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound@sha256:512d19bb1572787f68e1d5917dece6c4e50fe69b5b2f1a803b65002bd91b6959
-            namespace: programmingdevops
-          generation: 3
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.28
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
-            namespace: programmingdevops
-          generation: 7
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.01
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-inbound@sha256:6385a54eb85dc63b4264e31d102dc13db37d3a96c3944dcfd7709dc29a8b25b1
-            namespace: programmingdevops
-          generation: 6
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 18
-      name: mykohler-ess-sap-outbound-dev
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:db07c51b9d5e68340ed17388301459e780bf305e6107e2cc954d5b53a0967471
-            namespace: programmingdevops
-          generation: 18
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 9
-      name: mykohler-ess-sap-outbound-prd
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound-qa@sha256:9a6dc6ad3e9aa5a7008ee3fcedc86ce7d3e848ae2854c376c06ef8aa20319028
-            namespace: humanresourceapps
-          generation: 3
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.28
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound-qa@sha256:7daa68860a6a69091275988c6075ae3e148cc865db008cc4230f4a19af583487
-            namespace: humanresourceapps
-          generation: 5
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.01
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound-qa@sha256:e686ea977e874c8af9cc874c7e75a4a09051d3400b7d5957639ee02a4c254bee
-            namespace: humanresourceapps
-          generation: 7
-          importPolicy:
-            importMode: Legacy
-          name: 2023.02.24
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound-qa@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
-            namespace: humanresourceapps
-          generation: 9
-          importPolicy:
-            importMode: Legacy
-          name: 2023.07.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound-qa@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
-            namespace: humanresourceapps
-          generation: 8
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      generation: 17
-      name: mykohler-ess-sap-outbound-qa
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: false
-      tags:
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:9a6dc6ad3e9aa5a7008ee3fcedc86ce7d3e848ae2854c376c06ef8aa20319028
-            namespace: programmingdevops
-          generation: 3
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.28
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:7daa68860a6a69091275988c6075ae3e148cc865db008cc4230f4a19af583487
-            namespace: programmingdevops
-          generation: 5
-          importPolicy:
-            importMode: Legacy
-          name: 2022.12.01
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:e686ea977e874c8af9cc874c7e75a4a09051d3400b7d5957639ee02a4c254bee
-            namespace: programmingdevops
-          generation: 9
-          importPolicy:
-            importMode: Legacy
-          name: 2023.02.24
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:7c236b645b3b46e254196c9ff72403999d7667a7b2e8094d24fe1e5ada2c6924
-            namespace: programmingdevops
-          generation: 11
-          importPolicy:
-            importMode: Legacy
-          name: 2023.07.10
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:76d4984f6e8d20f4b708f93c5316b75eb91359adc706dc8406bacae5d022be2a
-            namespace: programmingdevops
-          generation: 15
-          importPolicy:
-            importMode: Legacy
-          name: 2023.07.12
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
-            namespace: programmingdevops
-          generation: 17
-          importPolicy:
-            importMode: Legacy
-          name: 2023.07.13
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: mykohler-ess-sap-outbound@sha256:db7655e40dc1873c11e29eb92ff9ffe705047c50d3a0a827418efd6e27f8c518
-            namespace: programmingdevops
-          generation: 16
-          importPolicy:
-            importMode: Legacy
-          name: latest
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      annotations:
-        openshift.io/image.dockerRepositoryCheck: "2025-07-14T13:19:39Z"
-      generation: 155
-      labels:
-        app: user-services-api
-      name: user-services-api
-      namespace: humanresourceapps
-    spec:
-      lookupPolicy:
-        local: true
-      tags:
-        - annotations: null
-          from:
-            kind: DockerImage
-            name: kohlercitregistry.azurecr.io/user-services-api:latest
-          generation: 155
-          importPolicy:
-            importMode: Legacy
-            scheduled: true
-          name: latest
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: DockerImage
-            name: kohlercitregistry.azurecr.io/user-services-api:test
-          generation: 155
-          importPolicy:
-            importMode: Legacy
-            scheduled: true
-          name: test
-          referencePolicy:
-            type: Source
-  - apiVersion: image.openshift.io/v1
-    kind: ImageStream
-    metadata:
-      annotations:
-        openshift.io/image.dockerRepositoryCheck: "2022-07-14T09:21:15Z"
-      generation: 70
-      labels:
-        app: user-services-imports
       name: user-services-imports
       namespace: humanresourceapps
     spec:
       lookupPolicy:
-        local: true
+        local: false
       tags:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: user-services-imports@sha256:f360565d54fa015bf2c75181bc9d5fcade230baf677a18d72a74abac386dba0d
+            name: user-services-imports@sha256:f1748cb76b0ac4e69b2211838fb4cc6789e5a5c45c0238871e3962af61a2ef0b
             namespace: programmingdevops
-          generation: 49
-          importPolicy:
-            importMode: Legacy
-          name: 2022.11.23
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: user-services-imports@sha256:588cd2721e0927c5217e400a2db54d466df006c4d75842f8353bf3eb78b7db47
-            namespace: programmingdevops
-          generation: 69
+          generation: 6
           importPolicy:
             importMode: Legacy
           name: 2025.03.11
@@ -1146,31 +286,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: user-services-imports@sha256:2b7798a24897d79c36eae663d37b15d5e78fa0010c3d64b240b52fe35ba47099
-            namespace: programmingdevops
-          generation: 58
-          importPolicy:
-            importMode: Legacy
-          name: 2025.12.02
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: user-services-imports@sha256:630b4ab10a43ac665f3349b1539442d8324d923b2b5e3004acda2adb6261b99b
-            namespace: programmingdevops
-          generation: 67
-          importPolicy:
-            importMode: Legacy
-          name: dev
-          referencePolicy:
-            type: Source
-        - annotations: null
-          from:
-            kind: ImageStreamImage
-            name: user-services-imports@sha256:588cd2721e0927c5217e400a2db54d466df006c4d75842f8353bf3eb78b7db47
+            name: user-services-imports@sha256:f1748cb76b0ac4e69b2211838fb4cc6789e5a5c45c0238871e3962af61a2ef0b
             namespace: humanresourceapps
-          generation: 70
+          generation: 7
           importPolicy:
             importMode: Legacy
           name: latest
@@ -1179,9 +297,9 @@ items:
         - annotations: null
           from:
             kind: ImageStreamImage
-            name: user-services-imports@sha256:588cd2721e0927c5217e400a2db54d466df006c4d75842f8353bf3eb78b7db47
+            name: user-services-imports@sha256:f1748cb76b0ac4e69b2211838fb4cc6789e5a5c45c0238871e3962af61a2ef0b
             namespace: programmingdevops
-          generation: 68
+          generation: 5
           importPolicy:
             importMode: Legacy
           name: test

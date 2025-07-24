@@ -9,11 +9,8 @@ namespace: humanresourceapps
 resources:
   - ../../base
   - configmaps-cleaned.yaml
-  - cronjobs-cleaned.yaml
-  - deploymentconfigs-cleaned.yaml
   - deployments-cleaned.yaml
   - imagestreams-cleaned.yaml
-  - jobs-cleaned.yaml
   - pvcs-cleaned.yaml
   - routes-cleaned.yaml
   - secrets-cleaned.yaml

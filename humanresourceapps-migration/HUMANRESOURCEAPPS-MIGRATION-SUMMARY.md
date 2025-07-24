@@ -2,8 +2,8 @@
 
 ## Migration Details
 
-**Date**: Thu, Jul 24, 2025  3:34:03 PM
-**Source Cluster**: OCP4 (https://api.ocp4.kohlerco.com:6443)
+**Date**: Thu, Jul 24, 2025  4:26:18 PM
+**Source Cluster**: OCP4 (https://api.ocp-prd.kohlerco.com:6443)
 **Target Cluster**: OCP-PRD 
 **Namespace**: humanresourceapps -> humanresourceapps
 
@@ -13,15 +13,15 @@
 2 job-related resources exported
 
 ### Configuration:
-- ✅ **ConfigMaps**: 8 items
-- ✅ **Secrets**: 47 items
+- ✅ **ConfigMaps**: 9 items
+- ✅ **Secrets**: 39 items
 
 ### Storage:
 - ✅ **PVCs**: 43 items
 
 ### Services & Networking:
-- ✅ **Services**: 8 items
-- ✅ **Routes**: 8 items
+- ✅ **Services**: 11 items
+- ✅ **Routes**: 6 items
 
 ## 🗂️ **GITOPS STRUCTURE CREATED**
 
