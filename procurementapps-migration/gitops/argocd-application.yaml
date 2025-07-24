@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: procurementapps-prd
+  namespace: openshift-gitops
+  labels:
+    app.kubernetes.io/name: procurementapps
+    app.kubernetes.io/part-of: kohler-apps
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    targetRevision: HEAD
+    path: procurementapps-migration/gitops/overlays/prd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: procurementapps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

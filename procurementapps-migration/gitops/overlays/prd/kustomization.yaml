@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: procurementapps-prd
+
+namespace: procurementapps
+
+resources:
+  - ../../base
+  - configmaps.yaml
+  - secrets.yaml
+  - deployments.yaml
+  - services.yaml
+  - routes.yaml
+
+commonLabels:
+  environment: production
+  app.kubernetes.io/instance: procurementapps-prd
+
+images:
+  - name: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp
+    newName: quay.openshiftocp4.kohlerco.com/procurementapps/pm-procedures-webapp
+    newTag: latest

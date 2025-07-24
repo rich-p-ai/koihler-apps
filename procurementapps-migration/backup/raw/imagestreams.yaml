@@ -1,0 +1,1934 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2022-11-04T05:29:37Z"
+    creationTimestamp: "2022-03-17T19:58:18Z"
+    generation: 583
+    name: pm-procedures-webapp
+    namespace: procurementapps
+    resourceVersion: "5289447626"
+    uid: 9e8e3201-6000-4f44-a976-ced93dbc67e1
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+        namespace: programmingdevops
+      generation: 196
+      importPolicy:
+        importMode: Legacy
+      name: 2022.11.26
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:9aefbac0072b448bcfaebdad310c8e6056e4e62a0601f6a30d5bb3c6fcc2104b
+        namespace: programmingdevops
+      generation: 200
+      importPolicy:
+        importMode: Legacy
+      name: 2023.12.06
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:8a209f6791b1d861c78e348f2b4179c4113813be310f202e949d1e6a43fdd05b
+        namespace: programmingdevops
+      generation: 202
+      importPolicy:
+        importMode: Legacy
+      name: 2024.04.23
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:b5643c97c896148246153a7b8b7be70f798ea913f7d079b567ad439ab8897472
+        namespace: programmingdevops
+      generation: 205
+      importPolicy:
+        importMode: Legacy
+      name: 2024.05.08
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:f29d833cab692ffeca11f3676d4036d14e206a297ca1a8dc995ed7a4e414ea53
+        namespace: programmingdevops
+      generation: 208
+      importPolicy:
+        importMode: Legacy
+      name: 2024.05.28
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:c5cb2867712bac4aa362c873c5efa24e584088d2302b37c2366997e4d19fe583
+        namespace: programmingdevops
+      generation: 211
+      importPolicy:
+        importMode: Legacy
+      name: 2024.05.30
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:9ddb54450e941304a6d7ec22b356c6dfbcdba68817242f338f1613e4eef1a19f
+        namespace: programmingdevops
+      generation: 214
+      importPolicy:
+        importMode: Legacy
+      name: 2024.06.07
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:f2c42ba5f0586b79130a0968ecf854e5a86295ef083958971f7a4d408f18ac6d
+        namespace: programmingdevops
+      generation: 217
+      importPolicy:
+        importMode: Legacy
+      name: 2024.06.10
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:b4c6d95a7f146c500a081933280f3a1a99daea401011bd0928dde8e5eca5486e
+        namespace: programmingdevops
+      generation: 220
+      importPolicy:
+        importMode: Legacy
+      name: 2024.06.14
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:a2ad698adc128ebdabbb798d7047812f69bd5e40b1747e54abd1346b8b800ec7
+        namespace: programmingdevops
+      generation: 223
+      importPolicy:
+        importMode: Legacy
+      name: 2024.08.19
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:c5364c8e7bc326db9a839088f8e88460db5b01d452d870059262efba401a12b2
+        namespace: programmingdevops
+      generation: 226
+      importPolicy:
+        importMode: Legacy
+      name: 2024.09.11
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:00aa690be8c068e90d46367f42bec4080087ddd1392f992a259beae28166d986
+        namespace: programmingdevops
+      generation: 229
+      importPolicy:
+        importMode: Legacy
+      name: 2024.11.05
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:047bb0c54beb79c66c5ebb5c008bc5b7765ea0dc02ebed7e3fcbb52c765b2a22
+        namespace: programmingdevops
+      generation: 232
+      importPolicy:
+        importMode: Legacy
+      name: 2024.11.14
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:7dc37fba8909e6a32353b51f0dc2d2397920778e83060dddbaf6d2df896770ed
+        namespace: programmingdevops
+      generation: 235
+      importPolicy:
+        importMode: Legacy
+      name: 2024.12.12
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:b433c0554799bb93c8035e7dccb8a3b14c302baceed87d33d1c2fc51b80a01ba
+        namespace: programmingdevops
+      generation: 238
+      importPolicy:
+        importMode: Legacy
+      name: 2024.12.13
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:391ddcfa57941e0a7a15ccaa3c5b53d5efc7d0da8b7d3d892cbdafefe729f68d
+        namespace: programmingdevops
+      generation: 244
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.25
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:ddf1cf2260fac5f1ec558a59e401ed07b5f145f76018f8a7ecddcaeeb6173e41
+        namespace: programmingdevops
+      generation: 247
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.26
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:1a4a785f0ac7d5c2113271c8f3772871cc910f484f1ace6dcdd6f7a9c03267d5
+        namespace: programmingdevops
+      generation: 250
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.27
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:8a5f5a1b57c1d674296e182bcc332f22ef5f58a5a9373df639e3af3747c4280e
+        namespace: programmingdevops
+      generation: 253
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.28
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:cefe7625d8197342cbd0344981a093df69a4f9bc7e2ec34123867019b678a756
+        namespace: programmingdevops
+      generation: 256
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.29
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:9b4bb9542eb4977910b8519769c609f5e45c4fe96aee6926346194f9748522c1
+        namespace: programmingdevops
+      generation: 259
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.30
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:03cde0ccf46285bbe3cd6eab9e8bcb144b29e93f031fd783ca14d2afb91082ea
+        namespace: programmingdevops
+      generation: 263
+      importPolicy:
+        importMode: Legacy
+      name: 2025.03.31
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+        namespace: programmingdevops
+      generation: 583
+      importPolicy:
+        importMode: Legacy
+      name: 2025.04.01
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:e536e4435a22a297eb5bff1612e712df3cb2345c71ced0299e0abf374afbdfac
+        namespace: programmingdevops
+      generation: 581
+      importPolicy:
+        importMode: Legacy
+      name: dev
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+        namespace: procurementapps
+      generation: 197
+      importPolicy:
+        importMode: Legacy
+      name: latest
+      referencePolicy:
+        type: Source
+    - annotations: null
+      from:
+        kind: ImageStreamImage
+        name: pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+        namespace: programmingdevops
+      generation: 582
+      importPolicy:
+        importMode: Legacy
+      name: test
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp
+    tags:
+    - items:
+      - created: "2022-11-26T20:32:27Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+        generation: 196
+        image: sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+      tag: 2022.11.26
+    - items:
+      - created: "2023-12-06T14:50:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9aefbac0072b448bcfaebdad310c8e6056e4e62a0601f6a30d5bb3c6fcc2104b
+        generation: 200
+        image: sha256:9aefbac0072b448bcfaebdad310c8e6056e4e62a0601f6a30d5bb3c6fcc2104b
+      tag: 2023.12.06
+    - items:
+      - created: "2024-04-23T10:01:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a209f6791b1d861c78e348f2b4179c4113813be310f202e949d1e6a43fdd05b
+        generation: 202
+        image: sha256:8a209f6791b1d861c78e348f2b4179c4113813be310f202e949d1e6a43fdd05b
+      tag: 2024.04.23
+    - items:
+      - created: "2024-05-08T11:18:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b5643c97c896148246153a7b8b7be70f798ea913f7d079b567ad439ab8897472
+        generation: 205
+        image: sha256:b5643c97c896148246153a7b8b7be70f798ea913f7d079b567ad439ab8897472
+      tag: 2024.05.08
+    - items:
+      - created: "2024-05-28T14:23:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f29d833cab692ffeca11f3676d4036d14e206a297ca1a8dc995ed7a4e414ea53
+        generation: 208
+        image: sha256:f29d833cab692ffeca11f3676d4036d14e206a297ca1a8dc995ed7a4e414ea53
+      tag: 2024.05.28
+    - items:
+      - created: "2024-05-30T07:21:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c5cb2867712bac4aa362c873c5efa24e584088d2302b37c2366997e4d19fe583
+        generation: 211
+        image: sha256:c5cb2867712bac4aa362c873c5efa24e584088d2302b37c2366997e4d19fe583
+      tag: 2024.05.30
+    - items:
+      - created: "2024-06-07T11:36:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9ddb54450e941304a6d7ec22b356c6dfbcdba68817242f338f1613e4eef1a19f
+        generation: 214
+        image: sha256:9ddb54450e941304a6d7ec22b356c6dfbcdba68817242f338f1613e4eef1a19f
+      tag: 2024.06.07
+    - items:
+      - created: "2024-06-10T13:36:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f2c42ba5f0586b79130a0968ecf854e5a86295ef083958971f7a4d408f18ac6d
+        generation: 217
+        image: sha256:f2c42ba5f0586b79130a0968ecf854e5a86295ef083958971f7a4d408f18ac6d
+      tag: 2024.06.10
+    - items:
+      - created: "2024-06-14T10:34:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b4c6d95a7f146c500a081933280f3a1a99daea401011bd0928dde8e5eca5486e
+        generation: 220
+        image: sha256:b4c6d95a7f146c500a081933280f3a1a99daea401011bd0928dde8e5eca5486e
+      tag: 2024.06.14
+    - items:
+      - created: "2024-08-19T07:26:24Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a2ad698adc128ebdabbb798d7047812f69bd5e40b1747e54abd1346b8b800ec7
+        generation: 223
+        image: sha256:a2ad698adc128ebdabbb798d7047812f69bd5e40b1747e54abd1346b8b800ec7
+      tag: 2024.08.19
+    - items:
+      - created: "2024-09-11T11:46:47Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c5364c8e7bc326db9a839088f8e88460db5b01d452d870059262efba401a12b2
+        generation: 226
+        image: sha256:c5364c8e7bc326db9a839088f8e88460db5b01d452d870059262efba401a12b2
+      tag: 2024.09.11
+    - items:
+      - created: "2024-11-05T11:28:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:00aa690be8c068e90d46367f42bec4080087ddd1392f992a259beae28166d986
+        generation: 229
+        image: sha256:00aa690be8c068e90d46367f42bec4080087ddd1392f992a259beae28166d986
+      tag: 2024.11.05
+    - items:
+      - created: "2024-11-14T08:58:19Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:047bb0c54beb79c66c5ebb5c008bc5b7765ea0dc02ebed7e3fcbb52c765b2a22
+        generation: 232
+        image: sha256:047bb0c54beb79c66c5ebb5c008bc5b7765ea0dc02ebed7e3fcbb52c765b2a22
+      tag: 2024.11.14
+    - items:
+      - created: "2024-12-12T12:47:54Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7dc37fba8909e6a32353b51f0dc2d2397920778e83060dddbaf6d2df896770ed
+        generation: 235
+        image: sha256:7dc37fba8909e6a32353b51f0dc2d2397920778e83060dddbaf6d2df896770ed
+      tag: 2024.12.12
+    - items:
+      - created: "2024-12-13T12:47:51Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b433c0554799bb93c8035e7dccb8a3b14c302baceed87d33d1c2fc51b80a01ba
+        generation: 238
+        image: sha256:b433c0554799bb93c8035e7dccb8a3b14c302baceed87d33d1c2fc51b80a01ba
+      tag: 2024.12.13
+    - items:
+      - created: "2025-03-25T06:10:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:391ddcfa57941e0a7a15ccaa3c5b53d5efc7d0da8b7d3d892cbdafefe729f68d
+        generation: 244
+        image: sha256:391ddcfa57941e0a7a15ccaa3c5b53d5efc7d0da8b7d3d892cbdafefe729f68d
+      tag: 2025.03.25
+    - items:
+      - created: "2025-03-26T05:54:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ddf1cf2260fac5f1ec558a59e401ed07b5f145f76018f8a7ecddcaeeb6173e41
+        generation: 247
+        image: sha256:ddf1cf2260fac5f1ec558a59e401ed07b5f145f76018f8a7ecddcaeeb6173e41
+      tag: 2025.03.26
+    - items:
+      - created: "2025-03-26T10:09:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1a4a785f0ac7d5c2113271c8f3772871cc910f484f1ace6dcdd6f7a9c03267d5
+        generation: 250
+        image: sha256:1a4a785f0ac7d5c2113271c8f3772871cc910f484f1ace6dcdd6f7a9c03267d5
+      tag: 2025.03.27
+    - items:
+      - created: "2025-03-26T13:56:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a5f5a1b57c1d674296e182bcc332f22ef5f58a5a9373df639e3af3747c4280e
+        generation: 253
+        image: sha256:8a5f5a1b57c1d674296e182bcc332f22ef5f58a5a9373df639e3af3747c4280e
+      tag: 2025.03.28
+    - items:
+      - created: "2025-03-26T14:44:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cefe7625d8197342cbd0344981a093df69a4f9bc7e2ec34123867019b678a756
+        generation: 256
+        image: sha256:cefe7625d8197342cbd0344981a093df69a4f9bc7e2ec34123867019b678a756
+      tag: 2025.03.29
+    - items:
+      - created: "2025-03-27T07:14:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9b4bb9542eb4977910b8519769c609f5e45c4fe96aee6926346194f9748522c1
+        generation: 259
+        image: sha256:9b4bb9542eb4977910b8519769c609f5e45c4fe96aee6926346194f9748522c1
+      tag: 2025.03.30
+    - items:
+      - created: "2025-03-27T10:31:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:03cde0ccf46285bbe3cd6eab9e8bcb144b29e93f031fd783ca14d2afb91082ea
+        generation: 263
+        image: sha256:03cde0ccf46285bbe3cd6eab9e8bcb144b29e93f031fd783ca14d2afb91082ea
+      tag: 2025.03.31
+    - items:
+      - created: "2025-07-09T15:59:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+        generation: 583
+        image: sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+      - created: "2025-07-09T14:57:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f53e212e72a37c26aa32dcf6959af7265942a8727b54fc6aaa2ceac16e8f174b
+        generation: 580
+        image: sha256:f53e212e72a37c26aa32dcf6959af7265942a8727b54fc6aaa2ceac16e8f174b
+      - created: "2025-06-27T15:02:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ca44e30af9b6f92939547080544a543c955380c40a815719eb3cd0b6d1e18bcb
+        generation: 577
+        image: sha256:ca44e30af9b6f92939547080544a543c955380c40a815719eb3cd0b6d1e18bcb
+      - created: "2025-06-27T12:17:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:64844768e0935ad90779b3371d5bd3154436446b5b4940ec90ab6ce99abbabc3
+        generation: 574
+        image: sha256:64844768e0935ad90779b3371d5bd3154436446b5b4940ec90ab6ce99abbabc3
+      - created: "2025-06-27T07:32:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:69b6140bde4bdc1a4ab03d040ef8684923ff94b321fd64f7c488e9a2d6f019f9
+        generation: 571
+        image: sha256:69b6140bde4bdc1a4ab03d040ef8684923ff94b321fd64f7c488e9a2d6f019f9
+      - created: "2025-06-02T12:58:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9b2c26ce8f9267754754e759e9acf9d2f8eb5c79f86f929ccb76c764d54dd5eb
+        generation: 568
+        image: sha256:9b2c26ce8f9267754754e759e9acf9d2f8eb5c79f86f929ccb76c764d54dd5eb
+      - created: "2025-06-02T12:24:46Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:56d506b6b8198481d89d231168a4352d812181aa05337fba3b8ad2c6831f6cbc
+        generation: 565
+        image: sha256:56d506b6b8198481d89d231168a4352d812181aa05337fba3b8ad2c6831f6cbc
+      - created: "2025-05-29T11:31:45Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:449dba79b4ad2218bcc65d536d8dd032101408b569e1172f5c32f57bab7a6d9b
+        generation: 562
+        image: sha256:449dba79b4ad2218bcc65d536d8dd032101408b569e1172f5c32f57bab7a6d9b
+      - created: "2025-05-29T10:36:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9a9b0f52d36f1df8ac0d9d821164e0df7a73fc3f356d19f885d51717d1223c9a
+        generation: 559
+        image: sha256:9a9b0f52d36f1df8ac0d9d821164e0df7a73fc3f356d19f885d51717d1223c9a
+      - created: "2025-05-28T13:36:34Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:714396de0329f0e734de9a4b895ef5c2bf8f002a182f267da53714ed6ec74c41
+        generation: 556
+        image: sha256:714396de0329f0e734de9a4b895ef5c2bf8f002a182f267da53714ed6ec74c41
+      - created: "2025-05-28T07:54:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e047e694cf4897cbf7cf5e6e20774864e23d14701f5a2fdc8b4eb77389c74dcb
+        generation: 553
+        image: sha256:e047e694cf4897cbf7cf5e6e20774864e23d14701f5a2fdc8b4eb77389c74dcb
+      - created: "2025-05-22T07:24:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:762888e6bb79642dee41fba6125497bcc4de5bc09fa8aa427f9c0c483d107ca5
+        generation: 550
+        image: sha256:762888e6bb79642dee41fba6125497bcc4de5bc09fa8aa427f9c0c483d107ca5
+      - created: "2025-05-20T14:49:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cf5d9516f8beee938037d8567c0dd91fc6dba89270bc7d8d35f6aab3314cead4
+        generation: 547
+        image: sha256:cf5d9516f8beee938037d8567c0dd91fc6dba89270bc7d8d35f6aab3314cead4
+      - created: "2025-05-20T13:41:14Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:2b5408c15c12f63ea6a0112b30e5d73c776a91566e15e46cfe63210195ccc45b
+        generation: 544
+        image: sha256:2b5408c15c12f63ea6a0112b30e5d73c776a91566e15e46cfe63210195ccc45b
+      - created: "2025-05-15T12:24:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:01d31eee8cd3c055b72c244c7761e93d3d6e90d76393b856c5cf45ac4e38cf43
+        generation: 541
+        image: sha256:01d31eee8cd3c055b72c244c7761e93d3d6e90d76393b856c5cf45ac4e38cf43
+      - created: "2025-05-15T06:21:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a96629c03e7ce0da7587e5288d2edf8bb9e27d036cc5c7ee094b896726ce920c
+        generation: 538
+        image: sha256:a96629c03e7ce0da7587e5288d2edf8bb9e27d036cc5c7ee094b896726ce920c
+      - created: "2025-05-14T11:19:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:989aada755307652135093c16f2389f189b4328b806cbd2e517de0ee27ac4175
+        generation: 534
+        image: sha256:989aada755307652135093c16f2389f189b4328b806cbd2e517de0ee27ac4175
+      - created: "2025-05-14T10:36:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:086063bc0271046e88cdd472bbabf88aa9935547cfea99d02d763430d5faa396
+        generation: 531
+        image: sha256:086063bc0271046e88cdd472bbabf88aa9935547cfea99d02d763430d5faa396
+      - created: "2025-05-14T08:29:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b03a1b7471413562d7a1c5b378801f87612a92e6d92f827be4488ecfe25a95ac
+        generation: 528
+        image: sha256:b03a1b7471413562d7a1c5b378801f87612a92e6d92f827be4488ecfe25a95ac
+      - created: "2025-05-14T07:56:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6b7834d3a742115c8540ee742337ec2abd573781fe96074ab68201d11f8d0cd3
+        generation: 525
+        image: sha256:6b7834d3a742115c8540ee742337ec2abd573781fe96074ab68201d11f8d0cd3
+      - created: "2025-05-14T05:56:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:aed02d13deebe09ce744b228cf66fbba3e9d4046011b55f02caf2f288976f3fe
+        generation: 522
+        image: sha256:aed02d13deebe09ce744b228cf66fbba3e9d4046011b55f02caf2f288976f3fe
+      - created: "2025-05-13T15:33:23Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:92ddc177032b3aff206616a420da5d2e63b03b5cbb9e98a98aba3319d82fb294
+        generation: 519
+        image: sha256:92ddc177032b3aff206616a420da5d2e63b03b5cbb9e98a98aba3319d82fb294
+      - created: "2025-05-13T14:56:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6d555136325bdf91370f77b0a1619ab1c77940a9fcfaa8a6448319d56c984716
+        generation: 516
+        image: sha256:6d555136325bdf91370f77b0a1619ab1c77940a9fcfaa8a6448319d56c984716
+      - created: "2025-05-13T14:25:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8590dfc4ee64180bd6ef0965308c25ce58f28ebaf5ff688fdd92e39eb93ebf63
+        generation: 513
+        image: sha256:8590dfc4ee64180bd6ef0965308c25ce58f28ebaf5ff688fdd92e39eb93ebf63
+      - created: "2025-05-13T13:27:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a62c6faf402ccb95d72d21337572a9f97971c884c887cf56157dd5c9d78d93e4
+        generation: 510
+        image: sha256:a62c6faf402ccb95d72d21337572a9f97971c884c887cf56157dd5c9d78d93e4
+      - created: "2025-05-13T12:08:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cae8a26af1c6dcfee9a5fff5c06b19ea70fc8a7d1e0f0becca7fe8bf91db6381
+        generation: 507
+        image: sha256:cae8a26af1c6dcfee9a5fff5c06b19ea70fc8a7d1e0f0becca7fe8bf91db6381
+      - created: "2025-05-09T13:43:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4f22822c3d188727cb1aeea8f299abd6980c2901e243bc6798f097ed3f3cf8ec
+        generation: 504
+        image: sha256:4f22822c3d188727cb1aeea8f299abd6980c2901e243bc6798f097ed3f3cf8ec
+      - created: "2025-05-09T10:59:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e9ffd1a0f51a3fba35b9e934fa128cc3564e78e6e02fb7af9266ef5a6dd1c2fe
+        generation: 501
+        image: sha256:e9ffd1a0f51a3fba35b9e934fa128cc3564e78e6e02fb7af9266ef5a6dd1c2fe
+      - created: "2025-05-09T07:39:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8c0047f8531527ea54c00326dc6b27915eb94aee3a4e46adf0acc420f7a8ada8
+        generation: 498
+        image: sha256:8c0047f8531527ea54c00326dc6b27915eb94aee3a4e46adf0acc420f7a8ada8
+      - created: "2025-05-08T09:54:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3defe204dbb739eb83af07b3e62f7358a20d8030d269db828a67a8be1886de96
+        generation: 495
+        image: sha256:3defe204dbb739eb83af07b3e62f7358a20d8030d269db828a67a8be1886de96
+      - created: "2025-05-08T07:34:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1c4b9f36d16a7ae8721cdd4a92e732a0e9cfe01cc4336bf72832c2c12bbe59d4
+        generation: 492
+        image: sha256:1c4b9f36d16a7ae8721cdd4a92e732a0e9cfe01cc4336bf72832c2c12bbe59d4
+      - created: "2025-05-08T06:16:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:91a668bc2c5aff5039c3a20a64d83c85e9ae08d9de6eca869448cc0fa95a6d08
+        generation: 489
+        image: sha256:91a668bc2c5aff5039c3a20a64d83c85e9ae08d9de6eca869448cc0fa95a6d08
+      - created: "2025-05-07T17:24:34Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:77bf34d69d51486c3c3cf9b7f95ab38a3de8c8862c179588a8908cb383b7b8de
+        generation: 486
+        image: sha256:77bf34d69d51486c3c3cf9b7f95ab38a3de8c8862c179588a8908cb383b7b8de
+      - created: "2025-05-07T11:51:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:75805e89ddc8254c7e958abfe0617ca7623e9711a536ebeb01e088d8ae84acaa
+        generation: 483
+        image: sha256:75805e89ddc8254c7e958abfe0617ca7623e9711a536ebeb01e088d8ae84acaa
+      - created: "2025-05-07T08:18:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7fa33fab0de1ed4891fbe6b8953b76e829048a96667997375af701c4c323929e
+        generation: 480
+        image: sha256:7fa33fab0de1ed4891fbe6b8953b76e829048a96667997375af701c4c323929e
+      - created: "2025-05-06T18:21:20Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d5056dbd88da02e303e2310915b297df46214c316f6aa713a2cdf727ce13410f
+        generation: 477
+        image: sha256:d5056dbd88da02e303e2310915b297df46214c316f6aa713a2cdf727ce13410f
+      - created: "2025-05-06T18:00:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:170303b66b4b392dcd0ae65486abde04e2f08872fae8e13aca66783a119e2433
+        generation: 474
+        image: sha256:170303b66b4b392dcd0ae65486abde04e2f08872fae8e13aca66783a119e2433
+      - created: "2025-05-06T17:31:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:25d91ee4d8fc6be43e988fdd2ac6e507133037e4a751e968359f80bcdaac630a
+        generation: 471
+        image: sha256:25d91ee4d8fc6be43e988fdd2ac6e507133037e4a751e968359f80bcdaac630a
+      - created: "2025-05-06T11:25:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a89e030d53a49ea27a3af30718a566f6169c81769da62a9740d4dd9d46391497
+        generation: 467
+        image: sha256:a89e030d53a49ea27a3af30718a566f6169c81769da62a9740d4dd9d46391497
+      - created: "2025-05-06T10:56:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1ad5f4164aa638e294c1332376371b206d27c2892533f7b811d826289efa154c
+        generation: 464
+        image: sha256:1ad5f4164aa638e294c1332376371b206d27c2892533f7b811d826289efa154c
+      - created: "2025-05-05T13:58:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a44af3173db4fa2c14da1b4725e7931d14f16c3a0d4beb905ee14da2834374c3
+        generation: 461
+        image: sha256:a44af3173db4fa2c14da1b4725e7931d14f16c3a0d4beb905ee14da2834374c3
+      - created: "2025-05-05T13:16:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9d11a87e556c6ae7e192adedaa3f3b270d3c9af66b70a8d35e4d996f8bafba61
+        generation: 458
+        image: sha256:9d11a87e556c6ae7e192adedaa3f3b270d3c9af66b70a8d35e4d996f8bafba61
+      - created: "2025-05-05T11:01:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:81c4bb67dc6bd210ed4a36600ae2bbc3971cc10943d6e2722c077901312f967b
+        generation: 455
+        image: sha256:81c4bb67dc6bd210ed4a36600ae2bbc3971cc10943d6e2722c077901312f967b
+      - created: "2025-05-05T06:42:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9696f42b64a8062bc5c772afa0ba2f6f3c5407a837c816c49d4a9991047443c4
+        generation: 452
+        image: sha256:9696f42b64a8062bc5c772afa0ba2f6f3c5407a837c816c49d4a9991047443c4
+      - created: "2025-05-02T17:14:21Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:786bbdda6503a8b01bf84964613718d65731efc5af49885fbf64e41a6059f5ca
+        generation: 449
+        image: sha256:786bbdda6503a8b01bf84964613718d65731efc5af49885fbf64e41a6059f5ca
+      - created: "2025-05-02T15:40:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1deb4694fd3408cb53aa6273ecf3481299a0044d4e92a3864a1d8c0f603404bb
+        generation: 446
+        image: sha256:1deb4694fd3408cb53aa6273ecf3481299a0044d4e92a3864a1d8c0f603404bb
+      - created: "2025-05-02T14:19:43Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b82bcab6da34443a632a7c440bde4774f27c44cfeb4a7915f44d8a2960263bb0
+        generation: 443
+        image: sha256:b82bcab6da34443a632a7c440bde4774f27c44cfeb4a7915f44d8a2960263bb0
+      - created: "2025-05-02T10:38:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:148dd481f2c86ba54ae7e5ad4ec1ab4f6bba2335c4d145e3164c02bf159d014a
+        generation: 440
+        image: sha256:148dd481f2c86ba54ae7e5ad4ec1ab4f6bba2335c4d145e3164c02bf159d014a
+      - created: "2025-05-02T08:23:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cfb74c11bf85384b9aadc64c6e9b5a17d3f5d1e563aa1b944ec1a89a4295e503
+        generation: 437
+        image: sha256:cfb74c11bf85384b9aadc64c6e9b5a17d3f5d1e563aa1b944ec1a89a4295e503
+      - created: "2025-05-02T07:48:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:55e49ac3524eb8249499442c7c1f95d213edc8c584daa30920063117199367a3
+        generation: 434
+        image: sha256:55e49ac3524eb8249499442c7c1f95d213edc8c584daa30920063117199367a3
+      - created: "2025-05-02T06:40:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3c43a79515b8468b05d7974bf656722c8712f001df7c11d84a5ab36591aaead4
+        generation: 431
+        image: sha256:3c43a79515b8468b05d7974bf656722c8712f001df7c11d84a5ab36591aaead4
+      - created: "2025-04-30T14:02:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ce258be3bf888fedaab3a8f6f671903943c6c0596507f8eb7b7ec05ae9ca710a
+        generation: 427
+        image: sha256:ce258be3bf888fedaab3a8f6f671903943c6c0596507f8eb7b7ec05ae9ca710a
+      - created: "2025-04-30T13:23:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:524f985278f0fdcd7ca5d7385e5dc936929503d395fec95c9511aeeead448952
+        generation: 424
+        image: sha256:524f985278f0fdcd7ca5d7385e5dc936929503d395fec95c9511aeeead448952
+      - created: "2025-04-30T10:38:51Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7c6ef90e91631c2f902ce51d6aa41954ebe5c9bb61f57aaa77b138859990c9e7
+        generation: 421
+        image: sha256:7c6ef90e91631c2f902ce51d6aa41954ebe5c9bb61f57aaa77b138859990c9e7
+      - created: "2025-04-30T10:01:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9353b17c557839ab26074c2314808b58414779c4597b60e9904f670172235dc0
+        generation: 418
+        image: sha256:9353b17c557839ab26074c2314808b58414779c4597b60e9904f670172235dc0
+      - created: "2025-04-29T14:02:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:de7c26719c42859ab86cfe3a6a30d4bc1c4c618bb060f567c59b7bbf84a42436
+        generation: 414
+        image: sha256:de7c26719c42859ab86cfe3a6a30d4bc1c4c618bb060f567c59b7bbf84a42436
+      - created: "2025-04-29T10:46:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:25af46f2513c2116af3e7341c16f320353daf3aec9aba39729f7307216dd182a
+        generation: 411
+        image: sha256:25af46f2513c2116af3e7341c16f320353daf3aec9aba39729f7307216dd182a
+      - created: "2025-04-29T08:14:11Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0bef6e81030d7ce7b8568a24a1af2c2fa2d05d3cb0364cada610196226556c73
+        generation: 408
+        image: sha256:0bef6e81030d7ce7b8568a24a1af2c2fa2d05d3cb0364cada610196226556c73
+      - created: "2025-04-29T07:45:50Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ae0a6716e6e2895038c3959137901d0c2dac0ef9ba5224ad6a33ebb92738b473
+        generation: 405
+        image: sha256:ae0a6716e6e2895038c3959137901d0c2dac0ef9ba5224ad6a33ebb92738b473
+      - created: "2025-04-28T14:49:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ef7c94eaf8961b40b61ee2572a6f316a83593f79b4cf3698cacb94b8308070d7
+        generation: 402
+        image: sha256:ef7c94eaf8961b40b61ee2572a6f316a83593f79b4cf3698cacb94b8308070d7
+      - created: "2025-04-28T13:42:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:69a4ed4dacd613c0c94114c33f8947d824f312b5d5b948a51615397922d89ee1
+        generation: 399
+        image: sha256:69a4ed4dacd613c0c94114c33f8947d824f312b5d5b948a51615397922d89ee1
+      - created: "2025-04-28T11:34:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3f31568fe7bdaa2cba667311c7283d553349640bdc076b4c546eef829feec025
+        generation: 395
+        image: sha256:3f31568fe7bdaa2cba667311c7283d553349640bdc076b4c546eef829feec025
+      - created: "2025-04-28T07:13:01Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:78943bddbe484526992fe5d1fbc681eed31b65763fb2ce722d2399a725d91998
+        generation: 392
+        image: sha256:78943bddbe484526992fe5d1fbc681eed31b65763fb2ce722d2399a725d91998
+      - created: "2025-04-24T09:51:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:11615a56d86c9d257444fc2275d7a329c8877e99e75dcf414654fab8e96d0aed
+        generation: 389
+        image: sha256:11615a56d86c9d257444fc2275d7a329c8877e99e75dcf414654fab8e96d0aed
+      - created: "2025-04-24T08:07:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5b3df565ff187f3d1fcdea8344741c9acb16615f130446d2b1550598562d2f5c
+        generation: 386
+        image: sha256:5b3df565ff187f3d1fcdea8344741c9acb16615f130446d2b1550598562d2f5c
+      - created: "2025-04-16T11:51:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d1716f28bc92333a7b98d11b040ada20d888e8a4cdd5b85f4e2f069478d970a4
+        generation: 383
+        image: sha256:d1716f28bc92333a7b98d11b040ada20d888e8a4cdd5b85f4e2f069478d970a4
+      - created: "2025-04-16T08:34:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dbe89539702b9a1814ca9b24bf6aa055dbd020d6b5f3517bc45fe5b3493609c5
+        generation: 380
+        image: sha256:dbe89539702b9a1814ca9b24bf6aa055dbd020d6b5f3517bc45fe5b3493609c5
+      - created: "2025-04-16T07:51:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:de029a0e3d2f68e6f2fc7bc9a060c11e559a70bbd3590dd09e9d32e309beb2ea
+        generation: 377
+        image: sha256:de029a0e3d2f68e6f2fc7bc9a060c11e559a70bbd3590dd09e9d32e309beb2ea
+      - created: "2025-04-15T14:53:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:945fc3c2b52e585772e09fdbdbf9c7f9b8af2b331e42ae859973c153ce4ed81a
+        generation: 374
+        image: sha256:945fc3c2b52e585772e09fdbdbf9c7f9b8af2b331e42ae859973c153ce4ed81a
+      - created: "2025-04-15T13:39:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e31c537be13252e37858060a200dc7849a69d38fc61bad8eaa209d9f5e631194
+        generation: 371
+        image: sha256:e31c537be13252e37858060a200dc7849a69d38fc61bad8eaa209d9f5e631194
+      - created: "2025-04-15T13:19:24Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:35d2e8ce9837acd9612ed949b911dadda9af0ed6b5fc3a4090cb537f9d0f57f5
+        generation: 368
+        image: sha256:35d2e8ce9837acd9612ed949b911dadda9af0ed6b5fc3a4090cb537f9d0f57f5
+      - created: "2025-04-14T07:09:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:548e3885c6c8f8c76258599e0f2f513eef96bd978d6e0ec4645ae87b28aa8aaa
+        generation: 365
+        image: sha256:548e3885c6c8f8c76258599e0f2f513eef96bd978d6e0ec4645ae87b28aa8aaa
+      - created: "2025-04-14T05:48:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bdb178211f8de3555390b00d79fc33201c3460a93f54320ff244416ce6bfa9a3
+        generation: 362
+        image: sha256:bdb178211f8de3555390b00d79fc33201c3460a93f54320ff244416ce6bfa9a3
+      - created: "2025-04-11T18:03:25Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ea76573bc2ebc4fc53d329e90188bf48fea8f2577be6afdbff00054de8d1b4bb
+        generation: 359
+        image: sha256:ea76573bc2ebc4fc53d329e90188bf48fea8f2577be6afdbff00054de8d1b4bb
+      - created: "2025-04-11T17:38:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:446a8eef5183991187c9a20a2c6a93dc6b7ed03441c9091d4e8cc4ab36321427
+        generation: 356
+        image: sha256:446a8eef5183991187c9a20a2c6a93dc6b7ed03441c9091d4e8cc4ab36321427
+      - created: "2025-04-11T12:20:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:82146538f02489ea0f1e897176c28b3fc08f40c62005be1d23d6f3d6eaa5927a
+        generation: 353
+        image: sha256:82146538f02489ea0f1e897176c28b3fc08f40c62005be1d23d6f3d6eaa5927a
+      - created: "2025-04-11T05:53:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6604543fe11f76b2846228f2bdbce2334307cf07d18d80d253f21f52d5f9cc74
+        generation: 350
+        image: sha256:6604543fe11f76b2846228f2bdbce2334307cf07d18d80d253f21f52d5f9cc74
+      - created: "2025-04-10T14:23:51Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4222a43760653bd182e6c8632a2defc70e36e910d0014b7b3212a64e186d7cdd
+        generation: 347
+        image: sha256:4222a43760653bd182e6c8632a2defc70e36e910d0014b7b3212a64e186d7cdd
+      - created: "2025-04-10T12:54:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:10913927d222aa3e5c4ee7bfb3eb28d1af416dc8da067641422c4e1fe1c7df8c
+        generation: 344
+        image: sha256:10913927d222aa3e5c4ee7bfb3eb28d1af416dc8da067641422c4e1fe1c7df8c
+      - created: "2025-04-10T11:22:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:370669007c0bd100c9ffda5fcadd61cf39cf1d686adfce3baf387646722245fc
+        generation: 341
+        image: sha256:370669007c0bd100c9ffda5fcadd61cf39cf1d686adfce3baf387646722245fc
+      - created: "2025-04-10T09:30:00Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3953e25fad17633b2d259d482df3d5f45d8385b63d8f2ae652fcb2039fd8ca3c
+        generation: 338
+        image: sha256:3953e25fad17633b2d259d482df3d5f45d8385b63d8f2ae652fcb2039fd8ca3c
+      - created: "2025-04-10T07:59:43Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dd1b779e6b2e19ed3b20653138a76ea03f901d3a16c02ccec05a868c8021e673
+        generation: 335
+        image: sha256:dd1b779e6b2e19ed3b20653138a76ea03f901d3a16c02ccec05a868c8021e673
+      - created: "2025-04-09T15:43:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4734ed2c834e130cd239c4e6e12d6e0a56ee4796383b679970036d0ed0ac4bdd
+        generation: 332
+        image: sha256:4734ed2c834e130cd239c4e6e12d6e0a56ee4796383b679970036d0ed0ac4bdd
+      - created: "2025-04-09T15:15:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cbf61e04d8b5479109d3a3bd989f8dc293dc9da53fccc1bf969e8f1a57760c84
+        generation: 329
+        image: sha256:cbf61e04d8b5479109d3a3bd989f8dc293dc9da53fccc1bf969e8f1a57760c84
+      - created: "2025-04-09T13:39:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:37818d5df28b3fab13825ca937e3a372288ad17411f925c72ac5a4385efa5392
+        generation: 326
+        image: sha256:37818d5df28b3fab13825ca937e3a372288ad17411f925c72ac5a4385efa5392
+      - created: "2025-04-09T11:45:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:076b4d085639bf0500914cc923e4c5c863228743537ff1892915c8531f381c97
+        generation: 323
+        image: sha256:076b4d085639bf0500914cc923e4c5c863228743537ff1892915c8531f381c97
+      - created: "2025-04-09T11:15:30Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:80511e266eaf9dafa1ee5476596fe46c035026a2870825608d99196e9c33be57
+        generation: 320
+        image: sha256:80511e266eaf9dafa1ee5476596fe46c035026a2870825608d99196e9c33be57
+      - created: "2025-04-09T07:44:34Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6c5497db7f60135dbe9cf71aa69c7d4aaf2f476a9dfdbd4a8f58a908474600e8
+        generation: 317
+        image: sha256:6c5497db7f60135dbe9cf71aa69c7d4aaf2f476a9dfdbd4a8f58a908474600e8
+      - created: "2025-04-08T15:32:09Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:15c005e0a895f24716b41ecea83ef9bd06927712e237cc2bb77a3c11ae9bc29c
+        generation: 314
+        image: sha256:15c005e0a895f24716b41ecea83ef9bd06927712e237cc2bb77a3c11ae9bc29c
+      - created: "2025-04-08T14:38:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:91515d05664adf7251c9cf30394ecf7b8c042706668fac6087dab8bdc70f1797
+        generation: 311
+        image: sha256:91515d05664adf7251c9cf30394ecf7b8c042706668fac6087dab8bdc70f1797
+      - created: "2025-04-08T14:02:07Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9451d85b510e33a2f50ae7ef761959e9b31650ad8553397081f837c6e8dfda8a
+        generation: 308
+        image: sha256:9451d85b510e33a2f50ae7ef761959e9b31650ad8553397081f837c6e8dfda8a
+      - created: "2025-04-08T11:03:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e484961312eb381b079cf6a4c00d19d61f7685d16c78cffd059eae4808d2787a
+        generation: 305
+        image: sha256:e484961312eb381b079cf6a4c00d19d61f7685d16c78cffd059eae4808d2787a
+      - created: "2025-04-08T09:28:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:31b4e26e1a6f97afa00c05391eb5af7d824160aad0eba7a3b824bd460fe593f4
+        generation: 302
+        image: sha256:31b4e26e1a6f97afa00c05391eb5af7d824160aad0eba7a3b824bd460fe593f4
+      - created: "2025-04-08T06:17:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0ac8ff4431a4b1037c225712cd6f5bc5e27f0c32c90c1118513e563c56d14a04
+        generation: 299
+        image: sha256:0ac8ff4431a4b1037c225712cd6f5bc5e27f0c32c90c1118513e563c56d14a04
+      - created: "2025-04-08T05:45:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:72c7ef1d38ac4a63a481bc92242130f6bd4779343af6c685ec34265d5c1531d2
+        generation: 296
+        image: sha256:72c7ef1d38ac4a63a481bc92242130f6bd4779343af6c685ec34265d5c1531d2
+      - created: "2025-04-04T10:28:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:49099f330b4b2ba21c8e4ed000d2f65a8603d27956a9058d795654fc1dbf7920
+        generation: 293
+        image: sha256:49099f330b4b2ba21c8e4ed000d2f65a8603d27956a9058d795654fc1dbf7920
+      - created: "2025-04-04T09:19:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c85ef3cd6078de81e1aad3505578cf716b83dd600be96167ef8d4056b283ca59
+        generation: 290
+        image: sha256:c85ef3cd6078de81e1aad3505578cf716b83dd600be96167ef8d4056b283ca59
+      - created: "2025-04-04T07:24:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:35114dec8f8ce40036652092b4ed6394168ea040d5bd14c731bf0b6fa849448b
+        generation: 287
+        image: sha256:35114dec8f8ce40036652092b4ed6394168ea040d5bd14c731bf0b6fa849448b
+      - created: "2025-04-03T06:58:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:206c19ee4ec51327c8c5f30ea59230a8ca8ae47a33bcfeeaa6745d448353113c
+        generation: 284
+        image: sha256:206c19ee4ec51327c8c5f30ea59230a8ca8ae47a33bcfeeaa6745d448353113c
+      - created: "2025-03-28T11:24:15Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:402a8f9145b9340fb8d6cc12887a5f4dc0d4817a28ba2b190d6c16c78841f40d
+        generation: 281
+        image: sha256:402a8f9145b9340fb8d6cc12887a5f4dc0d4817a28ba2b190d6c16c78841f40d
+      - created: "2025-03-28T09:55:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:883781f1104111fec7baca78f7b615f1327b2e3fd7245b92149a25066b09b4a5
+        generation: 278
+        image: sha256:883781f1104111fec7baca78f7b615f1327b2e3fd7245b92149a25066b09b4a5
+      - created: "2025-03-28T07:23:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:67815cfbf56d0538059dcdf298623015836f58d80b9062fbf42ed072b454d952
+        generation: 275
+        image: sha256:67815cfbf56d0538059dcdf298623015836f58d80b9062fbf42ed072b454d952
+      - created: "2025-03-27T16:23:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:818607a71a8838eec8e9ade1f447f3ae1996c9b3de4a2fa9a6e7f13f520715f7
+        generation: 272
+        image: sha256:818607a71a8838eec8e9ade1f447f3ae1996c9b3de4a2fa9a6e7f13f520715f7
+      - created: "2025-03-27T15:15:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c63d2711a7ca179c867a9c3eb0b1d3d4b4052065b81b530429a1732efcc2e456
+        generation: 269
+        image: sha256:c63d2711a7ca179c867a9c3eb0b1d3d4b4052065b81b530429a1732efcc2e456
+      - created: "2025-03-27T14:10:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cca5d1312b569d1e331feea31704b20a5041d5fff03382e931124759a742a466
+        generation: 266
+        image: sha256:cca5d1312b569d1e331feea31704b20a5041d5fff03382e931124759a742a466
+      tag: 2025.04.01
+    - items:
+      - created: "2025-07-09T15:15:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e536e4435a22a297eb5bff1612e712df3cb2345c71ced0299e0abf374afbdfac
+        generation: 581
+        image: sha256:e536e4435a22a297eb5bff1612e712df3cb2345c71ced0299e0abf374afbdfac
+      - created: "2025-07-09T10:53:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8367d4009a65541f0788947fe1b171692afe78180eb267c9dc9af09d26e8f6c5
+        generation: 578
+        image: sha256:8367d4009a65541f0788947fe1b171692afe78180eb267c9dc9af09d26e8f6c5
+      - created: "2025-06-27T14:47:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c697f1e21604ee2398e4b90ac071653d53dcb70bdc17271f44804a0cc64f9e8e
+        generation: 575
+        image: sha256:c697f1e21604ee2398e4b90ac071653d53dcb70bdc17271f44804a0cc64f9e8e
+      - created: "2025-06-27T11:12:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3b14214b32344eebcce7124737fbd8cf6fefe38e82496049f5af126195ee215c
+        generation: 572
+        image: sha256:3b14214b32344eebcce7124737fbd8cf6fefe38e82496049f5af126195ee215c
+      - created: "2025-06-27T06:34:45Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d464021b79622db33b67f80b83f360109f58b3ef257a6994b1c70552a9868d56
+        generation: 569
+        image: sha256:d464021b79622db33b67f80b83f360109f58b3ef257a6994b1c70552a9868d56
+      - created: "2025-06-02T12:47:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0a5300eeac7efd3fd63615134c9a7a8c19ccb80ba4d1253b6d2c7c5440e38781
+        generation: 566
+        image: sha256:0a5300eeac7efd3fd63615134c9a7a8c19ccb80ba4d1253b6d2c7c5440e38781
+      - created: "2025-06-02T11:33:07Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:02848cf5a35006e67a25ad19db681824a468ff4f516155200308fcb71725b8f8
+        generation: 563
+        image: sha256:02848cf5a35006e67a25ad19db681824a468ff4f516155200308fcb71725b8f8
+      - created: "2025-05-29T11:13:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5caa8dd63fda751d7c3b4428d3dbf6619b4200c98e68a5f707147dda2b5d0347
+        generation: 560
+        image: sha256:5caa8dd63fda751d7c3b4428d3dbf6619b4200c98e68a5f707147dda2b5d0347
+      - created: "2025-05-29T10:21:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:603418b324b7378de5093238ec3bbff62d216ef6a10c514116baa163f86056a6
+        generation: 557
+        image: sha256:603418b324b7378de5093238ec3bbff62d216ef6a10c514116baa163f86056a6
+      - created: "2025-05-28T13:21:00Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:280079b7f4cacf6039c2b1424addeab2fb9098a2a76ba9ad9081597d8d3ec98b
+        generation: 554
+        image: sha256:280079b7f4cacf6039c2b1424addeab2fb9098a2a76ba9ad9081597d8d3ec98b
+      - created: "2025-05-27T13:31:47Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:da0cd102dcf9b7bcf33603734b9958c344ac8bf12629d82045206bc6f591b93b
+        generation: 551
+        image: sha256:da0cd102dcf9b7bcf33603734b9958c344ac8bf12629d82045206bc6f591b93b
+      - created: "2025-05-22T07:14:47Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f28ea87b54fe8df02163f7a49d6ab79e61f7429c33b475606c070ed07247a6d6
+        generation: 548
+        image: sha256:f28ea87b54fe8df02163f7a49d6ab79e61f7429c33b475606c070ed07247a6d6
+      - created: "2025-05-20T14:32:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a835d3dea83dd8bf5a5efca3ea6392754f75b19dd3f6d6dbdaccc98f9085e6ab
+        generation: 545
+        image: sha256:a835d3dea83dd8bf5a5efca3ea6392754f75b19dd3f6d6dbdaccc98f9085e6ab
+      - created: "2025-05-20T13:11:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:33b4bb3df48064a0e4995a978678a48e0e942cc99d8a2399e2a3724f76510136
+        generation: 542
+        image: sha256:33b4bb3df48064a0e4995a978678a48e0e942cc99d8a2399e2a3724f76510136
+      - created: "2025-05-15T12:13:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0c99a3b82b29a42b969d9f0276134a2984d460478db2e337a826c9d7a121f6fa
+        generation: 539
+        image: sha256:0c99a3b82b29a42b969d9f0276134a2984d460478db2e337a826c9d7a121f6fa
+      - created: "2025-05-15T06:12:47Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7374e544d38f7335c12d72ef7e14afac53aa02cebf0ce7bd46749f186616e87f
+        generation: 536
+        image: sha256:7374e544d38f7335c12d72ef7e14afac53aa02cebf0ce7bd46749f186616e87f
+      - created: "2025-05-15T06:03:15Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:87c79636bafb7c0e727d9d85fd0f6ff980815f463db0698a0a58e2ae6cdb23e0
+        generation: 535
+        image: sha256:87c79636bafb7c0e727d9d85fd0f6ff980815f463db0698a0a58e2ae6cdb23e0
+      - created: "2025-05-14T11:10:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:225a39d553cfc5cc89b8716c24e6101712614c440fce37708bbec4f608017013
+        generation: 532
+        image: sha256:225a39d553cfc5cc89b8716c24e6101712614c440fce37708bbec4f608017013
+      - created: "2025-05-14T10:10:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c252e43fecaef3a8c5ca0e08a3c40c94eecf557e79043c2dc0d38d2d2ffb2041
+        generation: 529
+        image: sha256:c252e43fecaef3a8c5ca0e08a3c40c94eecf557e79043c2dc0d38d2d2ffb2041
+      - created: "2025-05-14T08:19:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b13d19c7abc149441958d8f265212c2224ec434e9e371f3187a2d652e3fbc9ce
+        generation: 526
+        image: sha256:b13d19c7abc149441958d8f265212c2224ec434e9e371f3187a2d652e3fbc9ce
+      - created: "2025-05-14T07:45:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:34345e8d36a3cc6eef43c351ce72f9e5b993ab9397dab119bef57de9f7ae5ad8
+        generation: 523
+        image: sha256:34345e8d36a3cc6eef43c351ce72f9e5b993ab9397dab119bef57de9f7ae5ad8
+      - created: "2025-05-14T05:44:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:eecde9661b12d3db4046ffc62431544ca65bea3a00d683a8b790add7e8059d5a
+        generation: 520
+        image: sha256:eecde9661b12d3db4046ffc62431544ca65bea3a00d683a8b790add7e8059d5a
+      - created: "2025-05-13T15:23:43Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:219b86a9639391f03a2574afce6506ccba9b8dc2b9ae60ba6f163043d00905e1
+        generation: 517
+        image: sha256:219b86a9639391f03a2574afce6506ccba9b8dc2b9ae60ba6f163043d00905e1
+      - created: "2025-05-13T14:45:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:da6e59572e1751e8dfb730f99ba8f69c2c2c783099b824bc16a0cd7c442211a4
+        generation: 514
+        image: sha256:da6e59572e1751e8dfb730f99ba8f69c2c2c783099b824bc16a0cd7c442211a4
+      - created: "2025-05-13T13:43:47Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a2ea09131c54ab81539025dd77f86f06b8429614866fef68699b3f494ee822a9
+        generation: 511
+        image: sha256:a2ea09131c54ab81539025dd77f86f06b8429614866fef68699b3f494ee822a9
+      - created: "2025-05-13T13:01:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:2fb468b979931a7a53735931393fe4dfbad3ae3f70b423e7c7723a64a30ff3ce
+        generation: 508
+        image: sha256:2fb468b979931a7a53735931393fe4dfbad3ae3f70b423e7c7723a64a30ff3ce
+      - created: "2025-05-13T11:55:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1e539145506144f7496c06050389f9475933dbf215ab331b87aacc4e72adee13
+        generation: 505
+        image: sha256:1e539145506144f7496c06050389f9475933dbf215ab331b87aacc4e72adee13
+      - created: "2025-05-09T13:35:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e8e8cc35e091428bd8dfe1bbcab1acf6143468e437b65148a4263b0ae027893c
+        generation: 502
+        image: sha256:e8e8cc35e091428bd8dfe1bbcab1acf6143468e437b65148a4263b0ae027893c
+      - created: "2025-05-09T10:44:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ca97c1442a7f9758e16ec9b451d0630782fd41869574dad98df2a627516353e8
+        generation: 499
+        image: sha256:ca97c1442a7f9758e16ec9b451d0630782fd41869574dad98df2a627516353e8
+      - created: "2025-05-09T07:25:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:004c47e113e203eb7ea90a243dad4a784ed8766ec9e71dffdd2a4b228df5728e
+        generation: 496
+        image: sha256:004c47e113e203eb7ea90a243dad4a784ed8766ec9e71dffdd2a4b228df5728e
+      - created: "2025-05-08T09:42:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f1b85d7222e8dd659a915b4153b44ed43f72d8ab3c5eea7ebbba0ddb7e71c86b
+        generation: 493
+        image: sha256:f1b85d7222e8dd659a915b4153b44ed43f72d8ab3c5eea7ebbba0ddb7e71c86b
+      - created: "2025-05-08T07:19:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:df037bbab7c896c5a963bb5401a4592697f84df86573d42f2a6de6115ae5d9dd
+        generation: 490
+        image: sha256:df037bbab7c896c5a963bb5401a4592697f84df86573d42f2a6de6115ae5d9dd
+      - created: "2025-05-08T06:04:45Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d368526300cb7830f73eef59f253fde6a7fc49d34fd14c59ed2d8b359e7a24fd
+        generation: 487
+        image: sha256:d368526300cb7830f73eef59f253fde6a7fc49d34fd14c59ed2d8b359e7a24fd
+      - created: "2025-05-07T17:10:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:2878eec5396e65a1699ab9b3a4117315d05474ff6d598ea92009867a3a9f6560
+        generation: 484
+        image: sha256:2878eec5396e65a1699ab9b3a4117315d05474ff6d598ea92009867a3a9f6560
+      - created: "2025-05-07T11:40:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:955abebaf0b80e38f6ee7fd566348ab7c7459fa0c719a3bf8bf1772d1f8ee7ae
+        generation: 481
+        image: sha256:955abebaf0b80e38f6ee7fd566348ab7c7459fa0c719a3bf8bf1772d1f8ee7ae
+      - created: "2025-05-07T08:03:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c7d44694f66de268e79b9708202dfe9c2f2435de8a0f4dee9879cd5fca35be1b
+        generation: 478
+        image: sha256:c7d44694f66de268e79b9708202dfe9c2f2435de8a0f4dee9879cd5fca35be1b
+      - created: "2025-05-06T18:12:41Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:aa70bae19123fd83eaba14ed6365b27b19757dd8a4228d38c79cc51285a5492b
+        generation: 475
+        image: sha256:aa70bae19123fd83eaba14ed6365b27b19757dd8a4228d38c79cc51285a5492b
+      - created: "2025-05-06T17:52:01Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b14d387176e5b3511382a3dfe530cfa94ce017b68ac96530d305ce271823d90c
+        generation: 472
+        image: sha256:b14d387176e5b3511382a3dfe530cfa94ce017b68ac96530d305ce271823d90c
+      - created: "2025-05-06T17:18:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ff4b7e6880f12b768ea6523b2fd88affac5ef7ae1dd0759c3e37516eaa4c791e
+        generation: 469
+        image: sha256:ff4b7e6880f12b768ea6523b2fd88affac5ef7ae1dd0759c3e37516eaa4c791e
+      - created: "2025-05-06T16:47:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9b2da88cd08f9f9877178a2d6e38953a620e6451bb7ea2ce54632320d5b30862
+        generation: 468
+        image: sha256:9b2da88cd08f9f9877178a2d6e38953a620e6451bb7ea2ce54632320d5b30862
+      - created: "2025-05-06T11:08:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b51e054fe52e6a5b7ae8c6b80d6567c750e145a20083dd3b230272cf498a13b1
+        generation: 465
+        image: sha256:b51e054fe52e6a5b7ae8c6b80d6567c750e145a20083dd3b230272cf498a13b1
+      - created: "2025-05-06T10:46:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:26956f6b9c74e8065d9855ae9ced2d0f9b2116c9f94523845f62a7fe52313de8
+        generation: 462
+        image: sha256:26956f6b9c74e8065d9855ae9ced2d0f9b2116c9f94523845f62a7fe52313de8
+      - created: "2025-05-05T13:43:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4d6e4c129b97f2a1fd7ea8c907ad643aed433a430053b47934f028e2c806fb84
+        generation: 459
+        image: sha256:4d6e4c129b97f2a1fd7ea8c907ad643aed433a430053b47934f028e2c806fb84
+      - created: "2025-05-05T12:38:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1f9e94cd197c960461bcd2ed541f0db55f7d4012916aaae43a83051d9a5bf717
+        generation: 456
+        image: sha256:1f9e94cd197c960461bcd2ed541f0db55f7d4012916aaae43a83051d9a5bf717
+      - created: "2025-05-05T09:41:11Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:54fa3113de437009c79b62881da1a4d05072e9505f91179278db02ddb547c5a6
+        generation: 453
+        image: sha256:54fa3113de437009c79b62881da1a4d05072e9505f91179278db02ddb547c5a6
+      - created: "2025-05-05T06:20:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:fd345a8a1cf4325d9c32982cdeaa4352a252e19ca897fed9db961274af69b120
+        generation: 450
+        image: sha256:fd345a8a1cf4325d9c32982cdeaa4352a252e19ca897fed9db961274af69b120
+      - created: "2025-05-02T17:06:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:449bff8d2334bc35be851b3ddfd849f81445f6f9e6316acb8954c380b7de7fe9
+        generation: 447
+        image: sha256:449bff8d2334bc35be851b3ddfd849f81445f6f9e6316acb8954c380b7de7fe9
+      - created: "2025-05-02T15:29:01Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1e47ae9dd71e6999eae2ecf1f295cd724e89f0c5498c8e4f35133702323f97dc
+        generation: 444
+        image: sha256:1e47ae9dd71e6999eae2ecf1f295cd724e89f0c5498c8e4f35133702323f97dc
+      - created: "2025-05-02T13:54:41Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:55434186ddff5426307c57fc9e891243c66db8932b09e2f53f4dbd96ee4602f6
+        generation: 441
+        image: sha256:55434186ddff5426307c57fc9e891243c66db8932b09e2f53f4dbd96ee4602f6
+      - created: "2025-05-02T10:20:10Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a2be6c751c994aa4d30400dea91d660812bee07ed10db0eb0809b19e3157baed
+        generation: 438
+        image: sha256:a2be6c751c994aa4d30400dea91d660812bee07ed10db0eb0809b19e3157baed
+      - created: "2025-05-02T08:08:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f7545be4b2f348bd99aff34607bf2632e38e19b3a75947e4ffb8b38a69ede025
+        generation: 435
+        image: sha256:f7545be4b2f348bd99aff34607bf2632e38e19b3a75947e4ffb8b38a69ede025
+      - created: "2025-05-02T07:40:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:524292e00d6daa58a7b554cd8cad93da349a07ce622b8153d703970908abb02a
+        generation: 432
+        image: sha256:524292e00d6daa58a7b554cd8cad93da349a07ce622b8153d703970908abb02a
+      - created: "2025-05-02T06:31:20Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ade101367dd11e86682b46f9922aed54429f778555941ed5403335fbbdeeec9c
+        generation: 429
+        image: sha256:ade101367dd11e86682b46f9922aed54429f778555941ed5403335fbbdeeec9c
+      - created: "2025-04-30T16:22:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ecbe4ba43e70ed8df383891ed6c4ccda8bc0065ec498d53c63688f184ae8df6b
+        generation: 428
+        image: sha256:ecbe4ba43e70ed8df383891ed6c4ccda8bc0065ec498d53c63688f184ae8df6b
+      - created: "2025-04-30T13:54:27Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e0573569d43328f4a1597553fc13ee89a9f1d1439bed24fc05336783ae0815a2
+        generation: 425
+        image: sha256:e0573569d43328f4a1597553fc13ee89a9f1d1439bed24fc05336783ae0815a2
+      - created: "2025-04-30T13:12:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3a8cff4d6ce881bdf0ce05ba78ea6cd003454ee627175dc43688379d415d3b34
+        generation: 422
+        image: sha256:3a8cff4d6ce881bdf0ce05ba78ea6cd003454ee627175dc43688379d415d3b34
+      - created: "2025-04-30T10:28:10Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a50bb0cace8e1557f11e13f25640b44510cd8c1a27bb583a7c247170810b8ff
+        generation: 419
+        image: sha256:8a50bb0cace8e1557f11e13f25640b44510cd8c1a27bb583a7c247170810b8ff
+      - created: "2025-04-30T09:50:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:63dc7cfff0b9c163d4a7d9f021cc7259e885233819edaf4a5ca90d7f16dcee08
+        generation: 416
+        image: sha256:63dc7cfff0b9c163d4a7d9f021cc7259e885233819edaf4a5ca90d7f16dcee08
+      - created: "2025-04-29T14:54:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:824ef33667bee7af9e40ee8f7056edf9cb8e325e6dfcc1025380f1ba647e1d8a
+        generation: 415
+        image: sha256:824ef33667bee7af9e40ee8f7056edf9cb8e325e6dfcc1025380f1ba647e1d8a
+      - created: "2025-04-29T13:43:03Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0e47188397d54aa4897638d5d24bb71bf7c4e314ca2c869876959fc71d4fb6a9
+        generation: 412
+        image: sha256:0e47188397d54aa4897638d5d24bb71bf7c4e314ca2c869876959fc71d4fb6a9
+      - created: "2025-04-29T10:32:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8dc9916263aae7690a519792d0d0075f27be7cc417adc7bdb8eaaf2aa8e55f0e
+        generation: 409
+        image: sha256:8dc9916263aae7690a519792d0d0075f27be7cc417adc7bdb8eaaf2aa8e55f0e
+      - created: "2025-04-29T08:05:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:135ff6ed343e94472706c77d6be84586cce9d95269fd6c7e49a65f554420c38d
+        generation: 406
+        image: sha256:135ff6ed343e94472706c77d6be84586cce9d95269fd6c7e49a65f554420c38d
+      - created: "2025-04-29T07:36:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:031a02160b7018730afdf73bdd582b467e7069edeb98824616bd35fabe487dea
+        generation: 403
+        image: sha256:031a02160b7018730afdf73bdd582b467e7069edeb98824616bd35fabe487dea
+      - created: "2025-04-28T14:33:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a71fd7cbfd23076d76ddc7e8b942e247d5bd312995a38f9ef10043226651080b
+        generation: 400
+        image: sha256:a71fd7cbfd23076d76ddc7e8b942e247d5bd312995a38f9ef10043226651080b
+      - created: "2025-04-28T13:27:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:fd3721b1a44d2a05a05d746e922bd9ee13ea8439b6115530710a99d0c979de9c
+        generation: 397
+        image: sha256:fd3721b1a44d2a05a05d746e922bd9ee13ea8439b6115530710a99d0c979de9c
+      - created: "2025-04-28T11:57:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:170fbae8f7c5ce598bd1f8b248c3915c2237d5a7070e5d064b14f0afa8fb7d37
+        generation: 396
+        image: sha256:170fbae8f7c5ce598bd1f8b248c3915c2237d5a7070e5d064b14f0afa8fb7d37
+      - created: "2025-04-28T08:46:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d014400a20e221de8d9c12256081564bc407cc3577268e44b4aa760111a6d70d
+        generation: 393
+        image: sha256:d014400a20e221de8d9c12256081564bc407cc3577268e44b4aa760111a6d70d
+      - created: "2025-04-28T06:55:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4370c3b9a49d537b9a199675271b9026c508a3486c37ae40b63e206c63c79029
+        generation: 390
+        image: sha256:4370c3b9a49d537b9a199675271b9026c508a3486c37ae40b63e206c63c79029
+      - created: "2025-04-24T09:41:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bdc1e89e988b172903f5839f382e780276c40292c4cb975c1fc1d5553ae65006
+        generation: 387
+        image: sha256:bdc1e89e988b172903f5839f382e780276c40292c4cb975c1fc1d5553ae65006
+      - created: "2025-04-24T07:30:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5929c4a5d121bbafa7a7ab606bf67d78abb3c7f78dfe3ad1c281268422ee6d9b
+        generation: 384
+        image: sha256:5929c4a5d121bbafa7a7ab606bf67d78abb3c7f78dfe3ad1c281268422ee6d9b
+      - created: "2025-04-16T11:33:23Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b5a933a34f83eaa271714041a75a4ecc9cd02c1332ed01b006ee1b8cefa8eb80
+        generation: 381
+        image: sha256:b5a933a34f83eaa271714041a75a4ecc9cd02c1332ed01b006ee1b8cefa8eb80
+      - created: "2025-04-16T08:26:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ff634c9c0da6e047eeae68786bc72ae2415b4ae7ab0984614cd3f366a9a24c79
+        generation: 378
+        image: sha256:ff634c9c0da6e047eeae68786bc72ae2415b4ae7ab0984614cd3f366a9a24c79
+      - created: "2025-04-16T07:42:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0f167543cbbfb232d00735c3407f0af8d99a738c3c0aa4ea205cb973b1d918c7
+        generation: 375
+        image: sha256:0f167543cbbfb232d00735c3407f0af8d99a738c3c0aa4ea205cb973b1d918c7
+      - created: "2025-04-15T14:43:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e28ac0393be32dee40214660c962eb9f192e0dfef42f390abf8439962a684410
+        generation: 372
+        image: sha256:e28ac0393be32dee40214660c962eb9f192e0dfef42f390abf8439962a684410
+      - created: "2025-04-15T13:32:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e1a0793a5e99630ef27244d1aa1720741c2a1628fd52b48a75ca54a9b35c56f5
+        generation: 369
+        image: sha256:e1a0793a5e99630ef27244d1aa1720741c2a1628fd52b48a75ca54a9b35c56f5
+      - created: "2025-04-15T13:09:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9ce5fea899556fbcd0fa22bf890fa2baccd22a513e3327ef9423872befc53df7
+        generation: 366
+        image: sha256:9ce5fea899556fbcd0fa22bf890fa2baccd22a513e3327ef9423872befc53df7
+      - created: "2025-04-14T06:28:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bb80f67fa64412b37973eb282bfd5b7a153e667479a8b37ee710c841fb5b8647
+        generation: 363
+        image: sha256:bb80f67fa64412b37973eb282bfd5b7a153e667479a8b37ee710c841fb5b8647
+      - created: "2025-04-14T05:22:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a0dfdea145b047577bbd1b010b3d8059acdfc11c9b6332bee6baf83d2b0c2bf
+        generation: 360
+        image: sha256:8a0dfdea145b047577bbd1b010b3d8059acdfc11c9b6332bee6baf83d2b0c2bf
+      - created: "2025-04-11T17:52:20Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6ff9e0cdbea006b1660b7625f41a96263f662770b339292ce6deff398e4c54f2
+        generation: 357
+        image: sha256:6ff9e0cdbea006b1660b7625f41a96263f662770b339292ce6deff398e4c54f2
+      - created: "2025-04-11T17:22:54Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dfd97b4000e8092bac3626e814af03e402313865da1be626c22ad0b7f582cf5d
+        generation: 354
+        image: sha256:dfd97b4000e8092bac3626e814af03e402313865da1be626c22ad0b7f582cf5d
+      - created: "2025-04-11T10:56:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f7fb9c8148c5f2162fb764067abeb8962b312191709e28b74a566651048ad176
+        generation: 351
+        image: sha256:f7fb9c8148c5f2162fb764067abeb8962b312191709e28b74a566651048ad176
+      - created: "2025-04-11T05:45:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:87ca5d33cd04eb3fc4a18385787e6135a1c2ae66b725c58d5988d37524f5923e
+        generation: 348
+        image: sha256:87ca5d33cd04eb3fc4a18385787e6135a1c2ae66b725c58d5988d37524f5923e
+      - created: "2025-04-10T13:51:24Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:81694d27d73ff767beef65b831de4b04557162714f4321c5e645b953fdd2b047
+        generation: 345
+        image: sha256:81694d27d73ff767beef65b831de4b04557162714f4321c5e645b953fdd2b047
+      - created: "2025-04-10T12:39:10Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dbb4f56e2f595120783f532592b919b2260eb20933682728b93a24bfec180a24
+        generation: 342
+        image: sha256:dbb4f56e2f595120783f532592b919b2260eb20933682728b93a24bfec180a24
+      - created: "2025-04-10T11:00:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4f9d6aabe5c8f834e62361fc7751f00395af98670d6255b148d0d163ef6ad898
+        generation: 339
+        image: sha256:4f9d6aabe5c8f834e62361fc7751f00395af98670d6255b148d0d163ef6ad898
+      - created: "2025-04-10T08:13:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e318b8433faf94b76459014bbfd757684336441d430645266466d89f6ca1b142
+        generation: 336
+        image: sha256:e318b8433faf94b76459014bbfd757684336441d430645266466d89f6ca1b142
+      - created: "2025-04-10T07:40:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7981513ccad22d1619cc535d7e199be7a4255d3dee315ffd79525177cf728cd1
+        generation: 333
+        image: sha256:7981513ccad22d1619cc535d7e199be7a4255d3dee315ffd79525177cf728cd1
+      - created: "2025-04-09T15:35:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4e89ac144cec4e477a525c1381be9e66bd43753d010bd1c5b446f7032ff90b4b
+        generation: 330
+        image: sha256:4e89ac144cec4e477a525c1381be9e66bd43753d010bd1c5b446f7032ff90b4b
+      - created: "2025-04-09T14:59:46Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b37f545e2aa8b29f2289fb3784229726e98807cccf62c7af431681f1644e4731
+        generation: 327
+        image: sha256:b37f545e2aa8b29f2289fb3784229726e98807cccf62c7af431681f1644e4731
+      - created: "2025-04-09T13:24:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e8f55c3110c182f0ef2f0f41e3941832dbfaaef71beaecbaa27e2efad30ab527
+        generation: 324
+        image: sha256:e8f55c3110c182f0ef2f0f41e3941832dbfaaef71beaecbaa27e2efad30ab527
+      - created: "2025-04-09T11:37:09Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:82dafe0c08d159ffb42da4fddf1c92bcd2444f2e2f34efad5f3e2ca45699227e
+        generation: 321
+        image: sha256:82dafe0c08d159ffb42da4fddf1c92bcd2444f2e2f34efad5f3e2ca45699227e
+      - created: "2025-04-09T11:04:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:419deebb609692a491944033e25b8227856439775dc9c991045a61c1d498072a
+        generation: 318
+        image: sha256:419deebb609692a491944033e25b8227856439775dc9c991045a61c1d498072a
+      - created: "2025-04-09T07:36:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cac259296c423bcf20ce2c5e6926f8c1ce7d27487fa6f2c92fdbff5988166e98
+        generation: 315
+        image: sha256:cac259296c423bcf20ce2c5e6926f8c1ce7d27487fa6f2c92fdbff5988166e98
+      - created: "2025-04-08T15:21:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1bf9e89e9e7f497c0548955a2676cc8e6fa38c5d158e545162805193adf01102
+        generation: 312
+        image: sha256:1bf9e89e9e7f497c0548955a2676cc8e6fa38c5d158e545162805193adf01102
+      - created: "2025-04-08T14:27:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:443e17812097305762c6eef36cf8cb76a71827a2eff0d5f05960c4792e9c18f9
+        generation: 309
+        image: sha256:443e17812097305762c6eef36cf8cb76a71827a2eff0d5f05960c4792e9c18f9
+      - created: "2025-04-08T11:23:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f85de356042ab8155fa1435b8cd86ae0dba3d56e3846fe0f30ace406ce85616b
+        generation: 306
+        image: sha256:f85de356042ab8155fa1435b8cd86ae0dba3d56e3846fe0f30ace406ce85616b
+      - created: "2025-04-08T10:54:09Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d7536f46a0cd9e37447e668945d1a213e147dda5df14d1a0badb682cddb81587
+        generation: 303
+        image: sha256:d7536f46a0cd9e37447e668945d1a213e147dda5df14d1a0badb682cddb81587
+      - created: "2025-04-08T09:17:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a51392d20286c4cfedb94e9abf53781946df93507a9e7e0352e2c109edf5f77c
+        generation: 300
+        image: sha256:a51392d20286c4cfedb94e9abf53781946df93507a9e7e0352e2c109edf5f77c
+      - created: "2025-04-08T06:08:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bdb35cfd94466e5f74c360ddc6bbe4b301c93c8e406a9854e8b8b9a0b1784365
+        generation: 297
+        image: sha256:bdb35cfd94466e5f74c360ddc6bbe4b301c93c8e406a9854e8b8b9a0b1784365
+      - created: "2025-04-08T05:33:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d86942afb90474bc91e71a52fa3218d94d4e75c6765f00d699ff2b773629607d
+        generation: 294
+        image: sha256:d86942afb90474bc91e71a52fa3218d94d4e75c6765f00d699ff2b773629607d
+      - created: "2025-04-04T10:15:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d413e0aad3cb593ed99b0fca8bd7b94ff1b08af15525d58cd694a2657aa346e8
+        generation: 291
+        image: sha256:d413e0aad3cb593ed99b0fca8bd7b94ff1b08af15525d58cd694a2657aa346e8
+      - created: "2025-04-04T08:04:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f67960e472031e221e1fbe62addff386723a3c0b8d0ba128ae3a036489c3605b
+        generation: 288
+        image: sha256:f67960e472031e221e1fbe62addff386723a3c0b8d0ba128ae3a036489c3605b
+      - created: "2025-04-04T07:11:50Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0d8e7df1ba5dea4e36af3762f0d8c367fdd2dbda274ac7204ef032bd463dee3b
+        generation: 285
+        image: sha256:0d8e7df1ba5dea4e36af3762f0d8c367fdd2dbda274ac7204ef032bd463dee3b
+      - created: "2025-04-03T06:48:53Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a68750f7d5e9074d3c0407867391781d094b88470c82fd0a480b81b75531ed00
+        generation: 282
+        image: sha256:a68750f7d5e9074d3c0407867391781d094b88470c82fd0a480b81b75531ed00
+      - created: "2025-03-28T10:59:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3cb7f544f42c74a03650c587f49127a8c49fb3dd68c61565fd7b09e366091da2
+        generation: 279
+        image: sha256:3cb7f544f42c74a03650c587f49127a8c49fb3dd68c61565fd7b09e366091da2
+      - created: "2025-03-28T09:40:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:27fd0b4f5497d8b065d7fc7433f4f7b23372465ef559be7b23689d54a4fa9a2b
+        generation: 276
+        image: sha256:27fd0b4f5497d8b065d7fc7433f4f7b23372465ef559be7b23689d54a4fa9a2b
+      - created: "2025-03-28T06:59:43Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:06db9ea5cab6b11e4df0b67d5aec837c08493026d01d167be40cc31fa4b17771
+        generation: 273
+        image: sha256:06db9ea5cab6b11e4df0b67d5aec837c08493026d01d167be40cc31fa4b17771
+      - created: "2025-03-27T15:55:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c20c1f3a29d74bebf5785555d24ca890af6c7b0a81ee64f12e447df6525d96ac
+        generation: 270
+        image: sha256:c20c1f3a29d74bebf5785555d24ca890af6c7b0a81ee64f12e447df6525d96ac
+      - created: "2025-03-27T15:00:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ef1942cde05a53d026c32221d8ee18b1affd79e230ce85c5ee07b8592578c752
+        generation: 267
+        image: sha256:ef1942cde05a53d026c32221d8ee18b1affd79e230ce85c5ee07b8592578c752
+      - created: "2025-03-27T13:56:24Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:df6473e5be027c1b878aa27682580ac041c555907cb01b8564ba2c219ac3d21b
+        generation: 264
+        image: sha256:df6473e5be027c1b878aa27682580ac041c555907cb01b8564ba2c219ac3d21b
+      - created: "2025-03-27T10:19:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:28c3a39b105e6b209630f3f280b4fb1988990a6b3ddbaa249d13f58b234597b0
+        generation: 261
+        image: sha256:28c3a39b105e6b209630f3f280b4fb1988990a6b3ddbaa249d13f58b234597b0
+      - created: "2025-03-27T09:49:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0a2993846b2115e76aa92bb4d8d27d7728ce1c662642b9473fb30383af658741
+        generation: 260
+        image: sha256:0a2993846b2115e76aa92bb4d8d27d7728ce1c662642b9473fb30383af658741
+      - created: "2025-03-27T06:58:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7b59e0a9eb9e718b6fd4ca425ce98eae789f38f5543bf75fb2b0f0c9a2ded597
+        generation: 257
+        image: sha256:7b59e0a9eb9e718b6fd4ca425ce98eae789f38f5543bf75fb2b0f0c9a2ded597
+      - created: "2025-03-26T14:28:07Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a85d8b16bc6a2eb5242adabb4d129e57982a1b585d507bf6c736bbec441d951e
+        generation: 254
+        image: sha256:a85d8b16bc6a2eb5242adabb4d129e57982a1b585d507bf6c736bbec441d951e
+      - created: "2025-03-26T13:41:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5297fa45c13888f365718921c8cf9dac896ba3e68f1992a7a181a6755bb46f33
+        generation: 251
+        image: sha256:5297fa45c13888f365718921c8cf9dac896ba3e68f1992a7a181a6755bb46f33
+      - created: "2025-03-26T09:54:53Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1e2e26a40a501130005242714a8974c95f434bd4fd30efed6a68ac7bd456f296
+        generation: 248
+        image: sha256:1e2e26a40a501130005242714a8974c95f434bd4fd30efed6a68ac7bd456f296
+      - created: "2025-03-26T05:39:46Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4b970d7e82a0ebbb2d6fc5f9976d512efb96e7c7f90a6a0a123587ec5288b4c3
+        generation: 245
+        image: sha256:4b970d7e82a0ebbb2d6fc5f9976d512efb96e7c7f90a6a0a123587ec5288b4c3
+      - created: "2025-03-25T05:07:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:89e68db70daca0c8e84ff6f791b43b6ddf81f73810b9eb4b2cf129a4198755ce
+        generation: 242
+        image: sha256:89e68db70daca0c8e84ff6f791b43b6ddf81f73810b9eb4b2cf129a4198755ce
+      - created: "2025-03-24T15:44:07Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:20b018bc4df222a5daec399d2d83c5b2070f80a4aeea8fb67514402fc9c9b808
+        generation: 241
+        image: sha256:20b018bc4df222a5daec399d2d83c5b2070f80a4aeea8fb67514402fc9c9b808
+      - created: "2025-03-19T15:09:41Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:037b0b3cf256f530d0162ec3baca25a01eb4a20f3f4c676e6863ac0a5fc63b5d
+        generation: 240
+        image: sha256:037b0b3cf256f530d0162ec3baca25a01eb4a20f3f4c676e6863ac0a5fc63b5d
+      - created: "2025-03-18T15:24:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6faeb42f264bd336b3c03577dc9e5f53c4d1149cb861794d8d6b4ccb3f5e0b53
+        generation: 239
+        image: sha256:6faeb42f264bd336b3c03577dc9e5f53c4d1149cb861794d8d6b4ccb3f5e0b53
+      - created: "2024-12-13T12:18:09Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cd1502ef3d8489afd0fcd8bd8421f1ce4c082e5bfcc90eba3f3afa77cc6ce28b
+        generation: 236
+        image: sha256:cd1502ef3d8489afd0fcd8bd8421f1ce4c082e5bfcc90eba3f3afa77cc6ce28b
+      - created: "2024-12-12T12:33:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7bae490485f12ea685a32635f6834757ae5b5c9a5a4ce9de1e4510c362105781
+        generation: 233
+        image: sha256:7bae490485f12ea685a32635f6834757ae5b5c9a5a4ce9de1e4510c362105781
+      - created: "2024-11-14T08:43:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:33dee127b12151fe60678cef3952d81c1fd7998cf9ced1cb2f40ab277946a682
+        generation: 230
+        image: sha256:33dee127b12151fe60678cef3952d81c1fd7998cf9ced1cb2f40ab277946a682
+      - created: "2024-11-05T10:41:03Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:578b0309742e882e0d58974d0517f4d47ecb25e6f6c067698f767b89d0428ed3
+        generation: 227
+        image: sha256:578b0309742e882e0d58974d0517f4d47ecb25e6f6c067698f767b89d0428ed3
+      - created: "2024-09-11T10:55:14Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:13321ac95db55f7244dc5bf0f206c6cb1497f55d698baaa4c35ef9bb98541f1c
+        generation: 224
+        image: sha256:13321ac95db55f7244dc5bf0f206c6cb1497f55d698baaa4c35ef9bb98541f1c
+      - created: "2024-08-19T06:44:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:01688cefa38491d7ff06de6dd565f6e8dfbc0108c1fdb0fb006dcf7805180014
+        generation: 221
+        image: sha256:01688cefa38491d7ff06de6dd565f6e8dfbc0108c1fdb0fb006dcf7805180014
+      - created: "2024-06-14T10:19:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5bb82b33ea67031a12e411288b5e01e1c500fc52110bc989248d7e945ce02168
+        generation: 218
+        image: sha256:5bb82b33ea67031a12e411288b5e01e1c500fc52110bc989248d7e945ce02168
+      - created: "2024-06-10T13:21:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:2d7deabdbcb14191091a80d3cae2af5373add151db9ff3dc940a8003fdbdd109
+        generation: 215
+        image: sha256:2d7deabdbcb14191091a80d3cae2af5373add151db9ff3dc940a8003fdbdd109
+      - created: "2024-06-07T11:21:25Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c663716a1bd70c3173292dfc281ac7dcd707037e919936383888d3504bbae9a5
+        generation: 212
+        image: sha256:c663716a1bd70c3173292dfc281ac7dcd707037e919936383888d3504bbae9a5
+      - created: "2024-05-29T07:06:15Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bb9089d852ddbd6645700adbdbf126e0c2bb31564d31a7515abae6c1c2795715
+        generation: 209
+        image: sha256:bb9089d852ddbd6645700adbdbf126e0c2bb31564d31a7515abae6c1c2795715
+      - created: "2024-05-28T07:21:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:97739ee2cf54d426522f0fa4dbefc8dc4739be613e006838eb3554c0c05cbfc3
+        generation: 206
+        image: sha256:97739ee2cf54d426522f0fa4dbefc8dc4739be613e006838eb3554c0c05cbfc3
+      - created: "2024-05-08T10:49:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d3ebf1f93554e2ad158eb9dc9db7fda59015e056ce93e1b72e39a7f76f0d6e98
+        generation: 203
+        image: sha256:d3ebf1f93554e2ad158eb9dc9db7fda59015e056ce93e1b72e39a7f76f0d6e98
+      - created: "2023-12-06T14:41:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dd9df66a797a0733d677ef7363be24ba6078da15d047be7f9eb17d83b1ccdc4d
+        generation: 198
+        image: sha256:dd9df66a797a0733d677ef7363be24ba6078da15d047be7f9eb17d83b1ccdc4d
+      - created: "2022-11-26T20:25:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3eee77205e50eacf63ba123946ca6378d0722fd88b4110ba3934d454b7c96adb
+        generation: 194
+        image: sha256:3eee77205e50eacf63ba123946ca6378d0722fd88b4110ba3934d454b7c96adb
+      tag: dev
+    - items:
+      - created: "2022-11-26T20:33:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+        generation: 197
+        image: sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+      - created: "2022-11-04T05:29:37Z"
+        dockerImageReference: kohlercitregistry.azurecr.io/pm-procedures-webapp@sha256:5bfe75b5ae729ce82758e3c374e7fb8e8424c4221bc7c12551c2febfaf6dfa31
+        generation: 193
+        image: sha256:5bfe75b5ae729ce82758e3c374e7fb8e8424c4221bc7c12551c2febfaf6dfa31
+      - created: "2022-05-24T16:24:27Z"
+        dockerImageReference: kohlercitregistry.azurecr.io/pm-procedures-webapp@sha256:e890eabc3f1bb3adb8518d29e6c34bec98e84a134c71d33e61147f9dbda9ef29
+        generation: 99
+        image: sha256:e890eabc3f1bb3adb8518d29e6c34bec98e84a134c71d33e61147f9dbda9ef29
+      tag: latest
+    - items:
+      - created: "2025-07-09T15:59:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+        generation: 582
+        image: sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+      - created: "2025-07-09T14:57:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f53e212e72a37c26aa32dcf6959af7265942a8727b54fc6aaa2ceac16e8f174b
+        generation: 579
+        image: sha256:f53e212e72a37c26aa32dcf6959af7265942a8727b54fc6aaa2ceac16e8f174b
+      - created: "2025-06-27T15:02:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ca44e30af9b6f92939547080544a543c955380c40a815719eb3cd0b6d1e18bcb
+        generation: 576
+        image: sha256:ca44e30af9b6f92939547080544a543c955380c40a815719eb3cd0b6d1e18bcb
+      - created: "2025-06-27T12:17:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:64844768e0935ad90779b3371d5bd3154436446b5b4940ec90ab6ce99abbabc3
+        generation: 573
+        image: sha256:64844768e0935ad90779b3371d5bd3154436446b5b4940ec90ab6ce99abbabc3
+      - created: "2025-06-27T07:32:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:69b6140bde4bdc1a4ab03d040ef8684923ff94b321fd64f7c488e9a2d6f019f9
+        generation: 570
+        image: sha256:69b6140bde4bdc1a4ab03d040ef8684923ff94b321fd64f7c488e9a2d6f019f9
+      - created: "2025-06-02T12:58:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9b2c26ce8f9267754754e759e9acf9d2f8eb5c79f86f929ccb76c764d54dd5eb
+        generation: 567
+        image: sha256:9b2c26ce8f9267754754e759e9acf9d2f8eb5c79f86f929ccb76c764d54dd5eb
+      - created: "2025-06-02T12:24:45Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:56d506b6b8198481d89d231168a4352d812181aa05337fba3b8ad2c6831f6cbc
+        generation: 564
+        image: sha256:56d506b6b8198481d89d231168a4352d812181aa05337fba3b8ad2c6831f6cbc
+      - created: "2025-05-29T11:31:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:449dba79b4ad2218bcc65d536d8dd032101408b569e1172f5c32f57bab7a6d9b
+        generation: 561
+        image: sha256:449dba79b4ad2218bcc65d536d8dd032101408b569e1172f5c32f57bab7a6d9b
+      - created: "2025-05-29T10:36:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9a9b0f52d36f1df8ac0d9d821164e0df7a73fc3f356d19f885d51717d1223c9a
+        generation: 558
+        image: sha256:9a9b0f52d36f1df8ac0d9d821164e0df7a73fc3f356d19f885d51717d1223c9a
+      - created: "2025-05-28T13:36:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:714396de0329f0e734de9a4b895ef5c2bf8f002a182f267da53714ed6ec74c41
+        generation: 555
+        image: sha256:714396de0329f0e734de9a4b895ef5c2bf8f002a182f267da53714ed6ec74c41
+      - created: "2025-05-28T07:54:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e047e694cf4897cbf7cf5e6e20774864e23d14701f5a2fdc8b4eb77389c74dcb
+        generation: 552
+        image: sha256:e047e694cf4897cbf7cf5e6e20774864e23d14701f5a2fdc8b4eb77389c74dcb
+      - created: "2025-05-22T07:24:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:762888e6bb79642dee41fba6125497bcc4de5bc09fa8aa427f9c0c483d107ca5
+        generation: 549
+        image: sha256:762888e6bb79642dee41fba6125497bcc4de5bc09fa8aa427f9c0c483d107ca5
+      - created: "2025-05-20T14:49:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cf5d9516f8beee938037d8567c0dd91fc6dba89270bc7d8d35f6aab3314cead4
+        generation: 546
+        image: sha256:cf5d9516f8beee938037d8567c0dd91fc6dba89270bc7d8d35f6aab3314cead4
+      - created: "2025-05-20T13:41:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:2b5408c15c12f63ea6a0112b30e5d73c776a91566e15e46cfe63210195ccc45b
+        generation: 543
+        image: sha256:2b5408c15c12f63ea6a0112b30e5d73c776a91566e15e46cfe63210195ccc45b
+      - created: "2025-05-15T12:24:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:01d31eee8cd3c055b72c244c7761e93d3d6e90d76393b856c5cf45ac4e38cf43
+        generation: 540
+        image: sha256:01d31eee8cd3c055b72c244c7761e93d3d6e90d76393b856c5cf45ac4e38cf43
+      - created: "2025-05-15T06:21:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a96629c03e7ce0da7587e5288d2edf8bb9e27d036cc5c7ee094b896726ce920c
+        generation: 537
+        image: sha256:a96629c03e7ce0da7587e5288d2edf8bb9e27d036cc5c7ee094b896726ce920c
+      - created: "2025-05-14T11:19:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:989aada755307652135093c16f2389f189b4328b806cbd2e517de0ee27ac4175
+        generation: 533
+        image: sha256:989aada755307652135093c16f2389f189b4328b806cbd2e517de0ee27ac4175
+      - created: "2025-05-14T10:36:15Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:086063bc0271046e88cdd472bbabf88aa9935547cfea99d02d763430d5faa396
+        generation: 530
+        image: sha256:086063bc0271046e88cdd472bbabf88aa9935547cfea99d02d763430d5faa396
+      - created: "2025-05-14T08:29:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b03a1b7471413562d7a1c5b378801f87612a92e6d92f827be4488ecfe25a95ac
+        generation: 527
+        image: sha256:b03a1b7471413562d7a1c5b378801f87612a92e6d92f827be4488ecfe25a95ac
+      - created: "2025-05-14T07:56:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6b7834d3a742115c8540ee742337ec2abd573781fe96074ab68201d11f8d0cd3
+        generation: 524
+        image: sha256:6b7834d3a742115c8540ee742337ec2abd573781fe96074ab68201d11f8d0cd3
+      - created: "2025-05-14T05:56:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:aed02d13deebe09ce744b228cf66fbba3e9d4046011b55f02caf2f288976f3fe
+        generation: 521
+        image: sha256:aed02d13deebe09ce744b228cf66fbba3e9d4046011b55f02caf2f288976f3fe
+      - created: "2025-05-13T15:33:23Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:92ddc177032b3aff206616a420da5d2e63b03b5cbb9e98a98aba3319d82fb294
+        generation: 518
+        image: sha256:92ddc177032b3aff206616a420da5d2e63b03b5cbb9e98a98aba3319d82fb294
+      - created: "2025-05-13T14:56:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6d555136325bdf91370f77b0a1619ab1c77940a9fcfaa8a6448319d56c984716
+        generation: 515
+        image: sha256:6d555136325bdf91370f77b0a1619ab1c77940a9fcfaa8a6448319d56c984716
+      - created: "2025-05-13T14:25:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8590dfc4ee64180bd6ef0965308c25ce58f28ebaf5ff688fdd92e39eb93ebf63
+        generation: 512
+        image: sha256:8590dfc4ee64180bd6ef0965308c25ce58f28ebaf5ff688fdd92e39eb93ebf63
+      - created: "2025-05-13T13:27:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a62c6faf402ccb95d72d21337572a9f97971c884c887cf56157dd5c9d78d93e4
+        generation: 509
+        image: sha256:a62c6faf402ccb95d72d21337572a9f97971c884c887cf56157dd5c9d78d93e4
+      - created: "2025-05-13T12:08:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cae8a26af1c6dcfee9a5fff5c06b19ea70fc8a7d1e0f0becca7fe8bf91db6381
+        generation: 506
+        image: sha256:cae8a26af1c6dcfee9a5fff5c06b19ea70fc8a7d1e0f0becca7fe8bf91db6381
+      - created: "2025-05-09T13:43:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4f22822c3d188727cb1aeea8f299abd6980c2901e243bc6798f097ed3f3cf8ec
+        generation: 503
+        image: sha256:4f22822c3d188727cb1aeea8f299abd6980c2901e243bc6798f097ed3f3cf8ec
+      - created: "2025-05-09T10:59:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e9ffd1a0f51a3fba35b9e934fa128cc3564e78e6e02fb7af9266ef5a6dd1c2fe
+        generation: 500
+        image: sha256:e9ffd1a0f51a3fba35b9e934fa128cc3564e78e6e02fb7af9266ef5a6dd1c2fe
+      - created: "2025-05-09T07:39:57Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8c0047f8531527ea54c00326dc6b27915eb94aee3a4e46adf0acc420f7a8ada8
+        generation: 497
+        image: sha256:8c0047f8531527ea54c00326dc6b27915eb94aee3a4e46adf0acc420f7a8ada8
+      - created: "2025-05-08T09:54:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3defe204dbb739eb83af07b3e62f7358a20d8030d269db828a67a8be1886de96
+        generation: 494
+        image: sha256:3defe204dbb739eb83af07b3e62f7358a20d8030d269db828a67a8be1886de96
+      - created: "2025-05-08T07:34:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1c4b9f36d16a7ae8721cdd4a92e732a0e9cfe01cc4336bf72832c2c12bbe59d4
+        generation: 491
+        image: sha256:1c4b9f36d16a7ae8721cdd4a92e732a0e9cfe01cc4336bf72832c2c12bbe59d4
+      - created: "2025-05-08T06:16:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:91a668bc2c5aff5039c3a20a64d83c85e9ae08d9de6eca869448cc0fa95a6d08
+        generation: 488
+        image: sha256:91a668bc2c5aff5039c3a20a64d83c85e9ae08d9de6eca869448cc0fa95a6d08
+      - created: "2025-05-07T17:24:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:77bf34d69d51486c3c3cf9b7f95ab38a3de8c8862c179588a8908cb383b7b8de
+        generation: 485
+        image: sha256:77bf34d69d51486c3c3cf9b7f95ab38a3de8c8862c179588a8908cb383b7b8de
+      - created: "2025-05-07T11:51:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:75805e89ddc8254c7e958abfe0617ca7623e9711a536ebeb01e088d8ae84acaa
+        generation: 482
+        image: sha256:75805e89ddc8254c7e958abfe0617ca7623e9711a536ebeb01e088d8ae84acaa
+      - created: "2025-05-07T08:18:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7fa33fab0de1ed4891fbe6b8953b76e829048a96667997375af701c4c323929e
+        generation: 479
+        image: sha256:7fa33fab0de1ed4891fbe6b8953b76e829048a96667997375af701c4c323929e
+      - created: "2025-05-06T18:21:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d5056dbd88da02e303e2310915b297df46214c316f6aa713a2cdf727ce13410f
+        generation: 476
+        image: sha256:d5056dbd88da02e303e2310915b297df46214c316f6aa713a2cdf727ce13410f
+      - created: "2025-05-06T18:00:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:170303b66b4b392dcd0ae65486abde04e2f08872fae8e13aca66783a119e2433
+        generation: 473
+        image: sha256:170303b66b4b392dcd0ae65486abde04e2f08872fae8e13aca66783a119e2433
+      - created: "2025-05-06T17:31:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:25d91ee4d8fc6be43e988fdd2ac6e507133037e4a751e968359f80bcdaac630a
+        generation: 470
+        image: sha256:25d91ee4d8fc6be43e988fdd2ac6e507133037e4a751e968359f80bcdaac630a
+      - created: "2025-05-06T11:25:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a89e030d53a49ea27a3af30718a566f6169c81769da62a9740d4dd9d46391497
+        generation: 466
+        image: sha256:a89e030d53a49ea27a3af30718a566f6169c81769da62a9740d4dd9d46391497
+      - created: "2025-05-06T10:56:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1ad5f4164aa638e294c1332376371b206d27c2892533f7b811d826289efa154c
+        generation: 463
+        image: sha256:1ad5f4164aa638e294c1332376371b206d27c2892533f7b811d826289efa154c
+      - created: "2025-05-05T13:58:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a44af3173db4fa2c14da1b4725e7931d14f16c3a0d4beb905ee14da2834374c3
+        generation: 460
+        image: sha256:a44af3173db4fa2c14da1b4725e7931d14f16c3a0d4beb905ee14da2834374c3
+      - created: "2025-05-05T13:16:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9d11a87e556c6ae7e192adedaa3f3b270d3c9af66b70a8d35e4d996f8bafba61
+        generation: 457
+        image: sha256:9d11a87e556c6ae7e192adedaa3f3b270d3c9af66b70a8d35e4d996f8bafba61
+      - created: "2025-05-05T11:01:30Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:81c4bb67dc6bd210ed4a36600ae2bbc3971cc10943d6e2722c077901312f967b
+        generation: 454
+        image: sha256:81c4bb67dc6bd210ed4a36600ae2bbc3971cc10943d6e2722c077901312f967b
+      - created: "2025-05-05T06:42:07Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9696f42b64a8062bc5c772afa0ba2f6f3c5407a837c816c49d4a9991047443c4
+        generation: 451
+        image: sha256:9696f42b64a8062bc5c772afa0ba2f6f3c5407a837c816c49d4a9991047443c4
+      - created: "2025-05-02T17:14:20Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:786bbdda6503a8b01bf84964613718d65731efc5af49885fbf64e41a6059f5ca
+        generation: 448
+        image: sha256:786bbdda6503a8b01bf84964613718d65731efc5af49885fbf64e41a6059f5ca
+      - created: "2025-05-02T15:40:16Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1deb4694fd3408cb53aa6273ecf3481299a0044d4e92a3864a1d8c0f603404bb
+        generation: 445
+        image: sha256:1deb4694fd3408cb53aa6273ecf3481299a0044d4e92a3864a1d8c0f603404bb
+      - created: "2025-05-02T14:19:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b82bcab6da34443a632a7c440bde4774f27c44cfeb4a7915f44d8a2960263bb0
+        generation: 442
+        image: sha256:b82bcab6da34443a632a7c440bde4774f27c44cfeb4a7915f44d8a2960263bb0
+      - created: "2025-05-02T10:38:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:148dd481f2c86ba54ae7e5ad4ec1ab4f6bba2335c4d145e3164c02bf159d014a
+        generation: 439
+        image: sha256:148dd481f2c86ba54ae7e5ad4ec1ab4f6bba2335c4d145e3164c02bf159d014a
+      - created: "2025-05-02T08:23:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cfb74c11bf85384b9aadc64c6e9b5a17d3f5d1e563aa1b944ec1a89a4295e503
+        generation: 436
+        image: sha256:cfb74c11bf85384b9aadc64c6e9b5a17d3f5d1e563aa1b944ec1a89a4295e503
+      - created: "2025-05-02T07:48:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:55e49ac3524eb8249499442c7c1f95d213edc8c584daa30920063117199367a3
+        generation: 433
+        image: sha256:55e49ac3524eb8249499442c7c1f95d213edc8c584daa30920063117199367a3
+      - created: "2025-05-02T06:40:03Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3c43a79515b8468b05d7974bf656722c8712f001df7c11d84a5ab36591aaead4
+        generation: 430
+        image: sha256:3c43a79515b8468b05d7974bf656722c8712f001df7c11d84a5ab36591aaead4
+      - created: "2025-04-30T14:02:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ce258be3bf888fedaab3a8f6f671903943c6c0596507f8eb7b7ec05ae9ca710a
+        generation: 426
+        image: sha256:ce258be3bf888fedaab3a8f6f671903943c6c0596507f8eb7b7ec05ae9ca710a
+      - created: "2025-04-30T13:23:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:524f985278f0fdcd7ca5d7385e5dc936929503d395fec95c9511aeeead448952
+        generation: 423
+        image: sha256:524f985278f0fdcd7ca5d7385e5dc936929503d395fec95c9511aeeead448952
+      - created: "2025-04-30T10:38:51Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7c6ef90e91631c2f902ce51d6aa41954ebe5c9bb61f57aaa77b138859990c9e7
+        generation: 420
+        image: sha256:7c6ef90e91631c2f902ce51d6aa41954ebe5c9bb61f57aaa77b138859990c9e7
+      - created: "2025-04-30T10:01:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9353b17c557839ab26074c2314808b58414779c4597b60e9904f670172235dc0
+        generation: 417
+        image: sha256:9353b17c557839ab26074c2314808b58414779c4597b60e9904f670172235dc0
+      - created: "2025-04-29T14:02:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:de7c26719c42859ab86cfe3a6a30d4bc1c4c618bb060f567c59b7bbf84a42436
+        generation: 413
+        image: sha256:de7c26719c42859ab86cfe3a6a30d4bc1c4c618bb060f567c59b7bbf84a42436
+      - created: "2025-04-29T10:46:02Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:25af46f2513c2116af3e7341c16f320353daf3aec9aba39729f7307216dd182a
+        generation: 410
+        image: sha256:25af46f2513c2116af3e7341c16f320353daf3aec9aba39729f7307216dd182a
+      - created: "2025-04-29T08:14:11Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0bef6e81030d7ce7b8568a24a1af2c2fa2d05d3cb0364cada610196226556c73
+        generation: 407
+        image: sha256:0bef6e81030d7ce7b8568a24a1af2c2fa2d05d3cb0364cada610196226556c73
+      - created: "2025-04-29T07:45:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ae0a6716e6e2895038c3959137901d0c2dac0ef9ba5224ad6a33ebb92738b473
+        generation: 404
+        image: sha256:ae0a6716e6e2895038c3959137901d0c2dac0ef9ba5224ad6a33ebb92738b473
+      - created: "2025-04-28T14:49:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ef7c94eaf8961b40b61ee2572a6f316a83593f79b4cf3698cacb94b8308070d7
+        generation: 401
+        image: sha256:ef7c94eaf8961b40b61ee2572a6f316a83593f79b4cf3698cacb94b8308070d7
+      - created: "2025-04-28T13:42:22Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:69a4ed4dacd613c0c94114c33f8947d824f312b5d5b948a51615397922d89ee1
+        generation: 398
+        image: sha256:69a4ed4dacd613c0c94114c33f8947d824f312b5d5b948a51615397922d89ee1
+      - created: "2025-04-28T11:34:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3f31568fe7bdaa2cba667311c7283d553349640bdc076b4c546eef829feec025
+        generation: 394
+        image: sha256:3f31568fe7bdaa2cba667311c7283d553349640bdc076b4c546eef829feec025
+      - created: "2025-04-28T07:13:00Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:78943bddbe484526992fe5d1fbc681eed31b65763fb2ce722d2399a725d91998
+        generation: 391
+        image: sha256:78943bddbe484526992fe5d1fbc681eed31b65763fb2ce722d2399a725d91998
+      - created: "2025-04-24T09:51:52Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:11615a56d86c9d257444fc2275d7a329c8877e99e75dcf414654fab8e96d0aed
+        generation: 388
+        image: sha256:11615a56d86c9d257444fc2275d7a329c8877e99e75dcf414654fab8e96d0aed
+      - created: "2025-04-24T08:07:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:5b3df565ff187f3d1fcdea8344741c9acb16615f130446d2b1550598562d2f5c
+        generation: 385
+        image: sha256:5b3df565ff187f3d1fcdea8344741c9acb16615f130446d2b1550598562d2f5c
+      - created: "2025-04-16T11:51:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:d1716f28bc92333a7b98d11b040ada20d888e8a4cdd5b85f4e2f069478d970a4
+        generation: 382
+        image: sha256:d1716f28bc92333a7b98d11b040ada20d888e8a4cdd5b85f4e2f069478d970a4
+      - created: "2025-04-16T08:34:51Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dbe89539702b9a1814ca9b24bf6aa055dbd020d6b5f3517bc45fe5b3493609c5
+        generation: 379
+        image: sha256:dbe89539702b9a1814ca9b24bf6aa055dbd020d6b5f3517bc45fe5b3493609c5
+      - created: "2025-04-16T07:51:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:de029a0e3d2f68e6f2fc7bc9a060c11e559a70bbd3590dd09e9d32e309beb2ea
+        generation: 376
+        image: sha256:de029a0e3d2f68e6f2fc7bc9a060c11e559a70bbd3590dd09e9d32e309beb2ea
+      - created: "2025-04-15T14:53:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:945fc3c2b52e585772e09fdbdbf9c7f9b8af2b331e42ae859973c153ce4ed81a
+        generation: 373
+        image: sha256:945fc3c2b52e585772e09fdbdbf9c7f9b8af2b331e42ae859973c153ce4ed81a
+      - created: "2025-04-15T13:39:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e31c537be13252e37858060a200dc7849a69d38fc61bad8eaa209d9f5e631194
+        generation: 370
+        image: sha256:e31c537be13252e37858060a200dc7849a69d38fc61bad8eaa209d9f5e631194
+      - created: "2025-04-15T13:19:24Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:35d2e8ce9837acd9612ed949b911dadda9af0ed6b5fc3a4090cb537f9d0f57f5
+        generation: 367
+        image: sha256:35d2e8ce9837acd9612ed949b911dadda9af0ed6b5fc3a4090cb537f9d0f57f5
+      - created: "2025-04-14T07:09:27Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:548e3885c6c8f8c76258599e0f2f513eef96bd978d6e0ec4645ae87b28aa8aaa
+        generation: 364
+        image: sha256:548e3885c6c8f8c76258599e0f2f513eef96bd978d6e0ec4645ae87b28aa8aaa
+      - created: "2025-04-14T05:48:03Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:bdb178211f8de3555390b00d79fc33201c3460a93f54320ff244416ce6bfa9a3
+        generation: 361
+        image: sha256:bdb178211f8de3555390b00d79fc33201c3460a93f54320ff244416ce6bfa9a3
+      - created: "2025-04-11T18:03:25Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ea76573bc2ebc4fc53d329e90188bf48fea8f2577be6afdbff00054de8d1b4bb
+        generation: 358
+        image: sha256:ea76573bc2ebc4fc53d329e90188bf48fea8f2577be6afdbff00054de8d1b4bb
+      - created: "2025-04-11T17:38:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:446a8eef5183991187c9a20a2c6a93dc6b7ed03441c9091d4e8cc4ab36321427
+        generation: 355
+        image: sha256:446a8eef5183991187c9a20a2c6a93dc6b7ed03441c9091d4e8cc4ab36321427
+      - created: "2025-04-11T12:20:26Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:82146538f02489ea0f1e897176c28b3fc08f40c62005be1d23d6f3d6eaa5927a
+        generation: 352
+        image: sha256:82146538f02489ea0f1e897176c28b3fc08f40c62005be1d23d6f3d6eaa5927a
+      - created: "2025-04-11T05:53:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6604543fe11f76b2846228f2bdbce2334307cf07d18d80d253f21f52d5f9cc74
+        generation: 349
+        image: sha256:6604543fe11f76b2846228f2bdbce2334307cf07d18d80d253f21f52d5f9cc74
+      - created: "2025-04-10T14:23:50Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4222a43760653bd182e6c8632a2defc70e36e910d0014b7b3212a64e186d7cdd
+        generation: 346
+        image: sha256:4222a43760653bd182e6c8632a2defc70e36e910d0014b7b3212a64e186d7cdd
+      - created: "2025-04-10T12:54:44Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:10913927d222aa3e5c4ee7bfb3eb28d1af416dc8da067641422c4e1fe1c7df8c
+        generation: 343
+        image: sha256:10913927d222aa3e5c4ee7bfb3eb28d1af416dc8da067641422c4e1fe1c7df8c
+      - created: "2025-04-10T11:22:28Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:370669007c0bd100c9ffda5fcadd61cf39cf1d686adfce3baf387646722245fc
+        generation: 340
+        image: sha256:370669007c0bd100c9ffda5fcadd61cf39cf1d686adfce3baf387646722245fc
+      - created: "2025-04-10T09:29:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:3953e25fad17633b2d259d482df3d5f45d8385b63d8f2ae652fcb2039fd8ca3c
+        generation: 337
+        image: sha256:3953e25fad17633b2d259d482df3d5f45d8385b63d8f2ae652fcb2039fd8ca3c
+      - created: "2025-04-10T07:59:42Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:dd1b779e6b2e19ed3b20653138a76ea03f901d3a16c02ccec05a868c8021e673
+        generation: 334
+        image: sha256:dd1b779e6b2e19ed3b20653138a76ea03f901d3a16c02ccec05a868c8021e673
+      - created: "2025-04-09T15:43:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:4734ed2c834e130cd239c4e6e12d6e0a56ee4796383b679970036d0ed0ac4bdd
+        generation: 331
+        image: sha256:4734ed2c834e130cd239c4e6e12d6e0a56ee4796383b679970036d0ed0ac4bdd
+      - created: "2025-04-09T15:15:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cbf61e04d8b5479109d3a3bd989f8dc293dc9da53fccc1bf969e8f1a57760c84
+        generation: 328
+        image: sha256:cbf61e04d8b5479109d3a3bd989f8dc293dc9da53fccc1bf969e8f1a57760c84
+      - created: "2025-04-09T13:39:40Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:37818d5df28b3fab13825ca937e3a372288ad17411f925c72ac5a4385efa5392
+        generation: 325
+        image: sha256:37818d5df28b3fab13825ca937e3a372288ad17411f925c72ac5a4385efa5392
+      - created: "2025-04-09T11:45:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:076b4d085639bf0500914cc923e4c5c863228743537ff1892915c8531f381c97
+        generation: 322
+        image: sha256:076b4d085639bf0500914cc923e4c5c863228743537ff1892915c8531f381c97
+      - created: "2025-04-09T11:15:30Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:80511e266eaf9dafa1ee5476596fe46c035026a2870825608d99196e9c33be57
+        generation: 319
+        image: sha256:80511e266eaf9dafa1ee5476596fe46c035026a2870825608d99196e9c33be57
+      - created: "2025-04-09T07:44:33Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:6c5497db7f60135dbe9cf71aa69c7d4aaf2f476a9dfdbd4a8f58a908474600e8
+        generation: 316
+        image: sha256:6c5497db7f60135dbe9cf71aa69c7d4aaf2f476a9dfdbd4a8f58a908474600e8
+      - created: "2025-04-08T15:32:08Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:15c005e0a895f24716b41ecea83ef9bd06927712e237cc2bb77a3c11ae9bc29c
+        generation: 313
+        image: sha256:15c005e0a895f24716b41ecea83ef9bd06927712e237cc2bb77a3c11ae9bc29c
+      - created: "2025-04-08T14:38:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:91515d05664adf7251c9cf30394ecf7b8c042706668fac6087dab8bdc70f1797
+        generation: 310
+        image: sha256:91515d05664adf7251c9cf30394ecf7b8c042706668fac6087dab8bdc70f1797
+      - created: "2025-04-08T14:02:06Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9451d85b510e33a2f50ae7ef761959e9b31650ad8553397081f837c6e8dfda8a
+        generation: 307
+        image: sha256:9451d85b510e33a2f50ae7ef761959e9b31650ad8553397081f837c6e8dfda8a
+      - created: "2025-04-08T11:03:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:e484961312eb381b079cf6a4c00d19d61f7685d16c78cffd059eae4808d2787a
+        generation: 304
+        image: sha256:e484961312eb381b079cf6a4c00d19d61f7685d16c78cffd059eae4808d2787a
+      - created: "2025-04-08T09:28:29Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:31b4e26e1a6f97afa00c05391eb5af7d824160aad0eba7a3b824bd460fe593f4
+        generation: 301
+        image: sha256:31b4e26e1a6f97afa00c05391eb5af7d824160aad0eba7a3b824bd460fe593f4
+      - created: "2025-04-08T06:17:34Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:0ac8ff4431a4b1037c225712cd6f5bc5e27f0c32c90c1118513e563c56d14a04
+        generation: 298
+        image: sha256:0ac8ff4431a4b1037c225712cd6f5bc5e27f0c32c90c1118513e563c56d14a04
+      - created: "2025-04-08T05:45:25Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:72c7ef1d38ac4a63a481bc92242130f6bd4779343af6c685ec34265d5c1531d2
+        generation: 295
+        image: sha256:72c7ef1d38ac4a63a481bc92242130f6bd4779343af6c685ec34265d5c1531d2
+      - created: "2025-04-04T10:28:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:49099f330b4b2ba21c8e4ed000d2f65a8603d27956a9058d795654fc1dbf7920
+        generation: 292
+        image: sha256:49099f330b4b2ba21c8e4ed000d2f65a8603d27956a9058d795654fc1dbf7920
+      - created: "2025-04-04T09:19:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c85ef3cd6078de81e1aad3505578cf716b83dd600be96167ef8d4056b283ca59
+        generation: 289
+        image: sha256:c85ef3cd6078de81e1aad3505578cf716b83dd600be96167ef8d4056b283ca59
+      - created: "2025-04-04T07:24:32Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:35114dec8f8ce40036652092b4ed6394168ea040d5bd14c731bf0b6fa849448b
+        generation: 286
+        image: sha256:35114dec8f8ce40036652092b4ed6394168ea040d5bd14c731bf0b6fa849448b
+      - created: "2025-04-03T06:58:31Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:206c19ee4ec51327c8c5f30ea59230a8ca8ae47a33bcfeeaa6745d448353113c
+        generation: 283
+        image: sha256:206c19ee4ec51327c8c5f30ea59230a8ca8ae47a33bcfeeaa6745d448353113c
+      - created: "2025-03-28T11:24:15Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:402a8f9145b9340fb8d6cc12887a5f4dc0d4817a28ba2b190d6c16c78841f40d
+        generation: 280
+        image: sha256:402a8f9145b9340fb8d6cc12887a5f4dc0d4817a28ba2b190d6c16c78841f40d
+      - created: "2025-03-28T09:55:12Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:883781f1104111fec7baca78f7b615f1327b2e3fd7245b92149a25066b09b4a5
+        generation: 277
+        image: sha256:883781f1104111fec7baca78f7b615f1327b2e3fd7245b92149a25066b09b4a5
+      - created: "2025-03-28T07:23:39Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:67815cfbf56d0538059dcdf298623015836f58d80b9062fbf42ed072b454d952
+        generation: 274
+        image: sha256:67815cfbf56d0538059dcdf298623015836f58d80b9062fbf42ed072b454d952
+      - created: "2025-03-27T16:23:04Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:818607a71a8838eec8e9ade1f447f3ae1996c9b3de4a2fa9a6e7f13f520715f7
+        generation: 271
+        image: sha256:818607a71a8838eec8e9ade1f447f3ae1996c9b3de4a2fa9a6e7f13f520715f7
+      - created: "2025-03-27T15:15:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c63d2711a7ca179c867a9c3eb0b1d3d4b4052065b81b530429a1732efcc2e456
+        generation: 268
+        image: sha256:c63d2711a7ca179c867a9c3eb0b1d3d4b4052065b81b530429a1732efcc2e456
+      - created: "2025-03-27T14:10:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cca5d1312b569d1e331feea31704b20a5041d5fff03382e931124759a742a466
+        generation: 265
+        image: sha256:cca5d1312b569d1e331feea31704b20a5041d5fff03382e931124759a742a466
+      - created: "2025-03-27T10:31:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:03cde0ccf46285bbe3cd6eab9e8bcb144b29e93f031fd783ca14d2afb91082ea
+        generation: 262
+        image: sha256:03cde0ccf46285bbe3cd6eab9e8bcb144b29e93f031fd783ca14d2afb91082ea
+      - created: "2025-03-27T07:14:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9b4bb9542eb4977910b8519769c609f5e45c4fe96aee6926346194f9748522c1
+        generation: 258
+        image: sha256:9b4bb9542eb4977910b8519769c609f5e45c4fe96aee6926346194f9748522c1
+      - created: "2025-03-26T14:44:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:cefe7625d8197342cbd0344981a093df69a4f9bc7e2ec34123867019b678a756
+        generation: 255
+        image: sha256:cefe7625d8197342cbd0344981a093df69a4f9bc7e2ec34123867019b678a756
+      - created: "2025-03-26T13:56:38Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a5f5a1b57c1d674296e182bcc332f22ef5f58a5a9373df639e3af3747c4280e
+        generation: 252
+        image: sha256:8a5f5a1b57c1d674296e182bcc332f22ef5f58a5a9373df639e3af3747c4280e
+      - created: "2025-03-26T10:09:56Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:1a4a785f0ac7d5c2113271c8f3772871cc910f484f1ace6dcdd6f7a9c03267d5
+        generation: 249
+        image: sha256:1a4a785f0ac7d5c2113271c8f3772871cc910f484f1ace6dcdd6f7a9c03267d5
+      - created: "2025-03-26T05:54:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:ddf1cf2260fac5f1ec558a59e401ed07b5f145f76018f8a7ecddcaeeb6173e41
+        generation: 246
+        image: sha256:ddf1cf2260fac5f1ec558a59e401ed07b5f145f76018f8a7ecddcaeeb6173e41
+      - created: "2025-03-25T06:10:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:391ddcfa57941e0a7a15ccaa3c5b53d5efc7d0da8b7d3d892cbdafefe729f68d
+        generation: 243
+        image: sha256:391ddcfa57941e0a7a15ccaa3c5b53d5efc7d0da8b7d3d892cbdafefe729f68d
+      - created: "2024-12-13T12:47:50Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b433c0554799bb93c8035e7dccb8a3b14c302baceed87d33d1c2fc51b80a01ba
+        generation: 237
+        image: sha256:b433c0554799bb93c8035e7dccb8a3b14c302baceed87d33d1c2fc51b80a01ba
+      - created: "2024-12-12T12:47:53Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:7dc37fba8909e6a32353b51f0dc2d2397920778e83060dddbaf6d2df896770ed
+        generation: 234
+        image: sha256:7dc37fba8909e6a32353b51f0dc2d2397920778e83060dddbaf6d2df896770ed
+      - created: "2024-11-14T08:58:19Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:047bb0c54beb79c66c5ebb5c008bc5b7765ea0dc02ebed7e3fcbb52c765b2a22
+        generation: 231
+        image: sha256:047bb0c54beb79c66c5ebb5c008bc5b7765ea0dc02ebed7e3fcbb52c765b2a22
+      - created: "2024-11-05T11:28:13Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:00aa690be8c068e90d46367f42bec4080087ddd1392f992a259beae28166d986
+        generation: 228
+        image: sha256:00aa690be8c068e90d46367f42bec4080087ddd1392f992a259beae28166d986
+      - created: "2024-09-11T11:46:45Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c5364c8e7bc326db9a839088f8e88460db5b01d452d870059262efba401a12b2
+        generation: 225
+        image: sha256:c5364c8e7bc326db9a839088f8e88460db5b01d452d870059262efba401a12b2
+      - created: "2024-08-19T07:26:23Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:a2ad698adc128ebdabbb798d7047812f69bd5e40b1747e54abd1346b8b800ec7
+        generation: 222
+        image: sha256:a2ad698adc128ebdabbb798d7047812f69bd5e40b1747e54abd1346b8b800ec7
+      - created: "2024-06-14T10:34:25Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b4c6d95a7f146c500a081933280f3a1a99daea401011bd0928dde8e5eca5486e
+        generation: 219
+        image: sha256:b4c6d95a7f146c500a081933280f3a1a99daea401011bd0928dde8e5eca5486e
+      - created: "2024-06-10T13:36:35Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f2c42ba5f0586b79130a0968ecf854e5a86295ef083958971f7a4d408f18ac6d
+        generation: 216
+        image: sha256:f2c42ba5f0586b79130a0968ecf854e5a86295ef083958971f7a4d408f18ac6d
+      - created: "2024-06-07T11:36:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9ddb54450e941304a6d7ec22b356c6dfbcdba68817242f338f1613e4eef1a19f
+        generation: 213
+        image: sha256:9ddb54450e941304a6d7ec22b356c6dfbcdba68817242f338f1613e4eef1a19f
+      - created: "2024-05-30T07:21:37Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c5cb2867712bac4aa362c873c5efa24e584088d2302b37c2366997e4d19fe583
+        generation: 210
+        image: sha256:c5cb2867712bac4aa362c873c5efa24e584088d2302b37c2366997e4d19fe583
+      - created: "2024-05-28T14:23:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:f29d833cab692ffeca11f3676d4036d14e206a297ca1a8dc995ed7a4e414ea53
+        generation: 207
+        image: sha256:f29d833cab692ffeca11f3676d4036d14e206a297ca1a8dc995ed7a4e414ea53
+      - created: "2024-05-08T11:18:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:b5643c97c896148246153a7b8b7be70f798ea913f7d079b567ad439ab8897472
+        generation: 204
+        image: sha256:b5643c97c896148246153a7b8b7be70f798ea913f7d079b567ad439ab8897472
+      - created: "2024-04-23T10:01:55Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:8a209f6791b1d861c78e348f2b4179c4113813be310f202e949d1e6a43fdd05b
+        generation: 201
+        image: sha256:8a209f6791b1d861c78e348f2b4179c4113813be310f202e949d1e6a43fdd05b
+      - created: "2023-12-06T14:50:17Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:9aefbac0072b448bcfaebdad310c8e6056e4e62a0601f6a30d5bb3c6fcc2104b
+        generation: 199
+        image: sha256:9aefbac0072b448bcfaebdad310c8e6056e4e62a0601f6a30d5bb3c6fcc2104b
+      - created: "2022-11-26T20:32:27Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+        generation: 195
+        image: sha256:20f5c9318ed9220eba37464f3b48394570865b43874d6c81800169c5eb35821f
+      - created: "2022-09-27T16:41:30Z"
+        dockerImageReference: kohlercitregistry.azurecr.io/pm-procedures-webapp@sha256:796dcc2860e9f96e286c2ef229edeb6d82fa258cd34393e357fce1573ffdbfed
+        generation: 192
+        image: sha256:796dcc2860e9f96e286c2ef229edeb6d82fa258cd34393e357fce1573ffdbfed
+      tag: test
+kind: List
+metadata:
+  resourceVersion: ""

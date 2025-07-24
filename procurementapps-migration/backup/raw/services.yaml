@@ -1,0 +1,85 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+      openshift.io/backup-server-version: "1.11"
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/migration-registry: 172.30.105.8:5000
+      openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+      openshift.io/restore-server-version: "1.20"
+    creationTimestamp: "2022-03-17T19:59:09Z"
+    labels:
+      app: pm-procedures-prod
+      migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
+      migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
+      velero.io/backup-name: migration-555db-initial-km8f4
+      velero.io/restore-name: migration-555db-final-wp57g
+    name: pm-procedures-prod
+    namespace: procurementapps
+    resourceVersion: "677427400"
+    uid: fed7a440-110f-432e-9002-0def8e4cfc4f
+  spec:
+    clusterIP: 172.30.86.238
+    clusterIPs:
+    - 172.30.86.238
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 5001-tcp
+      port: 5001
+      protocol: TCP
+      targetPort: 5001
+    selector:
+      deploymentconfig: pm-procedures-prod
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+      openshift.io/backup-server-version: "1.11"
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/migration-registry: 172.30.105.8:5000
+      openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+      openshift.io/restore-server-version: "1.20"
+    creationTimestamp: "2022-03-17T19:59:09Z"
+    labels:
+      app: pm-procedures-test
+      migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
+      migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
+      velero.io/backup-name: migration-555db-initial-km8f4
+      velero.io/restore-name: migration-555db-final-wp57g
+    name: pm-procedures-test
+    namespace: procurementapps
+    resourceVersion: "677427408"
+    uid: 6f4cd1cd-5cf3-48aa-8edd-2c824ad1c948
+  spec:
+    clusterIP: 172.30.39.139
+    clusterIPs:
+    - 172.30.39.139
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 5001-tcp
+      port: 5001
+      protocol: TCP
+      targetPort: 5001
+    selector:
+      deploymentconfig: pm-procedures-test
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""

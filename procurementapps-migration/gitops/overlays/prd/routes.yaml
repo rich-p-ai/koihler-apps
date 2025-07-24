@@ -1,0 +1,52 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+    openshift.io/backup-server-version: "1.11"
+    openshift.io/migration-registry: 172.30.105.8:5000
+    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+    openshift.io/restore-server-version: "1.20"
+  labels:
+    app: pm-procedures-prod
+  name: pm-procedures-prod
+  namespace: procurementapps
+spec:
+  host: pm-procedures-prod.apps.ocp4.kohlerco.com
+  port:
+    targetPort: 5001-tcp
+  tls:
+    termination: passthrough
+  to:
+    kind: Service
+    name: pm-procedures-prod
+    weight: 100
+  wildcardPolicy: None
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+    openshift.io/backup-server-version: "1.11"
+    openshift.io/migration-registry: 172.30.105.8:5000
+    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+    openshift.io/restore-server-version: "1.20"
+  labels:
+    app: pm-procedures-test
+    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
+    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
+    velero.io/backup-name: migration-555db-initial-km8f4
+    velero.io/restore-name: migration-555db-final-wp57g
+  name: pm-procedures-test
+  namespace: procurementapps
+spec:
+  host: pm-procedures-test.apps.ocp4.kohlerco.com
+  port:
+    targetPort: 5001-tcp
+  tls:
+    termination: passthrough
+  to:
+    kind: Service
+    name: pm-procedures-test
+    weight: 100
+  wildcardPolicy: None

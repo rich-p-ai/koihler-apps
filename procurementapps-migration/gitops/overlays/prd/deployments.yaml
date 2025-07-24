@@ -1,0 +1,169 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pm-procedures-prod
+  namespace: procurementapps
+  labels:
+    app: pm-procedures-prod
+    component: pm-procedures
+    environment: production
+    app.kubernetes.io/name: pm-procedures
+    app.kubernetes.io/component: webapp
+    app.kubernetes.io/part-of: procurementapps
+  annotations:
+    migrated-from: DeploymentConfig
+    migration-date: "2025-07-24"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pm-procedures-prod
+      deployment: pm-procedures-prod
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pm-procedures-prod
+        deployment: pm-procedures-prod
+        component: pm-procedures
+        environment: production
+    spec:
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: pm-procedures-webapp
+        image: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp:latest
+        ports:
+        - containerPort: 5001
+          protocol: TCP
+        env:
+        - name: TZ
+          value: America/Chicago
+        envFrom:
+        - configMapRef:
+            name: pm-procedures-prod
+        - secretRef:
+            name: pm-procedures-secrets-prod
+        volumeMounts:
+        - name: pm-procedures-cert-prod2
+          mountPath: /opt/app-root/src/ssl
+          readOnly: true
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5001
+            scheme: HTTPS
+          initialDelaySeconds: 120
+          timeoutSeconds: 30
+          periodSeconds: 30
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5001
+            scheme: HTTPS
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+          periodSeconds: 10
+          failureThreshold: 3
+      volumes:
+      - name: pm-procedures-cert-prod2
+        secret:
+          secretName: pm-procedures-cert-prod2
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pm-procedures-test
+  namespace: procurementapps
+  labels:
+    app: pm-procedures-test
+    component: pm-procedures
+    environment: test
+    app.kubernetes.io/name: pm-procedures
+    app.kubernetes.io/component: webapp
+    app.kubernetes.io/part-of: procurementapps
+  annotations:
+    migrated-from: DeploymentConfig
+    migration-date: "2025-07-24"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pm-procedures-test
+      deployment: pm-procedures-test
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pm-procedures-test
+        deployment: pm-procedures-test
+        component: pm-procedures
+        environment: test
+    spec:
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: pm-procedures-webapp
+        image: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp:test
+        ports:
+        - containerPort: 5001
+          protocol: TCP
+        env:
+        - name: TZ
+          value: America/Chicago
+        envFrom:
+        - configMapRef:
+            name: pm-procedures-test
+        - secretRef:
+            name: pm-procedures-secrets-test
+        volumeMounts:
+        - name: pm-procedures-cert-test2
+          mountPath: /opt/app-root/src/ssl
+          readOnly: true
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 50m
+            memory: 256Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5001
+            scheme: HTTPS
+          initialDelaySeconds: 120
+          timeoutSeconds: 30
+          periodSeconds: 30
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5001
+            scheme: HTTPS
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+          periodSeconds: 10
+          failureThreshold: 3
+      volumes:
+      - name: pm-procedures-cert-test2
+        secret:
+          secretName: pm-procedures-cert-test2
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

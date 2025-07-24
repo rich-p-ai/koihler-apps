@@ -1,0 +1,120 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+    openshift.io/backup-server-version: "1.11"
+    openshift.io/generated-by: OpenShiftWebConsole
+    openshift.io/migration-registry: 172.30.105.8:5000
+    openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+    openshift.io/restore-server-version: "1.20"
+  creationTimestamp: "2022-03-17T19:58:18Z"
+  generation: 288
+  labels:
+    app: pm-procedures-test
+    migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
+    migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
+    velero.io/backup-name: migration-555db-initial-km8f4
+    velero.io/restore-name: migration-555db-final-wp57g
+  name: pm-procedures-test
+  namespace: procurementapps
+  resourceVersion: "5289448393"
+  uid: 6fa9b176-50ae-4717-960d-214ab91bf1cc
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: pm-procedures-test
+    deploymentconfig: pm-procedures-test
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: pm-procedures-test
+        deploymentconfig: pm-procedures-test
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: America/Chicago
+        envFrom:
+        - configMapRef:
+            name: pm-procedures-test
+        - secretRef:
+            name: pm-procedures-secrets-test
+        - secretRef:
+            name: pm-procedures-certpass-test
+        image: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+        imagePullPolicy: Always
+        name: pm-procedures-test
+        ports:
+        - containerPort: 5001
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /i01/certs
+          name: volume-mp95y
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: useroot
+      serviceAccountName: useroot
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: volume-mp95y
+        secret:
+          defaultMode: 420
+          secretName: pm-procedures-cert-test2
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - pm-procedures-test
+      from:
+        kind: ImageStreamTag
+        name: pm-procedures-webapp:test
+        namespace: procurementapps
+      lastTriggeredImage: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+    type: ImageChange
+  - type: ConfigChange
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2025-07-09T16:00:06Z"
+    lastUpdateTime: "2025-07-09T16:00:06Z"
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2025-07-09T16:00:01Z"
+    lastUpdateTime: "2025-07-09T16:00:09Z"
+    message: replication controller "pm-procedures-test-271" successfully rolled out
+    reason: NewReplicationControllerAvailable
+    status: "True"
+    type: Progressing
+  details:
+    causes:
+    - imageTrigger:
+        from:
+          kind: DockerImage
+          name: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp@sha256:c99d177eb2bf7921cbaa4f4ddb1ba45dcb20aa9adf3fa5d0cc5bcc7a156a1a81
+      type: ImageChange
+    message: image change
+  latestVersion: 271
+  observedGeneration: 288
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1

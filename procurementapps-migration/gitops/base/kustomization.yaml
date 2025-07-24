@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+metadata:
+  name: procurementapps-base
+
+resources:
+  - namespace.yaml
+  - serviceaccount.yaml
+  - scc-binding.yaml
+
+commonLabels:
+  app.kubernetes.io/name: procurementapps
+  app.kubernetes.io/part-of: kohler-apps

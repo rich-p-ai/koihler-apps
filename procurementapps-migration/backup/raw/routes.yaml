@@ -1,0 +1,83 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+      openshift.io/backup-server-version: "1.11"
+      openshift.io/migration-registry: 172.30.105.8:5000
+      openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+      openshift.io/restore-server-version: "1.20"
+    creationTimestamp: "2022-05-05T13:56:43Z"
+    labels:
+      app: pm-procedures-prod
+    name: pm-procedures-prod
+    namespace: procurementapps
+    resourceVersion: "3949302996"
+    uid: 3edd3226-318d-44cf-812b-354c554738d5
+  spec:
+    host: pm-procedures-prod.apps.ocp4.kohlerco.com
+    port:
+      targetPort: 5001-tcp
+    tls:
+      termination: passthrough
+    to:
+      kind: Service
+      name: pm-procedures-prod
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2024-07-14T13:33:26Z"
+        status: "True"
+        type: Admitted
+      host: pm-procedures-prod.apps.ocp4.kohlerco.com
+      routerCanonicalHostname: router-default.apps.ocp4.kohlerco.com
+      routerName: default
+      wildcardPolicy: None
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/backup-registry-hostname: docker-registry.default.svc:5000
+      openshift.io/backup-server-version: "1.11"
+      openshift.io/migration-registry: 172.30.105.8:5000
+      openshift.io/restore-registry-hostname: image-registry.openshift-image-registry.svc:5000
+      openshift.io/restore-server-version: "1.20"
+    creationTimestamp: "2022-05-05T12:58:51Z"
+    labels:
+      app: pm-procedures-test
+      migration.openshift.io/migrated-by-migmigration: 963fa791-d1d5-4d33-a8bd-f6bf82dc7685
+      migration.openshift.io/migrated-by-migplan: beab174a-009f-4abf-9783-6ab7ab301523
+      velero.io/backup-name: migration-555db-initial-km8f4
+      velero.io/restore-name: migration-555db-final-wp57g
+    name: pm-procedures-test
+    namespace: procurementapps
+    resourceVersion: "3949305076"
+    uid: 5b44f6a4-531d-42c0-a588-51fc0c480b9c
+  spec:
+    host: pm-procedures-test.apps.ocp4.kohlerco.com
+    port:
+      targetPort: 5001-tcp
+    tls:
+      termination: passthrough
+    to:
+      kind: Service
+      name: pm-procedures-test
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2024-07-14T13:33:56Z"
+        status: "True"
+        type: Admitted
+      host: pm-procedures-test.apps.ocp4.kohlerco.com
+      routerCanonicalHostname: router-default.apps.ocp4.kohlerco.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
