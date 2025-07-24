@@ -21,5 +21,5 @@ labels:
 
 images:
   - name: image-registry.openshift-image-registry.svc:5000/procurementapps/pm-procedures-webapp
-    newName: quay.openshiftocp4.kohlerco.com/procurementapps/pm-procedures-webapp
+    newName: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp
     newTag: latest

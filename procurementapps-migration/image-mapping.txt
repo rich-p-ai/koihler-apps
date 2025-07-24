@@ -1,0 +1,9 @@
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:latest=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:latest
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:test=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:test
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:dev=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:dev
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2025.04.01=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.04.01
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.31=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.31
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.30=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.30
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.29=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.29
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.28=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.28
+default-route-openshift-image-registry.apps.ocp4.kohlerco.com/procurementapps/pm-procedures-webapp:2024.12.13=kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2024.12.13

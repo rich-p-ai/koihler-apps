@@ -1,0 +1,10 @@
+{
+  "auths": {
+    "default-route-openshift-image-registry.apps.ocp4.kohlerco.com": {
+      "auth": "a3ViZTphZG1pbjpzaGEyNTZ+Vm45UUowSmNGRkpQV3BDc2steXNVNXdUWG9UQ2hUNWMwdWxaWnhSQjBNTQ=="
+    },
+    "kohler-registry-quay-quay.apps.ocp-host.kohlerco.com": {
+      "auth": "cHJvY3VyZW1lbnRhcHBzK3JvYm90OlZIMDc4MUY0NjE4MDNPOFRZVVVXQURWQVpNRVUyQ1YxQ0VOWFoyNE8yMUY3RUM4STFLU1BNVFJEWkxFSkxGVEc="
+    }
+  }
+}
