@@ -2,14 +2,21 @@
 
 ## ✅ Migration Summary
 
-The `procurementapps` namespace has been successfully migrated from OCP4 to OCP-PRD with full GitOps deployment capability!
+The `procurementapps` namespace has been **SUCCESSFULLY MIGRATED** from OCP4 to OCP-PRD with full GitOps deployment capability and **ALL IMAGES MIGRATED** to the new Quay registry!
 
 ### 🔄 Key Transformations
+
+#### **Container Registry Migration** ✅
+- ✅ **Source**: `default-route-openshift-image-registry.apps.ocp4.kohlerco.com` 
+- ✅ **Target**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com`
+- ✅ **Images Migrated**: 9 critical tags (latest, test, dev, 2025.04.01, 2025.03.31, 2025.03.30, 2025.03.29, 2025.03.28, 2024.12.13)
+- ✅ **Authentication**: Service account dockercfg + robot account
+- ✅ **Data Transfer**: 296.1MB successfully uploaded to Quay
 
 #### **DeploymentConfig → Deployment Conversion**
 - ✅ **pm-procedures-prod**: Converted to standard Kubernetes Deployment
 - ✅ **pm-procedures-test**: Converted to standard Kubernetes Deployment
-- ✅ **Container Registry**: Updated from internal registry to Quay
+- ✅ **Container Registry**: Updated from internal registry to **Quay** (kohler-registry-quay-quay.apps.ocp-host.kohlerco.com)
 - ✅ **Security Context**: Maintained root permissions with proper SCC bindings
 - ✅ **Health Checks**: Preserved liveness and readiness probes
 - ✅ **Resource Management**: Added proper limits and requests

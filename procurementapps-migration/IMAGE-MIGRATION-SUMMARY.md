@@ -2,7 +2,7 @@
 
 ## Migration Details
 
-**Date**: Thu, Jul 24, 2025 10:40:30 AM
+**Date**: Thu, Jul 24, 2025 10:53:33 AM
 **Source Registry**: default-route-openshift-image-registry.apps.ocp4.kohlerco.com
 **Target Registry**: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com
 **Repository**: procurementapps/pm-procedures-webapp
@@ -11,24 +11,24 @@
 ## Migration Results
 
 - **Total Tags Attempted**: 9
-- **Successful Migrations**: 0
-- **Failed Migrations**: 9
+- **Successful Migrations**: 9
+- **Failed Migrations**: 1
 
 ### ✅ Successfully Migrated Images
 
-
+- **la**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:la`
+- ****: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:`
+- **dev**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:dev`
+- **2025.04.01**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.04.01`
+- **2025.03.31**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.31`
+- **2025.03.30**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.30`
+- **2025.03.29**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.29`
+- **2025.03.28**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2025.03.28`
+- **2024.12.13**: `kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/procurementapps/pm-procedures-webapp:2024.12.13`
 
 ### ❌ Failed Migrations
 
-- **latest**: Migration failed - manual intervention required
 - **test**: Migration failed - manual intervention required
-- **dev**: Migration failed - manual intervention required
-- **2025.04.01**: Migration failed - manual intervention required
-- **2025.03.31**: Migration failed - manual intervention required
-- **2025.03.30**: Migration failed - manual intervention required
-- **2025.03.29**: Migration failed - manual intervention required
-- **2025.03.28**: Migration failed - manual intervention required
-- **2024.12.13**: Migration failed - manual intervention required
 
 ## Registry Access
 
@@ -96,15 +96,7 @@ oc image info --registry-config=quay-auth.json kohler-registry-quay-quay.apps.oc
 ## 🔧 Manual Migration Required
 
 The following tags failed automatic migration and need manual attention:
-- **latest**
 - **test**
-- **dev**
-- **2025.04.01**
-- **2025.03.31**
-- **2025.03.30**
-- **2025.03.29**
-- **2025.03.28**
-- **2024.12.13**
 
 Manual migration steps:
 ```bash

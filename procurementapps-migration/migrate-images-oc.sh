@@ -71,23 +71,26 @@ check_prerequisites() {
     print_success "All prerequisites met"
 }
 
-# Create registry credentials for target Quay registry
+# Setup registry authentication using service account secret
 setup_registry_auth() {
     print_section "SETTING UP REGISTRY AUTHENTICATION"
     
-    # Create credentials file for Quay registry
-    QUAY_AUTH_FILE="quay-auth.json"
+    # Extract service account dockercfg secret
+    print_info "Extracting service account Docker config..."
+    oc get secret useroot-dockercfg-tvmxn -n procurementapps -o jsonpath='{.data.\.dockercfg}' | base64 -d > serviceaccount-dockercfg.json
     
-    # Get OCP token for source
-    OCP_TOKEN=$(oc whoami -t)
-    OCP_USER=$(oc whoami)
+    # Create enhanced auth config with both source and target registries
+    QUAY_AUTH_FILE="registry-auth.json"
     
-    # Create Docker auth config
+    # Extract the existing auth for source registry
+    SOURCE_AUTH=$(cat serviceaccount-dockercfg.json | jq -r '."default-route-openshift-image-registry.apps.ocp4.kohlerco.com".auth')
+    
+    # Create combined Docker auth config
     cat > "$QUAY_AUTH_FILE" << EOF
 {
   "auths": {
-    "$SOURCE_REGISTRY_EXTERNAL": {
-      "auth": "$(echo -n "$OCP_USER:$OCP_TOKEN" | base64 -w 0)"
+    "default-route-openshift-image-registry.apps.ocp4.kohlerco.com": {
+      "auth": "$SOURCE_AUTH"
     },
     "$TARGET_REGISTRY": {
       "auth": "$(echo -n "$ROBOT_USER:$ROBOT_TOKEN" | base64 -w 0)"
@@ -97,6 +100,8 @@ setup_registry_auth() {
 EOF
     
     print_success "Registry authentication configured: $QUAY_AUTH_FILE"
+    print_info "Using service account authentication for source registry"
+    print_info "Using robot account authentication for target registry"
 }
 
 # Create image mapping file for bulk migration
@@ -129,17 +134,15 @@ migrate_images() {
     print_info "Source: $SOURCE_REGISTRY/$NAMESPACE/$IMAGE_NAME"
     print_info "Target: $TARGET_REGISTRY/$NAMESPACE/$IMAGE_NAME"
     
-    # Perform the migration
-    if oc image mirror \
-        --from-dir=/tmp/mirror \
-        --registry-config="$QUAY_AUTH_FILE" \
-        --filename="image-mapping.txt" \
-        --dry-run=false \
-        --force \
-        --skip-multiple-scopes \
-        --continue-on-error; then
-        
-        print_success "Bulk migration completed"
+        # Perform the migration
+        if oc image mirror \
+            --from-dir=/tmp/mirror \
+            --registry-config="$QUAY_AUTH_FILE" \
+            --filename="image-mapping.txt" \
+            --dry-run=false \
+            --force \
+            --skip-multiple-scopes \
+            --continue-on-error; then        print_success "Bulk migration completed"
         
         # Since oc image mirror is bulk operation, assume all succeeded
         # Individual verification will confirm actual status
