@@ -1,0 +1,35 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    creationTimestamp: "2022-09-20T13:09:46Z"
+    name: mulesoftprd.apps.ocpaz.kohlerco.com
+    namespace: mulesoftapps-prod
+    resourceVersion: "301249582"
+    uid: 32b71e49-3956-4f59-9719-16ea4016d217
+  spec:
+    host: mulesoftprd.apps.ocpaz.kohlerco.com
+    port:
+      targetPort: 5001-tcp
+    tls:
+      insecureEdgeTerminationPolicy: None
+      termination: passthrough
+    to:
+      kind: Service
+      name: mulesoft-accelerator-2
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2022-09-20T13:09:46Z"
+        status: "True"
+        type: Admitted
+      host: mulesoftprd.apps.ocpaz.kohlerco.com
+      routerCanonicalHostname: router-default.apps.ocpaz.kohlerco.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""

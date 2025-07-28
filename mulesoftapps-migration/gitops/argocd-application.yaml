@@ -1,0 +1,60 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mulesoftapps-prd
+  namespace: openshift-gitops
+  labels:
+    app.kubernetes.io/name: mulesoftapps
+    app.kubernetes.io/part-of: mulesoftapps
+    environment: production
+    cluster: ocp-prd
+  annotations:
+    migration.source: "ocpaz"
+    migration.target: "ocp-prd"
+    migration.date: "2025-07-28"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    targetRevision: HEAD
+    path: mulesoftapps-migration/gitops/overlays/prd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mulesoftapps-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
+      - ApplyOutOfSyncOnly=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+        - /status
+    - group: ""
+      kind: Service
+      jsonPointers:
+        - /spec/clusterIP
+        - /spec/clusterIPs
+    - group: route.openshift.io
+      kind: Route
+      jsonPointers:
+        - /status
+    - group: ""
+      kind: PersistentVolumeClaim
+      jsonPointers:
+        - /status
+    - group: ""
+      kind: Secret
+      jsonPointers:
+        - /data

@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: Mulesoftapps-prod
+    openshift.io/requester: KO95056A@kohlerco.com
+    openshift.io/sa.scc.mcs: s0:c33,c12
+    openshift.io/sa.scc.supplemental-groups: 1001080000/10000
+    openshift.io/sa.scc.uid-range: 1001080000/10000
+  creationTimestamp: "2022-09-09T15:35:03Z"
+  finalizers:
+  - quay.redhat.com/quayintegrations
+  labels:
+    kubernetes.io/metadata.name: mulesoftapps-prod
+    openshift-pipelines.tekton.dev/namespace-reconcile-version: v1.6.4
+    pod-security.kubernetes.io/audit: baseline
+    pod-security.kubernetes.io/audit-version: v1.24
+    pod-security.kubernetes.io/warn: baseline
+    pod-security.kubernetes.io/warn-version: v1.24
+  name: mulesoftapps-prod
+  resourceVersion: "2127481740"
+  uid: 41daee54-a67c-41da-8e1a-b59095b1959d
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

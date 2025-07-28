@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mulesoftapps-prod
+  labels:
+    name: mulesoftapps-prod
+    app.kubernetes.io/name: mulesoftapps
+    app.kubernetes.io/part-of: mulesoftapps
+    app.kubernetes.io/managed-by: argocd
+    migrated-from: ocpaz
+  annotations:
+    openshift.io/description: "Mulesoft applications migrated from OCPAZ to OCP-PRD"
+    openshift.io/display-name: "Mulesoft Apps Production"

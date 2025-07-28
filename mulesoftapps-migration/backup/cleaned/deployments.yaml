@@ -1,0 +1,238 @@
+apiVersion: v1
+items:
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "40"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"mulesoft-accelerator-2:latest","namespace":"mulesoftapps-prod"},"fieldPath":"spec.template.spec.containers[?(@.name==\"mulesoft-accelerator-2\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-19T13:38:18Z"
+      generation: 71
+      name: mulesoft-accelerator-2
+      namespace: mulesoftapps-prod
+      resourceVersion: "4263003351"
+      uid: 5af2c765-98c3-4d1a-8bbe-bce86a044fe6
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: mulesoft-accelerator-2
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: mulesoft-accelerator-2
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              envFrom:
+                - secretRef:
+                    name: mulesoft-secrets
+              image: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+              imagePullPolicy: Always
+              name: mulesoft-accelerator-2
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /app/certs
+                  name: mulesoft-cert
+                - mountPath: /app/data
+                  name: mulesoft-accelerator
+                  subPath: data
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: mulesoft-cert
+              secret:
+                defaultMode: 420
+                secretName: mulesoft-ssl-cert
+            - name: mulesoft-accelerator
+              persistentVolumeClaim:
+                claimName: mulesoft-accelerator
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-11-19T13:38:18Z"
+          lastUpdateTime: "2024-10-09T14:54:41Z"
+          message: ReplicaSet "mulesoft-accelerator-2-677bfd5786" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-07-08T16:17:09Z"
+          lastUpdateTime: "2025-07-08T16:17:09Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 71
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "8"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"wins0002499-codepuller:latest","namespace":"mulesoftapps-prod"},"fieldPath":"spec.template.spec.containers[?(@.name==\"wins0002499-codepuller\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-14T14:18:18Z"
+      generation: 19
+      name: wins0002499-codepuller
+      namespace: mulesoftapps-prod
+      resourceVersion: "3928477754"
+      uid: 0c521feb-0bd3-49a8-b34d-1aacbe999b56
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: wins0002499-codepuller
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: wins0002499-codepuller
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              envFrom:
+                - secretRef:
+                    name: codepuller-secrets
+              image: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+              imagePullPolicy: Always
+              name: wins0002499-codepuller
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /i01/data
+                  name: mulesoft-accelerator
+                  subPath: data
+                - mountPath: /i01/code
+                  name: mulesoft-accelerator
+                  subPath: code
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: mulesoft-accelerator
+              persistentVolumeClaim:
+                claimName: mulesoft-accelerator
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-11-14T14:18:18Z"
+          lastUpdateTime: "2024-01-05T15:54:59Z"
+          message: ReplicaSet "wins0002499-codepuller-5584c6dfb" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-03-06T18:47:38Z"
+          lastUpdateTime: "2025-03-06T18:47:38Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 19
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        deployment.kubernetes.io/revision: "6"
+        image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"wins0002537-notifications:latest","namespace":"mulesoftapps-prod"},"fieldPath":"spec.template.spec.containers[?(@.name==\"wins0002537-notifications\")].image","pause":"false"}]'
+      creationTimestamp: "2022-11-14T14:04:26Z"
+      generation: 21
+      name: wins0002537-notifications
+      namespace: mulesoftapps-prod
+      resourceVersion: "3928480659"
+      uid: 5dcef156-9c6b-4799-8248-5bf7d6e9b18d
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+          app: wins0002537-notifications
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: wins0002537-notifications
+        spec:
+          containers:
+            - env:
+                - name: TZ
+                  value: America/Chicago
+              envFrom:
+                - secretRef:
+                    name: notification-secrets
+              image: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+              imagePullPolicy: Always
+              name: wins0002537-notifications
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01
+                  name: notifications-storage1
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: notifications-storage1
+              persistentVolumeClaim:
+                claimName: notifications-storage1
+    status:
+      availableReplicas: 1
+      conditions:
+        - lastTransitionTime: "2022-11-14T14:04:26Z"
+          lastUpdateTime: "2023-08-30T00:08:30Z"
+          message: ReplicaSet "wins0002537-notifications-58454c84fb" has successfully progressed.
+          reason: NewReplicaSetAvailable
+          status: "True"
+          type: Progressing
+        - lastTransitionTime: "2025-03-06T18:47:53Z"
+          lastUpdateTime: "2025-03-06T18:47:53Z"
+          message: Deployment has minimum availability.
+          reason: MinimumReplicasAvailable
+          status: "True"
+          type: Available
+      observedGeneration: 21
+      readyReplicas: 1
+      replicas: 1
+      updatedReplicas: 1
+kind: List
+metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []

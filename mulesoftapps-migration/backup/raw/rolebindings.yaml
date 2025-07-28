@@ -1,0 +1,176 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2022-09-09T15:35:03Z"
+    name: admin
+    namespace: mulesoftapps-prod
+    resourceVersion: "3442237846"
+    uid: 82f64a29-1e80-4f33-90b8-fa8ae2228966
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: KO95056A@kohlerco.com
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: KO168V0A@kohlerco.com
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2022-09-19T19:46:04Z"
+    name: admin-default
+    namespace: mulesoftapps-prod
+    resourceVersion: "299691780"
+    uid: 6d35ee60-1ba3-427d-b16b-55b799525a41
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: programmingdevops
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2024-02-01T14:22:36Z"
+    name: admin-soumya
+    namespace: mulesoftapps-prod
+    resourceVersion: "2593913642"
+    uid: e67cd617-83e6-4b36-801a-fcc1c0c3fdb5
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: KO14P66A@kohlerco.com
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2022-09-10T12:19:42Z"
+    name: admin1
+    namespace: mulesoftapps-prod
+    resourceVersion: "279566055"
+    uid: 9440ec28-ccd2-4f28-9aa0-4de02056e911
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: Nathan.Kracht@kohleradmin.com
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2022-10-02T18:48:06Z"
+    name: openshift-pipelines-edit
+    namespace: mulesoftapps-prod
+    ownerReferences:
+    - apiVersion: operator.tekton.dev/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: TektonInstallerSet
+      name: rhosp-rbac-gkqpp
+      uid: 465d0188-ec42-455a-8614-9a17b8d66902
+    resourceVersion: "327941700"
+    uid: 681223a7-5127-485f-9076-81d99288b9a3
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: edit
+  subjects:
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: mulesoftapps-prod
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2022-09-09T15:35:03Z"
+    name: pipelines-scc-rolebinding
+    namespace: mulesoftapps-prod
+    ownerReferences:
+    - apiVersion: operator.tekton.dev/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: TektonInstallerSet
+      name: rhosp-rbac-gkqpp
+      uid: 465d0188-ec42-455a-8614-9a17b8d66902
+    resourceVersion: "327941696"
+    uid: 9d2eb679-e67d-4683-8fa6-be1dea4ff846
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: pipelines-scc-clusterrole
+  subjects:
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: mulesoftapps-prod
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows deploymentconfigs in this namespace to rollout
+        pods in this namespace.  It is auto-managed by a controller; remove subjects
+        to disable.
+    creationTimestamp: "2022-09-09T15:35:04Z"
+    name: system:deployers
+    namespace: mulesoftapps-prod
+    resourceVersion: "277667231"
+    uid: 00609d04-ca83-486b-9533-62aea90644bf
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:deployer
+  subjects:
+  - kind: ServiceAccount
+    name: deployer
+    namespace: mulesoftapps-prod
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows builds in this namespace to push images to
+        this namespace.  It is auto-managed by a controller; remove subjects to disable.
+    creationTimestamp: "2022-09-09T15:35:03Z"
+    name: system:image-builders
+    namespace: mulesoftapps-prod
+    resourceVersion: "277667225"
+    uid: e828e41c-6bc7-4fcd-b3e3-1727c5067051
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:image-builder
+  subjects:
+  - kind: ServiceAccount
+    name: builder
+    namespace: mulesoftapps-prod
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows all pods in this namespace to pull images from
+        this namespace.  It is auto-managed by a controller; remove subjects to disable.
+    creationTimestamp: "2022-09-19T19:46:46Z"
+    name: system:image-pullers
+    namespace: mulesoftapps-prod
+    resourceVersion: "299692801"
+    uid: a1bed8b1-1db5-4126-9f7f-96ff9c3453e3
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:image-puller
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:serviceaccounts:mulesoftapps-prod
+kind: List
+metadata:
+  resourceVersion: ""

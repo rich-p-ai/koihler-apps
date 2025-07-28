@@ -1,0 +1,78 @@
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: mulesoftapps-anyuid
+  labels:
+    app.kubernetes.io/name: mulesoftapps
+    app.kubernetes.io/managed-by: argocd
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: false
+allowedCapabilities: null
+defaultAddCapabilities: null
+fsGroup:
+  type: RunAsAny
+priority: 10
+readOnlyRootFilesystem: false
+requiredDropCapabilities:
+- MKNOD
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: MustRunAs
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:mulesoftapps-prod:useroot
+- system:serviceaccount:mulesoftapps-prod:mulesoftapps-sa
+volumes:
+- configMap
+- downwardAPI
+- emptyDir
+- persistentVolumeClaim
+- projected
+- secret
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: mulesoftapps-anyuid-binding
+  namespace: mulesoftapps-prod
+  labels:
+    app.kubernetes.io/name: mulesoftapps
+    app.kubernetes.io/managed-by: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:anyuid
+subjects:
+- kind: ServiceAccount
+  name: useroot
+  namespace: mulesoftapps-prod
+- kind: ServiceAccount
+  name: mulesoftapps-sa
+  namespace: mulesoftapps-prod
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: mulesoftapps-privileged-binding
+  namespace: mulesoftapps-prod
+  labels:
+    app.kubernetes.io/name: mulesoftapps
+    app.kubernetes.io/managed-by: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:privileged
+subjects:
+- kind: ServiceAccount
+  name: useroot
+  namespace: mulesoftapps-prod
+- kind: ServiceAccount
+  name: mulesoftapps-sa
+  namespace: mulesoftapps-prod

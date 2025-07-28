@@ -1,0 +1,996 @@
+apiVersion: v1
+items:
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      creationTimestamp: "2022-09-19T20:09:49Z"
+      generation: 89
+      name: mulesoft-accelerator-2
+      namespace: mulesoftapps-prod
+      resourceVersion: "3458283551"
+      uid: 3adb7ab3-1441-48cc-8573-f245522a6677
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:481d5bc22c8a9164852049f4726eb0158bcfd9118bffed9526b832e5b5f98999
+            namespace: mulesoftapps-qa
+          generation: 7
+          importPolicy:
+            importMode: Legacy
+          name: 2022.09.26
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:9518a69341dd6b9bb7c56887b35404f61bb7dcdfb4102d46d94dcf0bcabc377f
+            namespace: mulesoftapps-qa
+          generation: 11
+          importPolicy:
+            importMode: Legacy
+          name: 2022.09.27
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:f6ab57491d671c166de1a8c9143867bff5027d56b76bcf6ac83e288513d21747
+            namespace: mulesoftapps-qa
+          generation: 13
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.12
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:d32627306036cf76ad2b9b167db03b48879d1a5f46add4755eba2a355ebd73e9
+            namespace: mulesoftapps-qa
+          generation: 15
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:f86464d71385c4cc905d4d18a9ce088201b338b8b89559db6689b2139f816c7e
+            namespace: mulesoftapps-qa
+          generation: 17
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.26
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:c1f4c373817c2ef690e48d32468245898e08b3622c1d3bbaa28222cd32a67a71
+            namespace: mulesoftapps-qa
+          generation: 19
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.27
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:253bf5b5a63ba5c7208bf36a13a5f3523af581dba4fb429163e240562aa297ff
+            namespace: mulesoftapps-qa
+          generation: 21
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.31
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:b251722465e631ec891df0e6299e61b6137aa73d029bedbf84ae2bd866c1bf36
+            namespace: mulesoftapps-qa
+          generation: 25
+          importPolicy:
+            importMode: Legacy
+          name: 2022.11.03
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:416b270c75f21c287662cf65787d361eba625a7112dfa2857a832c268741f011
+            namespace: mulesoftapps-qa
+          generation: 27
+          importPolicy:
+            importMode: Legacy
+          name: 2022.11.04
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:c2f0a6f333f2209e7aacf2435aeb985e23f5b0512b1447c5a3930100714d1ae4
+            namespace: mulesoftapps-qa
+          generation: 29
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:07d671a89657d8cd0ebf71f69117e26e1efdd7701c2046c16feb28b8c1a24df4
+            namespace: mulesoftapps-qa
+          generation: 31
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:f7fbbe84bd47ebccb937c7d96f48816c14986003e7f138dd8ff4186c37a02cd5
+            namespace: mulesoftapps-qa
+          generation: 33
+          importPolicy:
+            importMode: Legacy
+          name: 2023.02.07
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:dabb2795d390ad69297e0d6bb6fccc4a65895216060107f74cdce3f26455e442
+            namespace: mulesoftapps-qa
+          generation: 35
+          importPolicy:
+            importMode: Legacy
+          name: 2023.02.11
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:485e4f929ab66638bf1b42877b3c5162b80f3600538b0e04d1c48534c552f9ae
+            namespace: mulesoftapps-qa
+          generation: 37
+          importPolicy:
+            importMode: Legacy
+          name: 2023.03.01
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:bd773633e57118a62e1979ba720aea5a30fc116f472de680ff6e27a6c963989e
+            namespace: mulesoftapps-qa
+          generation: 39
+          importPolicy:
+            importMode: Legacy
+          name: 2023.03.03
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:b26bad2557cc60ac470d5338db1533d6aa3ff2586bd4b1a5d87cfbd7a4de0ec8
+            namespace: mulesoftapps-qa
+          generation: 41
+          importPolicy:
+            importMode: Legacy
+          name: 2023.03.06
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:6f2a28bff948d3f5661eee66770a4ce876b75e42458532eec859e16477b88629
+            namespace: mulesoftapps-qa
+          generation: 47
+          importPolicy:
+            importMode: Legacy
+          name: 2023.03.07
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:b0b1211ccf9658daad391b16cf559ff05db52bb744532fa398ac12790613f92d
+            namespace: mulesoftapps-qa
+          generation: 49
+          importPolicy:
+            importMode: Legacy
+          name: 2023.03.08
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:44d004dbe13c045d8c891897a68313d4662b6294012786d058a791a90061202f
+            namespace: mulesoftapps-qa
+          generation: 51
+          importPolicy:
+            importMode: Legacy
+          name: 2023.04.21
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:7c94071cc2863172d6f58613229818d7f786b27d4f46a4bcbb5f0a42d7f5646f
+            namespace: programmingdevops
+          generation: 55
+          importPolicy:
+            importMode: Legacy
+          name: 2023.06.21
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:121ebfa1a867e2faa5c4e4e431b54f949f4e2c94ff65e99fd10883a191c257b3
+            namespace: programmingdevops
+          generation: 59
+          importPolicy:
+            importMode: Legacy
+          name: 2023.07.18
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:2420abf9676c6b7d210ba4160f83cdbd370db53cc0b1f1624b9f3f71470faad4
+            namespace: programmingdevops
+          generation: 61
+          importPolicy:
+            importMode: Legacy
+          name: 2023.07.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:35c31d08e37e3bdceafd6fd23f700ba532a9ff9114ebbdc9f0bb4f89a601c678
+            namespace: programmingdevops
+          generation: 63
+          importPolicy:
+            importMode: Legacy
+          name: 2023.08.29
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:bba0c79e0ae9790fa5f27bbd34ddd9393865cf8fc5371b10f80e4b791f0728ea
+            namespace: programmingdevops
+          generation: 65
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.25
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:605bda99a889e64fb606fe610327c74e8e7321d4f494e6f621c007bc2cf39f7c
+            namespace: programmingdevops
+          generation: 67
+          importPolicy:
+            importMode: Legacy
+          name: 2023.11.08
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:3ae1ed8bcfd73075b6a85826c069d9aa1cb52ce2a4410545a0decf91ec455624
+            namespace: programmingdevops
+          generation: 69
+          importPolicy:
+            importMode: Legacy
+          name: 2023.12.07
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:28bf8174206e269ad4b793945930a49d5ef919936fcbd95321eee0f7d834a9e2
+            namespace: programmingdevops
+          generation: 73
+          importPolicy:
+            importMode: Legacy
+          name: 2023.12.08
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:b3e5917d8c2ebf32cf49c774cbee2460820b3bbabaaf7ca8d0fcd97acba3d21b
+            namespace: programmingdevops
+          generation: 79
+          importPolicy:
+            importMode: Legacy
+          name: 2024.01.04
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:09dff8df711ce937b7de9820279bf1789827bffb8045832361452e5aad58d3b1
+            namespace: programmingdevops
+          generation: 81
+          importPolicy:
+            importMode: Legacy
+          name: 2024.02.09
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:4b2120765227ee490d2baa3d805a2cca205077fb8e81df754aa936556609e1aa
+            namespace: programmingdevops
+          generation: 83
+          importPolicy:
+            importMode: Legacy
+          name: 2024.04.09
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:552adc30e9422c86cebf2a00a924aafb0d49e4ffbad22cdf644b35107dcceaf4
+            namespace: programmingdevops
+          generation: 85
+          importPolicy:
+            importMode: Legacy
+          name: 2024.04.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:fd5c94f2496a0c9872a4358bbf59199cadd7a1ee640882dab54ba94c95199dff
+            namespace: programmingdevops
+          generation: 87
+          importPolicy:
+            importMode: Legacy
+          name: 2024.09.16
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+            namespace: programmingdevops
+          generation: 89
+          importPolicy:
+            importMode: Legacy
+          name: 2024.10.09
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: mulesoft-accelerator-2@sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+            namespace: programmingdevops
+          generation: 88
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocpaz.kohlerco.com/mulesoftapps-prod/mulesoft-accelerator-2
+      tags:
+        - items:
+            - created: "2022-09-26T15:19:28Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:481d5bc22c8a9164852049f4726eb0158bcfd9118bffed9526b832e5b5f98999
+              generation: 7
+              image: sha256:481d5bc22c8a9164852049f4726eb0158bcfd9118bffed9526b832e5b5f98999
+          tag: 2022.09.26
+        - items:
+            - created: "2022-09-27T19:55:05Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:9518a69341dd6b9bb7c56887b35404f61bb7dcdfb4102d46d94dcf0bcabc377f
+              generation: 11
+              image: sha256:9518a69341dd6b9bb7c56887b35404f61bb7dcdfb4102d46d94dcf0bcabc377f
+          tag: 2022.09.27
+        - items:
+            - created: "2022-10-12T18:53:10Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:f6ab57491d671c166de1a8c9143867bff5027d56b76bcf6ac83e288513d21747
+              generation: 13
+              image: sha256:f6ab57491d671c166de1a8c9143867bff5027d56b76bcf6ac83e288513d21747
+          tag: 2022.10.12
+        - items:
+            - created: "2022-10-19T17:58:39Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:d32627306036cf76ad2b9b167db03b48879d1a5f46add4755eba2a355ebd73e9
+              generation: 15
+              image: sha256:d32627306036cf76ad2b9b167db03b48879d1a5f46add4755eba2a355ebd73e9
+          tag: 2022.10.19
+        - items:
+            - created: "2022-10-26T19:06:37Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:f86464d71385c4cc905d4d18a9ce088201b338b8b89559db6689b2139f816c7e
+              generation: 17
+              image: sha256:f86464d71385c4cc905d4d18a9ce088201b338b8b89559db6689b2139f816c7e
+          tag: 2022.10.26
+        - items:
+            - created: "2022-10-27T12:16:10Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:c1f4c373817c2ef690e48d32468245898e08b3622c1d3bbaa28222cd32a67a71
+              generation: 19
+              image: sha256:c1f4c373817c2ef690e48d32468245898e08b3622c1d3bbaa28222cd32a67a71
+          tag: 2022.10.27
+        - items:
+            - created: "2022-10-31T16:23:43Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:253bf5b5a63ba5c7208bf36a13a5f3523af581dba4fb429163e240562aa297ff
+              generation: 21
+              image: sha256:253bf5b5a63ba5c7208bf36a13a5f3523af581dba4fb429163e240562aa297ff
+          tag: 2022.10.31
+        - items:
+            - created: "2022-11-03T18:25:42Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b251722465e631ec891df0e6299e61b6137aa73d029bedbf84ae2bd866c1bf36
+              generation: 25
+              image: sha256:b251722465e631ec891df0e6299e61b6137aa73d029bedbf84ae2bd866c1bf36
+            - created: "2022-11-03T15:46:48Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b8a11352c5b190ec036de180ac8a44c45bc42d650d78cd5ec600f1cf5e2ad975
+              generation: 23
+              image: sha256:b8a11352c5b190ec036de180ac8a44c45bc42d650d78cd5ec600f1cf5e2ad975
+          tag: 2022.11.03
+        - items:
+            - created: "2022-11-06T13:18:23Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:416b270c75f21c287662cf65787d361eba625a7112dfa2857a832c268741f011
+              generation: 27
+              image: sha256:416b270c75f21c287662cf65787d361eba625a7112dfa2857a832c268741f011
+          tag: 2022.11.04
+        - items:
+            - created: "2023-01-25T01:22:01Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:c2f0a6f333f2209e7aacf2435aeb985e23f5b0512b1447c5a3930100714d1ae4
+              generation: 29
+              image: sha256:c2f0a6f333f2209e7aacf2435aeb985e23f5b0512b1447c5a3930100714d1ae4
+          tag: 2023.01.19
+        - items:
+            - created: "2023-01-31T22:51:23Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:07d671a89657d8cd0ebf71f69117e26e1efdd7701c2046c16feb28b8c1a24df4
+              generation: 31
+              image: sha256:07d671a89657d8cd0ebf71f69117e26e1efdd7701c2046c16feb28b8c1a24df4
+          tag: 2023.01.30
+        - items:
+            - created: "2023-02-07T22:18:29Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:f7fbbe84bd47ebccb937c7d96f48816c14986003e7f138dd8ff4186c37a02cd5
+              generation: 33
+              image: sha256:f7fbbe84bd47ebccb937c7d96f48816c14986003e7f138dd8ff4186c37a02cd5
+          tag: 2023.02.07
+        - items:
+            - created: "2023-02-11T17:24:21Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:dabb2795d390ad69297e0d6bb6fccc4a65895216060107f74cdce3f26455e442
+              generation: 35
+              image: sha256:dabb2795d390ad69297e0d6bb6fccc4a65895216060107f74cdce3f26455e442
+          tag: 2023.02.11
+        - items:
+            - created: "2023-03-02T19:47:42Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:485e4f929ab66638bf1b42877b3c5162b80f3600538b0e04d1c48534c552f9ae
+              generation: 37
+              image: sha256:485e4f929ab66638bf1b42877b3c5162b80f3600538b0e04d1c48534c552f9ae
+          tag: 2023.03.01
+        - items:
+            - created: "2023-03-03T15:46:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:bd773633e57118a62e1979ba720aea5a30fc116f472de680ff6e27a6c963989e
+              generation: 39
+              image: sha256:bd773633e57118a62e1979ba720aea5a30fc116f472de680ff6e27a6c963989e
+          tag: 2023.03.03
+        - items:
+            - created: "2023-03-06T13:10:46Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b26bad2557cc60ac470d5338db1533d6aa3ff2586bd4b1a5d87cfbd7a4de0ec8
+              generation: 41
+              image: sha256:b26bad2557cc60ac470d5338db1533d6aa3ff2586bd4b1a5d87cfbd7a4de0ec8
+          tag: 2023.03.06
+        - items:
+            - created: "2023-03-07T20:49:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:6f2a28bff948d3f5661eee66770a4ce876b75e42458532eec859e16477b88629
+              generation: 47
+              image: sha256:6f2a28bff948d3f5661eee66770a4ce876b75e42458532eec859e16477b88629
+            - created: "2023-03-07T20:21:13Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:80db1c0bfaa6db452146e182b53388bfa8fc4aa5199f69f8d086dc1553e802c9
+              generation: 45
+              image: sha256:80db1c0bfaa6db452146e182b53388bfa8fc4aa5199f69f8d086dc1553e802c9
+            - created: "2023-03-07T19:39:03Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:838be9a5afabf462369454bc48cbcee689589f6ca3450cb5ae8a2130eeb96288
+              generation: 43
+              image: sha256:838be9a5afabf462369454bc48cbcee689589f6ca3450cb5ae8a2130eeb96288
+          tag: 2023.03.07
+        - items:
+            - created: "2023-03-08T13:30:11Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b0b1211ccf9658daad391b16cf559ff05db52bb744532fa398ac12790613f92d
+              generation: 49
+              image: sha256:b0b1211ccf9658daad391b16cf559ff05db52bb744532fa398ac12790613f92d
+          tag: 2023.03.08
+        - items:
+            - created: "2023-04-21T13:34:23Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:44d004dbe13c045d8c891897a68313d4662b6294012786d058a791a90061202f
+              generation: 51
+              image: sha256:44d004dbe13c045d8c891897a68313d4662b6294012786d058a791a90061202f
+          tag: 2023.04.21
+        - items:
+            - created: "2023-06-21T19:44:10Z"
+              dockerImageReference: registry.kohlerco.com/openshiftocpaz_programmingdevops/mulesoft-accelerator-2@sha256:7c94071cc2863172d6f58613229818d7f786b27d4f46a4bcbb5f0a42d7f5646f
+              generation: 55
+              image: sha256:7c94071cc2863172d6f58613229818d7f786b27d4f46a4bcbb5f0a42d7f5646f
+            - created: "2023-06-21T19:35:24Z"
+              dockerImageReference: registry.kohlerco.com/openshiftocpaz_programmingdevops/mulesoft-accelerator-2@sha256:0607efb26416e81e0bbc3ad6ecbeb370f0c160132b1e47c85706e2a1257b4090
+              generation: 53
+              image: sha256:0607efb26416e81e0bbc3ad6ecbeb370f0c160132b1e47c85706e2a1257b4090
+          tag: 2023.06.21
+        - items:
+            - created: "2023-07-18T21:33:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:121ebfa1a867e2faa5c4e4e431b54f949f4e2c94ff65e99fd10883a191c257b3
+              generation: 59
+              image: sha256:121ebfa1a867e2faa5c4e4e431b54f949f4e2c94ff65e99fd10883a191c257b3
+            - created: "2023-07-18T14:46:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:85377489fc9f9bee910164ae3cbac311a7e0f2004d5932b486dcc4ddb0a3dc40
+              generation: 57
+              image: sha256:85377489fc9f9bee910164ae3cbac311a7e0f2004d5932b486dcc4ddb0a3dc40
+          tag: 2023.07.18
+        - items:
+            - created: "2023-07-19T19:24:51Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:2420abf9676c6b7d210ba4160f83cdbd370db53cc0b1f1624b9f3f71470faad4
+              generation: 61
+              image: sha256:2420abf9676c6b7d210ba4160f83cdbd370db53cc0b1f1624b9f3f71470faad4
+          tag: 2023.07.19
+        - items:
+            - created: "2023-08-29T22:59:14Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:35c31d08e37e3bdceafd6fd23f700ba532a9ff9114ebbdc9f0bb4f89a601c678
+              generation: 63
+              image: sha256:35c31d08e37e3bdceafd6fd23f700ba532a9ff9114ebbdc9f0bb4f89a601c678
+          tag: 2023.08.29
+        - items:
+            - created: "2023-11-02T11:40:33Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:bba0c79e0ae9790fa5f27bbd34ddd9393865cf8fc5371b10f80e4b791f0728ea
+              generation: 65
+              image: sha256:bba0c79e0ae9790fa5f27bbd34ddd9393865cf8fc5371b10f80e4b791f0728ea
+          tag: 2023.10.25
+        - items:
+            - created: "2023-11-08T17:31:18Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:605bda99a889e64fb606fe610327c74e8e7321d4f494e6f621c007bc2cf39f7c
+              generation: 67
+              image: sha256:605bda99a889e64fb606fe610327c74e8e7321d4f494e6f621c007bc2cf39f7c
+          tag: 2023.11.08
+        - items:
+            - created: "2023-12-07T16:39:48Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:3ae1ed8bcfd73075b6a85826c069d9aa1cb52ce2a4410545a0decf91ec455624
+              generation: 69
+              image: sha256:3ae1ed8bcfd73075b6a85826c069d9aa1cb52ce2a4410545a0decf91ec455624
+          tag: 2023.12.07
+        - items:
+            - created: "2023-12-11T15:01:59Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:28bf8174206e269ad4b793945930a49d5ef919936fcbd95321eee0f7d834a9e2
+              generation: 73
+              image: sha256:28bf8174206e269ad4b793945930a49d5ef919936fcbd95321eee0f7d834a9e2
+            - created: "2023-12-08T16:02:48Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:07f4ff4140985df2a3f11d3d4c9eeb961e058d7f605b20fe956d72007b105c3c
+              generation: 71
+              image: sha256:07f4ff4140985df2a3f11d3d4c9eeb961e058d7f605b20fe956d72007b105c3c
+          tag: 2023.12.08
+        - items:
+            - created: "2024-01-05T20:35:55Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b3e5917d8c2ebf32cf49c774cbee2460820b3bbabaaf7ca8d0fcd97acba3d21b
+              generation: 79
+              image: sha256:b3e5917d8c2ebf32cf49c774cbee2460820b3bbabaaf7ca8d0fcd97acba3d21b
+            - created: "2024-01-05T19:26:01Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:ac45dfef21fc074c52f46ae1508df33b7eb202b51ba984c0c18a5ab21f6b0256
+              generation: 77
+              image: sha256:ac45dfef21fc074c52f46ae1508df33b7eb202b51ba984c0c18a5ab21f6b0256
+            - created: "2024-01-04T20:24:08Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:251d353270fd0d027f7901d5f144488dc71c48cf70b6c373a75ca9f3f93fd1e3
+              generation: 75
+              image: sha256:251d353270fd0d027f7901d5f144488dc71c48cf70b6c373a75ca9f3f93fd1e3
+          tag: 2024.01.04
+        - items:
+            - created: "2024-02-09T17:53:27Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:09dff8df711ce937b7de9820279bf1789827bffb8045832361452e5aad58d3b1
+              generation: 81
+              image: sha256:09dff8df711ce937b7de9820279bf1789827bffb8045832361452e5aad58d3b1
+          tag: 2024.02.09
+        - items:
+            - created: "2024-04-09T13:07:02Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:4b2120765227ee490d2baa3d805a2cca205077fb8e81df754aa936556609e1aa
+              generation: 83
+              image: sha256:4b2120765227ee490d2baa3d805a2cca205077fb8e81df754aa936556609e1aa
+          tag: 2024.04.09
+        - items:
+            - created: "2024-04-18T11:53:30Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:552adc30e9422c86cebf2a00a924aafb0d49e4ffbad22cdf644b35107dcceaf4
+              generation: 85
+              image: sha256:552adc30e9422c86cebf2a00a924aafb0d49e4ffbad22cdf644b35107dcceaf4
+          tag: 2024.04.17
+        - items:
+            - created: "2024-09-17T14:36:12Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:fd5c94f2496a0c9872a4358bbf59199cadd7a1ee640882dab54ba94c95199dff
+              generation: 87
+              image: sha256:fd5c94f2496a0c9872a4358bbf59199cadd7a1ee640882dab54ba94c95199dff
+          tag: 2024.09.16
+        - items:
+            - created: "2024-10-09T14:54:35Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+              generation: 89
+              image: sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+          tag: 2024.10.09
+        - items:
+            - created: "2024-10-09T14:54:34Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+              generation: 88
+              image: sha256:a25f221dc46e0c2ea60924e0cd68492fd6c27ed742f2c058ad1c8e152384c7c6
+            - created: "2024-09-17T14:36:11Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:fd5c94f2496a0c9872a4358bbf59199cadd7a1ee640882dab54ba94c95199dff
+              generation: 86
+              image: sha256:fd5c94f2496a0c9872a4358bbf59199cadd7a1ee640882dab54ba94c95199dff
+            - created: "2024-04-18T11:53:26Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:552adc30e9422c86cebf2a00a924aafb0d49e4ffbad22cdf644b35107dcceaf4
+              generation: 84
+              image: sha256:552adc30e9422c86cebf2a00a924aafb0d49e4ffbad22cdf644b35107dcceaf4
+            - created: "2024-04-09T13:06:59Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:4b2120765227ee490d2baa3d805a2cca205077fb8e81df754aa936556609e1aa
+              generation: 82
+              image: sha256:4b2120765227ee490d2baa3d805a2cca205077fb8e81df754aa936556609e1aa
+            - created: "2024-02-09T17:53:27Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:09dff8df711ce937b7de9820279bf1789827bffb8045832361452e5aad58d3b1
+              generation: 80
+              image: sha256:09dff8df711ce937b7de9820279bf1789827bffb8045832361452e5aad58d3b1
+            - created: "2024-01-05T20:35:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:b3e5917d8c2ebf32cf49c774cbee2460820b3bbabaaf7ca8d0fcd97acba3d21b
+              generation: 78
+              image: sha256:b3e5917d8c2ebf32cf49c774cbee2460820b3bbabaaf7ca8d0fcd97acba3d21b
+            - created: "2024-01-05T19:26:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:ac45dfef21fc074c52f46ae1508df33b7eb202b51ba984c0c18a5ab21f6b0256
+              generation: 76
+              image: sha256:ac45dfef21fc074c52f46ae1508df33b7eb202b51ba984c0c18a5ab21f6b0256
+            - created: "2024-01-04T20:24:06Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:251d353270fd0d027f7901d5f144488dc71c48cf70b6c373a75ca9f3f93fd1e3
+              generation: 74
+              image: sha256:251d353270fd0d027f7901d5f144488dc71c48cf70b6c373a75ca9f3f93fd1e3
+            - created: "2023-12-11T15:01:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:28bf8174206e269ad4b793945930a49d5ef919936fcbd95321eee0f7d834a9e2
+              generation: 72
+              image: sha256:28bf8174206e269ad4b793945930a49d5ef919936fcbd95321eee0f7d834a9e2
+            - created: "2023-12-08T16:02:47Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:07f4ff4140985df2a3f11d3d4c9eeb961e058d7f605b20fe956d72007b105c3c
+              generation: 70
+              image: sha256:07f4ff4140985df2a3f11d3d4c9eeb961e058d7f605b20fe956d72007b105c3c
+            - created: "2023-12-07T16:39:47Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/mulesoft-accelerator-2@sha256:3ae1ed8bcfd73075b6a85826c069d9aa1cb52ce2a4410545a0decf91ec455624
+              generation: 68
+              image: sha256:3ae1ed8bcfd73075b6a85826c069d9aa1cb52ce2a4410545a0decf91ec455624
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      creationTimestamp: "2022-10-07T20:07:16Z"
+      generation: 19
+      name: wins0002499-codepuller
+      namespace: mulesoftapps-prod
+      resourceVersion: "2494873274"
+      uid: 6d87056b-edfc-4229-8029-6087c9177829
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:51de3adbff3ce3484d7ffebc1ec90c15532a1cd88ad9b89d18a663e3bc4fbb9f
+            namespace: mulesoftapps-qa
+          generation: 3
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.12
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:74b9882703f1b091386406dcbf668f60ed0a5861aec279a724ecd2c3756a55e1
+            namespace: mulesoftapps-qa
+          generation: 5
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:11687b2e173b6b3f9aee845e44a0e8d7f96b2a3d404b2079fadd118e736e47f3
+            namespace: mulesoftapps-qa
+          generation: 7
+          importPolicy:
+            importMode: Legacy
+          name: 2022.11.14
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+            namespace: mulesoftapps-qa
+          generation: 19
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.05
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:daeab0f00f5220fdc3943f312cb24b5ce374343d9249ddd9722897e2be6554b0
+            namespace: mulesoftapps-qa
+          generation: 15
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.18
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:85cb4ba265b06fd391c6c3549aa3f7a0d7f67f93ec6c2bb919a05aa34f5768d3
+            namespace: mulesoftapps-qa
+          generation: 17
+          importPolicy:
+            importMode: Legacy
+          name: 2024.01.04
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002499-codepuller@sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+            namespace: mulesoftapps-qa
+          generation: 18
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocpaz.kohlerco.com/mulesoftapps-prod/wins0002499-codepuller
+      tags:
+        - items:
+            - created: "2022-10-12T14:44:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:51de3adbff3ce3484d7ffebc1ec90c15532a1cd88ad9b89d18a663e3bc4fbb9f
+              generation: 3
+              image: sha256:51de3adbff3ce3484d7ffebc1ec90c15532a1cd88ad9b89d18a663e3bc4fbb9f
+          tag: 2022.10.12
+        - items:
+            - created: "2022-10-17T17:42:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:74b9882703f1b091386406dcbf668f60ed0a5861aec279a724ecd2c3756a55e1
+              generation: 5
+              image: sha256:74b9882703f1b091386406dcbf668f60ed0a5861aec279a724ecd2c3756a55e1
+          tag: 2022.10.17
+        - items:
+            - created: "2022-11-14T14:00:56Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:11687b2e173b6b3f9aee845e44a0e8d7f96b2a3d404b2079fadd118e736e47f3
+              generation: 7
+              image: sha256:11687b2e173b6b3f9aee845e44a0e8d7f96b2a3d404b2079fadd118e736e47f3
+          tag: 2022.11.14
+        - items:
+            - created: "2024-01-05T15:54:22Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+              generation: 19
+              image: sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+          tag: 2023.01.05
+        - items:
+            - created: "2023-01-18T21:31:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:daeab0f00f5220fdc3943f312cb24b5ce374343d9249ddd9722897e2be6554b0
+              generation: 15
+              image: sha256:daeab0f00f5220fdc3943f312cb24b5ce374343d9249ddd9722897e2be6554b0
+            - created: "2023-01-18T20:27:16Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:4909104a33874b8a049385b6b99bca1c2fd7d092dd695d914978e76d7a4ef73f
+              generation: 13
+              image: sha256:4909104a33874b8a049385b6b99bca1c2fd7d092dd695d914978e76d7a4ef73f
+            - created: "2023-01-18T20:08:45Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:c7f1d6a1fea531f2813b6e4975c6cf98ab3bfdebf1d4c18cc3ac3439e9f657cb
+              generation: 11
+              image: sha256:c7f1d6a1fea531f2813b6e4975c6cf98ab3bfdebf1d4c18cc3ac3439e9f657cb
+            - created: "2023-01-18T16:14:02Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:e730d7df933e228cd7e22b01cf89378009db0c3afae9175ce2fbbde287474076
+              generation: 9
+              image: sha256:e730d7df933e228cd7e22b01cf89378009db0c3afae9175ce2fbbde287474076
+          tag: 2023.01.18
+        - items:
+            - created: "2024-01-04T19:39:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:85cb4ba265b06fd391c6c3549aa3f7a0d7f67f93ec6c2bb919a05aa34f5768d3
+              generation: 17
+              image: sha256:85cb4ba265b06fd391c6c3549aa3f7a0d7f67f93ec6c2bb919a05aa34f5768d3
+          tag: 2024.01.04
+        - items:
+            - created: "2024-01-05T15:54:21Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+              generation: 18
+              image: sha256:f030450d84862b684a69042498d3a33fae01e75f6fb6939f7377b2d87b8c97e6
+            - created: "2024-01-04T19:39:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:85cb4ba265b06fd391c6c3549aa3f7a0d7f67f93ec6c2bb919a05aa34f5768d3
+              generation: 16
+              image: sha256:85cb4ba265b06fd391c6c3549aa3f7a0d7f67f93ec6c2bb919a05aa34f5768d3
+            - created: "2023-01-18T21:31:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:daeab0f00f5220fdc3943f312cb24b5ce374343d9249ddd9722897e2be6554b0
+              generation: 14
+              image: sha256:daeab0f00f5220fdc3943f312cb24b5ce374343d9249ddd9722897e2be6554b0
+            - created: "2023-01-18T20:27:16Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:4909104a33874b8a049385b6b99bca1c2fd7d092dd695d914978e76d7a4ef73f
+              generation: 12
+              image: sha256:4909104a33874b8a049385b6b99bca1c2fd7d092dd695d914978e76d7a4ef73f
+            - created: "2023-01-18T20:08:44Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:c7f1d6a1fea531f2813b6e4975c6cf98ab3bfdebf1d4c18cc3ac3439e9f657cb
+              generation: 10
+              image: sha256:c7f1d6a1fea531f2813b6e4975c6cf98ab3bfdebf1d4c18cc3ac3439e9f657cb
+            - created: "2023-01-18T16:14:02Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:e730d7df933e228cd7e22b01cf89378009db0c3afae9175ce2fbbde287474076
+              generation: 8
+              image: sha256:e730d7df933e228cd7e22b01cf89378009db0c3afae9175ce2fbbde287474076
+            - created: "2022-11-14T14:00:55Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002499-codepuller@sha256:11687b2e173b6b3f9aee845e44a0e8d7f96b2a3d404b2079fadd118e736e47f3
+              generation: 6
+              image: sha256:11687b2e173b6b3f9aee845e44a0e8d7f96b2a3d404b2079fadd118e736e47f3
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      creationTimestamp: "2022-10-04T12:17:53Z"
+      generation: 13
+      name: wins0002537-notifications
+      namespace: mulesoftapps-prod
+      resourceVersion: "1980845292"
+      uid: a2ab90a4-2121-490e-8d9b-41cfdbe7e801
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:8646492aab361b406c25e1b7d76f0bd211d6bde375ac65638b9b4740d2d71213
+            namespace: mulesoftapps-qa
+          generation: 3
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.07
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:ebeeb9363293fb8590a237e106845f984f4d2168909c3e2981833a05fff7377b
+            namespace: mulesoftapps-qa
+          generation: 5
+          importPolicy:
+            importMode: Legacy
+          name: 2022.10.12
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:f33fbff4501ce96db1b81ab36691382e86b6f394a9df7d359ec9d47c2a513623
+            namespace: mulesoftapps-qa
+          generation: 7
+          importPolicy:
+            importMode: Legacy
+          name: 2022.11.14
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:b523645ccb5eeb6bc0d28376c398cf361c4e359750492c27f2540be4e8f0dea1
+            namespace: mulesoftapps-qa
+          generation: 9
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:0b250e2129b3152cbf4d39ff5791666e3986d0bc8f7e4678272039e5ae917327
+            namespace: mulesoftapps-qa
+          generation: 11
+          importPolicy:
+            importMode: Legacy
+          name: 2023.01.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+            namespace: mulesoftapps-qa
+          generation: 13
+          importPolicy:
+            importMode: Legacy
+          name: 2023.08.29
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: wins0002537-notifications@sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+            namespace: mulesoftapps-qa
+          generation: 12
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocpaz.kohlerco.com/mulesoftapps-prod/wins0002537-notifications
+      tags:
+        - items:
+            - created: "2022-10-07T17:11:51Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:8646492aab361b406c25e1b7d76f0bd211d6bde375ac65638b9b4740d2d71213
+              generation: 3
+              image: sha256:8646492aab361b406c25e1b7d76f0bd211d6bde375ac65638b9b4740d2d71213
+          tag: 2022.10.07
+        - items:
+            - created: "2022-10-12T17:57:16Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:ebeeb9363293fb8590a237e106845f984f4d2168909c3e2981833a05fff7377b
+              generation: 5
+              image: sha256:ebeeb9363293fb8590a237e106845f984f4d2168909c3e2981833a05fff7377b
+          tag: 2022.10.12
+        - items:
+            - created: "2022-11-14T12:52:51Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:f33fbff4501ce96db1b81ab36691382e86b6f394a9df7d359ec9d47c2a513623
+              generation: 7
+              image: sha256:f33fbff4501ce96db1b81ab36691382e86b6f394a9df7d359ec9d47c2a513623
+          tag: 2022.11.14
+        - items:
+            - created: "2023-01-25T01:21:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:b523645ccb5eeb6bc0d28376c398cf361c4e359750492c27f2540be4e8f0dea1
+              generation: 9
+              image: sha256:b523645ccb5eeb6bc0d28376c398cf361c4e359750492c27f2540be4e8f0dea1
+          tag: 2023.01.19
+        - items:
+            - created: "2023-01-31T22:50:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:0b250e2129b3152cbf4d39ff5791666e3986d0bc8f7e4678272039e5ae917327
+              generation: 11
+              image: sha256:0b250e2129b3152cbf4d39ff5791666e3986d0bc8f7e4678272039e5ae917327
+          tag: 2023.01.30
+        - items:
+            - created: "2023-08-30T00:07:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+              generation: 13
+              image: sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+          tag: 2023.08.29
+        - items:
+            - created: "2023-08-30T00:07:54Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+              generation: 12
+              image: sha256:2feaa545430b367a3f85795ad614539b6a0a9697c39a91bdd7532738214b311c
+            - created: "2023-01-31T22:50:53Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:0b250e2129b3152cbf4d39ff5791666e3986d0bc8f7e4678272039e5ae917327
+              generation: 10
+              image: sha256:0b250e2129b3152cbf4d39ff5791666e3986d0bc8f7e4678272039e5ae917327
+            - created: "2023-01-25T01:21:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:b523645ccb5eeb6bc0d28376c398cf361c4e359750492c27f2540be4e8f0dea1
+              generation: 8
+              image: sha256:b523645ccb5eeb6bc0d28376c398cf361c4e359750492c27f2540be4e8f0dea1
+            - created: "2022-11-14T12:52:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/mulesoftapps-prod/wins0002537-notifications@sha256:f33fbff4501ce96db1b81ab36691382e86b6f394a9df7d359ec9d47c2a513623
+              generation: 6
+              image: sha256:f33fbff4501ce96db1b81ab36691382e86b6f394a9df7d359ec9d47c2a513623
+          tag: latest
+kind: List
+metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []
