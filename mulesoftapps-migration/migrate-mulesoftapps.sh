@@ -236,7 +236,8 @@ clean_resources() {
                     (.spec.template.spec.containers[]? | select(.image) | .image) |= sub("image-registry.openshift-image-registry.svc:5000/"; "kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/") |
                     (.spec.containers[]? | select(.image) | .image) |= sub("image-registry.openshift-image-registry.svc:5000/"; "kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/") |
                     (.spec.template.spec.containers[]? | select(.image) | .image) |= sub("ocpaz.kohlerco.com/"; "ocp-prd.kohlerco.com/") |
-                    (.spec.containers[]? | select(.image) | .image) |= sub("ocpaz.kohlerco.com/"; "ocp-prd.kohlerco.com/")
+                    (.spec.containers[]? | select(.image) | .image) |= sub("ocpaz.kohlerco.com/"; "ocp-prd.kohlerco.com/") |
+                    (.spec.storageClassName) |= "ocs-storagecluster-ceph-rbd"
                 ' "$file" > "cleaned/$filename" 2>/dev/null || cp "$file" "cleaned/$filename"
             else
                 # Fallback to sed-based cleaning if yq is not available
@@ -250,6 +251,7 @@ clean_resources() {
                     -e '/status:/,/^[[:space:]]*[^[:space:]]/d' \
                     -e 's|image-registry.openshift-image-registry.svc:5000/|kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/|g' \
                     -e 's|ocpaz.kohlerco.com/|ocp-prd.kohlerco.com/|g' \
+                    -e 's/storageClassName: .*/storageClassName: ocs-storagecluster-ceph-rbd/g' \
                     "$file" > "cleaned/$filename"
             fi
         fi
@@ -258,6 +260,43 @@ clean_resources() {
     cd - > /dev/null
     
     print_success "Resource cleaning completed"
+}
+
+# Update storage classes specifically for PVCs
+update_storage_classes() {
+    print_section "UPDATING STORAGE CLASSES"
+    
+    local pvc_file="$BACKUP_DIR/cleaned/pvcs.yaml"
+    
+    if [[ -f "$pvc_file" && -s "$pvc_file" ]]; then
+        print_info "Updating storage classes in PVCs to: ocs-storagecluster-ceph-rbd"
+        
+        if command -v yq &> /dev/null; then
+            # Use yq for precise storage class updates
+            yq eval '
+                (.items[]? | select(.kind == "PersistentVolumeClaim") | .spec.storageClassName) = "ocs-storagecluster-ceph-rbd"
+            ' "$pvc_file" > "${pvc_file}.tmp" && mv "${pvc_file}.tmp" "$pvc_file"
+        else
+            # Fallback to sed for storage class updates
+            sed -i 's/storageClassName: .*/storageClassName: ocs-storagecluster-ceph-rbd/g' "$pvc_file"
+        fi
+        
+        print_success "Storage classes updated successfully"
+        
+        # Show updated storage classes
+        if command -v yq &> /dev/null; then
+            local updated_classes
+            updated_classes=$(yq eval '.items[]? | select(.kind == "PersistentVolumeClaim") | .metadata.name + " -> " + .spec.storageClassName' "$pvc_file" 2>/dev/null)
+            if [[ -n "$updated_classes" ]]; then
+                print_info "Updated PVC storage classes:"
+                echo "$updated_classes" | while read -r line; do
+                    print_info "  $line"
+                done
+            fi
+        fi
+    else
+        print_info "No PVCs found to update"
+    fi
 }
 
 # Convert DeploymentConfigs to Deployments
@@ -534,7 +573,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    repoURL: https://github.com/KohlerCo/koihler-apps.git
     targetRevision: HEAD
     path: mulesoftapps-migration/gitops/overlays/prd
   destination:
@@ -750,9 +789,10 @@ oc logs -n $TARGET_NAMESPACE deployment/<app-name>
 - ⚠️ **External APIs**: Verify external service connectivity from OCP-PRD
 
 ### Storage Migration
-- ⚠️ **Storage Classes**: Verify storage classes are available on OCP-PRD
+- ⚠️ **Storage Classes**: Updated to use \`ocs-storagecluster-ceph-rbd\` for OCP-PRD compatibility
 - ⚠️ **Data Migration**: Plan data migration strategy for persistent volumes
 - ⚠️ **Backup Strategy**: Implement backup procedures for new environment
+- ✅ **OCS Storage**: Configured for OpenShift Container Storage on OCP-PRD
 
 ### Security and RBAC
 - ⚠️ **Service Accounts**: Review service account permissions
@@ -997,9 +1037,10 @@ See \`MULESOFTAPPS-INVENTORY.md\` for detailed resource inventory and migration 
 - **Anypoint Platform**: Validate Anypoint Platform connectivity and authentication
 
 ### Storage and Persistence
-- **Storage Classes**: Verify OCP-PRD storage classes match requirements
+- **Storage Classes**: Updated to use \`ocs-storagecluster-ceph-rbd\` for OCP-PRD
 - **Data Migration**: Plan separate data migration for persistent volumes
 - **Backup Strategy**: Implement backup procedures for new environment
+- **OCS Integration**: Configured for OpenShift Container Storage
 
 ### Networking
 - **Routes**: Update route hostnames to avoid conflicts
@@ -1318,6 +1359,7 @@ main() {
     login_to_cluster
     export_resources
     clean_resources
+    update_storage_classes
     convert_deploymentconfigs
     create_gitops_structure
     create_argocd_application

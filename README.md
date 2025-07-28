@@ -75,6 +75,14 @@ Migration of the `procurementapps` namespace from OCP4 to OCP-PRD with conversio
 **Method**: DeploymentConfig → Deployment + GitOps
 **Applications**: pm-procedures-prod, pm-procedures-test
 
+### Corporate Apps Migration
+Migration of the `corporateapps` namespace from PRD cluster to GitOps repository management for automated deployment using ArgoCD.
+
+**Location**: `corporateapps-migration/`
+**Status**: 🆕 Ready to execute
+**Method**: GitOps with Kustomize overlays
+**Applications**: java-phonelist-prd, wins0001173-prd, wins0001174-prd, batch processing applications
+
 ## Getting Started
 
 ### 1. ArgoCD Repository Setup
@@ -93,12 +101,22 @@ kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
 
 # Procurement Apps (new)
 kubectl apply -f procurementapps-migration/gitops/argocd-application.yaml
+
+# Corporate Apps (new - run migration first)
+cd corporateapps-migration && ./migrate-corporateapps.sh
+kubectl apply -f corporateapps-migration/gitops/argocd-application.yaml
 ```
 
 ### 3. Direct Kustomize Deployment (Alternative)
 ```bash
 # Data Analytics Production
 kubectl apply -k data-analytics-migration/gitops/overlays/prd
+
+# Procurement Apps Production
+kubectl apply -k procurementapps-migration/gitops/overlays/prd
+
+# Corporate Apps Production (after migration)
+kubectl apply -k corporateapps-migration/gitops/overlays/prd
 
 # Procurement Apps Production
 kubectl apply -k procurementapps-migration/gitops/overlays/prd

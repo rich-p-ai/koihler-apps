@@ -20,7 +20,7 @@ items:
       resources:
         requests:
           storage: 10Gi
-      storageClassName: azure-file
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
       volumeName: pvc-54110b71-8559-411d-911d-31263eef7b38
     status:
@@ -49,7 +49,7 @@ items:
       resources:
         requests:
           storage: 512Mi
-      storageClassName: azure-file
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
       volumeName: pvc-06456964-148d-4417-8265-9e53dc2c4ec8
     status:
