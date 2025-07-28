@@ -12,8 +12,7 @@ items:
         - kubernetes.io/pvc-protection
       name: mulesoft-accelerator
       namespace: mulesoftapps-prod
-      resourceVersion: "301235631"
-      uid: 54110b71-8559-411d-911d-31263eef7b38
+
     spec:
       accessModes:
         - ReadWriteMany
@@ -22,13 +21,7 @@ items:
           storage: 10Gi
       storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-54110b71-8559-411d-911d-31263eef7b38
-    status:
-      accessModes:
-        - ReadWriteMany
-      capacity:
-        storage: 10Gi
-      phase: Bound
+---
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
@@ -41,9 +34,7 @@ items:
         - kubernetes.io/pvc-protection
       name: notifications-storage1
       namespace: mulesoftapps-prod
-      resourceVersion: "963761546"
-      uid: 06456964-148d-4417-8265-9e53dc2c4ec8
-    spec:
+     spec:
       accessModes:
         - ReadWriteOnce
       resources:
@@ -51,17 +42,4 @@ items:
           storage: 512Mi
       storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
-      volumeName: pvc-06456964-148d-4417-8265-9e53dc2c4ec8
-    status:
-      accessModes:
-        - ReadWriteOnce
-      capacity:
-        storage: 1Gi
-      phase: Bound
-kind: List
-metadata: {}
-spec:
-  template:
-    spec:
-      containers: []
-  containers: []
+
