@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: import-sci-scorecard-dev-vol01
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: sci-scorecard-dev-vol01
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: sci-scorecard-dev-vol01
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: import
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting import for PVC: sci-scorecard-dev-vol01"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check for data archive
+          if [ -f "/backup/sci-scorecard-dev-vol01-data.tar.gz" ]; then
+            echo "Found data archive, extracting..."
+            cd /target
+            tar -xzf "/backup/sci-scorecard-dev-vol01-data.tar.gz"
+            echo "Data extracted to /target"
+          elif [ -f "/backup/sci-scorecard-dev-vol01-empty.marker" ]; then
+            echo "PVC sci-scorecard-dev-vol01 was empty, no data to restore"
+          else
+            echo "No backup file found for sci-scorecard-dev-vol01"
+          fi
+          
+          echo "Import completed for PVC: sci-scorecard-dev-vol01"
+        volumeMounts:
+        - name: target-data
+          mountPath: /target
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: target-data
+        persistentVolumeClaim:
+          claimName: sci-scorecard-dev-vol01
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---

@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: import-nfspvcdataanalyticsdata01
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: nfspvcdataanalyticsdata01
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: nfspvcdataanalyticsdata01
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: import
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting import for PVC: nfspvcdataanalyticsdata01"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check for data archive
+          if [ -f "/backup/nfspvcdataanalyticsdata01-data.tar.gz" ]; then
+            echo "Found data archive, extracting..."
+            cd /target
+            tar -xzf "/backup/nfspvcdataanalyticsdata01-data.tar.gz"
+            echo "Data extracted to /target"
+          elif [ -f "/backup/nfspvcdataanalyticsdata01-empty.marker" ]; then
+            echo "PVC nfspvcdataanalyticsdata01 was empty, no data to restore"
+          else
+            echo "No backup file found for nfspvcdataanalyticsdata01"
+          fi
+          
+          echo "Import completed for PVC: nfspvcdataanalyticsdata01"
+        volumeMounts:
+        - name: target-data
+          mountPath: /target
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: target-data
+        persistentVolumeClaim:
+          claimName: nfspvcdataanalyticsdata01
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---

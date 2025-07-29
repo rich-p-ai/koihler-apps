@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: import-cdh-callfinder-vol01
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: cdh-callfinder-vol01
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: cdh-callfinder-vol01
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: import
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting import for PVC: cdh-callfinder-vol01"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check for data archive
+          if [ -f "/backup/cdh-callfinder-vol01-data.tar.gz" ]; then
+            echo "Found data archive, extracting..."
+            cd /target
+            tar -xzf "/backup/cdh-callfinder-vol01-data.tar.gz"
+            echo "Data extracted to /target"
+          elif [ -f "/backup/cdh-callfinder-vol01-empty.marker" ]; then
+            echo "PVC cdh-callfinder-vol01 was empty, no data to restore"
+          else
+            echo "No backup file found for cdh-callfinder-vol01"
+          fi
+          
+          echo "Import completed for PVC: cdh-callfinder-vol01"
+        volumeMounts:
+        - name: target-data
+          mountPath: /target
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: target-data
+        persistentVolumeClaim:
+          claimName: cdh-callfinder-vol01
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---

@@ -1318,6 +1318,93 @@ EOF
     print_success "Migration summary generated"
 }
 
+# Migrate container images
+migrate_container_images() {
+    print_section "MIGRATING CONTAINER IMAGES"
+    
+    print_info "Running dedicated image migration for mulesoft-accelerator-2..."
+    
+    # Check if image migration script exists
+    if [[ -f "migrate-mulesoft-image.sh" ]]; then
+        # Make script executable
+        chmod +x migrate-mulesoft-image.sh
+        
+        print_info "Executing image migration script..."
+        if bash migrate-mulesoft-image.sh; then
+            print_success "✅ Container image migrated successfully"
+            print_info "Image available at: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/mulesoftapps/mulesoft-accelerator-2"
+        else
+            print_warning "⚠️ Image migration had issues - review manually"
+            print_warning "You may need to run migrate-mulesoft-image.sh separately"
+        fi
+    else
+        print_warning "Image migration script not found"
+        print_info "Creating image migration script..."
+        
+        # Create a simple image migration notice
+        cat > "IMAGE-MIGRATION-INSTRUCTIONS.md" << EOF
+# Manual Image Migration Required
+
+The image \`mulesoftapps-prod/mulesoft-accelerator-2\` needs to be migrated manually.
+
+## Source Details
+- Registry: default-route-openshift-image-registry.apps.ocpaz.kohlerco.com
+- Namespace: mulesoftapps-prod
+- Image: mulesoft-accelerator-2
+- Secret: default-dockercfg-8vvph
+
+## Target Details
+- Registry: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com
+- Namespace: mulesoftapps
+- Image: mulesoft-accelerator-2
+- Robot User: mulesoftapps+robot
+
+## Manual Migration Steps
+
+1. Login to OCPAZ cluster and extract image
+2. Use skopeo or podman/docker to migrate image
+3. Update deployment manifests with new image reference
+
+Run the dedicated image migration script: migrate-mulesoft-image.sh
+EOF
+        
+        print_warning "Created IMAGE-MIGRATION-INSTRUCTIONS.md with manual steps"
+    fi
+    
+    # Update image references in GitOps manifests
+    update_image_references_in_manifests
+}
+
+# Update image references in GitOps manifests
+update_image_references_in_manifests() {
+    print_info "Updating image references in GitOps manifests..."
+    
+    local old_registry="image-registry.openshift-image-registry.svc:5000"
+    local old_registry_external="default-route-openshift-image-registry.apps.ocpaz.kohlerco.com"
+    local new_registry="kohler-registry-quay-quay.apps.ocp-host.kohlerco.com"
+    
+    # Update deployment files if they exist
+    for manifest_file in "$GITOPS_DIR/overlays/prd"/*.yaml; do
+        if [[ -f "$manifest_file" && -s "$manifest_file" ]]; then
+            local filename=$(basename "$manifest_file")
+            print_info "Checking $filename for image references..."
+            
+            # Update image references
+            if grep -q "mulesoft-accelerator-2" "$manifest_file" 2>/dev/null; then
+                print_info "Found mulesoft-accelerator-2 reference in $filename"
+                
+                # Update specific image references
+                sed -i "s|${old_registry}/mulesoftapps-prod/mulesoft-accelerator-2|${new_registry}/mulesoftapps/mulesoft-accelerator-2|g" "$manifest_file"
+                sed -i "s|${old_registry_external}/mulesoftapps-prod/mulesoft-accelerator-2|${new_registry}/mulesoftapps/mulesoft-accelerator-2|g" "$manifest_file"
+                
+                print_success "Updated image reference in $filename"
+            fi
+        fi
+    done
+    
+    print_info "Image reference updates completed"
+}
+
 # Test GitOps structure
 test_gitops_structure() {
     print_section "TESTING GITOPS STRUCTURE"
@@ -1361,6 +1448,7 @@ main() {
     clean_resources
     update_storage_classes
     convert_deploymentconfigs
+    migrate_container_images
     create_gitops_structure
     create_argocd_application
     create_deployment_script

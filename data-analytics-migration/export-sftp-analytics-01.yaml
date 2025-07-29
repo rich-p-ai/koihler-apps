@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: export-sftp-analytics-01
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: sftp-analytics-01
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: sftp-analytics-01
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: export
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting export of PVC: sftp-analytics-01"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check if source directory has data
+          if [ -d "/source" ] && [ "$(find /source -mindepth 1 -maxdepth 1 | wc -l)" -gt 0 ]; then
+            echo "Data found in /source, creating archive..."
+            cd /source
+            tar -czf "/backup/sftp-analytics-01-data.tar.gz" .
+            echo "Archive created: sftp-analytics-01-data.tar.gz"
+            echo "Archive size: $(du -h /backup/sftp-analytics-01-data.tar.gz)"
+          else
+            echo "No data found in /source for sftp-analytics-01"
+            touch "/backup/sftp-analytics-01-empty.marker"
+          fi
+          
+          echo "Export completed for PVC: sftp-analytics-01"
+        volumeMounts:
+        - name: source-data
+          mountPath: /source
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: source-data
+        persistentVolumeClaim:
+          claimName: sftp-analytics-01
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---

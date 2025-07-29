@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: import-migration-backup-storage
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: migration-backup-storage
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: migration-backup-storage
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: import
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting import for PVC: migration-backup-storage"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check for data archive
+          if [ -f "/backup/migration-backup-storage-data.tar.gz" ]; then
+            echo "Found data archive, extracting..."
+            cd /target
+            tar -xzf "/backup/migration-backup-storage-data.tar.gz"
+            echo "Data extracted to /target"
+          elif [ -f "/backup/migration-backup-storage-empty.marker" ]; then
+            echo "PVC migration-backup-storage was empty, no data to restore"
+          else
+            echo "No backup file found for migration-backup-storage"
+          fi
+          
+          echo "Import completed for PVC: migration-backup-storage"
+        volumeMounts:
+        - name: target-data
+          mountPath: /target
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: target-data
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---

@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ko17g66a-cluster-admin
+  labels:
+    app.kubernetes.io/name: procurementapps
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/managed-by: kustomize
+subjects:
+  - kind: User
+    name: ko17g66a@kohlerco.com
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io

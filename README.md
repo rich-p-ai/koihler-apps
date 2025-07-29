@@ -42,6 +42,10 @@ koihler-apps/
 ├── ARGOCD-SETUP-GUIDE.md           # ArgoCD integration guide
 ├── argocd-repository.yaml          # ArgoCD repository configuration
 ├── setup-argocd.sh                 # Automated ArgoCD setup script
+├── setup/                          # Setup and utility scripts
+│   ├── backup-namespace-setup.sh   # Initial namespace backup setup
+│   ├── daily-namespace-backup.sh   # Daily backup automation
+│   └── NAMESPACE-BACKUP-README.md  # Backup system documentation
 ├── data-analytics-migration/        # Data Analytics migration to OCP-PRD
 │   ├── README.md                   # Migration project overview
 │   ├── gitops/                     # GitOps structure with Kustomize
@@ -83,6 +87,14 @@ Migration of the `corporateapps` namespace from PRD cluster to GitOps repository
 **Method**: GitOps with Kustomize overlays
 **Applications**: java-phonelist-prd, wins0001173-prd, wins0001174-prd, batch processing applications
 
+### Namespace Backup System
+Automated backup solution for Kubernetes namespaces using GitOps methodology with ArgoCD for disaster recovery and infrastructure as code.
+
+**Location**: `setup/`
+**Status**: ✅ Ready to use
+**Method**: GitOps with automated daily backups
+**Features**: Change detection, GitHub integration, disaster recovery
+
 ## Getting Started
 
 ### 1. ArgoCD Repository Setup
@@ -94,7 +106,17 @@ Migration of the `corporateapps` namespace from PRD cluster to GitOps repository
 kubectl apply -f argocd-repository.yaml
 ```
 
-### 2. Deploy Applications
+### 2. Namespace Backup Setup
+```bash
+# Setup automated backup for any namespace
+cd setup/
+./backup-namespace-setup.sh
+
+# Setup daily automated backups
+./scripts/setup-cron.sh
+```
+
+### 3. Deploy Applications
 ```bash
 # Data Analytics (already deployed)
 kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
@@ -107,7 +129,7 @@ cd corporateapps-migration && ./migrate-corporateapps.sh
 kubectl apply -f corporateapps-migration/gitops/argocd-application.yaml
 ```
 
-### 3. Direct Kustomize Deployment (Alternative)
+### 4. Direct Kustomize Deployment (Alternative)
 ```bash
 # Data Analytics Production
 kubectl apply -k data-analytics-migration/gitops/overlays/prd
@@ -122,7 +144,7 @@ kubectl apply -k corporateapps-migration/gitops/overlays/prd
 kubectl apply -k procurementapps-migration/gitops/overlays/prd
 ```
 
-### 4. ArgoCD Applications
+### 5. ArgoCD Applications
 ```bash
 kubectl apply -f data-analytics-migration/gitops/argocd-application.yaml
 ```

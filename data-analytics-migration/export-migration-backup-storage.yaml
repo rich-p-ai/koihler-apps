@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: export-migration-backup-storage
+  namespace: data-analytics
+  labels:
+    migration: data-analytics
+    pvc: migration-backup-storage
+spec:
+  template:
+    metadata:
+      labels:
+        migration: data-analytics
+        pvc: migration-backup-storage
+    spec:
+      restartPolicy: Never
+      serviceAccountName: useroot
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      containers:
+      - name: export
+        image: registry.redhat.io/ubi8/ubi:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Starting export of PVC: migration-backup-storage"
+          
+          # Install required tools
+          dnf install -y tar gzip
+          
+          # Check if source directory has data
+          if [ -d "/source" ] && [ "$(find /source -mindepth 1 -maxdepth 1 | wc -l)" -gt 0 ]; then
+            echo "Data found in /source, creating archive..."
+            cd /source
+            tar -czf "/backup/migration-backup-storage-data.tar.gz" .
+            echo "Archive created: migration-backup-storage-data.tar.gz"
+            echo "Archive size: $(du -h /backup/migration-backup-storage-data.tar.gz)"
+          else
+            echo "No data found in /source for migration-backup-storage"
+            touch "/backup/migration-backup-storage-empty.marker"
+          fi
+          
+          echo "Export completed for PVC: migration-backup-storage"
+        volumeMounts:
+        - name: source-data
+          mountPath: /source
+        - name: backup-storage
+          mountPath: /backup
+      volumes:
+      - name: source-data
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+      - name: backup-storage
+        persistentVolumeClaim:
+          claimName: migration-backup-storage
+---
