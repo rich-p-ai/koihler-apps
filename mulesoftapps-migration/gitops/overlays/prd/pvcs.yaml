@@ -1,67 +1,149 @@
+kind: PersistentVolumeClaim
 apiVersion: v1
-items:
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      annotations:
-        pv.kubernetes.io/bind-completed: "yes"
-        pv.kubernetes.io/bound-by-controller: "yes"
-        volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/azure-file
-      creationTimestamp: "2022-09-20T13:00:36Z"
-      finalizers:
-        - kubernetes.io/pvc-protection
-      name: mulesoft-accelerator
-      namespace: mulesoftapps-prod
-      resourceVersion: "301235631"
-      uid: 54110b71-8559-411d-911d-31263eef7b38
-    spec:
-      accessModes:
-        - ReadWriteMany
-      resources:
-        requests:
-          storage: 10Gi
-      storageClassName: ocs-storagecluster-ceph-rbd
-      volumeMode: Filesystem
-      volumeName: pvc-54110b71-8559-411d-911d-31263eef7b38
-    status:
-      accessModes:
-        - ReadWriteMany
-      capacity:
-        storage: 10Gi
-      phase: Bound
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      annotations:
-        pv.kubernetes.io/bind-completed: "yes"
-        pv.kubernetes.io/bound-by-controller: "yes"
-        volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/azure-file
-      creationTimestamp: "2023-01-25T01:26:18Z"
-      finalizers:
-        - kubernetes.io/pvc-protection
-      name: notifications-storage1
-      namespace: mulesoftapps-prod
-      resourceVersion: "963761546"
-      uid: 06456964-148d-4417-8265-9e53dc2c4ec8
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 512Mi
-      storageClassName: ocs-storagecluster-ceph-rbd
-      volumeMode: Filesystem
-      volumeName: pvc-06456964-148d-4417-8265-9e53dc2c4ec8
-    status:
-      accessModes:
-        - ReadWriteOnce
-      capacity:
-        storage: 1Gi
-      phase: Bound
-kind: List
-metadata: {}
+metadata:
+  name: mulesoft-accelerator
+  namespace: mulesoftapps-prod
+  uid: 8de2d8df-a93a-4eec-bf63-16f805642154
+  resourceVersion: '194016849'
+  creationTimestamp: '2025-07-28T12:55:45Z'
+  annotations:
+    pv.kubernetes.io/bind-completed: 'yes'
+    pv.kubernetes.io/bound-by-controller: 'yes'
+    volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+    volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+  finalizers:
+    - kubernetes.io/pvc-protection
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:55:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:accessModes': {}
+          'f:resources':
+            'f:requests':
+              .: {}
+              'f:storage': {}
+          'f:storageClassName': {}
+          'f:volumeMode': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:55:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:pv.kubernetes.io/bind-completed': {}
+            'f:pv.kubernetes.io/bound-by-controller': {}
+            'f:volume.beta.kubernetes.io/storage-provisioner': {}
+            'f:volume.kubernetes.io/storage-provisioner': {}
+        'f:spec':
+          'f:volumeName': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:55:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:accessModes': {}
+          'f:capacity':
+            .: {}
+            'f:storage': {}
+          'f:phase': {}
+      subresource: status
 spec:
-  template:
-    spec:
-      containers: []
-  containers: []
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  volumeName: pvc-8de2d8df-a93a-4eec-bf63-16f805642154
+  storageClassName: ocs-storagecluster-ceph-rbd
+  volumeMode: Block
+status:
+  phase: Bound
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 10Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: notifications-storage1
+  namespace: mulesoftapps-prod
+  uid: d2e4d117-2394-481b-bcea-278be9542788
+  resourceVersion: '194017255'
+  creationTimestamp: '2025-07-28T12:56:17Z'
+  annotations:
+    pv.kubernetes.io/bind-completed: 'yes'
+    pv.kubernetes.io/bound-by-controller: 'yes'
+    volume.beta.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+    volume.kubernetes.io/storage-provisioner: openshift-storage.rbd.csi.ceph.com
+  finalizers:
+    - kubernetes.io/pvc-protection
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:56:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:accessModes': {}
+          'f:resources':
+            'f:requests':
+              .: {}
+              'f:storage': {}
+          'f:storageClassName': {}
+          'f:volumeMode': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:56:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:pv.kubernetes.io/bind-completed': {}
+            'f:pv.kubernetes.io/bound-by-controller': {}
+            'f:volume.beta.kubernetes.io/storage-provisioner': {}
+            'f:volume.kubernetes.io/storage-provisioner': {}
+        'f:spec':
+          'f:volumeName': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2025-07-28T12:56:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:accessModes': {}
+          'f:capacity':
+            .: {}
+            'f:storage': {}
+          'f:phase': {}
+      subresource: status
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: pvc-d2e4d117-2394-481b-bcea-278be9542788
+  storageClassName: ocs-storagecluster-ceph-rbd
+  volumeMode: Filesystem
+status:
+  phase: Bound
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+
+
