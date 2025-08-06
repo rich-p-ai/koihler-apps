@@ -1093,7 +1093,7 @@ main() {
     prompt_configuration
     check_prerequisites
     create_directories
-    login_to_cluster
+    verify_cluster_access
     export_resources
     clean_resources
     create_gitops_structure

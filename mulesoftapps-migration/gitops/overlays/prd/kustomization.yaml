@@ -44,3 +44,4 @@ resources:
   - secrets.yaml
   - services.yaml
   - statefulsets.yaml
+  - couchdb-deployments.yaml

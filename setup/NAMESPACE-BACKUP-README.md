@@ -31,7 +31,54 @@ Before using these scripts, ensure you have:
 - GitHub repository with write access
 - Optional: `yq` for advanced YAML processing
 
+### 🔐 Authentication Setup
+
+The scripts require that you are already authenticated to OpenShift before running them. The setup script will verify your authentication and access to the specified namespace.
+
+#### Required: Pre-authenticate (Recommended)
+```bash
+# Login to OpenShift first with your token
+oc login https://api.ocp-prd.kohlerco.com:6443 --token=<your-token>
+
+# Verify you're logged in and can access your namespace
+oc whoami
+oc get namespace balance-fit-prd
+
+# Then run the setup script
+./backup-namespace-setup.sh
+```
+
+#### Getting an API Token
+1. Visit the OpenShift web console: `https://console-openshift-console.apps.ocp-prd.kohlerco.com`
+2. Click on your username (top right)
+3. Select "Copy login command"
+4. Click "Display Token"
+5. Copy the complete `oc login` command with the `--token=` parameter
+6. Run this command in your terminal
+
+#### Environment Variable (Optional)
+```bash
+# Set the token as an environment variable for automation
+export OPENSHIFT_TOKEN="your-token-here"
+
+# Login using the environment variable
+oc login https://api.ocp-prd.kohlerco.com:6443 --token=$OPENSHIFT_TOKEN
+```
+
 ## 🚀 Quick Start
+
+### Step 0: Authentication (Required First)
+
+Authenticate to your OpenShift cluster before running the setup:
+
+```bash
+# Get your token from the web console and login
+oc login https://api.ocp-prd.kohlerco.com:6443 --token=<your-token>
+
+# Verify authentication and namespace access
+oc whoami
+oc get namespace balance-fit-prd
+```
 
 ### Step 1: Initial Setup
 
@@ -268,10 +315,31 @@ echo $SOURCE_NAMESPACE $GITHUB_REPO_URL
 oc whoami
 oc get namespace [namespace]
 
+# Get a new token if expired
+# Visit: https://oauth-openshift.apps.ocp-prd.kohlerco.com/oauth/token/request
+# Or use the web console -> Copy login command
+
+# Test connectivity
+oc cluster-info
+
 # Check GitHub access
 git remote -v
 git push --dry-run
 ```
+
+**Common Authentication Problems:**
+
+1. **Token Expired**: Get a new token from the web console
+2. **Invalid Token**: Ensure you copied the complete token
+3. **Network Issues**: Check VPN connection and firewall settings
+4. **Certificate Issues**: Use `--insecure-skip-tls-verify` if needed (not recommended for production)
+
+**Getting an API Token:**
+1. Open OpenShift web console: `https://console-openshift-console.apps.ocp-prd.kohlerco.com`
+2. Click your username (top right) → "Copy login command"
+3. Click "Display Token"
+4. Copy the `oc login` command with `--token=` parameter
+5. Run this command in your terminal before the setup script
 
 #### ArgoCD Sync Issues
 

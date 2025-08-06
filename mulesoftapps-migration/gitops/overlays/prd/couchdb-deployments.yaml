@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-mulesoft-couchdb
+  namespace: mulesoftapps-prod
+  labels:
+    app: qa-mulesoft-couchdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qa-mulesoft-couchdb
+  template:
+    metadata:
+      labels:
+        app: qa-mulesoft-couchdb
+    spec:
+      containers:
+      - name: couchdb
+        image: couchdb:3.3
+        ports:
+        - containerPort: 5984
+          name: couchdb
+        env:
+        - name: COUCHDB_USER
+          value: "admin"
+        - name: COUCHDB_PASSWORD
+          value: "password"
+        volumeMounts:
+        - name: couchdb-data
+          mountPath: /opt/couchdb/data
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+      volumes:
+      - name: couchdb-data
+        persistentVolumeClaim:
+          claimName: mulesoft-couchdb-qa
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qa-mulesoft-couchdb
+  namespace: mulesoftapps-prod
+  labels:
+    app: qa-mulesoft-couchdb
+spec:
+  ports:
+  - port: 5984
+    targetPort: 5984
+    protocol: TCP
+    name: couchdb
+  selector:
+    app: qa-mulesoft-couchdb
+  type: ClusterIP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: qa-mulesoft-couchdb-mulesoftapps
+  namespace: mulesoftapps-prod
+  labels:
+    app: qa-mulesoft-couchdb
+spec:
+  host: qa-mulesoft-couchdb-mulesoftapps.apps.ocp-prd.kohlerco.com
+  port:
+    targetPort: couchdb
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: qa-mulesoft-couchdb
+    weight: 100
+  wildcardPolicy: None
