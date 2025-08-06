@@ -1,0 +1,249 @@
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+        pv.kubernetes.io/bound-by-controller: "yes"
+        volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+      creationTimestamp: "2022-03-11T21:46:03Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      name: cpq-ssh-keys
+      namespace: oraclecpq
+      resourceVersion: "5384049624"
+      uid: a3aa25bb-dd72-405c-84ba-02462ac17c17
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 100Mi
+      storageClassName: ocs-external-storagecluster-cephfs
+      volumeMode: Filesystem
+      volumeName: pvc-a3aa25bb-dd72-405c-84ba-02462ac17c17
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 100Mi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+        pv.kubernetes.io/bound-by-controller: "yes"
+        volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+        volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
+      creationTimestamp: "2023-09-14T20:59:39Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      name: integrations-ssh-keys
+      namespace: oraclecpq
+      resourceVersion: "5384049950"
+      uid: bccfd04e-3564-4f67-a434-8401392c7cbd
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 100Mi
+      storageClassName: ocs-external-storagecluster-cephfs
+      volumeMode: Filesystem
+      volumeName: pvc-bccfd04e-3564-4f67-a434-8401392c7cbd
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 100Mi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2022-03-11T18:09:54Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        velero.io/exclude-from-backup: "true"
+      name: nfspvcdevnascpq
+      namespace: oraclecpq
+      resourceVersion: "5337136532"
+      uid: 3ff47b6d-955e-4f8d-8922-bb180bf01f5b
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvdevnascpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcdevnaskbnaoraclecpq","namespace":"oraclecpq"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvdevnaskbnaoraclecpq"}}
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2023-09-20T20:00:44Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp4-config
+      name: nfspvcdevnaskbnaoraclecpq
+      namespace: oraclecpq
+      resourceVersion: "5337136533"
+      uid: 13861a6f-913a-4e5b-924b-6e066cd29364
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 15Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvdevnaskbnaoraclecpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2022-03-11T18:09:48Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        velero.io/exclude-from-backup: "true"
+      name: nfspvcprdnascpq
+      namespace: oraclecpq
+      resourceVersion: "5337136534"
+      uid: c1beaea1-e5c2-4a88-afd7-bbeed32d1dc7
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvprdnascpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcprdnaskbnaoraclecpq","namespace":"oraclecpq"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvprdnaskbnaoraclecpq"}}
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2023-09-20T20:01:44Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp4-config
+      name: nfspvcprdnaskbnaoraclecpq
+      namespace: oraclecpq
+      resourceVersion: "5337136535"
+      uid: bbea0eda-ab14-47e9-a007-74e1ff3b58d4
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 15Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvprdnaskbnaoraclecpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2022-03-11T18:04:21Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        velero.io/exclude-from-backup: "true"
+      name: nfspvcqanascpq
+      namespace: oraclecpq
+      resourceVersion: "5337136536"
+      uid: 316a76cd-5942-45a0-9503-5543958305fa
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvqanascpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ocp4-config"},"name":"nfspvcqanaskbnaoraclecpq","namespace":"oraclecpq"},"spec":{"accessModes":["ReadWriteMany"],"resources":{"requests":{"storage":"15Gi"}},"storageClassName":"nfs","volumeName":"nfspvqanaskbnaoraclecpq"}}
+        pv.kubernetes.io/bind-completed: "yes"
+      creationTimestamp: "2023-09-20T20:01:16Z"
+      finalizers:
+        - kubernetes.io/pvc-protection
+      labels:
+        app.kubernetes.io/instance: ocp4-config
+      name: nfspvcqanaskbnaoraclecpq
+      namespace: oraclecpq
+      resourceVersion: "5337136538"
+      uid: 4b34b4b8-5b11-4044-b6aa-13764a6aa1c1
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 15Gi
+      storageClassName: nfs
+      volumeMode: Filesystem
+      volumeName: nfspvqanaskbnaoraclecpq
+    status:
+      accessModes:
+        - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      phase: Bound
+kind: List
+metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []
+  storageClassName: gp3-csi

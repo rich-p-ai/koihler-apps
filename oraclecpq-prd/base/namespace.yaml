@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: oraclecpq
+  labels:
+    name: oraclecpq
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
