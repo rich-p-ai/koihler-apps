@@ -8,11 +8,11 @@ items:
       namespace: oraclecpq
     spec:
       accessModes:
-        - ReadWriteMany
+        - ReadWriteOnce
       resources:
         requests:
           storage: 100Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
   - apiVersion: v1
     kind: PersistentVolumeClaim
@@ -21,11 +21,11 @@ items:
       namespace: oraclecpq
     spec:
       accessModes:
-        - ReadWriteMany
+        - ReadWriteOnce
       resources:
         requests:
           storage: 100Mi
-      storageClassName: gp3-csi
+      storageClassName: ocs-storagecluster-ceph-rbd
       volumeMode: Filesystem
   - apiVersion: v1
     kind: PersistentVolumeClaim
