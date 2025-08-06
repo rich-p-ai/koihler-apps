@@ -1,0 +1,61 @@
+apiVersion: v1
+items:
+  - apiVersion: build.openshift.io/v1
+    kind: BuildConfig
+    metadata:
+      annotations:
+        description: Defines how to build the application
+        template.alpha.openshift.io/wait-for-ready: "true"
+      creationTimestamp: "2022-03-11T21:56:22Z"
+      generation: 2
+      labels:
+        app: httpd-example
+        template: httpd-example
+        template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
+      name: httpd-example
+      namespace: oraclecpq
+      resourceVersion: "671324574"
+      uid: 82c558a1-8404-47f1-b478-4d0d3d49f584
+    spec:
+      failedBuildsHistoryLimit: 5
+      nodeSelector: null
+      output:
+        to:
+          kind: ImageStreamTag
+          name: httpd-example:latest
+      postCommit: {}
+      resources: {}
+      runPolicy: Serial
+      source:
+        git:
+          uri: https://github.com/sclorg/httpd-ex.git
+        type: Git
+      strategy:
+        sourceStrategy:
+          from:
+            kind: ImageStreamTag
+            name: httpd:2.4-el8
+            namespace: openshift
+        type: Source
+      successfulBuildsHistoryLimit: 5
+      triggers:
+        - imageChange:
+            lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/httpd@sha256:1cbb10f8a5972d115e1c044ae0b07f56a9072bc9d26bf80002abf6c5e05a1c48
+          type: ImageChange
+        - type: ConfigChange
+        - github:
+            secret: Grbg4R5xjIwHBd03iF2rNhY7jc5VEK6PuWibANyS
+          type: GitHub
+        - generic:
+            secret: AyKP0qGwAVniHcGailPjPclQBsGE7RIWxMQ4Bua3
+          type: Generic
+    status:
+      lastVersion: 1
+kind: List
+metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []
+  storageClassName: gp3-csi
