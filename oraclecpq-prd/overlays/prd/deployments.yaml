@@ -8,8 +8,6 @@ items:
         deployment.kubernetes.io/revision: "2"
         image.openshift.io/triggers: -> [{"from":{"kind":"ImageStreamTag","name":"cpq-sftp-dev:latest","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"cpq-sftp-dev\")].image","pause":"false"}]
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2022-03-11T21:46:25Z"
-      generation: 38
       labels:
         app: cpq-sftp-dev
         app.kubernetes.io/component: cpq-sftp-dev
@@ -18,8 +16,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-dev
       namespace: oraclecpq
-      resourceVersion: "4513273246"
-      uid: 26de84ad-a8ce-470c-89a8-262f86da8e64
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -33,7 +29,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: cpq-sftp-dev
             deploymentconfig: cpq-sftp-dev
@@ -42,7 +37,7 @@ items:
             - env:
                 - name: TZ
                   value: America/Chicago
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-dev@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-dev@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
               imagePullPolicy: Always
               name: cpq-sftp-dev
               ports:
@@ -83,21 +78,15 @@ items:
             - name: nfspvcdevnascpq
               persistentVolumeClaim:
                 claimName: nfspvcdevnascpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2022-03-11T21:46:25Z"
           lastUpdateTime: "2022-03-22T11:14:34Z"
           message: ReplicaSet "cpq-sftp-dev-846b88" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:10:27Z"
           lastUpdateTime: "2024-12-07T16:10:27Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 38
       readyReplicas: 1
       replicas: 1
@@ -110,8 +99,6 @@ items:
         deployment.kubernetes.io/revision: "2"
         image.openshift.io/triggers: -> [{"from":{"kind":"ImageStreamTag","name":"cpq-sftp-prd:latest","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"cpq-sftp-prd\")].image","pause":"false"}]
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2022-03-11T21:47:14Z"
-      generation: 30
       labels:
         app: cpq-sftp-prd
         app.kubernetes.io/component: cpq-sftp-prd
@@ -120,8 +107,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-prd
       namespace: oraclecpq
-      resourceVersion: "4513272709"
-      uid: a5ecf079-6d95-4365-8099-dc5622c12d36
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -135,7 +120,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: cpq-sftp-prd
             deploymentconfig: cpq-sftp-prd
@@ -144,7 +128,7 @@ items:
             - env:
                 - name: TZ
                   value: America/Chicago
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-prd@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-prd@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
               imagePullPolicy: Always
               name: cpq-sftp-prd
               ports:
@@ -185,21 +169,15 @@ items:
             - name: nfspvcprdnascpq
               persistentVolumeClaim:
                 claimName: nfspvcprdnascpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2022-03-11T21:47:14Z"
           lastUpdateTime: "2022-03-22T11:22:44Z"
           message: ReplicaSet "cpq-sftp-prd-bc9968566" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:10:18Z"
           lastUpdateTime: "2024-12-07T16:10:18Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 30
       readyReplicas: 1
       replicas: 1
@@ -212,8 +190,6 @@ items:
         deployment.kubernetes.io/revision: "2"
         image.openshift.io/triggers: -> [{"from":{"kind":"ImageStreamTag","name":"cpq-sftp-qa:latest","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"cpq-sftp-qa\")].image","pause":"false"}]
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2022-03-11T21:46:49Z"
-      generation: 32
       labels:
         app: cpq-sftp-qa
         app.kubernetes.io/component: cpq-sftp-qa
@@ -222,8 +198,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-qa
       namespace: oraclecpq
-      resourceVersion: "4513264584"
-      uid: 953f764f-0dc2-46c6-988a-a90e4ab44f12
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -237,7 +211,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: cpq-sftp-qa
             deploymentconfig: cpq-sftp-qa
@@ -246,7 +219,7 @@ items:
             - env:
                 - name: TZ
                   value: America/Chicago
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-qa@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-qa@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
               imagePullPolicy: Always
               name: cpq-sftp-qa
               ports:
@@ -287,21 +260,15 @@ items:
             - name: nfspvcqanascpq
               persistentVolumeClaim:
                 claimName: nfspvcqanascpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2022-03-11T21:46:49Z"
           lastUpdateTime: "2022-03-22T11:23:30Z"
           message: ReplicaSet "cpq-sftp-qa-67b74cc6bd" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:07:55Z"
           lastUpdateTime: "2024-12-07T16:07:55Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 32
       readyReplicas: 1
       replicas: 1
@@ -314,8 +281,6 @@ items:
         deployment.kubernetes.io/revision: "38"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-api:dev","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-api-dev\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T15:42:53Z"
-      generation: 42
       labels:
         app: oraclecpq-system-api-dev
         app.kubernetes.io/component: oraclecpq-system-api-dev
@@ -327,8 +292,6 @@ items:
         app.openshift.io/runtime-version: dev
       name: oraclecpq-system-api-dev
       namespace: oraclecpq
-      resourceVersion: "4513266173"
-      uid: a6de4fd7-8e21-4dab-9f47-6b2f6f9c47ef
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -345,7 +308,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-api-dev
             deploymentconfig: oraclecpq-system-api-dev
@@ -374,7 +336,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-dev
               ports:
@@ -395,21 +357,15 @@ items:
             - name: nfspvcdevnaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcdevnaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-02-23T15:42:53Z"
           lastUpdateTime: "2023-09-30T21:03:36Z"
           message: ReplicaSet "oraclecpq-system-api-dev-876887988" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:08:14Z"
           lastUpdateTime: "2024-12-07T16:08:14Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 42
       readyReplicas: 1
       replicas: 1
@@ -422,8 +378,6 @@ items:
         deployment.kubernetes.io/revision: "10"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-api:latest","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-api-prd\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T19:47:26Z"
-      generation: 14
       labels:
         app: oraclecpq-system-api-prd
         app.kubernetes.io/component: oraclecpq-system-api-prd
@@ -435,8 +389,6 @@ items:
         app.openshift.io/runtime-version: latest
       name: oraclecpq-system-api-prd
       namespace: oraclecpq
-      resourceVersion: "4513266638"
-      uid: a6102696-a66b-4f19-b247-4e7c2b4d9c57
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -453,7 +405,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-api-prd
             deploymentconfig: oraclecpq-system-api-prd
@@ -490,7 +441,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-prd
               ports:
@@ -511,21 +462,15 @@ items:
             - name: nfspvcprdnaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcprdnaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-02-23T19:47:26Z"
           lastUpdateTime: "2023-10-08T12:24:16Z"
           message: ReplicaSet "oraclecpq-system-api-prd-65757bd9cd" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:08:21Z"
           lastUpdateTime: "2024-12-07T16:08:21Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 14
       readyReplicas: 1
       replicas: 1
@@ -538,8 +483,6 @@ items:
         deployment.kubernetes.io/revision: "20"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-api:test","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-api-test\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T19:44:41Z"
-      generation: 27
       labels:
         app: oraclecpq-system-api-test
         app.kubernetes.io/component: oraclecpq-system-api-test
@@ -551,8 +494,6 @@ items:
         app.openshift.io/runtime-version: test
       name: oraclecpq-system-api-test
       namespace: oraclecpq
-      resourceVersion: "4513266228"
-      uid: d5b7ad8f-9054-44f3-b4e9-2cac27a8e18f
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -569,7 +510,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-api-test
             deploymentconfig: oraclecpq-system-api-test
@@ -598,7 +538,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-test
               ports:
@@ -619,21 +559,15 @@ items:
             - name: nfspvcqanaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcqanaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-02-23T19:44:41Z"
           lastUpdateTime: "2023-09-30T21:04:10Z"
           message: ReplicaSet "oraclecpq-system-api-test-5fdf989964" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:08:15Z"
           lastUpdateTime: "2024-12-07T16:08:15Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 27
       readyReplicas: 1
       replicas: 1
@@ -646,8 +580,6 @@ items:
         deployment.kubernetes.io/revision: "13"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-batch:dev","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-batch-dev\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-09-30T20:44:44Z"
-      generation: 15
       labels:
         app: oraclecpq-system-batch-dev
         app.kubernetes.io/component: oraclecpq-system-batch-dev
@@ -659,8 +591,6 @@ items:
         app.openshift.io/runtime-version: dev
       name: oraclecpq-system-batch-dev
       namespace: oraclecpq
-      resourceVersion: "4513279461"
-      uid: d03b4518-ad86-43c3-b30d-faf456a6884f
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -677,7 +607,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-batch-dev
             deploymentconfig: oraclecpq-system-batch-dev
@@ -714,7 +643,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-dev
               ports:
@@ -735,21 +664,15 @@ items:
             - name: nfspvcdevnaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcdevnaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-09-30T20:44:44Z"
           lastUpdateTime: "2023-12-18T02:21:29Z"
           message: ReplicaSet "oraclecpq-system-batch-dev-6798764f98" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:12:18Z"
           lastUpdateTime: "2024-12-07T16:12:18Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 15
       readyReplicas: 1
       replicas: 1
@@ -762,8 +685,6 @@ items:
         deployment.kubernetes.io/revision: "11"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-batch:latest","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-batch-prd\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-09-30T21:06:35Z"
-      generation: 15
       labels:
         app: oraclecpq-system-batch-prd
         app.kubernetes.io/component: oraclecpq-system-batch-prd
@@ -775,8 +696,6 @@ items:
         app.openshift.io/runtime-version: latest
       name: oraclecpq-system-batch-prd
       namespace: oraclecpq
-      resourceVersion: "4513268182"
-      uid: fbcaaa82-bf10-45a4-b9a5-87f7dec634d5
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -793,7 +712,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-batch-prd
             deploymentconfig: oraclecpq-system-batch-prd
@@ -830,7 +748,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-prd
               ports:
@@ -851,21 +769,15 @@ items:
             - name: nfspvcprdnaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcprdnaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-09-30T21:06:35Z"
           lastUpdateTime: "2023-12-18T02:26:38Z"
           message: ReplicaSet "oraclecpq-system-batch-prd-649bcf55fb" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:08:50Z"
           lastUpdateTime: "2024-12-07T16:08:50Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 15
       readyReplicas: 1
       replicas: 1
@@ -878,8 +790,6 @@ items:
         deployment.kubernetes.io/revision: "13"
         image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"oraclecpq-system-batch:test","namespace":"oraclecpq"},"fieldPath":"spec.template.spec.containers[?(@.name==\"oraclecpq-system-batch-test\")].image","pause":"false"}]'
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-09-30T20:58:40Z"
-      generation: 13
       labels:
         app: oraclecpq-system-batch-test
         app.kubernetes.io/component: oraclecpq-system-batch-test
@@ -891,8 +801,6 @@ items:
         app.openshift.io/runtime-version: test
       name: oraclecpq-system-batch-test
       namespace: oraclecpq
-      resourceVersion: "4513278121"
-      uid: e0adc30b-9745-477c-9d38-821daab3a515
     spec:
       progressDeadlineSeconds: 600
       replicas: 1
@@ -909,7 +817,6 @@ items:
         metadata:
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
-          creationTimestamp: null
           labels:
             app: oraclecpq-system-batch-test
             deploymentconfig: oraclecpq-system-batch-test
@@ -946,7 +853,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-test
               ports:
@@ -967,21 +874,15 @@ items:
             - name: nfspvcqanaskbnaoraclecpq
               persistentVolumeClaim:
                 claimName: nfspvcqanaskbnaoraclecpq
-    status:
-      availableReplicas: 1
       conditions:
         - lastTransitionTime: "2023-09-30T20:58:40Z"
           lastUpdateTime: "2023-12-18T02:25:38Z"
           message: ReplicaSet "oraclecpq-system-batch-test-8646c5f84b" has successfully progressed.
           reason: NewReplicaSetAvailable
-          status: "True"
-          type: Progressing
         - lastTransitionTime: "2024-12-07T16:11:53Z"
           lastUpdateTime: "2024-12-07T16:11:53Z"
           message: Deployment has minimum availability.
           reason: MinimumReplicasAvailable
-          status: "True"
-          type: Available
       observedGeneration: 13
       readyReplicas: 1
       replicas: 1

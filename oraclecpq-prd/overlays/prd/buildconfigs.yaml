@@ -6,16 +6,12 @@ items:
       annotations:
         description: Defines how to build the application
         template.alpha.openshift.io/wait-for-ready: "true"
-      creationTimestamp: "2022-03-11T21:56:22Z"
-      generation: 2
       labels:
         app: httpd-example
         template: httpd-example
         template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
       name: httpd-example
       namespace: oraclecpq
-      resourceVersion: "671324574"
-      uid: 82c558a1-8404-47f1-b478-4d0d3d49f584
     spec:
       failedBuildsHistoryLimit: 5
       nodeSelector: null
@@ -49,8 +45,6 @@ items:
         - generic:
             secret: AyKP0qGwAVniHcGailPjPclQBsGE7RIWxMQ4Bua3
           type: Generic
-    status:
-      lastVersion: 1
 kind: List
 metadata: {}
 spec:

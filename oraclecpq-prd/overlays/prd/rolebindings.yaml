@@ -3,11 +3,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2022-03-11T17:35:13Z"
       name: admin
       namespace: oraclecpq
-      resourceVersion: "671138415"
-      uid: e4664bd9-73e3-48ad-978c-8bfbfe74dc2a
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -19,11 +16,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2022-03-11T17:36:22Z"
       name: admin-0
       namespace: oraclecpq
-      resourceVersion: "4248082358"
-      uid: 88994ebb-95a8-4a43-bbaa-80d315ca6320
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -44,11 +38,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2022-06-27T18:11:21Z"
       name: admin-1
       namespace: oraclecpq
-      resourceVersion: "789972321"
-      uid: 3d022503-7ad8-4127-946e-1e215c77e131
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -60,11 +51,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2023-02-23T15:25:32Z"
       name: admin-jenkins
       namespace: oraclecpq
-      resourceVersion: "1627995027"
-      uid: a892d79e-907e-4845-ae3a-90ccfc15e64c
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -76,11 +64,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2023-02-23T15:35:42Z"
       name: admin-jenkins2
       namespace: oraclecpq
-      resourceVersion: "1628038535"
-      uid: 2033b44b-09c4-43e5-a1e4-c0c10e09856c
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -92,11 +77,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2023-05-18T13:25:06Z"
       name: bharti-admin
       namespace: oraclecpq
-      resourceVersion: "2024794241"
-      uid: 238826f2-cb74-4892-a8b5-91385608640f
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -108,7 +90,6 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2022-12-01T01:07:24Z"
       name: openshift-pipelines-edit
       namespace: oraclecpq
       ownerReferences:
@@ -117,9 +98,6 @@ items:
           controller: true
           kind: TektonInstallerSet
           name: rhosp-rbac-rtd8g
-          uid: 96a8678d-2bd8-40db-b38a-3df25a2060bc
-      resourceVersion: "1137376118"
-      uid: 9a10f45f-0526-4484-8598-ea5ece840b6c
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -131,7 +109,6 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2022-12-01T01:07:24Z"
       name: pipelines-scc-rolebinding
       namespace: oraclecpq
       ownerReferences:
@@ -140,9 +117,6 @@ items:
           controller: true
           kind: TektonInstallerSet
           name: rhosp-rbac-rtd8g
-          uid: 96a8678d-2bd8-40db-b38a-3df25a2060bc
-      resourceVersion: "1137376108"
-      uid: bfa49e47-d75a-47fa-a85d-9923527f3191
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -154,11 +128,8 @@ items:
   - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
-      creationTimestamp: "2024-02-05T14:58:51Z"
       name: soumya-admin
       namespace: oraclecpq
-      resourceVersion: "3210878465"
-      uid: d55c26f3-b00e-4bf0-8b08-280356e9741e
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -172,11 +143,8 @@ items:
     metadata:
       annotations:
         openshift.io/description: Allows deploymentconfigs in this namespace to rollout pods in this namespace.  It is auto-managed by a controller; remove subjects to disable.
-      creationTimestamp: "2022-03-11T17:35:14Z"
       name: system:deployers
       namespace: oraclecpq
-      resourceVersion: "671138457"
-      uid: d6b6688b-52ca-48fd-880b-1755238f889b
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -190,11 +158,8 @@ items:
     metadata:
       annotations:
         openshift.io/description: Allows builds in this namespace to push images to this namespace.  It is auto-managed by a controller; remove subjects to disable.
-      creationTimestamp: "2022-03-11T17:35:14Z"
       name: system:image-builders
       namespace: oraclecpq
-      resourceVersion: "671138451"
-      uid: 05428a08-6772-481a-b3b4-a35d3679810c
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole
@@ -208,11 +173,8 @@ items:
     metadata:
       annotations:
         openshift.io/description: Allows all pods in this namespace to pull images from this namespace.  It is auto-managed by a controller; remove subjects to disable.
-      creationTimestamp: "2022-03-11T17:35:13Z"
       name: system:image-pullers
       namespace: oraclecpq
-      resourceVersion: "671138433"
-      uid: 39ff05b3-c1b8-44c4-a243-a5935af5134b
     roleRef:
       apiGroup: rbac.authorization.k8s.io
       kind: ClusterRole

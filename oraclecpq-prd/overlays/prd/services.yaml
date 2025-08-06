@@ -3,7 +3,6 @@ items:
   - apiVersion: v1
     kind: Service
     metadata:
-      creationTimestamp: "2022-03-11T21:47:28Z"
       labels:
         app: cpq-sftp-dev
         app.kubernetes.io/component: cpq-sftp-dev
@@ -12,8 +11,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-dev
       namespace: oraclecpq
-      resourceVersion: "671318169"
-      uid: 442476cd-a22c-4ecc-9ac0-9eeb57f19b8f
     spec:
       clusterIP: 172.30.116.7
       clusterIPs:
@@ -34,12 +31,9 @@ items:
         deploymentconfig: cpq-sftp-dev
       sessionAffinity: None
       type: NodePort
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
-      creationTimestamp: "2022-03-11T21:47:52Z"
       labels:
         app: cpq-sftp-prd
         app.kubernetes.io/component: cpq-sftp-prd
@@ -48,8 +42,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-prd
       namespace: oraclecpq
-      resourceVersion: "671318464"
-      uid: 9432794b-a824-4a68-90ce-a4fb3ec8ca6b
     spec:
       clusterIP: 172.30.34.18
       clusterIPs:
@@ -70,12 +62,9 @@ items:
         deploymentconfig: cpq-sftp-prd
       sessionAffinity: None
       type: NodePort
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
-      creationTimestamp: "2022-03-11T21:47:40Z"
       labels:
         app: cpq-sftp-qa
         app.kubernetes.io/component: cpq-sftp-qa
@@ -84,8 +73,6 @@ items:
         app.openshift.io/runtime-namespace: oraclecpq
       name: cpq-sftp-qa
       namespace: oraclecpq
-      resourceVersion: "671318325"
-      uid: 68e4df14-736b-44e7-b59e-54ee411e7839
     spec:
       clusterIP: 172.30.102.3
       clusterIPs:
@@ -106,22 +93,17 @@ items:
         deploymentconfig: cpq-sftp-qa
       sessionAffinity: None
       type: NodePort
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
       annotations:
         description: Exposes and load balances the application pods
-      creationTimestamp: "2022-03-11T21:56:22Z"
       labels:
         app: httpd-example
         template: httpd-example
         template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
       name: httpd-example
       namespace: oraclecpq
-      resourceVersion: "671324560"
-      uid: 70bce5ed-c4dc-4725-8dcb-03e352ea9c0b
     spec:
       clusterIP: 172.30.179.122
       clusterIPs:
@@ -139,14 +121,11 @@ items:
         name: httpd-example
       sessionAffinity: None
       type: ClusterIP
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
       annotations:
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T19:08:36Z"
       labels:
         app: oraclecpq-system-api-dev
         app.kubernetes.io/component: oraclecpq-system-api-dev
@@ -154,8 +133,6 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-dev
       namespace: oraclecpq
-      resourceVersion: "1628928099"
-      uid: 67835033-3191-4a01-a254-fd311d379cb2
     spec:
       clusterIP: 172.30.206.73
       clusterIPs:
@@ -174,14 +151,11 @@ items:
         deploymentconfig: oraclecpq-system-api-dev
       sessionAffinity: None
       type: ClusterIP
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
       annotations:
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T19:49:32Z"
       labels:
         app: oraclecpq-system-api-prd
         app.kubernetes.io/component: oraclecpq-system-api-prd
@@ -189,8 +163,6 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-prd
       namespace: oraclecpq
-      resourceVersion: "1629103895"
-      uid: 8dce1513-0fda-438e-9ba8-bc7372f4baa2
     spec:
       clusterIP: 172.30.28.118
       clusterIPs:
@@ -209,14 +181,11 @@ items:
         deploymentconfig: oraclecpq-system-api-prd
       sessionAffinity: None
       type: ClusterIP
-    status:
-      loadBalancer: {}
   - apiVersion: v1
     kind: Service
     metadata:
       annotations:
         openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: "2023-02-23T19:48:43Z"
       labels:
         app: oraclecpq-system-api-test
         app.kubernetes.io/component: oraclecpq-system-api-test
@@ -224,8 +193,6 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-test
       namespace: oraclecpq
-      resourceVersion: "1629100246"
-      uid: 26693fc2-1b19-4dd7-a716-cb391f6c7e34
     spec:
       clusterIP: 172.30.18.196
       clusterIPs:
@@ -244,8 +211,6 @@ items:
         deploymentconfig: oraclecpq-system-api-test
       sessionAffinity: None
       type: ClusterIP
-    status:
-      loadBalancer: {}
 kind: List
 metadata: {}
 spec:

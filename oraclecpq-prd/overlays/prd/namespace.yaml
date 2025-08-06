@@ -9,7 +9,6 @@ metadata:
     openshift.io/sa.scc.supplemental-groups: 1000990000/10000
     openshift.io/sa.scc.uid-range: 1000990000/10000
     operator.tekton.dev/prune.hash: e12cf88878007ab90299fa28c92d42daf72a1dda6ff604ea40c1f1da0f1f5e1d
-  finalizers:
     - quay.redhat.com/quayintegrations
   labels:
     kubernetes.io/metadata.name: oraclecpq
@@ -20,7 +19,6 @@ metadata:
     pod-security.kubernetes.io/warn-version: v1.24
   name: oraclecpq
 spec:
-  finalizers:
     - kubernetes
   template:
     spec:
