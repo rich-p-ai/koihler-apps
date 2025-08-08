@@ -374,7 +374,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-dev
               ports:
@@ -490,7 +490,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-prd
               ports:
@@ -598,7 +598,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-api:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-api-test
               ports:
@@ -714,7 +714,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-dev
               ports:
@@ -830,7 +830,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-prd
               ports:
@@ -946,7 +946,7 @@ items:
                   value: costs
                 - name: VALUES_PIMLOCATION
                   value: pim
-              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              image: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/oraclecpq/oraclecpq-system-batch:latest
               imagePullPolicy: IfNotPresent
               name: oraclecpq-system-batch-test
               ports:
