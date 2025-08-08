@@ -1,0 +1,459 @@
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: cpq-sftp-dev
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-dev@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              imagePullPolicy: Always
+              name: cpq-sftp-dev
+              ports:
+                - containerPort: 22
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /etc/sftp
+                  name: volume-users
+                  readOnly: true
+                - mountPath: /etc/ssh/ssh_host_ed25519_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: dev/ssh_host_ed25519_key
+                - mountPath: /etc/ssh/ssh_host_rsa_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: dev/ssh_host_rsa_key
+                - mountPath: /home/cpqprofile/share
+                  name: nfspvcdevnascpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - configMap:
+              name: volume-users
+            - name: volume-ssh-keys
+              persistentVolumeClaim:
+                claimName: cpq-ssh-keys
+            - name: nfspvcdevnascpq
+              persistentVolumeClaim:
+                claimName: nfspvcdevnascpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: cpq-sftp-prd
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-prd@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              imagePullPolicy: Always
+              name: cpq-sftp-prd
+              ports:
+                - containerPort: 22
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /etc/sftp
+                  name: volume-users
+                  readOnly: true
+                - mountPath: /etc/ssh/ssh_host_ed25519_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: prd/ssh_host_ed25519_key
+                - mountPath: /etc/ssh/ssh_host_rsa_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: prd/ssh_host_rsa_key
+                - mountPath: /home/cpqprofile/share
+                  name: nfspvcprdnascpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - configMap:
+              name: volume-users
+            - name: volume-ssh-keys
+              persistentVolumeClaim:
+                claimName: cpq-ssh-keys
+            - name: nfspvcprdnascpq
+              persistentVolumeClaim:
+                claimName: nfspvcprdnascpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: cpq-sftp-qa
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/cpq-sftp-qa@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              imagePullPolicy: Always
+              name: cpq-sftp-qa
+              ports:
+                - containerPort: 22
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /etc/sftp
+                  name: volume-users
+                  readOnly: true
+                - mountPath: /etc/ssh/ssh_host_ed25519_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: qa/ssh_host_ed25519_key
+                - mountPath: /etc/ssh/ssh_host_rsa_key
+                  name: volume-ssh-keys
+                  readOnly: true
+                  subPath: qa/ssh_host_rsa_key
+                - mountPath: /home/cpqprofile/share
+                  name: nfspvcqanascpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: useroot
+          serviceAccountName: useroot
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - configMap:
+              name: volume-users
+            - name: volume-ssh-keys
+              persistentVolumeClaim:
+                claimName: cpq-ssh-keys
+            - name: nfspvcqanascpq
+              persistentVolumeClaim:
+                claimName: nfspvcqanascpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-api-dev
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-api-dev
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcdevnaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcdevnaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcdevnaskbnaoraclecpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-api-prd
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-api-prd
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcprdnaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcprdnaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcprdnaskbnaoraclecpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-api-test
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-api-test
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcqanaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcqanaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcqanaskbnaoraclecpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-batch-dev
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-batch-dev
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcdevnaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcdevnaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcdevnaskbnaoraclecpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-batch-prd
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-batch-prd
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcprdnaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcprdnaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcprdnaskbnaoraclecpq
+      replicas: 1
+---
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+      labels:
+      name: oraclecpq-system-batch-test
+      namespace: oraclecpq
+    spec:
+      progressDeadlineSeconds: 600
+      replicas: 1
+      revisionHistoryLimit: 10
+      selector:
+        matchLabels:
+      strategy:
+        type: RollingUpdate
+      template:
+        metadata:
+          annotations:
+          labels:
+        spec:
+          containers:
+            - env:
+              image: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              imagePullPolicy: IfNotPresent
+              name: oraclecpq-system-batch-test
+              ports:
+                - containerPort: 5001
+                  protocol: TCP
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+                - mountPath: /x01/workingdir
+                  name: nfspvcqanaskbnaoraclecpq
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+            - name: nfspvcqanaskbnaoraclecpq
+              persistentVolumeClaim:
+                claimName: nfspvcqanaskbnaoraclecpq
+      replicas: 1
+    spec:

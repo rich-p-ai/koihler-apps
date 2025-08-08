@@ -1,0 +1,300 @@
+apiVersion: v1
+items:
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2023-09-14T21:18:41Z"
+      labels:
+        app: cpq-sftp-dev
+        app.kubernetes.io/component: cpq-sftp-dev
+        app.kubernetes.io/instance: cpq-sftp-dev
+        app.kubernetes.io/part-of: SFTP
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: cpq-sftp-dev
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/cpq-sftp-dev
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2023-09-30T21:18:18Z"
+      labels:
+        app: cpq-sftp-prd
+        app.kubernetes.io/component: cpq-sftp-prd
+        app.kubernetes.io/instance: cpq-sftp-prd
+        app.kubernetes.io/part-of: SFTP
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: cpq-sftp-prd
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/cpq-sftp-prd
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2023-09-14T21:20:22Z"
+      labels:
+        app: cpq-sftp-qa
+        app.kubernetes.io/component: cpq-sftp-qa
+        app.kubernetes.io/instance: cpq-sftp-qa
+        app.kubernetes.io/part-of: SFTP
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: cpq-sftp-qa
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/cpq-sftp-qa
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        description: Keeps track of changes in the application image
+      labels:
+        app: httpd-example
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+        template: httpd-example
+        template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
+      name: httpd-example
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/httpd-example
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      labels:
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: oraclecpq-system-api
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.02.23
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.21
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.27
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.29
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: dev
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: oraclecpq
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: test
+          referencePolicy:
+            type: Source
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/oraclecpq-system-api
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      labels:
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: oraclecpq-system-batch
+      namespace: oraclecpq
+    spec:
+      lookupPolicy:
+        local: false
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.01
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.20
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: 2023.12.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: dev
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: oraclecpq
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: programmingdevops
+          importPolicy:
+            importMode: Legacy
+          name: test
+          referencePolicy:
+            type: Source
+      publicDockerImageRepository: quay.io/kohlerco/oraclecpq/oraclecpq-system-batch
+    spec:
+      containers: []
+  containers: []
+  storageClassName: gp3-csi
+kind: List
+metadata: {}
