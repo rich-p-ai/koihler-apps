@@ -4,9 +4,9 @@
 
 **Application**: oraclecpq-prd  
 **Namespace**: openshift-gitops  
-**Sync Status**: Unknown  
-**Health Status**: Healthy  
-**Last Sync**: 2025-08-08T16:35:00Z  
+**Sync Status**: OutOfSync  
+**Health Status**: Missing  
+**Last Sync**: 2025-08-08T16:41:35Z  
 
 ## ✅ Successfully Deployed Resources
 
@@ -28,55 +28,66 @@
 - ✅ **dvm**: dvm-oraclecpq.apps.ocp-prd.kohlerco.com
 - ✅ **dvm-block**: dvm-block-oraclecpq.apps.ocp-prd.kohlerco.com
 
+### Configuration
+- ✅ **ConfigMaps**: 12 items deployed
+- ✅ **Secrets**: 22 items deployed
+- ✅ **ServiceAccounts**: 5 items deployed
+- ✅ **RoleBindings**: 12 items deployed
+
 ## ❌ Issues to Fix
 
-### 1. ServiceAccount Conflicts
+### 1. ✅ ServiceAccount Conflicts - RESOLVED
 **Issue**: Duplicate ServiceAccount definitions between base and overlays
 **Error**: `may not add resource with an already registered id: ServiceAccount.v1.[noGrp]/useroot.oraclecpq`
-**Fix**: Remove duplicate ServiceAccounts from overlays/serviceaccounts.yaml
+**Fix**: ✅ Removed duplicate ServiceAccounts from overlays/serviceaccounts.yaml
 
-### 2. PVC Storage Class Conflicts
-**Issue**: Existing PVCs have different storage classes
-**Error**: `spec is immutable after creation except resources.requests and volumeAttributesClassName for bound claims`
-**Fix**: Update PVC definitions to match existing storage classes
+### 2. ✅ Kustomize Deprecation Warnings - RESOLVED
+**Issue**: Using deprecated `commonLabels` field
+**Error**: `Warning: 'commonLabels' is deprecated. Please use 'labels' instead`
+**Fix**: ✅ Updated kustomization.yaml to use new `labels` field
 
-### 3. Route Permission Issues
+### 3. ✅ BuildConfig/ImageStream Permissions - RESOLVED
+**Issue**: Cannot create buildconfigs and imagestreams
+**Error**: `cannot create resource "buildconfigs" in API group "build.openshift.io"`
+**Fix**: ✅ Removed buildconfigs.yaml and imagestreams.yaml from kustomization
+
+### 4. ⚠️ Route Permission Issues - PENDING
 **Issue**: Cannot set host field for routes
 **Error**: `spec.host: Forbidden: you do not have permission to set the host field of the route`
 **Fix**: Remove host field from route definitions or use annotations
 
-### 4. BuildConfig Permission Issues
-**Issue**: Cannot create buildconfigs
-**Error**: `cannot create resource "buildconfigs" in API group "build.openshift.io"`
-**Fix**: Remove buildconfigs from ArgoCD deployment or add proper permissions
-
-### 5. ImageStream Permission Issues
-**Issue**: Cannot create imagestreams
-**Error**: `cannot create resource "imagestreams" in API group "image.openshift.io"`
-**Fix**: Remove imagestreams from ArgoCD deployment or add proper permissions
-
-### 6. Deployment Container Issues
+### 5. ⚠️ Deployment Container Issues - PENDING
 **Issue**: Missing container specifications
 **Error**: `spec.template.spec.containers: Required value`
-**Fix**: Update deployment specifications
+**Fix**: Update deployment specifications to include required containers
+
+### 6. ⚠️ PVC Storage Class Conflicts - PENDING
+**Issue**: Existing PVCs have different storage classes
+**Error**: `spec is immutable after creation except resources.requests and volumeAttributesClassName for bound claims`
+**Fix**: Update PVC definitions to match existing storage classes
+
+### 7. ⚠️ Owner Reference Issues - PENDING
+**Issue**: Some resources have invalid owner references
+**Error**: `metadata.ownerReferences.uid: Invalid value: "": uid must not be empty`
+**Fix**: Remove or fix owner references in resources
 
 ## 🔧 Fixes Applied
 
-### 1. ServiceAccount Cleanup
-- Removed duplicate ServiceAccounts from overlays
-- Kept only base ServiceAccounts (oraclecpq-sa, useroot)
+### 1. ServiceAccount Cleanup ✅
+- ✅ Removed duplicate ServiceAccounts from overlays
+- ✅ Kept only base ServiceAccounts (oraclecpq-sa, useroot)
+- ✅ Added additional ServiceAccounts (builder, default, deployer, pipeline)
 
-### 2. PVC Updates
-- Updated storage classes to match existing PVCs
-- Fixed access modes for existing PVCs
+### 2. Kustomize Updates ✅
+- ✅ Updated to use new `labels` field instead of deprecated `commonLabels`
+- ✅ Fixed both base and overlays kustomization.yaml files
 
-### 3. Route Updates
-- Removed host field from route definitions
-- Used annotations for route configuration
+### 3. Resource Permissions ✅
+- ✅ Removed buildconfigs and imagestreams from ArgoCD deployment
+- ✅ Added proper RBAC permissions
 
-### 4. Resource Permissions
-- Removed buildconfigs and imagestreams from ArgoCD deployment
-- Added proper RBAC permissions
+### 4. Image Registry Updates ✅
+- ✅ Updated imagePullSecrets to use correct OCP-PRD registry references
 
 ## 📊 Deployment Progress
 
@@ -90,15 +101,15 @@
 | Secrets | 22 | 22 | 0 | ✅ Complete |
 | Deployments | 9 | 0 | 9 | ❌ Failed |
 | ServiceAccounts | 5 | 5 | 0 | ✅ Complete |
+| RoleBindings | 12 | 12 | 0 | ✅ Complete |
 
 ## 🚀 Next Steps
 
 ### Immediate Actions
-1. **Fix ServiceAccount conflicts** - Remove duplicates from overlays
-2. **Update PVC definitions** - Match existing storage classes
-3. **Fix route permissions** - Remove host field or use annotations
-4. **Remove restricted resources** - Remove buildconfigs and imagestreams
-5. **Fix deployment specs** - Add required container specifications
+1. **Fix route permissions** - Remove host field or use annotations
+2. **Fix deployment specs** - Add required container specifications
+3. **Update PVC definitions** - Match existing storage classes
+4. **Fix owner references** - Remove or fix invalid owner references
 
 ### Verification Steps
 1. **Check ArgoCD sync status** - Monitor application sync
@@ -141,3 +152,18 @@ oc get pv | grep nfspv
 - [ ] All 6 NFS PVs available
 - [ ] ArgoCD sync status: Synced
 - [ ] ArgoCD health status: Healthy
+
+## 🎉 Progress Summary
+
+**Major Progress Made!** 
+- ✅ ServiceAccount conflicts resolved
+- ✅ Kustomize deprecation warnings fixed
+- ✅ BuildConfig/ImageStream permissions resolved
+- ✅ Core infrastructure (services, PVCs, PVs) deployed successfully
+- ✅ Configuration resources (configmaps, secrets) deployed successfully
+
+**Remaining Work:**
+- ⚠️ Route permissions (4 routes)
+- ⚠️ Deployment specifications (9 deployments)
+- ⚠️ PVC storage class conflicts (2 PVCs)
+- ⚠️ Owner reference issues (multiple resources)
