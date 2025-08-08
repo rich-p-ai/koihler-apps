@@ -1,0 +1,130 @@
+---
+# NFS Persistent Volumes for OracleCPQ
+# These PVs are required for NFS storage mapping to server and path
+# They must be deployed before the PVCs that reference them
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvdevnaskbnaoraclecpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: dev
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/DEV/kbnaOracleCpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvqanaskbnaoraclecpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: qa
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/QA/kbnaOracleCpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvprdnaskbnaoraclecpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: prd
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/PRD/kbnaOracleCpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvdevnascpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: dev
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/DEV/cpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvqanascpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: qa
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/QA/cpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfspvprdnascpq
+  labels:
+    app.kubernetes.io/name: oraclecpq
+    app.kubernetes.io/component: oracle-cpq
+    app.kubernetes.io/managed-by: argocd
+    environment: prd
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /ifs/NFS/USWINFS01/D/Shared/PRD/cpq
+    server: USWINFS01.kohlerco.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  volumeMode: Filesystem

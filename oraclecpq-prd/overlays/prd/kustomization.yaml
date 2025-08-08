@@ -12,6 +12,7 @@ resources:
 - imagestreams.yaml
 - jobs.yaml
 - networkpolicies.yaml
+- nfs-persistent-volumes.yaml
 - pvcs.yaml
 - rolebindings.yaml
 - routes.yaml
