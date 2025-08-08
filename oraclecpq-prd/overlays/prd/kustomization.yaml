@@ -5,11 +5,9 @@ namespace: oraclecpq
 
 resources:
 - ../../base
-- buildconfigs.yaml
 - configmaps.yaml
 - cronjobs.yaml
 - deployments.yaml
-- imagestreams.yaml
 - jobs.yaml
 - networkpolicies.yaml
 - nfs-persistent-volumes.yaml
@@ -23,6 +21,7 @@ resources:
 
 images: []
 
-commonLabels:
-  environment: production
-  cluster: ocp-prd
+labels:
+- pairs:
+    environment: production
+    cluster: ocp-prd
