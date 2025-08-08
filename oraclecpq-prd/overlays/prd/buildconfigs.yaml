@@ -40,7 +40,7 @@ items:
       successfulBuildsHistoryLimit: 5
       triggers:
         - imageChange:
-            lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/httpd@sha256:1cbb10f8a5972d115e1c044ae0b07f56a9072bc9d26bf80002abf6c5e05a1c48
+            lastTriggeredImageID: kohler-registry-quay-quay.apps.ocp-host.kohlerco.com/openshift/httpd@sha256:1cbb10f8a5972d115e1c044ae0b07f56a9072bc9d26bf80002abf6c5e05a1c48
           type: ImageChange
         - type: ConfigChange
         - github:
