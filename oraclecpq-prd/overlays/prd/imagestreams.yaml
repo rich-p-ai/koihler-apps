@@ -5,6 +5,8 @@ items:
     metadata:
       annotations:
         openshift.io/image.dockerRepositoryCheck: "2023-09-14T21:18:41Z"
+      creationTimestamp: "2022-03-11T21:44:10Z"
+      generation: 4
       labels:
         app: cpq-sftp-dev
         app.kubernetes.io/component: cpq-sftp-dev
@@ -13,5 +15,737 @@ items:
         migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
       name: cpq-sftp-dev
       namespace: oraclecpq
+      resourceVersion: "5335144621"
+      uid: 82ceb765-504d-444a-bc3b-6e2a01868cb3
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          generation: 4
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-dev
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/cpq-sftp-dev
+      tags:
+        - items:
+            - created: "2023-09-14T21:18:41Z"
+              dockerImageReference: kohlercitregistry.azurecr.io/ia_unix-sftp@sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+              generation: 4
+              image: sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+            - created: "2022-03-11T21:44:11Z"
+              dockerImageReference: atmoz/sftp@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              generation: 2
+              image: sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2023-09-30T21:18:18Z"
+      creationTimestamp: "2022-03-11T21:44:37Z"
+      generation: 4
+      labels:
+        app: cpq-sftp-prd
+        app.kubernetes.io/component: cpq-sftp-prd
+        app.kubernetes.io/instance: cpq-sftp-prd
+        app.kubernetes.io/part-of: SFTP
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: cpq-sftp-prd
+      namespace: oraclecpq
+      resourceVersion: "5335144622"
+      uid: a1abe8aa-3e59-431e-b233-cb7eba1ec7ec
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          generation: 4
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-prd
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/cpq-sftp-prd
+      tags:
+        - items:
+            - created: "2023-09-30T21:18:18Z"
+              dockerImageReference: kohlercitregistry.azurecr.io/ia_unix-sftp@sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+              generation: 4
+              image: sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+            - created: "2022-03-11T21:44:38Z"
+              dockerImageReference: atmoz/sftp@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              generation: 2
+              image: sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        openshift.io/image.dockerRepositoryCheck: "2023-09-14T21:20:22Z"
+      creationTimestamp: "2022-03-11T21:44:25Z"
+      generation: 4
+      labels:
+        app: cpq-sftp-qa
+        app.kubernetes.io/component: cpq-sftp-qa
+        app.kubernetes.io/instance: cpq-sftp-qa
+        app.kubernetes.io/part-of: SFTP
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: cpq-sftp-qa
+      namespace: oraclecpq
+      resourceVersion: "5335144623"
+      uid: 2abba55e-b584-443d-a6ce-4f41a3233286
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+            openshift.io/imported-from: kohlercitregistry.azurecr.io/ia_unix-sftp
+          from:
+            kind: DockerImage
+            name: kohlercitregistry.azurecr.io/ia_unix-sftp
+          generation: 4
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Local
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/cpq-sftp-qa
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/cpq-sftp-qa
+      tags:
+        - items:
+            - created: "2023-09-14T21:20:22Z"
+              dockerImageReference: kohlercitregistry.azurecr.io/ia_unix-sftp@sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+              generation: 4
+              image: sha256:41eb5359cbbca2c1cb8158fca9801da7215c6b7200b31e7590706bc8dc974daa
+            - created: "2022-03-11T21:44:26Z"
+              dockerImageReference: atmoz/sftp@sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+              generation: 2
+              image: sha256:417f43a10e741a3f071ae4bf1b1ccd5dc2a7cf4250ddfe65e09c81a93de3f009
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      annotations:
+        description: Keeps track of changes in the application image
+      creationTimestamp: "2022-03-11T21:56:22Z"
+      generation: 1
+      labels:
+        app: httpd-example
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+        template: httpd-example
+        template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
+      name: httpd-example
+      namespace: oraclecpq
+      resourceVersion: "5335144624"
+      uid: 4a7149b9-9712-48d9-8a19-cd8bd6858219
+    spec:
+      lookupPolicy:
+        local: false
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/httpd-example
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/httpd-example
+      tags:
+        - items:
+            - created: "2022-03-11T21:56:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/httpd-example@sha256:7d885aee23124ef6defc617ca401de74e7e5f3396e2c4bc980860efd33098f39
+              generation: 1
+              image: sha256:7d885aee23124ef6defc617ca401de74e7e5f3396e2c4bc980860efd33098f39
+          tag: latest
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      creationTimestamp: "2023-02-23T15:27:20Z"
+      generation: 56
+      labels:
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: oraclecpq-system-api
+      namespace: oraclecpq
+      resourceVersion: "5335144625"
+      uid: 5a560869-9721-4a68-91fc-f3ecac3c2b1c
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+            namespace: programmingdevops
+          generation: 4
+          importPolicy:
+            importMode: Legacy
+          name: 2023.02.23
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+            namespace: programmingdevops
+          generation: 30
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.21
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+            namespace: programmingdevops
+          generation: 47
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.27
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+            namespace: programmingdevops
+          generation: 49
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.29
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: programmingdevops
+          generation: 55
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+            namespace: programmingdevops
+          generation: 53
+          importPolicy:
+            importMode: Legacy
+          name: dev
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: oraclecpq
+          generation: 56
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            namespace: programmingdevops
+          generation: 54
+          importPolicy:
+            importMode: Legacy
+          name: test
+          referencePolicy:
+            type: Source
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/oraclecpq-system-api
+      tags:
+        - items:
+            - created: "2023-02-23T19:39:05Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+              generation: 4
+              image: sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+          tag: 2023.02.23
+        - items:
+            - created: "2023-09-21T15:55:14Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+              generation: 30
+              image: sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+            - created: "2023-09-21T15:36:56Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:9fae2eb80a541fe2f992aa8d56dd423d2f96b1773f11f7b680512e56b93d085f
+              generation: 26
+              image: sha256:9fae2eb80a541fe2f992aa8d56dd423d2f96b1773f11f7b680512e56b93d085f
+            - created: "2023-09-21T15:29:55Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:537b35d88d03f1d297deb95e078a9372907577f22b3f854cb257e9623d5c8e73
+              generation: 23
+              image: sha256:537b35d88d03f1d297deb95e078a9372907577f22b3f854cb257e9623d5c8e73
+          tag: 2023.09.21
+        - items:
+            - created: "2023-09-29T17:36:37Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+              generation: 47
+              image: sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+            - created: "2023-09-28T02:46:34Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:79377d8015f777bfd21b1d7d49c477751ae963bee0ea4165a70f56cee0daadba
+              generation: 40
+              image: sha256:79377d8015f777bfd21b1d7d49c477751ae963bee0ea4165a70f56cee0daadba
+          tag: 2023.09.27
+        - items:
+            - created: "2023-09-29T17:47:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+              generation: 49
+              image: sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+          tag: 2023.09.29
+        - items:
+            - created: "2023-09-30T20:51:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              generation: 55
+              image: sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            - created: "2023-09-30T12:54:49Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:33666691b1ba62389068eeee3f012d67bb28df0a78dd71645de3bc7b8cb911f5
+              generation: 52
+              image: sha256:33666691b1ba62389068eeee3f012d67bb28df0a78dd71645de3bc7b8cb911f5
+          tag: 2023.09.30
+        - items:
+            - created: "2023-09-30T20:50:24Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+              generation: 53
+              image: sha256:b8b3473dbfbdeb17160950aeebac6783a501b683a0824dfff83c167f755bc889
+            - created: "2023-09-30T12:49:46Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:45a47d8c9c2be1c054c88e7bf474fae2e471737f5860ed782f26eb4aa59a1df4
+              generation: 50
+              image: sha256:45a47d8c9c2be1c054c88e7bf474fae2e471737f5860ed782f26eb4aa59a1df4
+            - created: "2023-09-29T13:28:33Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:39b535892e5b18e860b1398651eda1f4697004413d3eca7deb7af714b3c2330b
+              generation: 45
+              image: sha256:39b535892e5b18e860b1398651eda1f4697004413d3eca7deb7af714b3c2330b
+            - created: "2023-09-29T12:41:57Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:5eff6c29d61022c783d9ed1575639f61871bacdc33c376c6e34bea9788106c88
+              generation: 44
+              image: sha256:5eff6c29d61022c783d9ed1575639f61871bacdc33c376c6e34bea9788106c88
+            - created: "2023-09-29T02:18:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:5d556b12dbfbf60218379fdc2a7670783c289ed278184bfdfd3bb3f2d5cd4c02
+              generation: 43
+              image: sha256:5d556b12dbfbf60218379fdc2a7670783c289ed278184bfdfd3bb3f2d5cd4c02
+            - created: "2023-09-28T22:29:43Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:44626e2fb409355e01ec6748bcdcef47d1a9568457259dfba172e8cb136ba969
+              generation: 42
+              image: sha256:44626e2fb409355e01ec6748bcdcef47d1a9568457259dfba172e8cb136ba969
+            - created: "2023-09-28T22:11:21Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:1a2a7d06047cbef070d0acde2399b2cb0e9668f535b710d62d8c009725e2fbdb
+              generation: 41
+              image: sha256:1a2a7d06047cbef070d0acde2399b2cb0e9668f535b710d62d8c009725e2fbdb
+            - created: "2023-09-28T02:41:41Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:11b19d1ebe61390a613c9025deca395aad0f3e4fed540a5c11881a2ea8ce9170
+              generation: 38
+              image: sha256:11b19d1ebe61390a613c9025deca395aad0f3e4fed540a5c11881a2ea8ce9170
+            - created: "2023-09-27T23:58:44Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:b98afca4ab16cd847efb7339359332dcba74c2eb2e94c2c8118c0088dbd0af53
+              generation: 37
+              image: sha256:b98afca4ab16cd847efb7339359332dcba74c2eb2e94c2c8118c0088dbd0af53
+            - created: "2023-09-25T14:08:41Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:ca517fbdc26268618904225a3c5ccf9836ebb4d5e835da5b94d3a8874e9cecb4
+              generation: 36
+              image: sha256:ca517fbdc26268618904225a3c5ccf9836ebb4d5e835da5b94d3a8874e9cecb4
+          tag: dev
+        - items:
+            - created: "2023-09-30T20:53:01Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              generation: 56
+              image: sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            - created: "2023-02-23T19:40:34Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+              generation: 5
+              image: sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+          tag: latest
+        - items:
+            - created: "2023-09-30T20:51:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+              generation: 54
+              image: sha256:f66d510bb95afb8551124e3c0109217fbc068ea7d2d0567e0712b554c2085c3d
+            - created: "2023-09-30T12:54:49Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:33666691b1ba62389068eeee3f012d67bb28df0a78dd71645de3bc7b8cb911f5
+              generation: 51
+              image: sha256:33666691b1ba62389068eeee3f012d67bb28df0a78dd71645de3bc7b8cb911f5
+            - created: "2023-09-29T17:47:35Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+              generation: 48
+              image: sha256:f146acab82f8b185120ee4dc750a4c3e54804b31f47981612e296b9564b2c3a1
+            - created: "2023-09-29T17:36:37Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+              generation: 46
+              image: sha256:0880364250ad91af6553c4d816d80a02983ee51911703b80295ffbbbc0d5be32
+            - created: "2023-09-28T02:46:34Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:79377d8015f777bfd21b1d7d49c477751ae963bee0ea4165a70f56cee0daadba
+              generation: 39
+              image: sha256:79377d8015f777bfd21b1d7d49c477751ae963bee0ea4165a70f56cee0daadba
+            - created: "2023-09-21T15:55:13Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+              generation: 29
+              image: sha256:0a82ad2e5552dbceb322ca258dc7dd7a75ab919c87439f338607de6ce8b6e46a
+            - created: "2023-09-21T15:36:55Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:9fae2eb80a541fe2f992aa8d56dd423d2f96b1773f11f7b680512e56b93d085f
+              generation: 25
+              image: sha256:9fae2eb80a541fe2f992aa8d56dd423d2f96b1773f11f7b680512e56b93d085f
+            - created: "2023-02-23T19:39:05Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-api@sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+              generation: 3
+              image: sha256:269de5d0855a756365528f862546f1821b32ba781be10854ccb59a95be36b771
+          tag: test
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      creationTimestamp: "2023-09-30T20:26:01Z"
+      generation: 50
+      labels:
+        migration-included-stage-backup: 87322141-bc6c-426b-97ee-c064d8e11b07
+      name: oraclecpq-system-batch
+      namespace: oraclecpq
+      resourceVersion: "5335144626"
+      uid: 82f16966-2fa0-4fc4-ac57-f40551abd8a6
+    spec:
+      lookupPolicy:
+        local: false
+      tags:
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+            namespace: programmingdevops
+          generation: 4
+          importPolicy:
+            importMode: Legacy
+          name: 2023.09.30
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+            namespace: programmingdevops
+          generation: 11
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.01
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+            namespace: programmingdevops
+          generation: 15
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+            namespace: programmingdevops
+          generation: 21
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.19
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+            namespace: programmingdevops
+          generation: 26
+          importPolicy:
+            importMode: Legacy
+          name: 2023.10.20
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: programmingdevops
+          generation: 49
+          importPolicy:
+            importMode: Legacy
+          name: 2023.12.17
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+            namespace: programmingdevops
+          generation: 45
+          importPolicy:
+            importMode: Legacy
+          name: dev
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: oraclecpq
+          generation: 50
+          importPolicy:
+            importMode: Legacy
+          name: latest
+          referencePolicy:
+            type: Source
+        - annotations: null
+          from:
+            kind: ImageStreamImage
+            name: oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            namespace: programmingdevops
+          generation: 48
+          importPolicy:
+            importMode: Legacy
+          name: test
+          referencePolicy:
+            type: Source
+    status:
+      dockerImageRepository: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch
+      publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-prd.kohlerco.com/oraclecpq/oraclecpq-system-batch
+      tags:
+        - items:
+            - created: "2023-09-30T20:36:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+              generation: 4
+              image: sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+          tag: 2023.09.30
+        - items:
+            - created: "2023-10-01T12:12:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+              generation: 11
+              image: sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+            - created: "2023-10-01T12:08:51Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+              generation: 7
+              image: sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+          tag: 2023.10.01
+        - items:
+            - created: "2023-10-17T13:29:59Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+              generation: 15
+              image: sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+          tag: 2023.10.17
+        - items:
+            - created: "2023-10-19T18:40:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+              generation: 21
+              image: sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+          tag: 2023.10.19
+        - items:
+            - created: "2023-10-26T19:32:57Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+              generation: 26
+              image: sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+            - created: "2023-10-20T15:41:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:6010fa9a3950f3103da81595ab4e5c74bea470c2d23a5c48a591c42943ac9cc8
+              generation: 24
+              image: sha256:6010fa9a3950f3103da81595ab4e5c74bea470c2d23a5c48a591c42943ac9cc8
+          tag: 2023.10.20
+        - items:
+            - created: "2023-12-18T02:25:28Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              generation: 49
+              image: sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            - created: "2023-12-18T02:23:08Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5288401c6e40bfe75a5f449fdc428861671c83893fb2c62057155622b56c0b79
+              generation: 47
+              image: sha256:5288401c6e40bfe75a5f449fdc428861671c83893fb2c62057155622b56c0b79
+            - created: "2023-12-18T01:28:13Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+              generation: 41
+              image: sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+            - created: "2023-12-18T01:10:23Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+              generation: 38
+              image: sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+            - created: "2023-12-18T00:49:57Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+              generation: 34
+              image: sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+            - created: "2023-12-18T00:36:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+              generation: 30
+              image: sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+          tag: 2023.12.17
+        - items:
+            - created: "2023-12-18T02:21:17Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+              generation: 45
+              image: sha256:f5e88d3fa9f8300db540a7d1435ddaaf5ee2dd4c89d71a59428a6d90736b0cd5
+            - created: "2023-12-18T02:05:29Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:c1bb17c77c8c428881294b76f4362e29e51dba74a477c1760f94c30846c6899d
+              generation: 44
+              image: sha256:c1bb17c77c8c428881294b76f4362e29e51dba74a477c1760f94c30846c6899d
+            - created: "2023-12-18T01:30:06Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5611702d56a129c53fb82aa47e073a7d6228a75143a60a897bc35c1f2785332e
+              generation: 43
+              image: sha256:5611702d56a129c53fb82aa47e073a7d6228a75143a60a897bc35c1f2785332e
+            - created: "2023-12-18T01:06:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:6c0c7f4cacb51cfd494984d6ba63032a5aa73a6ee047e82a752c3aada80187cb
+              generation: 36
+              image: sha256:6c0c7f4cacb51cfd494984d6ba63032a5aa73a6ee047e82a752c3aada80187cb
+            - created: "2023-12-18T00:46:49Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:96721010c912ea60de16b4b287182257322286a8e767766696c14008fdd83856
+              generation: 32
+              image: sha256:96721010c912ea60de16b4b287182257322286a8e767766696c14008fdd83856
+            - created: "2023-12-18T00:33:03Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f100d58dddf49c4bb7974c0cbee10a4364936512c4f65175b956a8589939064e
+              generation: 28
+              image: sha256:f100d58dddf49c4bb7974c0cbee10a4364936512c4f65175b956a8589939064e
+            - created: "2023-10-20T15:40:21Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:c262169844d0b0a47d51a05abf77e25f366b38ac8e94117e3533df117a56ad73
+              generation: 22
+              image: sha256:c262169844d0b0a47d51a05abf77e25f366b38ac8e94117e3533df117a56ad73
+            - created: "2023-10-19T11:40:26Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:de638f0dfb974facb8d392c6a04995f1d53fbe485d3f9cb6d822c7b35884bd26
+              generation: 19
+              image: sha256:de638f0dfb974facb8d392c6a04995f1d53fbe485d3f9cb6d822c7b35884bd26
+            - created: "2023-10-18T14:05:24Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:3ece0115d9cd14de7b122f0830a96183e241cf81b0a60f057d2a611f8ee6e72f
+              generation: 18
+              image: sha256:3ece0115d9cd14de7b122f0830a96183e241cf81b0a60f057d2a611f8ee6e72f
+            - created: "2023-10-17T15:45:37Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:cd2abde1cca3a5eb3ed6208ed7d344c7bbd2dccc39fe7327d348038f994e70ea
+              generation: 17
+              image: sha256:cd2abde1cca3a5eb3ed6208ed7d344c7bbd2dccc39fe7327d348038f994e70ea
+            - created: "2023-10-17T13:28:42Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:89962c8d731352e0964dbb3f5bb40ef11ef7c839809b8761021cc8f8c783d87e
+              generation: 13
+              image: sha256:89962c8d731352e0964dbb3f5bb40ef11ef7c839809b8761021cc8f8c783d87e
+            - created: "2023-10-01T12:10:45Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:475728e02368e203fdd2abc210d3e92926d2b574f0b0f0edefb63ed72d92cea9
+              generation: 9
+              image: sha256:475728e02368e203fdd2abc210d3e92926d2b574f0b0f0edefb63ed72d92cea9
+            - created: "2023-09-30T20:33:31Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:6bf38b90bedbe4a4da62caaa6c3effd305b1a7f0c10dc2e56381218c6960b01d
+              generation: 2
+              image: sha256:6bf38b90bedbe4a4da62caaa6c3effd305b1a7f0c10dc2e56381218c6960b01d
+          tag: dev
+        - items:
+            - created: "2023-12-18T02:26:35Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              generation: 50
+              image: sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            - created: "2023-12-18T01:29:36Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+              generation: 42
+              image: sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+            - created: "2023-12-18T01:12:42Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+              generation: 39
+              image: sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+            - created: "2023-12-18T00:50:08Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+              generation: 35
+              image: sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+            - created: "2023-12-18T00:37:41Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+              generation: 31
+              image: sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+            - created: "2023-10-27T14:30:24Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+              generation: 27
+              image: sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+            - created: "2023-10-17T14:04:57Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+              generation: 16
+              image: sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+            - created: "2023-10-01T12:12:06Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+              generation: 12
+              image: sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+            - created: "2023-10-01T12:09:01Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+              generation: 8
+              image: sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+            - created: "2023-09-30T20:38:49Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+              generation: 5
+              image: sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+          tag: latest
+        - items:
+            - created: "2023-12-18T02:25:28Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+              generation: 48
+              image: sha256:56f60f590a3258e4971471ace23cfa1831dd2a17a19f605fe2a57e30ff734254
+            - created: "2023-12-18T02:23:08Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5288401c6e40bfe75a5f449fdc428861671c83893fb2c62057155622b56c0b79
+              generation: 46
+              image: sha256:5288401c6e40bfe75a5f449fdc428861671c83893fb2c62057155622b56c0b79
+            - created: "2023-12-18T01:28:12Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+              generation: 40
+              image: sha256:be67cbad9834f174edc13ca4a5f8d170814d5318bbf88875a509cd8c9e5303df
+            - created: "2023-12-18T01:10:22Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+              generation: 37
+              image: sha256:f268ce48d413e8339e180bddb5cc032ffea3a43c19364139367384c8be5a35f7
+            - created: "2023-12-18T00:49:56Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+              generation: 33
+              image: sha256:386d1982fda24c40d93afa1a54fe2c0ff0ad0d56ce6bf162c94ddb935882f1af
+            - created: "2023-12-18T00:36:49Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+              generation: 29
+              image: sha256:19cd62fefacd2051903c6d634bb249c11b6c0f9da3754892a2d76a59fb2da02b
+            - created: "2023-10-26T19:32:57Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+              generation: 25
+              image: sha256:c342a95c6b2709375933e6f2ca6bfffad51b08bba52e6f3f19061f6adf2d224a
+            - created: "2023-10-20T15:41:32Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:6010fa9a3950f3103da81595ab4e5c74bea470c2d23a5c48a591c42943ac9cc8
+              generation: 23
+              image: sha256:6010fa9a3950f3103da81595ab4e5c74bea470c2d23a5c48a591c42943ac9cc8
+            - created: "2023-10-19T18:40:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+              generation: 20
+              image: sha256:0bb31e42d34f5400e939b0b07dc86d0b352c09b2a5b4a5adc57c45a05f681981
+            - created: "2023-10-17T13:29:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+              generation: 14
+              image: sha256:3de48a4448ba98f09f9f3a791f541419d4f020c454e817cc0d8d7ad5623eb169
+            - created: "2023-10-01T12:12:00Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+              generation: 10
+              image: sha256:40abd9fcb34dae1395c6540653340119c6ef075e5845a6e09bfc25fb05dce694
+            - created: "2023-10-01T12:08:50Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+              generation: 6
+              image: sha256:5012ff5efac763987180e90e85ba0ae3d57dfc53353bf3edda0079800fea04ca
+            - created: "2023-09-30T20:36:58Z"
+              dockerImageReference: image-registry.openshift-image-registry.svc:5000/oraclecpq/oraclecpq-system-batch@sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+              generation: 3
+              image: sha256:d2ab0f2c67368b57fa84eb4bcf755739a35c01a57f8e76ce0b8edf3300e08e6f
+          tag: test
 kind: List
 metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []
+  storageClassName: gp3-csi

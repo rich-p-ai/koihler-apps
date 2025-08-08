@@ -5,12 +5,15 @@ items:
     metadata:
       annotations:
         openshift.io/host.generated: "true"
+      creationTimestamp: "2022-03-11T21:56:22Z"
       labels:
         app: httpd-example
         template: httpd-example
         template.openshift.io/template-instance-owner: bf4a272b-0b29-4157-9089-0bf3655d9f6b
       name: httpd-example
       namespace: oraclecpq
+      resourceVersion: "3949305093"
+      uid: ee23d6b8-e0f5-4095-85af-1ac7220988d1
     spec:
       host: httpd-example-oraclecpq.apps.ocp-prd.kohlerco.com
       to:
@@ -18,11 +21,22 @@ items:
         name: httpd-example
         weight: 100
       wildcardPolicy: None
+    status:
+      ingress:
+        - conditions:
+            - lastTransitionTime: "2024-07-14T13:33:57Z"
+              status: "True"
+              type: Admitted
+          host: httpd-example-oraclecpq.apps.ocp-prd.kohlerco.com
+          routerCanonicalHostname: router-default.apps.ocp-prd.kohlerco.com
+          routerName: default
+          wildcardPolicy: None
   - apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
       annotations:
         openshift.io/host.generated: "true"
+      creationTimestamp: "2023-02-23T19:09:22Z"
       labels:
         app: oraclecpq-system-api-dev
         app.kubernetes.io/component: oraclecpq-system-api-dev
@@ -30,6 +44,8 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-dev
       namespace: oraclecpq
+      resourceVersion: "3949305239"
+      uid: 8cdcacaf-7511-48c6-b2bf-cba73358b4f5
     spec:
       host: oraclecpq-system-api-dev-mulesoftapps.apps.ocp-prd.kohlerco.com
       port:
@@ -42,11 +58,22 @@ items:
         name: oraclecpq-system-api-dev
         weight: 100
       wildcardPolicy: None
+    status:
+      ingress:
+        - conditions:
+            - lastTransitionTime: "2024-07-14T13:33:59Z"
+              status: "True"
+              type: Admitted
+          host: oraclecpq-system-api-dev-mulesoftapps.apps.ocp-prd.kohlerco.com
+          routerCanonicalHostname: router-default.apps.ocp-prd.kohlerco.com
+          routerName: default
+          wildcardPolicy: None
   - apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
       annotations:
         openshift.io/host.generated: "true"
+      creationTimestamp: "2023-02-23T20:20:24Z"
       labels:
         app: oraclecpq-system-api-prd
         app.kubernetes.io/component: oraclecpq-system-api-prd
@@ -54,6 +81,8 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-prd
       namespace: oraclecpq
+      resourceVersion: "3949305287"
+      uid: fdce33be-bf22-4f26-88f3-a8f2a38aa9ad
     spec:
       host: oraclecpq-system-api-prd-mulesoftapps.apps.ocp-prd.kohlerco.com
       port:
@@ -66,11 +95,22 @@ items:
         name: oraclecpq-system-api-prd
         weight: 100
       wildcardPolicy: None
+    status:
+      ingress:
+        - conditions:
+            - lastTransitionTime: "2024-07-14T13:34:00Z"
+              status: "True"
+              type: Admitted
+          host: oraclecpq-system-api-prd-mulesoftapps.apps.ocp-prd.kohlerco.com
+          routerCanonicalHostname: router-default.apps.ocp-prd.kohlerco.com
+          routerName: default
+          wildcardPolicy: None
   - apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
       annotations:
         openshift.io/host.generated: "true"
+      creationTimestamp: "2023-02-23T19:50:42Z"
       labels:
         app: oraclecpq-system-api-test
         app.kubernetes.io/component: oraclecpq-system-api-test
@@ -78,6 +118,8 @@ items:
         app.kubernetes.io/part-of: oraclecpq-system-api
       name: oraclecpq-system-api-test
       namespace: oraclecpq
+      resourceVersion: "3949304985"
+      uid: 2593009a-abb5-4607-be02-404813261118
     spec:
       host: oraclecpq-system-api-test-mulesoftapps.apps.ocp-prd.kohlerco.com
       port:
@@ -90,5 +132,21 @@ items:
         name: oraclecpq-system-api-test
         weight: 100
       wildcardPolicy: None
+    status:
+      ingress:
+        - conditions:
+            - lastTransitionTime: "2024-07-14T13:33:55Z"
+              status: "True"
+              type: Admitted
+          host: oraclecpq-system-api-test-mulesoftapps.apps.ocp-prd.kohlerco.com
+          routerCanonicalHostname: router-default.apps.ocp-prd.kohlerco.com
+          routerName: default
+          wildcardPolicy: None
 kind: List
 metadata: {}
+spec:
+  template:
+    spec:
+      containers: []
+  containers: []
+  storageClassName: gp3-csi
