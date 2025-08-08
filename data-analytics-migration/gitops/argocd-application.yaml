@@ -10,7 +10,7 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    repoURL: https://github.com/rich-p-ai/kohler-apps.git
     targetRevision: HEAD
     path: data-analytics-migration/gitops/overlays/prd
   
@@ -48,7 +48,7 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    repoURL: https://github.com/rich-p-ai/kohler-apps.git
     targetRevision: HEAD
     path: data-analytics-migration/gitops/overlays/dev
   

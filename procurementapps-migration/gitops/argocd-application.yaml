@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rich-p-ai/koihler-apps.git
+    repoURL: https://github.com/rich-p-ai/kohler-apps.git
     targetRevision: HEAD
     path: procurementapps-migration/gitops/overlays/prd
   destination:

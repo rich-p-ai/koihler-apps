@@ -8,11 +8,9 @@ resources:
 - buildconfigs.yaml
 - configmaps.yaml
 - cronjobs.yaml
-- deploymentconfigs.yaml
 - deployments.yaml
 - imagestreams.yaml
 - jobs.yaml
-- namespace.yaml
 - networkpolicies.yaml
 - pvcs.yaml
 - rolebindings.yaml
@@ -22,11 +20,7 @@ resources:
 - services.yaml
 - statefulsets.yaml
 
-patchesStrategicMerge: []
-
 images: []
-
-replicas: []
 
 commonLabels:
   environment: production

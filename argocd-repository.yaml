@@ -1,31 +1,15 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: koihler-apps-repo
+  name: kohler-apps-repo
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: repository
 type: Opaque
 stringData:
   type: git
-  url: https://github.com/rich-p-ai/koihler-apps.git
+  url: https://github.com/rich-p-ai/kohler-apps.git
   # For public repositories, no credentials needed
   # For private repositories, add:
   # username: <your-username>
   # password: <your-token>
----
-apiVersion: argoproj.io/v1alpha1
-kind: Repository
-metadata:
-  name: koihler-apps
-  namespace: openshift-gitops
-spec:
-  repo: https://github.com/rich-p-ai/koihler-apps.git
-  # For private repositories, add:
-  # username: <your-username>
-  # password: <your-token>
-  # or use SSH:
-  # sshPrivateKey: |
-  #   -----BEGIN OPENSSH PRIVATE KEY-----
-  #   ...
-  #   -----END OPENSSH PRIVATE KEY-----
